@@ -33,25 +33,33 @@ function onPageLoad()
 
 // load the HTML of the header from the right file and put in the right location
 function loadHeader()
-{		
-	client.onreadystatechange  = htmlCodeHandler;
+{	
+	client.onreadystatechange  = HeaderHandler;
 	client.open("GET", "/components/header.html", false);
 	client.send();
+}
+
+function HeaderHandler() 
+{
+	if (this.readyState == 4 && this.status == 200 && this.responseText != null)
+	{
+		document.getElementById("header").innerHTML = this.responseText;
+	}
 }
 
 // load the HTML of the header from the right file and put in the right location
 function loadFooter()
 {		
-	client.onreadystatechange  = htmlCodeHandler;
+	client.onreadystatechange  = FooterHandler;
 	client.open("GET", "/components/footer.html", false);
 	client.send();
 }
 
-function htmlCodeHandler() 
+function FooterHandler() 
 {
 	if (this.readyState == 4 && this.status == 200 && this.responseText != null)
 	{
-		document.getElementById("header").innerHTML = this.responseText;
+		document.getElementById("footer").innerHTML = this.responseText;
 	}
 }
 
