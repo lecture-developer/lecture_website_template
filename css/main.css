@@ -1,4 +1,7 @@
-@import url('http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700');
+
+/* import fonts */
+@import url('http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700|Roboto|Playfair+Display&display=swap');
+/* end - import fonts */
 
 /* screen header - content - footer */
 
@@ -37,33 +40,67 @@ body {
 /* flex footer */
 
 footer {
-    background-color: #555;
-    color: #fff;
-    line-height: 1.5;
+	padding-top: 40px;
+    background-color: #1A202C;
+    color: white;
+	padding-bottom: 60px;
 }
-footer a {
-    text-decoration: none;
-    color: #fff;
+
+.footer-section {
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
+
+.footer-menu{
+	max-width: 25%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.footer-menu-title{
+	color: #A0AEC0;
+	font-size: 24pt;
+	line-height: 28px;
+	margin-bottom: 20px;
+}
+
+.footer-menu-item-header{
+	font-weight: bold;
+	color: white;
+	font-size: 18px;
+	line-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.footer-menu-item{
+	color: white;
+	font-size: 16px;
+	line-height: 19px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.footer-info-item{
+	margin-top: 10px;
+	color: white;
+	font-size: 18pt;
+	margin-right: 40px;
+}
+
+.footer-info-item i{
+	color: #63B3ED;
+	padding-right: 5px;
+}
+
 a:hover {
     text-decoration: underline;
-}
-.ft-legal {
-    padding: 0.9375rem 1.875rem;
-    background-color: #111;
-}
-.ft-legal-list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.ft-legal-list li {
-    margin: 0.125rem 0.625rem;
-    white-space: nowrap;
-}
-/* one before the last child */
-.ft-legal-list li:nth-last-child(2) {
-    flex: 1;       /* same as flex-grow: 1; */
 }
 
 /*** main content pages section ***/
@@ -110,6 +147,28 @@ a:hover {
 	}
 }
 
+/*** elements ***/
+
+.download-btn{
+	background: #5A67D8;
+	border-radius: 4px;
+	color: white !important;
+	font-size: 16pt;
+	line-height: 135%;
+	padding: 10px 20px;
+}
+
+.link-btn{
+	background: #1A202C;
+	border-radius: 4px;
+	color: white !important;
+	font-size: 16pt;
+	line-height: 135%;
+	padding: 10px 20px;
+}
+
+/*** end - elements ***/
+
 
 /* end - main content pages section */
 
@@ -142,7 +201,7 @@ a:hover {
 }
 
 .updates-section h2{
-	font-family: Playfair;
+	font-family: Playfair Display;
 	color: white;
 	font-size: 24pt;
 	padding-bottom: 20px;
@@ -244,13 +303,13 @@ a:hover {
 	align-content: flex-start;
 }
 
-.personal-titles h2{
-	font-family: Playfair;
+.personal-titles h3{
+	font-family: Playfair Display;
 	font-size: 22pt;
 	color: #1A202C;
 }
 
-.personal-titles h3{
+.personal-titles h4{
 	font-family: Roboto;
 	font-size: 16pt;
 	color: #718096;
@@ -274,11 +333,11 @@ a:hover {
 	padding-right: 10px;
 }
 
-.personal-row h1{
-	font-family: Playfair;
+.personal-row h2{
+	font-family: Playfair Display;
 	color: #1A202C;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 30px;
+	padding-bottom: 50px;
 	font-size: 40pt;
 	text-transform: capitalize;
 }
@@ -300,6 +359,71 @@ a:hover {
 .personal-row .read-more:hover{
 	color: #27475E;
 	font-weight: 900;
+}
+
+.featured-publications-container{
+	margin-top: 40px;
+	width: 100%;
+	background-color: white;
+}
+
+.featured-publications-section{
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.featured-publications-panel{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: flex-start;
+	max-width: 50%;
+}
+
+.current-projects-container{
+	margin-top: 60px;
+	width: 100%;
+	background-color: white;
+	margin-bottom: 60px;
+}
+
+.current-projects-section{
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.current-projects-panel{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: space-between;
+	max-width: 30%;
+	box-shadow: 0px 0px 15px rgba(26, 32, 44, 0.05), 0px 15px 25px rgba(26, 32, 44, 0.05);
+	border-radius: 4px;
+	padding: 20px 20px;
+}
+
+.current-projects-panel h4{
+	font-weight: bold;
+	letter-spacing: 0.04em;
+	color: #1A202C;
+	font-size: 24pt;
+}
+
+.current-projects-panel p{
+	color: #718096;
+	line-height: 135%;
+	font-size: 16pt;
 }
 
 

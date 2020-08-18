@@ -114,8 +114,8 @@
 						<img src="/img/personal_image.png" alt="Lecture name" />
 					</div>
 					<div class="personal-titles">
-						<h2> A long position A long position A long position A long position A long position </h2>
-						<h3> A long list of intrests A long list of intrests A long list of intrests A long list of intrests A long list of intrests </h3>
+						<h3> A long position A long position A long position A long position A long position </h2>
+						<h4> A long list of intrests A long list of intrests A long list of intrests A long list of intrests A long list of intrests </h3>
 					</div>
 				</div>
 				<div class="personal-row space-between">
@@ -130,15 +130,66 @@
 					</div>
 				</div>
 				<div class="personal-row">
-					<h1>
+					<h2>
 						Biography
-					</h1>
+					</h2>
 				</div>
 				<div class="personal-row">
 					<p>
 						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-						<a class="read-more" href="#">Read More...</div>
+						<span id="biography-read-more-btn" class="read-more"  onclick="return bioReadMore()">Read More...</span>
 					</p>
+					<p id="biography-read-more" style="display: none">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						<span id="biography-read-less-btn" class="read-more" onclick="return bioReadLess()">Read Less...</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="featured-publications-container">
+			<div class="featured-publications-section">
+				<div class="personal-row">
+					<h2>
+						Featured Publications
+					</h2>
+				</div>
+				<div class="personal-row nowrap">
+					<div class="featured-publications-panel">
+						<h3>Paper's title Paper's title Paper's title Paper's title</h3>
+						<p>Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description<p>
+						<a class="download-btn"> Download Research </a>
+					</div>
+					<div class="featured-publications-panel">
+						<h3>Paper's title Paper's title Paper's title Paper's title</h3>
+						<p>Paper's description Paper's description Paper's description Paper's Paper's description Paper's description Paper's description Paper's Paper's description Paper's description Paper's description Paper's Paper's description Paper's description Paper's description Paper'sPaper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description<p>
+						<a class="download-btn"> Download Research </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="current-projects-container">
+			<div class="current-projects-section">
+				<div class="personal-row">
+					<h2>
+						 Current Projects 
+					</h2>
+				</div>
+				<div class="personal-row space-between">
+					<div class="current-projects-panel">
+						<h4>Name</h4>
+						<p>Short Description Short Description Short Description Short Description <p>
+						<a class="link-btn"> <i class="fa fa-link" aria-hidden="true"></i> View project </a>
+					</div>
+					<div class="current-projects-panel">
+						<h4>Name</h4>
+						<p>Short Description Short Description Short Description Short Description <p>
+						<a class="link-btn"> <i class="fa fa-link" aria-hidden="true"></i> View project </a>
+					</div>
+					<div class="current-projects-panel">
+						<h4>Name</h4>
+						<p>Short Description Short Description Short Description Short Description <p>
+						<a class="link-btn"> <i class="fa fa-link" aria-hidden="true"></i> View project </a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -152,9 +203,23 @@
 	
 	<!-- js -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="/js/main.js"> </script>	
+	<script>
+		function bioReadMore()
+		{
+			document.getElementById("biography-read-more").style.display = "";
+			document.getElementById("biography-read-more-btn").style.display = "none";
+			return false;
+		}
+		function bioReadLess()
+		{
+			document.getElementById("biography-read-more").style.display = "none";
+			document.getElementById("biography-read-more-btn").style.display = "";
+			return false;
+		}
+	</script>
 	<!-- end - js -->	
 </body>
 </html>
