@@ -35,6 +35,18 @@ body {
     margin: 0;
 }
 
+.start{
+	justify-content: start;
+	align-items: center;
+	display: flex;
+}
+
+.end{
+	justify-content: end;
+	align-items: center;
+	display: flex;
+}
+
 /* end - flex box code */
 
 /* flex footer */
@@ -56,6 +68,12 @@ footer {
 	flex-direction: column;
 }
 
+.footer-section p{
+	padding-top: 40px;
+    color: #EBF4FF !important;
+	font-size: 16pt;
+}
+
 .footer-menu{
 	max-width: 25%;
 	display: flex;
@@ -64,15 +82,16 @@ footer {
 }
 
 .footer-menu-title{
-	color: #A0AEC0;
+	color: #5A67D8 !important;
 	font-size: 24pt;
+	font-weight: bold;
 	line-height: 28px;
 	margin-bottom: 20px;
 }
 
 .footer-menu-item-header{
 	font-weight: bold;
-	color: white;
+	color: #EBF4FF !important;
 	font-size: 18px;
 	line-height: 20px;
 	margin-top: 10px;
@@ -80,7 +99,7 @@ footer {
 }
 
 .footer-menu-item{
-	color: white;
+	color: #EBF4FF !important;
 	font-size: 16px;
 	line-height: 19px;
 	margin-top: 10px;
@@ -89,14 +108,23 @@ footer {
 
 .footer-info-item{
 	margin-top: 10px;
-	color: white;
+	color: #EBF4FF !important;
 	font-size: 18pt;
 	margin-right: 40px;
 }
 
-.footer-info-item i{
+.footer-info-item svg{
 	color: #63B3ED;
-	padding-right: 5px;
+	margin-right: 10px;
+}
+
+.footer-border{
+	border-bottom: 1px solid  #4A5568;
+	margin-bottom: 20px;
+}
+
+.footer-social-item{
+	margin-right: 10px;
 }
 
 a:hover {
@@ -150,7 +178,21 @@ a:hover {
 /*** elements ***/
 
 .download-btn{
-	background: #5A67D8;
+	background: #434190;
+	border-radius: 4px;
+	color: white !important;
+	font-size: 16pt;
+	line-height: 135%;
+	padding: 8px 16px;
+}
+
+.download-btn svg{
+	margin-left: 20px;
+}
+
+.link-btn{
+	font-family: Roboto;
+	background: #000000;
 	border-radius: 4px;
 	color: white !important;
 	font-size: 16pt;
@@ -158,13 +200,8 @@ a:hover {
 	padding: 10px 20px;
 }
 
-.link-btn{
-	background: #1A202C;
-	border-radius: 4px;
-	color: white !important;
-	font-size: 16pt;
-	line-height: 135%;
-	padding: 10px 20px;
+.link-btn svg{
+	margin-right: 10px;
 }
 
 /*** end - elements ***/
@@ -176,7 +213,7 @@ a:hover {
 
 .updates-container{
 	width: 100%;
-	background-color: #44428e;
+	background-color: #F7FAFC;
 }
 
 .updates-section {
@@ -201,25 +238,23 @@ a:hover {
 }
 
 .updates-section h2{
-	font-family: Playfair Display;
-	color: white;
+	font-family: Playfair Display
+	color: #1A202C;
 	font-size: 24pt;
 	padding-bottom: 20px;
 	font-weight: bold;
+	letter-spacing: 0.04em;
 }
 
 .update-panel{
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	align-content: flex-start;
 	max-width: 45%;
 }
 
 .update-img{
-	background: white;
-	border: 0px solid white;
-	border-radius: 100%;
 	height: 60px;
 	width: 60px;
 	min-height: 60px;
@@ -238,11 +273,12 @@ a:hover {
 }
 
 .update-text{
+	font-family: Roboto;
 	text-align: left;
 	font-size: 18pt;
-	font-weight: 400;
+	font-weight: 200;
 	line-height: 1.25;
-	color: white;
+	color: #718096;
 }
 
 .personal-container{
@@ -274,12 +310,21 @@ a:hover {
 	margin-bottom: 20px;
 }
 
+.personal-row-spacer{
+	margin-bottom: 60px;
+}
+
+.personal-row-line-spacer{
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+}
+
 .personal-img{
 	height: 100px;
 	width: 100px;
 	min-height: 100px;
 	min-width: 100px;
-	margin-right: 20px;
+	margin-right: 50px;
 	display: flex;
 	align-items: center; 
 	justify-content: center;
@@ -328,9 +373,9 @@ a:hover {
 	font-size: 18pt;
 }
 
-.personal-info-item i{
+.personal-info-item svg{
 	color: #63B3ED;
-	padding-right: 10px;
+	margin-right: 10px;
 }
 
 .personal-row h2{
@@ -382,14 +427,28 @@ a:hover {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	max-width: 50%;
+	margin-bottom: 50px;
+}
+
+.featured-publications-panel p{
+	color: #718096;
+	padding-bottom: 15px;
+}
+
+.featured-publications-panel h3{
+	font-family: Playfair Display;
+	font-size: 24pt;
+	line-height: 32px;
+	letter-spacing: 0.04em;
+	padding-bottom: 10px;
 }
 
 .current-projects-container{
-	margin-top: 60px;
 	width: 100%;
 	background-color: white;
-	margin-bottom: 60px;
+	padding-bottom: 60px;
+	padding-top: 60px;
+	background: #F7FAFC;
 }
 
 .current-projects-section{
@@ -408,12 +467,15 @@ a:hover {
 	flex-wrap: nowrap;
 	align-content: space-between;
 	max-width: 30%;
-	box-shadow: 0px 0px 15px rgba(26, 32, 44, 0.05), 0px 15px 25px rgba(26, 32, 44, 0.05);
-	border-radius: 4px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px rgba(45, 55, 72, 0.15);
+	border-radius: 10px;
 	padding: 20px 20px;
+	text-align: center;
 }
 
 .current-projects-panel h4{
+	font-family: Playfair Display;
 	font-weight: bold;
 	letter-spacing: 0.04em;
 	color: #1A202C;
@@ -421,6 +483,7 @@ a:hover {
 }
 
 .current-projects-panel p{
+	font-family: Roboto;
 	color: #718096;
 	line-height: 135%;
 	font-size: 16pt;
