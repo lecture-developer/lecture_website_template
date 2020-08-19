@@ -26,7 +26,6 @@ function onPageLoad()
 	// perform all the preparation actions needed 
 	loadHeader();
 	loadFooter();
-	loadSEO();
 	activeMenuLink();
 	loadNotificationPanel();
 }
@@ -60,60 +59,6 @@ function FooterHandler()
 	if (this.readyState == 4 && this.status == 200 && this.responseText != null)
 	{
 		document.getElementById("footer").innerHTML = this.responseText;
-	}
-}
-
-// load the SEO data from JSON file and insert in the right locations
-function loadSEO()
-{		
-	client.onreadystatechange  = seoHandler;
-	client.open("GET", "/data/jsons/seo/" + thisPage + ".json", false);
-	client.send();
-}
-
-function seoHandler() 
-{
-	if (this.readyState == 4 && this.status == 200 && this.responseText != null)
-	{
-		var seoJsonObj = JSON.parse(this.responseText);
-		// run over all the keys
-		for (var key in seoJsonObj)
-		{
-			var content = "";
-			if (Array.isArray(seoJsonObj[key])) // if list
-			{
-				for (var key2 in seoJsonObj[key])
-				{
-					content += seoJsonObj[key][key2] + ",";
-				}
-				content = content.substring(0, content.length - 1);
-			}
-			else if (typeof seoJsonObj[key] == 'string') // if string
-			{
-				content = seoJsonObj[key];
-			}
-			else  // if different object
-			{
-				content = JSON.stringify(seoJsonObj[key]);
-			}
-			
-			// try to add it to the page
-			try
-			{
-				document.querySelector('meta[name="' + key + '"]').setAttribute("content", content);
-			}
-			catch (error)
-			{
-				try
-				{
-					document.getElementById(key).innerHTML = content;	
-				}
-				catch (error)
-				{
-					console.log("Error in 'seoHandler' while trying to add key = '" + key + "', because: " + error);
-				}
-			}
-		}
 	}
 }
 

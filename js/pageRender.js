@@ -1,7 +1,20 @@
 // Data file paths
-PLACE_HOLDER = "{}"
-SEO_JSON = "/data/jsons/seo/[].json"
-MAIN_JSON = "/data/jsons/[].json"
+let PLACE_HOLDER = "{}";
+let SEO_JSON = "/data/jsons/seo/[].json";
+let MAIN_JSON = "/data/jsons/[].json";
+
+// globals //
+let retrivedData = null;
+let pageRenderClient;
+// code for IE7+, Firefox, Chrome, Opera, Safari
+if (window.XMLHttpRequest)
+{
+	pageRenderClient = new XMLHttpRequest();
+}
+else // code for IE6, IE5
+{
+	pageRenderClient = new ActiveXObject("Microsoft.XMLHTTP");
+}
 
 class PageRender
 {
@@ -27,19 +40,38 @@ class PageRender
 				"main": MAIN_JSON.replace(PLACE_HOLDER, pageName)}
 	}
 	
-	static loadFileFromServer(filePath)
+	static loadFileFromServer(filePath, is_json = false)
 	{	
-		client.onreadystatechange  = function(){
-			if (this.readyState == 4 && this.status == 200 && this.responseText != null)
+		try
+		{
+			pageRenderClient.open("GET", filePath, false);
+			pageRenderClient.onreadystatechange = function(e)
 			{
-				return this.responseText;
-			}
-			else
-			{
-				console.debug("Error at loading file " + filePath + " from server");
-			}
-		};
-		client.open("GET", filePath, false);
-		client.send();
+				if (this.readyState == 4 && this.status == 200 && (this.responseText != null || this.response != null))
+				{
+					if (is_json)
+					{
+						retrivedData = JSON.parse(this.response);
+					}
+					else
+					{
+						retrivedData = this.responseText;	
+					}
+				}
+				else
+				{
+					console.log("Error at loading file " + filePath + " from server");
+					retrivedData = null;
+				}
+			};
+			pageRenderClient.send();
+		}
+		catch (error)
+		{
+			console.log("Error at PageRender.loadFileFromServer saying: " + error);
+			return null;
+		}
 	}
 }
+
+export {PageRender, retrivedData };
