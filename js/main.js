@@ -9,8 +9,10 @@ if (thisPage == "")
 }
 // end - init all the objects needed //
 
+// run this method on page load 
 onPageLoad();
 
+// the function to run on page load to build dynamic components that does not change often or not render in SEO lookups
 function onPageLoad()
 {
 	// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -23,11 +25,10 @@ function onPageLoad()
 		client = new ActiveXObject("Microsoft.XMLHTTP");
 	}
 	
-	// perform all the preparation actions needed 
+	// perform all the preparation actions needed  //
 	loadHeader();
 	loadFooter();
 	activeMenuLink();
-	loadNotificationPanel();
 }
 
 // load the HTML of the header from the right file and put in the right location
@@ -75,60 +76,9 @@ function activeMenuLink()
 }
 
 
-/* notification panel on mian pages */
-function loadNotificationPanel()
-{	
-	// check if needed 
-	if (document.getElementById("notification-panel") == null)
-	{
-		return;
-	}
-	
-	client.onreadystatechange  = notificationHandler;
-	client.open("GET", "/notifications.txt", false);
-	client.send();
-}
-
-function notificationHandler() 
-{
-	if (this.readyState == 4)
-	{
-		if(this.status == 200 && this.responseText != null )
-		{
-			buildNotificationUI(this.responseText.split("\n"), true);
-		} 
-		else 
-		{
-			buildNotificationUI(this.status, false);
-		}
-	}
-}
-
-function buildNotificationUI(notifications, is_ok)
-{
-	var notfi_panel = document.getElementById("notification-panel");
-	var notfi_html = '<div class="notification-panel">';
-	// set notifications or error message
-	if (is_ok)
-	{
-		// build the panel
-		for (var i = 0; i < notifications.length; i++)
-		{
-			notfi_html += '<div class="notification"><p>' + notifications[i].trim().replace("script", "") + '</p></div>'; // the replace is to avoid JS injection in the original file
-		}
-	}
-	else
-	{
-		notfi_html += "<p> Error with status " + notifications + " while trying to retrive notifications - please inform the owner of the site regarding this error... </p>";
-	}
-	// set the content into the panel
-	notfi_html += '</div>';
-	notfi_panel.innerHTML = notfi_html;
-}
-/* end - notification panel on mian pages */
-
 /* help functions */
 
+// TODO: duplicated of pageRender method - delete later
 function loadJSON(callback) 
 {   
 	var xobj = new XMLHttpRequest();
@@ -144,6 +94,8 @@ function loadJSON(callback)
 	};
 	xobj.send(null);  
 }
+
+// cookie related functions // 
 
 function setCookie(cname, cvalue, exdays)
 {
@@ -171,5 +123,7 @@ function getCookie(cname)
 	}
 	return "";
 }
+
+// end - cookie related functions // 
 
 /* end - help functions */

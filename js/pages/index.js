@@ -2,11 +2,13 @@
 import { PageRender, retrivedData } from '/js/pageRender.js';
 
 // Data file paths
-let SEO_JSON = "/data/jsons/seo/index.html"
 let UPDATES_TEXT = "/data/notifications.txt"
 let LECTURE_INFO_JSON = "/data/jsons/lecturer.json";
 let INDEX_JSON = "/data/jsons/index.json";
 
+/*
+	Single instance class to build Index page with dynamic content from JSONS from the server
+*/
 class Index  extends PageRender
 {
 	constructor()
@@ -14,6 +16,7 @@ class Index  extends PageRender
 		
 	}
 	
+	// just gather all the build of all the sections in the page - one per call to the server side
 	static build()
 	{
 		Index.buildeNotifications();

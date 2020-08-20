@@ -15,19 +15,25 @@ else // code for IE6, IE5
 {
 	pageRenderClient = new ActiveXObject("Microsoft.XMLHTTP");
 }
+// end - globals //
 
+// abstract class that each page implements to get dynamic data from the server side
 class PageRender
 {
+	// empty constructor
 	constructor()
 	{
 		
 	}
 	
+	// not implemented - each page implements this method
 	static build()
 	{
 		throw new NotImplemented("Build");
 	}
 	
+	// guess the main files in the server if not provided 
+	// TODO: think again if we need this function
 	static guessDataLocation()
 	{
 		var pageName = location.pathname.split("/").slice(-1)[0];
@@ -40,6 +46,7 @@ class PageRender
 				"main": MAIN_JSON.replace(PLACE_HOLDER, pageName)}
 	}
 	
+	// generic function to load data from server and put it in global var allowing any process to read it
 	static loadFileFromServer(filePath, is_json = false)
 	{	
 		try
@@ -47,13 +54,15 @@ class PageRender
 			pageRenderClient.open("GET", filePath, false);
 			pageRenderClient.onreadystatechange = function(e)
 			{
+				// check if the response is legit
 				if (this.readyState == 4 && this.status == 200 && (this.responseText != null || this.response != null))
 				{
+					// if json
 					if (is_json)
 					{
 						retrivedData = JSON.parse(this.response);
 					}
-					else
+					else // else - txt file
 					{
 						retrivedData = this.responseText;	
 					}
