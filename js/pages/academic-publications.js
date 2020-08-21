@@ -2,12 +2,12 @@
 import { PageRender, retrivedData } from '/js/pageRender.js';
 
 // Data file paths
-let TEACHING_JSON = "/data/jsons/teaching.json";
+let TEACHING_JSON = "/data/jsons/academic-publications.json";
 
 /*
 	Single instance class to build teaching.html page with dynamic content from JSONS from the server
 */
-class Teaching  extends PageRender
+class AcademicPublications  extends PageRender
 {
 	constructor()
 	{
@@ -43,20 +43,35 @@ class Teaching  extends PageRender
 	
 	buildBody(filter = "type")
 	{
+		// perpare ds //
 		// sort the list
 		this.publicationList = PublicationElement.sortByProperty(this.publicationList, filter);
+		
+		// split into the right sets
+		var publicSets = PublicationElement.splitByProperty(this.publicationList, filter);
+		
+		// build the UI //
 		try
 		{
 			if (this.publicationList.length > 0)
 			{
-				
+				var ansewrHtml = "";
+				for (var spliterKey in publicSets)
+				{
+					// add spliter 
+					ansewrHtml += "<h3>" + spliterKey + "</h3>";
+					// add elements inside the list
+					for (var elementIndex = 0; elementIndex < publicSets[spliterKey].length; elementIndex++)
+					{
+						ansewrHtml += publicSets[spliterKey][elementIndex].toHtml();
+					}
+				}
+				document.getElementById("").innerHTML = ansewrHtml;
 			}
-			else // 
+			else // show error message
 			{
-				
+				document.getElementById("").innerHTML = "<h3>Error message</h3?";
 			}
-			for (var i = 0; 
-			
 		}
 		catch (error)
 		{
@@ -73,15 +88,30 @@ class Teaching  extends PageRender
 
 class PublicationElement()
 {
-	constructor(name, description, fileLink, year, topic, type, publisher)
+	constructor(name, authors, description, fileLink, year, topic, type, publisher)
 	{
 		this.name = name;
+		this.authors = authors;
 		this.description = description;
 		this.fileLink = fileLink;
 		this.year = year;
 		this.topic = topic;
 		this.type = type;
 		this.publisher = publisher;
+	}
+	
+	// convert the object into HTML
+	toHtml()
+	{
+		var answer = '<div class="academic-papers-panel"><h3>' 
+		+ this.name + '</h3><p>'
+		+ this.description + '</p><ul><li>' 
+		+ this.authors + '</li><li>' 
+		+ this.publisher + '</li><li>' 
+		+ this.year + '</li><li>'
+		+ this.type + '</li></ul><div class="space-between"><a class="download-btn" href="' 
+		+ this.link + '">Download Work</a><a class="cite-btn" onclick="'
+		+ this.name + '">Cite this publication</a></div></div>';
 	}
 	
 	// build a list of this object from Json object
@@ -106,8 +136,31 @@ class PublicationElement()
 			return ((x < y) ? -1 : ((x > y) ? 1 : 0));
 		});
 	}
+	
+	// split list into list of lists according to some property
+	static splitByProperty(ObjList, property)
+	{
+		var answer = {};
+		var spliter = ObjList[0][property + ""];
+		var subGroup = [ObjList[0]];
+		for (var publicationIndex = 1; publicationIndex < ObjList.length; publicationIndex++)
+		{
+			if (ObjList[publicationIndex][property + ""] != spliter)
+			{
+				answer[spliter] = [...subGroup];
+				spliter = ObjList[publicationIndex][property + ""];
+				subGroup = [ObjList[publicationIndex]];
+			}
+			else
+			{
+				subGroup.push(ObjList[0]);
+			}
+		}
+		answer[spliter] = [...subGroup];
+		return answer;
+	}
 }
 
 // run the class build on page load
-var teaching = Teaching();
-teaching.build();
+var academicPublications = AcademicPublications();
+academicPublications.build();
