@@ -178,31 +178,69 @@ a:hover {
 /*** elements ***/
 
 .download-btn{
-	background: #434190;
+	font-family: Roboto;
+	background: #5A67D8;
 	border-radius: 4px;
 	color: white !important;
 	font-size: 16pt;
-	line-height: 135%;
-	padding: 8px 16px;
+	line-height: 150%;
+	padding: 6px 18px;
 }
 
 .download-btn svg{
-	margin-left: 20px;
+	margin-left: 10px;
+}
+
+.download-btn:hover{
+	background: #667EEA;
+}
+
+.download-btn:active{
+	background: #5A67D8;
+	color: #434190 !important;
 }
 
 .link-btn{
 	font-family: Roboto;
-	background: #000000;
+	background: #E2E8F0;
 	border-radius: 4px;
-	color: white !important;
+	color: #4A5568 !important;
 	font-size: 16pt;
-	line-height: 135%;
-	padding: 10px 20px;
+	line-height: 150%;
+	padding: 4px 18px;
 }
 
 .link-btn svg{
 	margin-right: 10px;
 }
+
+.link-btn:hover{
+	background: #F7FAFC;
+}
+
+.link-btn:active{
+	background: #E2E8F0;
+	color: #A0AEC0 !important;
+}
+
+/* carosel */
+
+.gallery {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.gallery-cell {
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+
+/* end - carosel */
 
 /*** end - elements ***/
 
@@ -251,7 +289,7 @@ a:hover {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	max-width: 45%;
+	max-width: 95%;
 }
 
 .update-img{
