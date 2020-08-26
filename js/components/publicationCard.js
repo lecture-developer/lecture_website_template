@@ -1,5 +1,5 @@
-import { Element } from '/js/components/element.js';
-import { ActionButton } from '/js/components/actionButton.js';
+import { Element } from '/lecture_website_template/js/components/element.js';
+import { ActionButton } from '/lecture_website_template/js/components/actionButton.js';
 
 let CITE_SYMBOL = '<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.5703 7.62723C12.5703 9.68531 12.5703 10.0285 10.856 10.0285L10.856 13.8588C14.8557 13.8588 16 11.1697 16 6.42689L16 0.141748L8.56874 0.141748L8.56874 6.42689L12.5703 6.42689L12.5703 7.62723Z" fill="#2D3748"/><path d="M3.99845 6.42689L3.99845 7.62723C3.99845 9.68531 3.99845 10.0285 2.28421 10.0285L2.28421 13.8588C6.2839 13.8588 7.42755 11.1697 7.42755 6.42689L7.42755 0.141748L-5.47655e-06 0.141748L-6.02601e-06 6.42689L3.99845 6.42689Z" fill="#2D3748"/></svg>';
 
