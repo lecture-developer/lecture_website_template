@@ -82,28 +82,29 @@ footer {
 }
 
 .footer-menu-title{
+	font-family: Roboto;
 	color: #5A67D8 !important;
 	font-size: 24pt;
 	font-weight: bold;
 	line-height: 28px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .footer-menu-item-header{
+	font-family: Roboto;
 	font-weight: bold;
 	color: #EBF4FF !important;
-	font-size: 18px;
-	line-height: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	font-size: 18pt;
+	line-height: 140%;
+	margin-bottom: 20px;
 }
 
 .footer-menu-item{
+	font-family: Roboto;
 	color: #EBF4FF !important;
-	font-size: 16px;
-	line-height: 19px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	font-size: 18pt;
+	line-height: 140%;
+	margin-bottom: 20px;
 }
 
 .footer-info-item{
@@ -115,16 +116,16 @@ footer {
 
 .footer-info-item svg{
 	color: #63B3ED;
-	margin-right: 10px;
+	margin-right: 12px;
 }
 
 .footer-border{
 	border-bottom: 1px solid  #4A5568;
-	margin-bottom: 20px;
+	margin-bottom: 22px;
 }
 
 .footer-social-item{
-	margin-right: 10px;
+	margin-right: 16px;
 }
 
 a:hover {
@@ -138,6 +139,7 @@ a:hover {
 .navbar{
 	padding-top: 10px;
 	padding-bottom: 10px;
+	min-height: 80px;
 }
 
 .navbar .spacer{
@@ -145,18 +147,26 @@ a:hover {
 }
 
 .logo{
-	font-family: Playfair Display;
+	font-family: Roboto;
 	font-weight: bold;
 	font-size: 24pt;
-	padding-right: 30px;
+	line-height: 28px;
+	padding-right: 45px;
 }
 
 .nav-link{
-	font-size: 18pt;
+	font-family: Roboto;
+	font-size: 16pt;
+	color: #FFFFFF;
+	line-height: 19px;
+}
+
+.nav-link i{
+	margin-left: 5px;
 }
 
 .menu-main-link{
-	padding-right: 20px;
+	padding-right: 24px;
 }
 
 .navbar .flex-1 {
@@ -177,32 +187,103 @@ a:hover {
 
 /*** elements ***/
 
+.example-search-input{
+	min-width: 320px !important;
+}
+
 .download-btn{
-	background: #434190;
+	font-family: Roboto;
+	background: #5A67D8;
 	border-radius: 4px;
 	color: white !important;
 	font-size: 16pt;
-	line-height: 135%;
-	padding: 8px 16px;
+	line-height: 150%;
+	padding: 6px 18px;
 }
 
 .download-btn svg{
-	margin-left: 20px;
+	margin-left: 10px;
+}
+
+.download-btn:hover{
+	background: #667EEA;
+}
+
+.download-btn:active{
+	background: #5A67D8;
+	color: #434190 !important;
 }
 
 .link-btn{
 	font-family: Roboto;
-	background: #000000;
+	background: #E2E8F0;
 	border-radius: 4px;
-	color: white !important;
+	color: #4A5568 !important;
 	font-size: 16pt;
-	line-height: 135%;
-	padding: 10px 20px;
+	line-height: 150%;
+	padding: 4px 18px;
 }
 
 .link-btn svg{
 	margin-right: 10px;
 }
+
+.link-btn:hover{
+	background: #F7FAFC;
+}
+
+.cite-btn{
+	font-family: Roboto;
+	color: #2D3748 !important;
+	font-size: 16pt;
+	line-height: 150%;
+	padding: 4px 18px;
+}
+
+.cite-btn svg{
+	margin-right: 6px;
+}
+
+.cite-btn:hover{
+	
+}
+
+.link-btn:active{
+	background: #E2E8F0;
+	color: #A0AEC0 !important;
+}
+
+/* carosel */
+
+.carousel {
+	width: 100%;
+	min-height: 75px;
+}
+
+.carousel-cell {
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+}
+
+.flickity-prev-next-button{
+	background: #EBF4FF;
+	border: 2px solid #667EEA;
+}
+
+.flickity-prev-next-button:hover{
+	background: #EBF4FF !important;
+	border: 3px solid #667EEA;
+}
+
+flickity-prev-next-button:disabled,
+flickity-prev-next-button[disabled]{
+	border: 2px solid #C3DAFE !important;
+}
+
+
+/* end - carosel */
 
 /*** end - elements ***/
 
@@ -213,7 +294,8 @@ a:hover {
 
 .updates-container{
 	width: 100%;
-	background-color: #F7FAFC;
+	background-color: #EBF4FF;
+	min-height: 220px;
 }
 
 .updates-section {
@@ -224,6 +306,8 @@ a:hover {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .updates-section-panels {
@@ -231,18 +315,16 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-between;
 	align-items: stretch;
-	align-content: flex-start;
-	padding-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .updates-section h2{
-	font-family: Playfair Display
-	color: #1A202C;
-	font-size: 24pt;
-	padding-bottom: 20px;
-	font-weight: bold;
+	font-family: Playfair Display;
+	color: #A3BFFA;
+	font-size: 32pt;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	letter-spacing: 0.04em;
 }
 
@@ -251,34 +333,17 @@ a:hover {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	max-width: 45%;
-}
-
-.update-img{
-	height: 60px;
-	width: 60px;
-	min-height: 60px;
-	min-width: 60px;
-	margin-right: 20px;
-	display: flex;
-	align-items: center; 
-	justify-content: center;
-	text-align: center;
-}
-
-.update-img i{
-	color: #ccdcfb;
-	font-size: 18pt;
+	width: 100%;
 	text-align: center;
 }
 
 .update-text{
 	font-family: Roboto;
-	text-align: left;
 	font-size: 18pt;
-	font-weight: 200;
-	line-height: 1.25;
-	color: #718096;
+	text-align: center;
+	line-height: 140%;
+	width: 100%;
+	color: #000000;
 }
 
 .personal-container{
@@ -291,7 +356,7 @@ a:hover {
 	max-width: 1080px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 20px;
+	padding-top: 40px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -300,48 +365,62 @@ a:hover {
 .personal-row{
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
+	align-items: stretch;
 	align-content: flex-start;
 }
 
-.personal-row-divider{
-	padding-bottom: 20px;
-	border-bottom: 1px solid #A0AEC0;
-	margin-bottom: 20px;
+
+.personal-coloum{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	align-content: flex-start;
+}
+
+.intrest-item{
+	margin-top: 32px;
+	display: flex;
+	align-items: stretch;
+	flex-direction: row;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	color: #1A202C;
+	font-family: Roboto;
+	font-size: 18pt;
+	line-height: 140%;
+}
+
+.intrest-item svg{
+	margin-right: 12px;
 }
 
 .personal-row-spacer{
 	margin-bottom: 60px;
 }
 
-.personal-row-line-spacer{
-	padding-bottom: 60px;
-	margin-bottom: 60px;
-}
-
 .personal-img{
-	height: 100px;
-	width: 100px;
-	min-height: 100px;
-	min-width: 100px;
-	margin-right: 50px;
+	height: 68px;
+	width: 68px;
+	margin-right: 12px;
 	display: flex;
 	align-items: center; 
 	justify-content: center;
 	text-align: center;
 }
 
-.personal-img{
-	margin-right: 30px;
-}
-
 .personal-img img{
 	border: 0px solid white;
 	border-radius: 100%;
+	max-height: 68px;
+	max-width: 68px;
+	min-height: 68px;
+	min-width: 68px;
 }
 
 .personal-titles{
-	width: 100%;
+	width: clac(100% - 80px);
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -350,18 +429,24 @@ a:hover {
 
 .personal-titles h3{
 	font-family: Playfair Display;
-	font-size: 22pt;
+	letter-spacing: 0.04em;
+	font-size: 32pt;
 	color: #1A202C;
 }
 
-.personal-titles h4{
-	font-family: Roboto;
-	font-size: 16pt;
-	color: #718096;
+.space-between{
+	display: flex;
+	justify-content: space-between;
 }
 
-.space-between{
-	justify-content: space-between;
+.space-evenly{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flex-end{
+	display: flex;
+	justify-content: flex-end;
 }
 
 .nowrap{
@@ -369,29 +454,30 @@ a:hover {
 }
 
 .personal-info-item{
+	font-size: 16pt;
+	line-height: 150%;
 	color: #2D3748;
-	font-size: 18pt;
+	margin-top: 10px;
 }
 
 .personal-info-item svg{
 	color: #63B3ED;
-	margin-right: 10px;
+	margin-right: 12px;
 }
 
 .personal-row h2{
 	font-family: Playfair Display;
 	color: #1A202C;
 	padding-top: 30px;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 	font-size: 40pt;
 	text-transform: capitalize;
 }
 
 .personal-row p{
-	color: #718096;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	color: #2D3748;
 	font-size: 16pt;
+	line-height: 135%;
 }
 
 .personal-row .read-more{
@@ -407,7 +493,7 @@ a:hover {
 }
 
 .featured-publications-container{
-	margin-top: 40px;
+	margin-bottom: 50px;
 	width: 100%;
 	background-color: white;
 }
@@ -422,73 +508,59 @@ a:hover {
 	flex-direction: column;
 }
 
-.featured-publications-panel{
+.academic-papers-panel{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
+	padding: 42px 50px;
+	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
+	border-radius: 10px;
 }
 
-.featured-publications-panel p{
-	color: #718096;
-	padding-bottom: 15px;
-}
-
-.featured-publications-panel h3{
+.academic-papers-panel h3{
 	font-family: Playfair Display;
+	font-weight: bold;
 	font-size: 24pt;
 	line-height: 32px;
 	letter-spacing: 0.04em;
-	padding-bottom: 10px;
+	padding-bottom: 8px;
 }
 
-.current-projects-container{
-	width: 100%;
-	background-color: white;
-	padding-bottom: 60px;
-	padding-top: 60px;
-	background: #F7FAFC;
-}
-
-.current-projects-section{
-	max-width: 1080px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.current-projects-panel{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	align-content: space-between;
-	max-width: 30%;
-	background: #FFFFFF;
-	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px rgba(45, 55, 72, 0.15);
-	border-radius: 10px;
-	padding: 20px 20px;
-	text-align: center;
-}
-
-.current-projects-panel h4{
-	font-family: Playfair Display;
-	font-weight: bold;
-	letter-spacing: 0.04em;
-	color: #1A202C;
-	font-size: 24pt;
-}
-
-.current-projects-panel p{
+.academic-papers-panel h4{
 	font-family: Roboto;
-	color: #718096;
+	font-size: 14pt;
 	line-height: 135%;
-	font-size: 16pt;
+	padding-bottom: 26px;
+	color: #718096;
 }
 
+.academic-papers-panel p{
+	color: #1A202C;
+	font-size: 18pt;
+	line-height: 140%;
+	padding-bottom: 40px;
+}
+
+.academic-papers-panel span{
+	font-family: Roboto;
+	background: #E2E8F0;
+	border-radius: 4px;
+	padding: 8px 18px;
+	color: #718096;
+	font-weight: bold;
+	font-size: 16pt;
+	line-height: 150%;
+	margin-right: 20px;
+}
 
 /* end - index page */ 
 
+/* help settings */
+
+.w-100{
+	width: 100%;
+}
+
+/* end - help settings */

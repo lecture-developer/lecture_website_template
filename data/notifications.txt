@@ -1,2 +1,3 @@
-Test notification <a href="#" title="#">read more here</a>
-Test notification <a href="#" title="#">read more here</a>
+Test notification 1 Test notification 1 Test notification 1 
+Test notification 2 Test notification 2 
+Test notification 3
