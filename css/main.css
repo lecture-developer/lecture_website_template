@@ -82,28 +82,29 @@ footer {
 }
 
 .footer-menu-title{
+	font-family: Roboto;
 	color: #5A67D8 !important;
 	font-size: 24pt;
 	font-weight: bold;
 	line-height: 28px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .footer-menu-item-header{
+	font-family: Roboto;
 	font-weight: bold;
 	color: #EBF4FF !important;
-	font-size: 18px;
-	line-height: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	font-size: 18pt;
+	line-height: 140%;
+	margin-bottom: 20px;
 }
 
 .footer-menu-item{
+	font-family: Roboto;
 	color: #EBF4FF !important;
-	font-size: 16px;
-	line-height: 19px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	font-size: 18pt;
+	line-height: 140%;
+	margin-bottom: 20px;
 }
 
 .footer-info-item{
@@ -115,16 +116,16 @@ footer {
 
 .footer-info-item svg{
 	color: #63B3ED;
-	margin-right: 10px;
+	margin-right: 12px;
 }
 
 .footer-border{
 	border-bottom: 1px solid  #4A5568;
-	margin-bottom: 20px;
+	margin-bottom: 22px;
 }
 
 .footer-social-item{
-	margin-right: 10px;
+	margin-right: 16px;
 }
 
 a:hover {
@@ -231,6 +232,22 @@ a:hover {
 	background: #F7FAFC;
 }
 
+.cite-btn{
+	font-family: Roboto;
+	color: #2D3748 !important;
+	font-size: 16pt;
+	line-height: 150%;
+	padding: 4px 18px;
+}
+
+.cite-btn svg{
+	margin-right: 6px;
+}
+
+.cite-btn:hover{
+	
+}
+
 .link-btn:active{
 	background: #E2E8F0;
 	color: #A0AEC0 !important;
@@ -248,6 +265,21 @@ a:hover {
   height: 100%;
   margin-right: 10px;
   counter-increment: gallery-cell;
+}
+
+.flickity-prev-next-button{
+	background: #EBF4FF;
+	border: 2px solid #667EEA;
+}
+
+.flickity-prev-next-button:hover{
+	background: #EBF4FF !important;
+	border: 3px solid #667EEA;
+}
+
+flickity-prev-next-button:disabled,
+flickity-prev-next-button[disabled]{
+	border: 2px solid #C3DAFE !important;
 }
 
 
@@ -403,7 +435,18 @@ a:hover {
 }
 
 .space-between{
+	display: flex;
 	justify-content: space-between;
+}
+
+.space-evenly{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flex-end{
+	display: flex;
+	justify-content: flex-end;
 }
 
 .nowrap{
@@ -450,7 +493,7 @@ a:hover {
 }
 
 .featured-publications-container{
-	margin-top: 40px;
+	margin-bottom: 50px;
 	width: 100%;
 	background-color: white;
 }
@@ -465,71 +508,51 @@ a:hover {
 	flex-direction: column;
 }
 
-.featured-publications-panel{
+.academic-papers-panel{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
+	padding: 42px 50px;
+	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
+	border-radius: 10px;
 }
 
-.featured-publications-panel p{
-	color: #718096;
-	padding-bottom: 15px;
-}
-
-.featured-publications-panel h3{
+.academic-papers-panel h3{
 	font-family: Playfair Display;
+	font-weight: bold;
 	font-size: 24pt;
 	line-height: 32px;
 	letter-spacing: 0.04em;
-	padding-bottom: 10px;
+	padding-bottom: 8px;
 }
 
-.current-projects-container{
-	width: 100%;
-	background-color: white;
-	padding-bottom: 60px;
-	padding-top: 60px;
-	background: #F7FAFC;
-}
-
-.current-projects-section{
-	max-width: 1080px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.current-projects-panel{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	align-content: space-between;
-	max-width: 30%;
-	background: #FFFFFF;
-	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px rgba(45, 55, 72, 0.15);
-	border-radius: 10px;
-	padding: 20px 20px;
-	text-align: center;
-}
-
-.current-projects-panel h4{
-	font-family: Playfair Display;
-	font-weight: bold;
-	letter-spacing: 0.04em;
-	color: #1A202C;
-	font-size: 24pt;
-}
-
-.current-projects-panel p{
+.academic-papers-panel h4{
 	font-family: Roboto;
-	color: #718096;
+	font-size: 14pt;
 	line-height: 135%;
+	padding-bottom: 26px;
+	color: #718096;
+}
+
+.academic-papers-panel p{
+	color: #1A202C;
+	font-size: 18pt;
+	line-height: 140%;
+	padding-bottom: 40px;
+}
+
+.academic-papers-panel span{
+	font-family: Roboto;
+	background: #E2E8F0;
+	border-radius: 4px;
+	padding: 8px 18px;
+	color: #718096;
+	font-weight: bold;
 	font-size: 16pt;
+	line-height: 150%;
+	margin-right: 20px;
 }
 
 /* end - index page */ 

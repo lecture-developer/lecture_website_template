@@ -10,6 +10,7 @@ class ActionButton extends Element
 {
 	constructor(info, type, link)
 	{
+		super();
 		this.info = info;
 		this.type = type;
 		this.link = link;
@@ -34,7 +35,7 @@ class ActionButton extends Element
 		var answer = [];
 		for (var index = 0; index < jsonObj.length; index++)
 		{
-			answer.push(ActionButton.createFromJson(jsonObj[index])));
+			answer.push(ActionButton.createFromJson(jsonObj[index]));
 		}
 		return answer;
 	}
@@ -42,7 +43,7 @@ class ActionButton extends Element
 	// build a list of this object from Json object
 	static createFromJson(jsonObj)
 	{
-		return new ActionButton(jsonObj["info"], jsonObj["type"], jsonObj["link"]));
+		return new ActionButton(jsonObj["info"], jsonObj["type"], jsonObj["link"]);
 	}
 }
 export {ActionButton};
