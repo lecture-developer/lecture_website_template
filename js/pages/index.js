@@ -4,9 +4,9 @@ import { PublicationCard } from '/lecture_website_template/js/components/publica
 import { ProjectPanel } from '/lecture_website_template/js/components/projectPanel.js';
 
 // Data file paths
-let UPDATES_TEXT = "/data/notifications.txt"
-let LECTURE_INFO_JSON = "/data/jsons/lecturer.json";
-let INDEX_JSON = "/data/jsons/index.json";
+let UPDATES_TEXT = "/lecture_website_template/data/notifications.txt"
+let LECTURE_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
+let INDEX_JSON = "/lecture_website_template/data/jsons/index.json";
 
 /*
 	Single instance class to build Index page with dynamic content from JSONS from the server
