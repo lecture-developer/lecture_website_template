@@ -71,7 +71,7 @@ footer {
 .footer-section p{
 	padding-top: 40px;
     color: #EBF4FF !important;
-	font-size: 16pt;
+	font-size: 16px;
 }
 
 .footer-menu{
@@ -84,25 +84,25 @@ footer {
 .footer-menu-title{
 	font-family: Roboto;
 	color: #5A67D8 !important;
-	font-size: 24pt;
+	font-size: 24px;
 	font-weight: bold;
 	line-height: 28px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .footer-menu-item-header{
 	font-family: Roboto;
 	font-weight: bold;
 	color: #EBF4FF !important;
-	font-size: 18pt;
+	font-size: 16px;
 	line-height: 140%;
-	margin-bottom: 20px;
+	margin-bottom: 12px;
 }
 
 .footer-menu-item{
 	font-family: Roboto;
 	color: #EBF4FF !important;
-	font-size: 18pt;
+	font-size: 18px;
 	line-height: 140%;
 	margin-bottom: 20px;
 }
@@ -110,7 +110,7 @@ footer {
 .footer-info-item{
 	margin-top: 10px;
 	color: #EBF4FF !important;
-	font-size: 18pt;
+	font-size: 18px;
 	margin-right: 40px;
 }
 
@@ -149,14 +149,14 @@ a:hover {
 .logo{
 	font-family: Roboto;
 	font-weight: bold;
-	font-size: 24pt;
+	font-size: 24px;
 	line-height: 28px;
 	padding-right: 45px;
 }
 
 .nav-link{
 	font-family: Roboto;
-	font-size: 16pt;
+	font-size: 16px;
 	color: #FFFFFF;
 	line-height: 19px;
 }
@@ -194,11 +194,12 @@ a:hover {
 .download-btn{
 	font-family: Roboto;
 	background: #5A67D8;
-	border-radius: 4px;
+	border-radius: 8px;
 	color: white !important;
-	font-size: 16pt;
+	font-size: 16px;
 	line-height: 150%;
-	padding: 6px 18px;
+	padding: 12px 20px;
+    text-decoration: none !important;
 }
 
 .download-btn svg{
@@ -219,9 +220,10 @@ a:hover {
 	background: #E2E8F0;
 	border-radius: 4px;
 	color: #4A5568 !important;
-	font-size: 16pt;
+	font-size: 16px;
 	line-height: 150%;
 	padding: 4px 18px;
+    text-decoration: none !important;
 }
 
 .link-btn svg{
@@ -235,9 +237,10 @@ a:hover {
 .cite-btn{
 	font-family: Roboto;
 	color: #2D3748 !important;
-	font-size: 16pt;
+	font-size: 16px;
 	line-height: 150%;
 	padding: 4px 18px;
+    text-decoration: none !important;
 }
 
 .cite-btn svg{
@@ -268,12 +271,12 @@ a:hover {
 }
 
 .flickity-prev-next-button{
-	background: #EBF4FF;
+	background-color: #E2E8F0 !important;
 	border: 2px solid #667EEA;
 }
 
 .flickity-prev-next-button:hover{
-	background: #EBF4FF !important;
+	background-color: #E2E8F0 !important;
 	border: 3px solid #667EEA;
 }
 
@@ -294,7 +297,7 @@ flickity-prev-next-button[disabled]{
 
 .updates-container{
 	width: 100%;
-	background-color: #EBF4FF;
+	background-color: #E2E8F0;
 	min-height: 220px;
 }
 
@@ -321,10 +324,9 @@ flickity-prev-next-button[disabled]{
 
 .updates-section h2{
 	font-family: Playfair Display;
-	color: #A3BFFA;
-	font-size: 32pt;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	color: #1A202C;
+	font-size: 32px;
+	margin-bottom: 28px;
 	letter-spacing: 0.04em;
 }
 
@@ -339,7 +341,7 @@ flickity-prev-next-button[disabled]{
 
 .update-text{
 	font-family: Roboto;
-	font-size: 18pt;
+	font-size: 18px;
 	text-align: center;
 	line-height: 140%;
 	width: 100%;
@@ -380,7 +382,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .intrest-item{
-	margin-top: 32px;
+	margin-top: 21px;
 	display: flex;
 	align-items: stretch;
 	flex-direction: row;
@@ -388,7 +390,7 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: nowrap;
 	color: #1A202C;
 	font-family: Roboto;
-	font-size: 18pt;
+	font-size: 18px;
 	line-height: 140%;
 }
 
@@ -430,7 +432,8 @@ flickity-prev-next-button[disabled]{
 .personal-titles h3{
 	font-family: Playfair Display;
 	letter-spacing: 0.04em;
-	font-size: 32pt;
+	font-size: 32px;
+	line-height: 43px;
 	color: #1A202C;
 }
 
@@ -449,12 +452,16 @@ flickity-prev-next-button[disabled]{
 	justify-content: flex-end;
 }
 
+.align-items-center{
+	align-items: center;
+}
+
 .nowrap{
     flex-wrap: nowrap;
 }
 
 .personal-info-item{
-	font-size: 16pt;
+	font-size: 16px;
 	line-height: 150%;
 	color: #2D3748;
 	margin-top: 10px;
@@ -465,18 +472,22 @@ flickity-prev-next-button[disabled]{
 	margin-right: 12px;
 }
 
+#lecture_address{
+	padding-right: 20%;
+}
+
 .personal-row h2{
 	font-family: Playfair Display;
 	color: #1A202C;
 	padding-top: 30px;
-	padding-bottom: 30px;
-	font-size: 40pt;
+	padding-bottom: 18px;
+	font-size: 48px;
 	text-transform: capitalize;
 }
 
 .personal-row p{
 	color: #2D3748;
-	font-size: 16pt;
+	font-size: 16px;
 	line-height: 135%;
 }
 
@@ -484,7 +495,7 @@ flickity-prev-next-button[disabled]{
 	text-decoration: none;
 	color: #63B3ED;
 	font-weight: bold;
-	font-size: 16pt;
+	font-size: 16px;
 }
 
 .personal-row .read-more:hover{
@@ -522,7 +533,7 @@ flickity-prev-next-button[disabled]{
 .academic-papers-panel h3{
 	font-family: Playfair Display;
 	font-weight: bold;
-	font-size: 24pt;
+	font-size: 24px;
 	line-height: 32px;
 	letter-spacing: 0.04em;
 	padding-bottom: 8px;
@@ -530,7 +541,7 @@ flickity-prev-next-button[disabled]{
 
 .academic-papers-panel h4{
 	font-family: Roboto;
-	font-size: 14pt;
+	font-size: 14px;
 	line-height: 135%;
 	padding-bottom: 26px;
 	color: #718096;
@@ -538,7 +549,7 @@ flickity-prev-next-button[disabled]{
 
 .academic-papers-panel p{
 	color: #1A202C;
-	font-size: 18pt;
+	font-size: 18px;
 	line-height: 140%;
 	padding-bottom: 40px;
 }
@@ -550,7 +561,7 @@ flickity-prev-next-button[disabled]{
 	padding: 8px 18px;
 	color: #718096;
 	font-weight: bold;
-	font-size: 16pt;
+	font-size: 16px;
 	line-height: 150%;
 	margin-right: 20px;
 }
