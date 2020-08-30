@@ -57,9 +57,16 @@ footer {
     color: white;
 	padding-bottom: 60px;
 }
+footer a:hover{
+	text-decoration: underline;
+}
+
+footer h1{
+	padding-right: 150px;
+}
 
 .footer-section {
-	max-width: 90%;
+	max-width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
@@ -79,6 +86,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 20px;
+	margin-right: 80px;
 }
 
 .footer-menu-title{
@@ -140,6 +148,7 @@ a:hover {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	min-height: 80px;
+	background: #1A202C !important;
 }
 
 .navbar .spacer{
@@ -157,8 +166,12 @@ a:hover {
 .nav-link{
 	font-family: Roboto;
 	font-size: 16px;
-	color: #FFFFFF;
+	color: #FFFFFF !important;
 	line-height: 19px;
+}
+
+.nav-link:hover{
+	text-decoration: underline;
 }
 
 .nav-link i{
@@ -176,6 +189,11 @@ a:hover {
 
 .search-menu-btn{
 	background: white;
+}
+
+#header-search-btn:hover{
+	background: white;
+	color: #6c757d;
 }
 
 @media (max-width: 600px)
@@ -248,7 +266,7 @@ a:hover {
 }
 
 .cite-btn:hover{
-	
+	text-decoration: underline  !important;
 }
 
 .link-btn:active{
@@ -273,6 +291,8 @@ a:hover {
 .flickity-prev-next-button{
 	background-color: #E2E8F0 !important;
 	border: 2px solid #667EEA;
+	width: 24px;
+	height: 24px;
 }
 
 .flickity-prev-next-button:hover{
@@ -320,12 +340,13 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: nowrap;
 	align-items: stretch;
 	margin-bottom: 40px;
+    border-bottom: 1px solid #D3DAE2;
 }
 
 .updates-section h2{
 	font-family: Playfair Display;
 	color: #1A202C;
-	font-size: 32px;
+	font-size: 24px;
 	margin-bottom: 28px;
 	letter-spacing: 0.04em;
 }
@@ -341,7 +362,7 @@ flickity-prev-next-button[disabled]{
 
 .update-text{
 	font-family: Roboto;
-	font-size: 18px;
+	font-size: 14px;
 	text-align: center;
 	line-height: 140%;
 	width: 100%;
@@ -382,7 +403,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .intrest-item{
-	margin-top: 21px;
+	margin-top: 20px;
 	display: flex;
 	align-items: stretch;
 	flex-direction: row;
@@ -390,7 +411,7 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: nowrap;
 	color: #1A202C;
 	font-family: Roboto;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 140%;
 }
 
@@ -476,6 +497,12 @@ flickity-prev-next-button[disabled]{
 	padding-right: 20%;
 }
 
+#lecture_address span{
+    width: 24px;
+    height: 24px;
+    margin: 0 6px 0 0;
+}
+
 .personal-row h2{
 	font-family: Playfair Display;
 	color: #1A202C;
@@ -528,6 +555,7 @@ flickity-prev-next-button[disabled]{
 	padding: 42px 50px;
 	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
 	border-radius: 10px;
+	max-width: 830px;
 }
 
 .academic-papers-panel h3{
@@ -549,7 +577,7 @@ flickity-prev-next-button[disabled]{
 
 .academic-papers-panel p{
 	color: #1A202C;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 140%;
 	padding-bottom: 40px;
 }
