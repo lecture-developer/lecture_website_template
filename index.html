@@ -86,7 +86,7 @@
 			<div class="updates-section">
 				<h2>General Updates</h2>
 				<div class="updates-section-panels">
-					<div class="carousel js-flickity" data-flickity-options='{"contain": true, "wrapAround": false, "freeScroll": false, "pageDots": false, "draggable": ">1", "cellAlign": "center"}'  id="updates-panel">
+					<div class="carousel js-flickity" data-flickity-options='{"contain": true, "wrapAround": false, "freeScroll": false, "draggable": ">1", "cellAlign": "center"}'  id="updates-panel">
 						
 					</div>
 				</div>
@@ -214,6 +214,20 @@
 	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 	<script src="/lecture_website_template/js/main.js"> </script>	
 	<script src="/lecture_website_template/js/pages/index.js"  type="module"> </script>
+	<script>
+		// fix the design of the dots 
+		setTimeout(function(){ fixDotsColor(); }, 300);
+		setTimeout(function(){ fixDotsColor(); }, 1000);
+		
+		function fixDotsColor()
+		{
+			var dots = document.querySelectorAll(".flickity-page-dots .dot");
+			for (var i = 0; i < dots.length; i++)
+			{
+				dots[i].style.backgroundColor = "#667EEA";
+			}
+		}
+	</script>
 	<!-- end - js -->	
 </body>
 </html>
