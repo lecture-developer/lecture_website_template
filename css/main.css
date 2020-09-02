@@ -1,6 +1,6 @@
 
 /* import fonts */
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700|Roboto|Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700|Roboto:100,200,300,400,500,600,700|Playfair+Display:100,200,300,400,500,600,700&display=swap');
 /* end - import fonts */
 
 /* screen header - content - footer */
@@ -45,6 +45,10 @@ body {
 	justify-content: end;
 	align-items: center;
 	display: flex;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* end - flex box code */
@@ -136,8 +140,31 @@ footer h1{
 	margin-right: 16px;
 }
 
-a:hover {
-    text-decoration: underline;
+@media only screen and (max-width: 850px) {
+	
+  .footer-border{
+    flex-direction: column !important;
+  }
+  
+  .footer-menu{
+	  max-width: 80% !important;
+  }
+  
+  footer h1{
+	  padding-right: 0px;
+	  width: 100%;
+  }
+  
+  .footer-info-item  {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+	
+	#footer-menu-row{
+		flex-wrap: wrap !important;
+	}
 }
 
 /*** main content pages section ***/
@@ -593,6 +620,65 @@ flickity-prev-next-button[disabled]{
 	line-height: 150%;
 	margin-right: 20px;
 }
+
+.mobile-row-breaker{
+	
+}
+
+.mobile-row-spacer{
+	
+}
+
+
+@media only screen and (max-width: 850px) {
+	
+  .updates-container{
+	  padding: 0px 20px;
+  }
+  .personal-container{
+	  padding: 0px 20px;
+  }
+  .featured-publications-container{
+	  padding: 0px 20px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+	
+  #image-row{
+	  flex-direction: column !important;
+	  align-items: center !important;
+	  align-content: center !important;
+	  text-align: center !important;
+	  margin-bottom: 20px !important;
+  }
+  
+  #lecture_position{
+	  font-weight: bold;
+	  font-size: 18px !important;
+	  line-height: 24px !important;
+	  margin-top: 8px;
+  }
+  
+  #personal-data-row{
+	  flex-direction: column !important;
+  }
+  
+  .personal-row h2{
+	  font-size: 26px !important;
+	  line-height: 35px !important;
+	  padding: 0px 0px;
+  }
+  
+  .mobile-row-breaker{
+	  flex-wrap: wrap;
+	}
+	
+	.mobile-row-spacer{
+		padding-top: 40px;
+	}
+}
+
 
 /* end - index page */ 
 

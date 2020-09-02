@@ -28,10 +28,10 @@ class PublicationCard extends Element
 		var answer = '<div class="academic-papers-panel"><h3>' 
 		+ this.name + '</h3><h4>'
 		+ this.authors + "<br>" + this.publisher + '</h4><p>'
-		+ this.description + '</p><div class="personal-row space-between align-items-center"><div class="w-100"><span>'
+		+ this.description + '</p><div class="personal-row space-between align-items-center mobile-row-breaker"><div class="w-100"><span>'
 		+ this.publicationStatus + '</span><span>'
 		+ this.year + '</span><span>'
-		+ this.type + '</span></div><div class="w-100 flex-end align-items-center"><a class="cite-btn" href="'
+		+ this.type + '</span></div><div class="w-100 flex-end align-items-center mobile-row-spacer"><a class="cite-btn" href="'
 		+ this.fileLinks[0]["link"] + '">' + CITE_SYMBOL + ' Cite this publication</a><a href="'
 		+ this.fileLinks[1]["link"] + '" class="download-btn">Download</a></div></div></div>';
 		return answer;
