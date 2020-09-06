@@ -1,0 +1,34 @@
+{
+	"teaching_philosophy": "A very long text - allow HTML edditing",
+	"coureses":
+	[
+		{
+			"name": "courese name",
+			"code": "courese's code",
+			"year": "2020",
+			"semester": "1",
+			"description": "sentence or two of text - no HTML needed"
+		},
+		{
+			"name": "courese name",
+			"code": "courese's code",
+			"year": "2020",
+			"semester": "1",
+			"description": "sentence or two of text - no HTML needed"
+		},
+		{
+			"name": "courese name",
+			"code": "courese's code",
+			"year": "2020",
+			"semester": "1",
+			"description": "sentence or two of text - no HTML needed"
+		},
+		{
+			"name": "courese name",
+			"code": "courese's code",
+			"year": "2020",
+			"semester": "1",
+			"description": "sentence or two of text - no HTML needed"
+		},
+	]
+}
