@@ -75,6 +75,16 @@ function activeMenuLink()
 	});
 }
 
+// close header mobile menu on click outside the menu
+document.getElementById("mobile-menu-bg").onclick = function() { 
+	document.getElementById('mobile-menu').style.marginLeft = '-320px';
+	document.getElementById('mobile-menu-bg').style.marginLeft = '100%';
+};
+
+document.getElementById('mobile-menu').onclick = function(e) { 
+	e.stopPropagation();
+};
+
 
 /* help functions */
 

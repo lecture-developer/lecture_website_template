@@ -1,3 +1,4 @@
+<div class="mobile-menu-bg" id="mobile-menu-bg"></div>
 <div id="mobile-menu" class="mobile-menu">
 	<div class="personal-coloum">
 		<h2>Lecture name</h2>
@@ -15,50 +16,50 @@
 			Home
 		</a>
 		
-		<a class="mobile-menu-link" onclick="mobileMenuOpen('research');">
+		<a class="mobile-menu-link">
 			Research <i class="fa fa-angle-down" aria-hidden="true"></i>
+			<div class="mobile-menu-second-level" id="mobile-menu-second-level-research">
+				<a class="mobile-menu-link" href="/academic-publications.html">
+					Academic Publications
+				</a>
+				<a class="mobile-menu-link" href="/academic-students.html">
+					Research Students
+				</a>
+			</div>
 		</a>
-		<div class="mobile-menu-second-level" id="mobile-menu-second-level-research">
-			<a class="mobile-menu-link" href="/academic-publications.html">
-				Academic Publications
-			</a>
-			<a class="mobile-menu-link" href="/academic-students.html">
-				Research Students
-			</a>
-		</div>
 		
-		<a class="mobile-menu-link" onclick="mobileMenuOpen('courses');">
+		<a class="mobile-menu-link">
 			Courses <i class="fa fa-angle-down" aria-hidden="true"></i>
+			<div class="mobile-menu-second-level" id="mobile-menu-second-level-research">
+				<a class="mobile-menu-link" href="/course-page-1.html">
+					Sample course 1 
+				</a>
+				<a class="mobile-menu-link" href="/course-page-2.html">
+					Sample course 2 
+				</a>
+				<a class="mobile-menu-link" href="/teaching.html">
+					All classes
+				</a>
+			</div>
 		</a>
-		<div class="mobile-menu-second-level" id="mobile-menu-second-level-research">
-			<a class="mobile-menu-link" href="/course-page-1.html">
-				Sample course 1 
-			</a>
-			<a class="mobile-menu-link" href="/course-page-2.html">
-				Sample course 2 
-			</a>
-			<a class="mobile-menu-link" href="/teaching.html">
-				All classes
-			</a>
-		</div>
 		
-		<a class="mobile-menu-link" onclick="mobileMenuOpen('projects');">
+		<a class="mobile-menu-link">
 			Projects <i class="fa fa-angle-down" aria-hidden="true"></i>
+			<div class="mobile-menu-second-level" id="mobile-menu-second-level-research">
+				<a class="mobile-menu-link" href="/openresources.html">
+					Open Source
+				</a>
+				<a class="mobile-menu-link" href="/blog.html">
+					Blog 
+				</a>
+			</div>
 		</a>
-		<div class="mobile-menu-second-level" id="mobile-menu-second-level-research">
-			<a class="mobile-menu-link" href="/openresources.html">
-				Open Source
-			</a>
-			<a class="mobile-menu-link" href="/blog.html">
-				Blog 
-			</a>
-		</div>
 	</div>
 </div>
 <nav class="navbar navbar-expand-md main-nav">
 	<div class="spacer"></div>
 	<a class="logo navbar-brand order-first order-md-0 mx-0" href="#">
-	<button class="hamburger hamburger--collapse" type="button" aria-label="Menu" aria-controls="navigation" onclick="document.getElementById('mobile-menu').style.marginLeft = '0px';">
+	<button class="hamburger hamburger--collapse" type="button" aria-label="Menu" aria-controls="navigation" onclick="document.getElementById('mobile-menu').style.marginLeft = '0px';document.getElementById('mobile-menu-bg').style.marginLeft = '0px';">
 	  <span class="hamburger-box">
 		<span class="hamburger-inner"></span>
 	  </span>
@@ -67,12 +68,39 @@
 		<ul class="nav navbar-nav w-100 ">
 			<li class="nav-item menu-main-link active">
 				<a class="nav-link" href="#">Research <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+				<div class="menu-second-level">
+					<a class="mobile-menu-link" href="/academic-publications.html">
+						Academic Publications
+					</a>
+					<a class="mobile-menu-link" href="/academic-students.html">
+						Research Students
+					</a>
+				</div>
 			</li>
 			<li class="nav-item menu-main-link">
 				<a class="nav-link" href="#">Courses <i class="fa fa-angle-down" aria-hidden="true"></i> </a>
+				<div class="menu-second-level">
+					<a class="mobile-menu-link" href="/course-page-1.html">
+						Sample course 1 
+					</a>
+					<a class="mobile-menu-link" href="/course-page-2.html">
+						Sample course 2 
+					</a>
+					<a class="mobile-menu-link" href="/teaching.html">
+						All classes
+					</a>
+				</div>
 			</li>
 			<li class="nav-item menu-main-link">
 				<a class="nav-link" href="#">Projects <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+				<div class="menu-second-level">
+					<a class="mobile-menu-link" href="/openresources.html">
+						Open Source
+					</a>
+					<a class="mobile-menu-link" href="/blog.html">
+						Blog 
+					</a>
+				</div>
 			</li>
 		</ul>
 	</div>
