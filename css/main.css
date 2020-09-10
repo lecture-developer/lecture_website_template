@@ -763,12 +763,108 @@ flickity-prev-next-button[disabled]{
 }
 
 
-/* end - index page */ 
+/* end - index page */
+
+
+/* publications page  */
+
+.academic-papers-container{
+	max-width: 830px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.academic-papers-header-section{
+	align-items: start;
+    display: flex;
+    flex-flow: column;
+	width: 100%;
+}
+
+.academic-papers-body-section h2{
+	padding-top: 30px;
+}
+
+.academic-papers-header-section button{
+	padding: 8px 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+	border-radius: 4px;
+	border: 0px solid white;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 150%;
+	color: #4A5568;
+}
+
+.academic-papers-header-section form{
+	margin-bottom: 20px;
+}
+
+.academic-papers-header-section button:hover{
+	background: #5A67D8 !important;
+	color: #FFFFFF;
+	border: 0px solid #5A67D8;
+}
+
+.active-sort-button{
+	background: #5A67D8 !important;
+	color: #FFFFFF !important;
+	font-weight: bold !important;
+	border: 0px solid #5A67D8;
+}
+
+.academic-papers-header-section button:active{
+	background: #5A67D8 !important;
+	color: #FFFFFF;
+	border: 0px solid #5A67D8;
+}
+
+.academic-papers-body-section{
+	padding-bottom: 50px;
+}
+
+.academic-papers-header-section select{
+	padding: 8px 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+	border-radius: 4px;
+	border: 0px solid white;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 150%;
+	color: #4A5568;
+}
+
+/* end - publications page */
+ 
 
 /* help settings */
 
 .w-100{
 	width: 100%;
+}
+
+.wrap{
+	flex-wrap: wrap !important;
+}
+
+.nowrap{
+	flex-wrap: nowrap !important;
 }
 
 /* end - help settings */

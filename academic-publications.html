@@ -11,7 +11,7 @@
 	<meta name="description" content="Lecuter's Name Academic Website focusing on cool study in the field of something" />
 	<meta name="keywords" content="lecture website, academic website" />
 	<meta id="author" content="First Last name" name="author"/>
-	<link href="/img/favicon.ico" rel="icon" type="image/x-icon"/>
+	<link href="/lecture_website_template/img/favicon.ico" rel="icon" type="image/x-icon"/>
 	<!-- end - seo -->
 
 	<!-- css -->
@@ -58,21 +58,31 @@
 			<div class="academic-papers-header-section">
 				<h1>Academic publications</h1>
 				<p> Published acadmic papers, presentations, and abstracts.</p>
+				<h5>Order By</h5>
+				<form>
+					<div class="personal-row wrap">
+						<button class="active-sort-button"> Title </button>
+						<button> Type </button>
+						<button> Topic </button>
+						<button> Year (decresed) </button>
+						<button> Year (decresed) </button>
+					</div>
+				</form>
+				<h5>Filter</h5>
 				<div class="academic-papers-filters" id="academic_papers_filters">
-					<ul id="">
-						<li>Topic</li>
-						<li>Year</li>
-						<li>Type</li>
-					</ul>
-					<div class="academic-papers-filter-labels hide" id="academic-papers-filter-years">
-						
-					</div>
-					<div class="academic-papers-filter-labels hide" id="academic-papers-filter-topics">
-						
-					</div>
-					<div class="academic-papers-filter-labels hide" id="academic-papers-filter-types">
-						
-					</div>
+					<form>
+						<div class="personal-row wrap">
+							<select id="type-filter">
+								<option>Type</option>
+							</select>
+							<select id="type-filter">
+								<option>Topic</option>
+							</select>
+							<select id="type-filter">
+								<option>Year</option>
+							</select>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="academic-papers-body-section">
@@ -144,8 +154,8 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="/js/main.js"> </script>	
-	<script src="/js/pages/teaching.js"  type="module"> </script>
+	<script src="/lecture_website_template/js/main.js"> </script>	
+	<script src="/lecture_website_template/js/pages/teaching.js"  type="module"> </script>
 	<!-- end - js -->	
 </body>
 </html>
