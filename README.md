@@ -8,7 +8,7 @@ This repo holds the template website that user's get after generating there webs
 3. [Andorid App Template](https://github.com/teddy4445/lecture_andorid_app_template)
 
 ### Credits 
-
+More details about the project and the team please checkout [here](https://teddy4445.github.io/lecture_website_app_generator/src/client/public/index.html)
 
 ### License
 Inside this project we are using the following open-source projects:
