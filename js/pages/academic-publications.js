@@ -146,6 +146,16 @@ class AcademicPublications extends PageRender
 	
 	/* GUI functions */
 	
+	changeSort(sort_value)
+	{
+		document.getElementById("sort-btn-topic").classList.remove("active-sort-button");
+		document.getElementById("sort-btn-year").classList.remove("active-sort-button");
+		document.getElementById("sort-btn-type").classList.remove("active-sort-button");
+		document.getElementById("sort-btn-" + sort_value).classList.add("active-sort-button");
+		
+		this.buildBody(sort_value, default_filter);
+	}
+	
 	changeFilterYear()
 	{
 		// get value

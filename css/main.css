@@ -791,7 +791,7 @@ flickity-prev-next-button[disabled]{
 	padding-top: 30px;
 }
 
-.academic-papers-header-section a{
+.academic-papers-header-section button{
 	padding: 8px 20px;
 	margin-right: 20px;
 	margin-top: 5px;
@@ -811,7 +811,7 @@ flickity-prev-next-button[disabled]{
 	margin-bottom: 20px;
 }
 
-.academic-papers-header-section a:hover{
+.academic-papers-header-section button:hover{
 	background: #5A67D8 !important;
 	color: #FFFFFF;
 	border: 0px solid #5A67D8;
@@ -825,7 +825,7 @@ flickity-prev-next-button[disabled]{
 	border: 0px solid #5A67D8;
 }
 
-.academic-papers-header-section a:active{
+.academic-papers-header-section button:active{
 	background: #5A67D8 !important;
 	color: #FFFFFF;
 	border: 0px solid #5A67D8;
