@@ -155,3 +155,5 @@ class Index  extends PageRender
 
 // run the class build on page load
 Index.build();
+
+export { Index };

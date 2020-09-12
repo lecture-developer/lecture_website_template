@@ -61,85 +61,29 @@
 				<h5>Order By</h5>
 				<form>
 					<div class="personal-row wrap">
-						<button class="active-sort-button"> Title </button>
-						<button> Type </button>
-						<button> Topic </button>
-						<button> Year (decresed) </button>
-						<button> Year (decresed) </button>
+						<a id="sort-btn-year" href="/academic-publications.html?sort=year"> Year </a>
+						<a id="sort-btn-type" href="/academic-publications.html?sort=type"> Type </a>
+						<a id="sort-btn-topic" href="/academic-publications.html?sort=topic"> Topic </a>
 					</div>
 				</form>
 				<h5>Filter</h5>
 				<div class="academic-papers-filters" id="academic_papers_filters">
 					<form>
 						<div class="personal-row wrap">
-							<select id="type-filter">
+							<select id="year-filter" onchange="document.academicPublications.changeFilterYear();">
+								<option>Year</option>
+							</select>
+							<select id="type-filter" onchange="document.academicPublications.changeFilterType();">
 								<option>Type</option>
 							</select>
-							<select id="type-filter">
+							<select id="topic-filter" onchange="document.academicPublications.changeFilterTopic();">
 								<option>Topic</option>
-							</select>
-							<select id="type-filter">
-								<option>Year</option>
 							</select>
 						</div>
 					</form>
 				</div>
 			</div>
-			<div class="academic-papers-body-section">
-				<h2>Title 1</h2>
-				<div class="academic-papers-panel">
-					<h3>Publication name Publication name Publication name Publication name Publication name Publication name Publication name</h3>
-					<p> abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts </p>
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="space-between">
-						<a class="download-btn" href="#"></a>
-						<a class="cite-btn" href="#"></a>
-					</div>
-				</div>
-				<div class="academic-papers-panel">
-					<h3>Publication name Publication name Publication name Publication name Publication name Publication name Publication name</h3>
-					<p> abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts </p>
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="space-between">
-						<a class="download-btn" href="#"></a>
-						<a class="cite-btn" href="#"></a>
-					</div>
-				</div>
-				<h2>Title 2</h2>
-				<div class="academic-papers-panel">
-					<h3>Publication name Publication name Publication name Publication name Publication name Publication name Publication name</h3>
-					<p> abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts </p>
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="space-between">
-						<a class="download-btn" href="#"></a>
-						<a class="cite-btn" href="#"></a>
-					</div>
-				</div>
-				<div class="academic-papers-panel">
-					<h3>Publication name Publication name Publication name Publication name Publication name Publication name Publication name</h3>
-					<p> abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts abstracts </p>
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="space-between">
-						<a class="download-btn" href="#"></a>
-						<a class="cite-btn" href="#"></a>
-					</div>
-				</div>
+			<div class="academic-papers-body-section" id="publications-body">
 			</div>
 		</div>
 	</main>
@@ -155,7 +99,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="/lecture_website_template/js/main.js"> </script>	
-	<script src="/lecture_website_template/js/pages/teaching.js"  type="module"> </script>
+	<script src="/lecture_website_template/js/pages/academic-publications.js" type="module"> </script>
+	<script>
+	
+	</script>
 	<!-- end - js -->	
 </body>
 </html>

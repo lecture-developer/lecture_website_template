@@ -5,10 +5,10 @@ let CITE_SYMBOL = '<svg width="16" height="14" viewBox="0 0 16 14" fill="none" x
 
 class PublicationCard extends Element
 {
-	constructor(name, description, fileLinks, authors, year, topic, type, publisher, publicationStatus)
+	constructor(title, description, fileLinks, authors, year, topic, type, publisher, publicationStatus)
 	{
 		super();
-		this.name = name;
+		this.title = title;
 		this.description = description;
 		this.fileLinks = fileLinks;
 		this.authors = authors;
@@ -26,7 +26,7 @@ class PublicationCard extends Element
 		// 1. dynamic list of action buttons each one with it's design from the class 
 		// 2. 
 		var answer = '<div class="academic-papers-panel"><h3>' 
-		+ this.name + '</h3><h4>'
+		+ this.title + '</h3><h4>'
 		+ this.authors + "<br>" + this.publisher + '</h4><p>'
 		+ this.description + '</p><div class="personal-row space-between align-items-center mobile-row-breaker"><div class="w-100"><span>'
 		+ this.publicationStatus + '</span><span>'

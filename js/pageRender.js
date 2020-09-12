@@ -46,6 +46,12 @@ class PageRender
 				"main": MAIN_JSON.replace(PLACE_HOLDER, pageName)}
 	}
 	
+	// read parameters from the page's url as HTTP get 
+	static readGetPrams()
+	{
+		return new URLSearchParams((new URL(window.location.href)).search);
+	}
+	
 	// generic function to load data from server and put it in global var allowing any process to read it
 	static loadFileFromServer(filePath, is_json = false)
 	{	
