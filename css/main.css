@@ -194,7 +194,7 @@ footer h1{
 .nav-link{
 	font-family: Roboto;
 	font-size: 16px;
-	color: #FFFFFF !important;
+	color: #FFFFFF;
 	line-height: 19px;
 }
 
@@ -203,7 +203,7 @@ footer h1{
 }
 
 .nav-link:hover{
-	color: #667EEA  !important;
+	color: #667EEA;
 }
 
 .nav-link i{
@@ -215,9 +215,37 @@ footer h1{
 }
 
 .menu-second-level{
-    display: none !important;
+	display: none;
 }
 
+.nav-item:hover .menu-second-level {
+	display: block;
+}
+
+.menu-second-level-list:hover .menu-second-level {
+	display: block;
+}
+
+.menu-second-level-list {
+	background-color: #1A202C;
+	z-index: 1;
+	position: absolute;
+	top: 55px;
+}
+
+.menu-second-level-list-item {
+	list-style: none;
+	padding: 1rem;
+}
+
+.menu-second-level-list-item a{
+	color: white;
+	text-decoration: none;
+}
+
+.menu-second-level-list-item a:hover{
+	color: #667EEA;
+}
 
 .navbar .flex-1 {
     flex: 1;
@@ -285,9 +313,9 @@ footer h1{
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 150%;
-	color: #1A202C;
 	width: 100%;
 	margin-bottom: 30px;
+	cursor: pointer;
 }
 
 .mobile-menu-link i{
@@ -305,6 +333,10 @@ footer h1{
 	
 	.hamburger{
 		display: inline-block !important;
+	}
+
+	.mobile-menu-link{
+		color: #1A202C;
 	}
 }
 
