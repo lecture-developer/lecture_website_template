@@ -7,6 +7,7 @@
 			"code": "courese's code",
 			"year": "2020",
 			"semester": "1",
+			"university":"Bar-Ilan University",
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
@@ -14,6 +15,7 @@
 			"code": "courese's code",
 			"year": "2020",
 			"semester": "1",
+			"university":"Bar-Ilan University",
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
@@ -21,6 +23,7 @@
 			"code": "courese's code",
 			"year": "2020",
 			"semester": "1",
+			"university":"Tel-Aviv University",
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
@@ -28,6 +31,7 @@
 			"code": "courese's code",
 			"year": "2020",
 			"semester": "1",
+			"university":"Tel-Aviv University",
 			"description": "sentence or two of text - no HTML needed"
 		},
 	]
