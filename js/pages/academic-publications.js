@@ -160,13 +160,18 @@ class AcademicPublications extends PageRender
 	{
 		// get value
 		var selector = document.getElementById("year-filter");
-		var filter = selector.options[selector.selectedIndex].value;
+		var selectorIndex = selector.selectedIndex;
+		var filter = selector.options[selectorIndex].value;
 		
-		// mark this filter as choosen
-		selector.classList.add("active-sort-button");
 		// clear from the other for any case
-		document.getElementById("topic-filter").classList.remove("active-sort-button");
-		document.getElementById("type-filter").classList.remove("active-sort-button");
+		this.clearFilterViewSelect();
+		
+		if (filter.toLowerCase() != "year")
+		{
+			// mark this filter as choosen
+			selector.classList.add("active-sort-button");
+			document.getElementById("year-filter").selectedIndex = "" + selectorIndex;
+		}
 		
 		this.buildBody(this.sorter, filter, "year");
 	}
@@ -175,13 +180,18 @@ class AcademicPublications extends PageRender
 	{
 		// get value
 		var selector = document.getElementById("type-filter");
-		var filter = selector.options[selector.selectedIndex].value;
+		var selectorIndex = selector.selectedIndex;
+		var filter = selector.options[selectorIndex].value;
 		
-		// mark this filter as choosen
-		selector.classList.add("active-sort-button");
 		// clear from the other for any case
-		document.getElementById("topic-filter").classList.remove("active-sort-button");
-		document.getElementById("year-filter").classList.remove("active-sort-button");
+		this.clearFilterViewSelect();
+		
+		if (filter.toLowerCase() != "type")
+		{
+			// mark this filter as choosen
+			selector.classList.add("active-sort-button");
+			document.getElementById("type-filter").selectedIndex = "" + selectorIndex;
+		}
 		
 		this.buildBody(this.sorter, filter, "type");
 	}
@@ -190,15 +200,30 @@ class AcademicPublications extends PageRender
 	{
 		// get value
 		var selector = document.getElementById("topic-filter");
-		var filter = selector.options[selector.selectedIndex].value;
+		var selectorIndex = selector.selectedIndex;
+		var filter = selector.options[selectorIndex].value;
 		
-		// mark this filter as choosen
-		selector.classList.add("active-sort-button");
 		// clear from the other for any case
-		document.getElementById("type-filter").classList.remove("active-sort-button");
-		document.getElementById("year-filter").classList.remove("active-sort-button");
+		this.clearFilterViewSelect();
+		
+		if (filter.toLowerCase() != "topic")
+		{
+			// mark this filter as choosen
+			selector.classList.add("active-sort-button");
+			document.getElementById("topic-filter").selectedIndex = "" + selectorIndex;
+		}
 		
 		this.buildBody(this.sorter, filter, "topic");
+	}
+	
+	clearFilterViewSelect()
+	{
+		document.getElementById("type-filter").classList.remove("active-sort-button");
+		document.getElementById("type-filter").selectedIndex = "0";
+		document.getElementById("year-filter").classList.remove("active-sort-button");
+		document.getElementById("year-filter").selectedIndex = "0";
+		document.getElementById("topic-filter").classList.remove("active-sort-button");
+		document.getElementById("topic-filter").selectedIndex = "0";
 	}
 	
 	/* end - GUI functions */
