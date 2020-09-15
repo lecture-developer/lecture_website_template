@@ -198,7 +198,7 @@ footer h1{
 	line-height: 19px;
 }
 
-.mobile-menu-link:hover > div{
+.navbar .mobile-menu-link:hover > div{
     display:block;
 }
 
@@ -210,11 +210,11 @@ footer h1{
 	margin-left: 5px;
 }
 
-.menu-main-link{
+.navbar .menu-main-link{
 	padding-right: 24px;
 }
 
-.menu-second-level{
+.navbar .menu-second-level{
 	display: none;
 }
 
@@ -222,28 +222,28 @@ footer h1{
 	display: block;
 }
 
-.menu-second-level-list:hover .menu-second-level {
+.navbar .menu-second-level-list:hover .menu-second-level {
 	display: block;
 }
 
-.menu-second-level-list {
+.navbar .menu-second-level-list {
 	background-color: #1A202C;
-	z-index: 1;
 	position: absolute;
 	top: 55px;
+	z-index: 1;
 }
 
-.menu-second-level-list-item {
+.navbar .menu-second-level-list-item {
 	list-style: none;
 	padding: 1rem;
 }
 
-.menu-second-level-list-item a{
+.navbar .menu-second-level-list-item a{
 	color: white;
 	text-decoration: none;
 }
 
-.menu-second-level-list-item a:hover{
+.navbar .menu-second-level-list-item a:hover{
 	color: #667EEA;
 }
 
@@ -323,12 +323,33 @@ footer h1{
 }
 
 .mobile-menu-second-level{
-	display: none;
+	overflow: hidden;
+	display: block;
+	padding-top: 4px;
+	max-height: 0px;
+	opacity: 0;
+	transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	-webkit-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	-moz-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	-o-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+}
+
+.collapsible {
+	
+}
+
+.active > i {
+	transform: rotate(180deg);
+}
+
+.mobile-menu-list-item {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 850px) {
-	.navbar .spacer{
-		width: 0%;
+	.navbar-collapse{
+		visibility: hidden;
 	}
 	
 	.hamburger{
@@ -910,9 +931,23 @@ flickity-prev-next-button[disabled]{
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+
+ @media screen and (min-width: 850px) {
+	.hamburger {
+		display: none;
+	}
+
+	.mobile-menu {
+		display: none;
+	}
+
+	.mobile-menu-bg {
+		opacity: 0;
+	}
+ }
+
 .hamburger {
   padding-right: 20px;
-  display: none;
   cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
