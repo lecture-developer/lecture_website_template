@@ -23,7 +23,8 @@ class CourseCard extends Element
 			listCourse.push(CourseCard.createFromJson(jsonObj[publicationIndex]));
 		}
 		return listCourse;
-    }
+	}
+	
     // build a list of this object from Json object
 	static createFromJson(jsonObj)
 	{
@@ -37,15 +38,23 @@ class CourseCard extends Element
 
 
     // sort according to some property list of this object
-	static sortByProperty(ObjList, property)
+	static sortByProperty(ObjList, propertyA,propertyB)
 	{
 		return ObjList.sort(function(a, b)
 		{
-			var x = a[property + ""]; 
-			var y = b[property + ""];
-			return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+			var x = a[propertyA + ""]; 
+			var y = b[propertyA + ""];
+		
+			if (x === y) {
+				// propertyB is only important when propertyA are the same
+				return a[propertyB+ ""]-b[propertyB + ""];
+			 }
+			 return x > y ? -1 : 1;
+		
+		
 		});
-    }
+	}
+	
     // filter the list according to some property and value
 	static filterList(objList, property, filterValue)
 	{
@@ -58,16 +67,19 @@ class CourseCard extends Element
 			}
 		}
 		return answer;
-    }
-    static listByPropery(objList,property){
-        var answer=new Set();
+	}
+	
+	//create list of the name of the buttons 
+	static listFilterButtons(objList,property)
+	{
+        var answer=[];
         for (var objIndex=0;objIndex < objList.length; objIndex++)
         {
-            if (!answer.has(objList[objIndex][property+""]))
+            if (!answer.includes(objList[objIndex][property+""]))
             {
                 answer.push(objList[objIndex][property+""]);
             }
-        }
+		}
         return answer;
     }
 }
