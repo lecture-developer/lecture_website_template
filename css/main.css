@@ -196,10 +196,7 @@ footer h1{
 	font-size: 16px;
 	color: #FFFFFF;
 	line-height: 19px;
-}
-
-.navbar .mobile-menu-link:hover > div{
-    display:block;
+	cursor: pointer;
 }
 
 .nav-link:hover{
@@ -214,16 +211,14 @@ footer h1{
 	padding-right: 24px;
 }
 
-.navbar .menu-second-level{
-	display: none;
-}
-
-.nav-item:hover .menu-second-level {
-	display: block;
-}
-
-.navbar .menu-second-level-list:hover .menu-second-level {
-	display: block;
+.navbar .menu-second-level {
+	overflow: auto;
+	max-height: 0px;
+	opacity: 0;
+	transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	-webkit-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	-moz-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	-o-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
 }
 
 .navbar .menu-second-level-list {
@@ -238,12 +233,12 @@ footer h1{
 	padding: 1rem;
 }
 
-.navbar .menu-second-level-list-item a{
+.navbar .menu-second-level-list-item a {
 	color: white;
 	text-decoration: none;
 }
 
-.navbar .menu-second-level-list-item a:hover{
+.navbar .menu-second-level-list-item a:hover {
 	color: #667EEA;
 }
 
