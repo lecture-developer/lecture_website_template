@@ -19,7 +19,7 @@ class CourseCard extends Element
 	{
 		var answer = '<h4 class="course-card-semester"> Semster ' + this.semester + '</h4><div class="academic-papers-panel"><h3>' 
 		+ this.name + ' <small>(' + this.code + ')</small> </h3><p>'
-		+ this.description + '</p><div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course='
+		+ this.description + '</p><p>'+this.university+'</p> <div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course='
 		+ this.name.trim().replaceAll('\ ', '') + '" class="download-btn">Course Page</a></div></div></div>';
 		return answer;
 	}

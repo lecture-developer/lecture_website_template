@@ -5,7 +5,7 @@ import {CourseCard} from '/lecture_website_template/js/components/courseCard.js'
 let TAECHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
 
 // consts 
-let default_filter = "All universities";
+let default_filter = "All Universities";
 
 /*
 	Single instance class to build teaching.html page with dynamic content from JSONS from the server
@@ -18,36 +18,25 @@ class Teaching extends PageRender
         Teaching.loadFileFromServer(TAECHING_JSON, true);
         this.cardList = CourseCard.createListFromJson(retrivedData["coureses"]);
         this.filter=default_filter;
-        this.property_university='university';
+		this.property_university='university';
+		this.listFilterName=CourseCard.listFilterButtons(this.cardList,this.property_university);
 	}
     /* biuld function start */
 	// just gather all the build of all the sections in the page - one per call to the server side
 	build()
 	{
-		// get the data from the GET HTTP from the URL and build the page
-		var getParms = PageRender.readGetPrams();
-		if (getParms.get("filter") != null)
-		{
-			this.filter = getParms.get("filter");
-		}
-		else
-		{
-			this.filter = default_filter;
-			console.log("Teaching.build did not find filter, using default");
-		}
-		
 		// build the page itself
         this.buildHeader(this.filter);
 		this.buildBody(this.filter);
     }
 
-    buildHeader(filter=default_filter)
+    buildHeader(filterValue=default_filter)
 	{
         try
 		{
             this.createButtons();
 			// highlight the sort button which is active
-            document.getElementById("filter-btn-" + filter).classList.add("active-sort-button");
+            document.getElementById("filter-btn-" + filterValue).classList.add("active-sort-button");
         }
         catch (error)
 		{
@@ -55,16 +44,16 @@ class Teaching extends PageRender
 		}
     }
 
-    buildBody(filter=default_filter)
+    buildBody(filterValue=default_filter)
 	{
         // sort the list
 		var buildTeachingList = CourseCard.sortByProperty(this.cardList,"year","semester");
         
         // if filter needed
-		if (filter != default_filter)
+		if (filterValue != default_filter)
 		{
 			// filter the needed list only
-			buildTeachingList = CourseCard.filterList(buildTeachingList, filterProperty, filter);
+			buildTeachingList = CourseCard.filterList(buildTeachingList, this.property_university, filterValue);
 		}
 		
 		// split into the right sets
@@ -99,61 +88,45 @@ class Teaching extends PageRender
 		}
 
     }
-    /* biuld function end */
+    /* build function end */
 
-    //the function change the filter by the value.
-    changeFilter(filter_value)
-	{
-        var listCard = CourseCard.listFilterButtons(this.cardList, this.property_university);
-        for (var b = 0; b < listCard.length; b++){
-            var name=listCard[b];
-            document.getElementById("filter-btn-"+name).classList.remove("active-sort-button");
-        }
-		document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
-		
-		this.buildBody(filter_value, default_filter);
-	}
     
     //the function create buttons to the filter header section
     createButtons()
 	{
-        function changeFilter(filter_value)
-		{
-            var listCard=CourseCard.listFilterButtons(this.cardList,this.property_university);
-            this.filter=filter_value;
-            for (var b=0; b<listCard.length;b++)
-			{
-                var name=listCard[b];
-                document.getElementById("filter-btn-" + name).classList.remove("active-sort-button");
-            }
-            document.getElementById("filter-btn-" + default_filter).classList.remove("active-sort-button");
-            document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
-            
-            //this.buildBody(filter_value, default_filter);
-        }
         var Buttons = document.getElementById("Buttons");
-        var button = document.createElement("button");
-		button.innerHTML = default_filter;
-		button.type = "button";
-        button.id = "filter-btn-"+default_filter;
-        button.addEventListener("click", function(){changeFilter(default_filter)});
-        Buttons.appendChild(button);
-        
-        var listCard=CourseCard.listFilterButtons(this.cardList, this.property_university);
-        for (var b = 0; b < listCard.length; b++)
+        Buttons.appendChild(this.createElementButton(default_filter));
+        for (var b = 0; b < this.listFilterName.length; b++)
         {
-            var button = document.createElement("button");
-            var name = listCard[b];
-            button.innerHTML = name;
-            button.id = "filter-btn-" + name;
-            button.addEventListener("click", function(name){ changeFilter(name)});
-            Buttons.appendChild(button);
-       }
-    }   
+            var name = this.listFilterName[b];
+            Buttons.appendChild(this.createElementButton(name));
+	   	}
+	   	console.log(Buttons);
+	}   
+	
+	//the function change the filter by the value.
+	ChangeFilter(filter_value)
+	{
+            document.getElementById("filter-btn-" + this.filter).classList.remove("active-sort-button");
+			this.filter=filter_value;
+			document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
+			
+			this.buildBody(filter_value);
+	}
+		
+	//create a element button 
+	createElementButton(nameButton){
+		var button = document.createElement("button");
+		button.innerHTML = default_filter;
+		button.id = "filter-btn-"+nameButton;
+		button.setAttribute("onclick", "document.teaching.ChangeFilter("+nameButton+");");
+		return button;
+	}
+
 }
 
 // run the class build on page load
 document.teaching = new Teaching();
 document.teaching.build();
 
-export { Teaching };
+export { Teaching }
