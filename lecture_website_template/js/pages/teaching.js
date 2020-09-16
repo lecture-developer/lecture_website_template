@@ -94,14 +94,13 @@ class Teaching extends PageRender
     //the function create buttons to the filter header section
     createButtons()
 	{
-        var Buttons = document.getElementById("Buttons");
-        Buttons.appendChild(this.createElementButton(default_filter));
+        var buttonsDiv = document.getElementById("Buttons");
+		var buttonsHTML = this.createElementButton(default_filter);
         for (var b = 0; b < this.listFilterName.length; b++)
         {
-            var name = this.listFilterName[b];
-            Buttons.appendChild(this.createElementButton(name));
+            buttonsHTML += this.createElementButton(this.listFilterName[b]);
 	   	}
-	   	console.log(Buttons);
+		buttonsDiv.innerHTML += buttonsHTML;
 	}   
 	
 	//the function change the filter by the value.
@@ -115,12 +114,9 @@ class Teaching extends PageRender
 	}
 		
 	//create a element button 
-	createElementButton(nameButton){
-		var button = document.createElement("button");
-		button.innerHTML = default_filter;
-		button.id = "filter-btn-"+nameButton;
-		button.setAttribute("onclick", "document.teaching.ChangeFilter("+nameButton+");");
-		return button;
+	createElementButton(nameButton)
+	{
+		return '<button type="button" id="filter-btn-' + nameButton + '" onclick="document.teaching.ChangeFilter(\'' + nameButton + '\');">' + nameButton + '</button>';
 	}
 
 }
