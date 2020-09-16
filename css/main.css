@@ -262,6 +262,7 @@ footer h1{
 }
 
 .mobile-menu{
+	overflow: auto;
 	position: fixed;
 	height: 100%;
 	margin-left: -320px;
