@@ -29,6 +29,7 @@ function onPageLoad()
 	loadHeader();
 	loadFooter();
 	activeMenuLink();
+	manageCollapsible();
 }
 
 // load the HTML of the header from the right file and put in the right location
@@ -73,6 +74,50 @@ function activeMenuLink()
 			$(this).addClass('active'); 
 		}
 	});
+}
+
+// manage collapsible
+// taken from w3school: https://www.w3schools.com/howto/howto_js_collapsible.asp
+function manageCollapsible() {
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			for (let j = 0; j < coll.length; j++) {
+				// close all other active menus
+				if(this == coll[j]) { // skip the current menu
+					continue;
+				} else {
+					// check if the menu is active
+					if(coll[j].classList.contains("active")) {
+						// toggle the active class and close the menu
+						coll[j].classList.toggle("active");
+						var content = $(coll[j]).find("div")[0];
+						content.style.maxHeight = null;
+						content.style.opacity = null;
+					}
+				}
+			}
+
+			// expand the current menu
+			this.classList.toggle("active");
+			var content = $(this).find("div")[0];
+			if (content.style.maxHeight){
+				content.style.maxHeight = null;
+			} else {
+				content.style.maxHeight = content.scrollHeight + "px";
+			}
+
+			// change opacity of the menu
+			if (content.style.opacity) {
+				content.style.opacity = null;
+			} else {
+				content.style.opacity = 1;
+			}
+			
+		});
+	}
 }
 
 // close header mobile menu on click outside the menu
