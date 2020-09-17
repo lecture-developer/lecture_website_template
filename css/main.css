@@ -215,10 +215,10 @@ footer h1{
 	overflow: auto;
 	max-height: 0px;
 	opacity: 0;
-	transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
-	-webkit-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
-	-moz-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
-	-o-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	transition: max-height 0.5s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-transition: max-height 0.5s ease-in-out, opacity 0.2s ease-in-out;
+	-moz-transition: max-height 0.5s ease-in-out, opacity 0.2s ease-in-out;
+	-o-transition: max-height 0.5s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .navbar .menu-second-level-list {
@@ -324,10 +324,10 @@ footer h1{
 	padding-top: 4px;
 	max-height: 0px;
 	opacity: 0;
-	transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
-	-webkit-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
-	-moz-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
-	-o-transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;
+	transition: max-height 0.2s ease-in-out, opacity 0.5s ease-in-out;
+	-webkit-transition: max-height 0.2s ease-in-out, opacity 0.5s ease-in-out;
+	-moz-transition: max-height 0.2s ease-in-out, opacity 0.5s ease-in-out;
+	-o-transition: max-height 0.2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .collapsible {
@@ -756,6 +756,30 @@ flickity-prev-next-button[disabled]{
 	
 }
 
+@media only screen and (max-width: 1020px) {
+	
+	.nav .menu-main-link{
+		padding-right: 1rem;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	
+	.nav .menu-main-link{
+		padding-right: 0.5rem;
+	}
+}
+
+@media only screen and (max-width: 920px) {
+	
+	.nav .menu-main-link {
+		padding-right: 0px;
+	}
+
+	.nav *{
+		font-size: 15px;
+	}
+}
 
 @media only screen and (max-width: 850px) {
 	
