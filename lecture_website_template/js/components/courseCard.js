@@ -17,9 +17,12 @@ class CourseCard extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		var answer = '<p class="teaching-papers-body-section" > Semster ' + this.semester + '</p><div class="teaching-body-card"><h3>' 
-		+ this.name + ' <small>(' + this.code + ')</small> </h3><p>'
-		+ this.description + '</p><p>'+this.university+'</p> <div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course='
+		var answer = '<p> Semster ' 
+		+ this.semester + '</p><div class="academic-papers-panel"><h3>' 
+		+ this.name +' <small>(' 
+		+ this.code + ')</small> </h3><p style=\"color:black;\">'
+		+ this.description + '<br>'
+		+ this.university +'</p> <div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course='
 		+ this.name.trim().replaceAll('\ ', '') + '" class="download-btn">Course Page</a></div></div></div>';
 		return answer;
 	}
@@ -46,7 +49,6 @@ class CourseCard extends Element
         jsonObj["description"],);
     }
 
-
     // sort according to some property list of this object
 	static sortByProperty(ObjList, propertyA, propertyB)
 	{
@@ -57,17 +59,9 @@ class CourseCard extends Element
 		
 			if (x === y) {
 				// propertyB is only important when propertyA are the same
-<<<<<<< HEAD
-				return b[propertyB+ ""]-a[propertyB + ""];
+				return b[propertyB + ""] - a[propertyB + ""];
 			 }
-			 return x > y ? 1 : -1;
-		
-		
-=======
-				return a[propertyB + ""] - b[propertyB + ""];
-			 }
-			 return x > y ? -1 : 1;
->>>>>>> 5a95dfb6018ec31c1b4f925841ab8f5361983122
+			 return ((x < y) ? 1 : -1);
 		});
 	}
 	
@@ -111,8 +105,8 @@ class CourseCard extends Element
 	//create list of the name of the buttons 
 	static listFilterButtons(objList,property)
 	{
-        var answer=[];
-        for (var objIndex=0;objIndex < objList.length; objIndex++)
+        var answer = [];
+        for (var objIndex = 0; objIndex < objList.length; objIndex++)
         {
             if (!answer.includes(objList[objIndex][property+""]))
             {

@@ -1,6 +1,7 @@
 // imports 
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import {CourseCard} from '/lecture_website_template/js/components/courseCard.js';
+
 // Data file paths
 let TAECHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
 
@@ -23,6 +24,7 @@ class Teaching extends PageRender
 	}
 	
     /* biuld function start */
+	
 	// just gather all the build of all the sections in the page - one per call to the server side
 	build()
 	{
@@ -31,7 +33,8 @@ class Teaching extends PageRender
 		this.buildBody(this.filter);
     }
 
-    buildHeader(filterValue=default_filter)
+	//build the header section of the page
+    buildHeader(filterValue = default_filter)
 	{
         try
 		{
@@ -45,12 +48,13 @@ class Teaching extends PageRender
 		}
     }
 
-    buildBody(filterValue=default_filter)
+	//build the body section of the page, start after the button filter.
+    buildBody(filterValue = default_filter)
 	{
         // sort the list
-		var buildTeachingList = CourseCard.sortByProperty(this.cardList,"year","semester");
-        
-        // if filter needed
+		var buildTeachingList = CourseCard.sortByProperty(this.cardList, "year", "semester");
+
+		// if filter needed
 		if (filterValue != default_filter)
 		{
 			// filter the needed list only
@@ -59,7 +63,7 @@ class Teaching extends PageRender
 		
 		// split into the right sets
 		var coursesSets = CourseCard.splitByProperty(buildTeachingList, 'year');
-		
+		console.log(coursesSets);
 		// build the UI //
 		try
 		{
@@ -90,12 +94,11 @@ class Teaching extends PageRender
 
     }
     /* build function end */
-
     
     //the function create buttons to the filter header section
     createButtons()
 	{
-        var buttonsDiv = document.getElementById("Buttons");
+        var buttonsDiv = document.getElementById("buttons-filter");
 		var buttonsHTML = this.createElementButton(default_filter);
         for (var b = 0; b < this.listFilterName.length; b++)
         {
@@ -108,9 +111,9 @@ class Teaching extends PageRender
 	ChangeFilter(filter_value)
 	{
 		document.getElementById("filter-btn-" + this.filter).classList.remove("active-sort-button");
-		this.filter=filter_value;
+		this.filter = filter_value;
 		document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
-		
+		//build the new body after the filter change.
 		this.buildBody(filter_value);
 	}
 		
