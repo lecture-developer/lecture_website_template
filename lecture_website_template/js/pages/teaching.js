@@ -12,15 +12,16 @@ let default_filter = "All Universities";
 */
 class Teaching extends PageRender
 {
-	constructor()
+	constructor() 
 	{
 		super();
         Teaching.loadFileFromServer(TAECHING_JSON, true);
         this.cardList = CourseCard.createListFromJson(retrivedData["coureses"]);
-        this.filter=default_filter;
-		this.property_university='university';
-		this.listFilterName=CourseCard.listFilterButtons(this.cardList,this.property_university);
+        this.filter = default_filter;
+		this.property_university = 'university';
+		this.listFilterName = CourseCard.listFilterButtons(this.cardList, this.property_university);
 	}
+	
     /* biuld function start */
 	// just gather all the build of all the sections in the page - one per call to the server side
 	build()
@@ -62,7 +63,7 @@ class Teaching extends PageRender
 		// build the UI //
 		try
 		{
-            if (buildTeachingList.length > 0)
+            if (buildTeachingList.length > 0) 
 			{
 				var ansewrHtml = "";
 				for (var spliterKey in coursesSets)
@@ -106,11 +107,11 @@ class Teaching extends PageRender
 	//the function change the filter by the value.
 	ChangeFilter(filter_value)
 	{
-            document.getElementById("filter-btn-" + this.filter).classList.remove("active-sort-button");
-			this.filter=filter_value;
-			document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
-			
-			this.buildBody(filter_value);
+		document.getElementById("filter-btn-" + this.filter).classList.remove("active-sort-button");
+		this.filter=filter_value;
+		document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
+		
+		this.buildBody(filter_value);
 	}
 		
 	//create a element button 
@@ -118,7 +119,6 @@ class Teaching extends PageRender
 	{
 		return '<button type="button" id="filter-btn-' + nameButton + '" onclick="document.teaching.ChangeFilter(\'' + nameButton + '\');">' + nameButton + '</button>';
 	}
-
 }
 
 // run the class build on page load
