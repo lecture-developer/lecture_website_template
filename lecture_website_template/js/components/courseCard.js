@@ -48,7 +48,7 @@ class CourseCard extends Element
 
 
     // sort according to some property list of this object
-	static sortByProperty(ObjList, propertyA,propertyB)
+	static sortByProperty(ObjList, propertyA, propertyB)
 	{
 		return ObjList.sort(function(a, b)
 		{
@@ -57,11 +57,9 @@ class CourseCard extends Element
 		
 			if (x === y) {
 				// propertyB is only important when propertyA are the same
-				return a[propertyB+ ""]-b[propertyB + ""];
+				return a[propertyB + ""] - b[propertyB + ""];
 			 }
 			 return x > y ? -1 : 1;
-		
-		
 		});
 	}
 	
