@@ -17,7 +17,7 @@ class CourseCard extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		var answer = '<h4 class="course-card-semester"> Semster ' + this.semester + '</h4><div class="academic-papers-panel"><h3>' 
+		var answer = '<p class="teaching-papers-body-section" > Semster ' + this.semester + '</p><div class="teaching-body-card"><h3>' 
 		+ this.name + ' <small>(' + this.code + ')</small> </h3><p>'
 		+ this.description + '</p><p>'+this.university+'</p> <div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course='
 		+ this.name.trim().replaceAll('\ ', '') + '" class="download-btn">Course Page</a></div></div></div>';
@@ -57,9 +57,9 @@ class CourseCard extends Element
 		
 			if (x === y) {
 				// propertyB is only important when propertyA are the same
-				return a[propertyB+ ""]-b[propertyB + ""];
+				return b[propertyB+ ""]-a[propertyB + ""];
 			 }
-			 return x > y ? -1 : 1;
+			 return x > y ? 1 : -1;
 		
 		
 		});
