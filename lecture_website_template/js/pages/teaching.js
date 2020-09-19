@@ -70,14 +70,21 @@ class Teaching extends PageRender
             if (buildTeachingList.length > 0) 
 			{
 				var ansewrHtml = "";
+				var keys = [];
 				for (var spliterKey in coursesSets)
 				{
+					keys.push(spliterKey);
+				}
+				keys = keys.sort().reverse();
+				
+				for (var spliterKeyIndex = 0; spliterKeyIndex < keys.length; spliterKeyIndex++)
+				{
 					// add spliter 
-					ansewrHtml += "<h3>" + spliterKey + "</h3>";
+					ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
 					// add elements inside the list
-					for (var elementIndex = 0; elementIndex < coursesSets[spliterKey].length; elementIndex++)
+					for (var elementIndex = 0; elementIndex < coursesSets[keys[spliterKeyIndex]].length; elementIndex++)
 					{
-						ansewrHtml += coursesSets[spliterKey][elementIndex].toHtml();
+						ansewrHtml += coursesSets[keys[spliterKeyIndex]][elementIndex].toHtml();
 					}
 				}
 				document.getElementById("teaching-body").innerHTML = ansewrHtml;
@@ -120,7 +127,7 @@ class Teaching extends PageRender
 	//create a element button 
 	createElementButton(nameButton)
 	{
-		return '<button type="button" id="filter-btn-' + nameButton + '" onclick="document.teaching.ChangeFilter(\'' + nameButton + '\');">' + nameButton + '</button>';
+		return '<button type="button" class="mobile-buttons-tide" id="filter-btn-' + nameButton + '" onclick="document.teaching.ChangeFilter(\'' + nameButton + '\');">' + nameButton + '</button>';
 	}
 }
 

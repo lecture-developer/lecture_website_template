@@ -1070,13 +1070,43 @@ flickity-prev-next-button[disabled]{
 	border: 0px solid #5A67D8;
 }
 
-@media only screen and (max-width:420px){
-	.teaching-body-filter button{
+@media only screen and (max-width: 420px){
+	.teaching-body-filter button {
 		white-space: normal 
 	}
 
 	.teaching-papers-header-section hr{
 		visibility: hidden;
+	}
+}
+
+@media only screen and (max-width: 500px){
+	.mobile-buttons-tide{
+		margin-right: 0px !important;
+		width: 100%;
+	}
+	
+	.mobile-buttons-holder-tide{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	
+	.teaching-papers-body-section h3 {
+		margin-left: 16px;
+	}
+	
+	.teaching-papers-body-section p {
+		margin-left: 16px;
+	}
+	
+	.academic-papers-panel h3{
+		margin-left: 0px;
+	}
+	
+	.academic-papers-panel p{
+		margin-left: 0px;
 	}
 }
 
@@ -1096,7 +1126,7 @@ flickity-prev-next-button[disabled]{
 		margin-right: auto;
 		margin-bottom: 10px;
 	}
-  }
+}
   
 
 /* end - teaching page*/

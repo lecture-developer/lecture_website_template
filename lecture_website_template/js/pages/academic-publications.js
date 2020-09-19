@@ -97,7 +97,7 @@ class AcademicPublications extends PageRender
 	{
 		// perpare ds //
 		// sort the list
-		var buildPublicationList = PublicationCard.sortByProperty(this.publicationList, sorter);
+		var buildPublicationList = PublicationCard.sortByProperty(this.publicationList, sorter);	
 		
 		// if filter needed
 		if (filter != null)
@@ -115,14 +115,28 @@ class AcademicPublications extends PageRender
 			if (buildPublicationList.length > 0)
 			{
 				var ansewrHtml = "";
+				var keys = [];
+				
 				for (var spliterKey in publicSets)
 				{
+					keys.push(spliterKey);
+				}
+				keys = keys.sort();
+				
+				// edge - case, years we wish to get in the decreasing order
+				if (sorter == "year")
+				{
+					keys = keys.reverse();
+				}
+				
+				for (var spliterKeyIndex = 0; spliterKeyIndex < keys.length; spliterKeyIndex++)
+				{
 					// add spliter 
-					ansewrHtml += "<h3>" + spliterKey + "</h3>";
+					ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
 					// add elements inside the list
-					for (var elementIndex = 0; elementIndex < publicSets[spliterKey].length; elementIndex++)
+					for (var elementIndex = 0; elementIndex < publicSets[keys[spliterKeyIndex]].length; elementIndex++)
 					{
-						ansewrHtml += publicSets[spliterKey][elementIndex].toHtml();
+						ansewrHtml += publicSets[keys[spliterKeyIndex]][elementIndex].toHtml();
 					}
 				}
 				document.getElementById("publications-body").innerHTML = ansewrHtml;
