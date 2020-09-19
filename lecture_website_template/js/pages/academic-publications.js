@@ -129,7 +129,7 @@ class AcademicPublications extends PageRender
 			}
 			else // show error message
 			{
-				document.getElementById("publications-body").innerHTML = "<h3>Error message</h3>";
+				document.getElementById("publications-body").innerHTML = "<h3>Don't have publication with this filter</h3>"; // should not happen
 			}
 		}
 		catch (error)

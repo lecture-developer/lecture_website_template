@@ -359,7 +359,7 @@ footer h1{
 
 /*** elements ***/
 
-}
+
 /* Reset Select */
 select {
   -webkit-appearance: none;
@@ -974,6 +974,132 @@ flickity-prev-next-button[disabled]{
 
 /* end - publications page */
  
+/* start  - teaching page*/
+
+
+.teaching-papers-header-section{
+    display: flex;
+    flex-flow: column;
+	width: 100%;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.teaching-body-filter form{
+	margin-bottom: 20px;
+}
+
+.teaching-papers-header-section hr{
+	border: 1px solid #E2E8F0;
+}
+
+.teaching-papers-header-section h1{
+	font-family: Playfair Display;
+	font-size: 48px;
+	line-height: 64px;
+	text-transform: capitalize;
+}
+
+.teaching-papers-body-section{
+	padding-bottom: 50px;
+	width: 100%;
+}
+
+.teaching-papers-body-section h3{
+	font-family: Playfair Display;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 32px;
+	letter-spacing: 0.04em;
+	padding-bottom: 8px;
+	color: #1A202C;
+}
+
+.teaching-papers-body-section p{
+	font-family: Roboto;
+	font-size: 14px;
+	line-height: 19px;
+	color: #A0AEC0;
+}
+
+.teaching-container{
+	max-width: 830px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.teaching-body-filter button{
+	padding: 8px 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+	border-radius: 4px;
+	border: 0px solid white;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 150%;
+	color: #4A5568;
+}
+
+.teaching-body-filter button:hover{
+	background: #5A67D8 !important;
+	color: #FFFFFF;
+	border: 0px solid #5A67D8;
+    text-decoration: none !important;
+}
+
+.active-filter-button{
+	background: #5A67D8 !important;
+	color: #FFFFFF !important;
+	font-weight: bold !important;
+	border: 0px solid #5A67D8;
+}
+
+.teaching-body-filter button:active{
+	background: #5A67D8 !important;
+	color: #FFFFFF;
+	border: 0px solid #5A67D8;
+}
+
+@media only screen and (max-width:420px){
+	.teaching-body-filter button{
+		white-space: normal 
+	}
+
+	.teaching-papers-header-section hr{
+		visibility: hidden;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	.teaching-papers-body-section{
+		margin-left: 16px;
+	}
+	
+	.teaching-body-card{
+		margin-left: 16px;
+		margin-right: 16px;
+	}
+
+	.teaching-papers-header-section select{
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+	}
+  }
+  
+
+/* end - teaching page*/
 
 /* help settings */
 
