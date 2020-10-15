@@ -47,6 +47,23 @@ class Index  extends PageRender
 					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text">' + notificationLines[notificationIndex] + '</div></div></div>';
 				}
 				document.getElementById("updates-panel").innerHTML = notificationHtml;
+				
+				if (notificationLines.length == 1)
+				{
+					setTimeout(function() 
+					{
+						  var flickity_button = document.getElementsByClassName("flickity-button");
+						  for (var i = 0; i < flickity_button.length; i++) 
+						  {
+							  flickity_button[i].style.display = "none";
+						  }
+						  var flickity_dots = document.getElementsByClassName("flickity-page-dots");
+						  for (var i = 0; i < flickity_dots.length; i++) 
+						  {
+							  flickity_dots[i].style.display = "none";
+						  }
+					}, 10);
+				}
 			}
 			else
 			{
@@ -83,7 +100,10 @@ class Index  extends PageRender
 			document.getElementById("lecture_address").innerHTML += addressesHtml;
 			document.getElementById("lecture_phone").innerHTML += jsonObj["phone"];
 			document.getElementById("lecture_email").innerHTML += jsonObj["email"];
-			// TODO: add links to the academic social buttons
+			
+			
+			document.getElementById("social-linkedin").href = jsonObj["linkedin_link"];
+			document.getElementById("social-google-scholar").href = jsonObj["google_scholar_link"];
 			
 			// TODO: as list not single string
 			// document.getElementById("research_intrests").innerHTML = jsonObj["field"];

@@ -9,8 +9,8 @@
       {
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
-					  {"info": "cite", "type": 3, "link": "bbb"}],
+         "fileLinks":[{"info": "download", "type": 1, "link": ""}, 
+					  {"info": "cite", "type": 3, "link": ""}],
 		 "authors": "first name, last name; first name, last name",
          "year": 2019,
          "topic":"cool topic",
@@ -35,7 +35,7 @@
       {
          "name":"Name 1",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": "aaa"}
+         "link":{"info": "view project", "type": 1, "link": ""}
       },
       {
          "name":"Name 2",
@@ -45,7 +45,7 @@
       {
          "name":"Name 3",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": "aaa"}
+         "link":{"info": "view project", "type": 1, "link": ""}
       }
    ]
 }

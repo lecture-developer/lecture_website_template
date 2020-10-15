@@ -19,9 +19,12 @@ class ProjectPanel extends Element
 		// 2. 
 		var answer = '<div class="academic-papers-panel"><h3>' 
 		+ this.name + '</h3><p>'
-		+ this.description + '</p><div class="personal-row space-between"><div class="w-100 flex-end"><a href="'
-		+ this.btn["link"] + '" class="download-btn">'
-		+ this.btn["info"] + '</a></div></div></div>';
+		+ this.description + '</p>'
+		if (this.btn["link"] != "")
+		{
+			answer += '<div class="personal-row space-between"><div class="w-100 flex-end"><a href="' + this.btn["link"] + '" class="download-btn">' + this.btn["info"] + '</a></div></div>';
+		}
+		answer += '</div>';
 		return answer;
 	}
 	
