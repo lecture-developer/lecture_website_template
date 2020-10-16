@@ -1,0 +1,30 @@
+.course-page-section{
+    padding-left: 185px;
+    padding-right: 134px;
+}
+
+.header-margin{
+    margin-bottom: 27px;
+}
+
+.header-deatel {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.item-deatel{
+    display: flex;
+    flex-direction: row;
+}
+.item-deatel img{
+    left: 4.17%;
+    right: 4.17%;
+    top: 12.5%;
+    bottom: 12.5%; 
+    padding-right: 8px;
+
+}
+.grey-1{
+    color: #1A202C;
+}

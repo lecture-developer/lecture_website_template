@@ -8,6 +8,9 @@
 			"year": "2019",
 			"semester": "2",
 			"university":"Bar-Ilan University",
+			"department":"Computer science",
+			"location_class":"Room 210",
+			"syllabus":"link",
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
@@ -16,6 +19,9 @@
 			"year": "2020",
 			"semester": "1",
 			"university":"Bar-Ilan University",
+			"department":"Computer science",
+			"location_class":"Room 210",
+			"syllabus":"link",
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
@@ -24,6 +30,9 @@
 			"year": "2018",
 			"semester": "1",
 			"university":"Tel-Aviv University",
+			"department":"Computer science",
+			"location_class":"Room 210",
+			"syllabus":"link",
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
@@ -32,6 +41,9 @@
 			"year": "2020",
 			"semester": "2",
 			"university":"Tel-Aviv University",
+			"department":"Computer science",
+			"location_class":"Room 210",
+			"syllabus":"link",
 			"description": "sentence or two of text - no HTML needed"
 		}
 	]
