@@ -360,14 +360,14 @@ footer h1{
 /*** elements ***/
 
 /* for all pages */
-.breadcrumb{
+.breadcrumb-page{
 	background-color:none;
 	padding: 0px;
 	margin-top: 35px;
 	margin-bottom: 35px;
 }
 
-.breadcrumb li{
+.breadcrumb-page li{
 	display: inline;
 	font-family: Roboto;
 	font-style: normal;
@@ -377,17 +377,17 @@ footer h1{
 	color: #5A67D8;
 }
 
-.breadcrumb li+li:before{
+.breadcrumb-page li+li:before{
 	padding: 8px;
 	color: #5A67D8;
 	content: ">";
 }
 
-.breadcrumb li a {
+.breadcrumb-page li a {
 	text-decoration: none;
 }
   
-.breadcrumb li a:hover {
+.breadcrumb-page li a:hover {
 	text-decoration: underline;
 }
 
@@ -434,6 +434,17 @@ footer h1{
 	line-height: 25px;	
 }
 
+.main-dot{
+	position: static;
+	width: 8px;
+	height: 8px;
+	background: #C4C4C4;
+	flex: none;
+	order: 0;
+	align-self: center;
+	flex-grow: 0;
+	margin: 24px 0px;
+}
 
 /* Reset Select */
 select {
