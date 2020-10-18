@@ -73,18 +73,32 @@ class CoursePage extends PageRender
     //create html of Breadcrumb
     createBreadcrumb()
 	{
-        var html='<ul><li><a href="/">Home</a></li><li><a href="/teaching.html">Courses</a></li><li>' + this.data.name + '</li></ul>';
-        document.getElementById("breadcrumb_section").innerHTML = html;
+		try
+		{
+			var html='<ul><li><a href="/">Home</a></li><li><a href="/teaching.html">Courses</a></li><li>' + this.data.name + '</li></ul>';
+			document.getElementById("breadcrumb_section").innerHTML = html;	
+		}
+		catch (error)
+		{
+			console.log("Error at Course.createSectionData, saying: " + error);
+		}
     }
     
     //create html for the body sections
     createSectionData(title, subTitle, text)
 	{
-        var html = '<div class="main-body-page"><h3>'
-        + title + '</h3><hr><h2>'
-        + subTitle + '</h2><p>'
-        + text + '</p><div class="person-row"><span class="main-dot"></span><span class="main-dot"></span><span class="main-dot"></span></div></div>';
-        document.getElementById("body-section").innerHTML = html;
+		try
+		{
+			var html = '<div class="main-body-page"><h3>'
+			+ title + '</h3><hr><h2>'
+			+ subTitle + '</h2><p>'
+			+ text + '</p><div class="person-row"><span class="main-dot"></span><span class="main-dot"></span><span class="main-dot"></span></div></div>';
+			document.getElementById("body-section").innerHTML = html;	
+		}
+		catch (error)
+		{
+			console.log("Error at Course.createSectionData, saying: " + error);
+		}
     }
 	
 	createResourceList()
@@ -93,12 +107,7 @@ class CoursePage extends PageRender
 	}
 	
 	// help functions //
-	
-	createResourceList()
-	{
-		
-	}
-    
+
     // check if we need the new icon or not, if we do - just give the HTML
     _addNewTagIfNeeded(resourceDate){
 		if (resourceDate > this.last_visit)

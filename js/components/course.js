@@ -1,18 +1,26 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
+import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
+import { CourseUpdate } from '/lecture_website_template/js/components/courseUpdate.js';
+import { CourseModule } from '/lecture_website_template/js/components/courseModule.js';
 
 class Course extends Element
 {
-	constructor(name, description, projects, year,degree,linked_link,publiction_link,is_alumni)
+	constructor(name, description, code, year, semester, university, department, location_class, syllabus, grade_parts, resources, updates, modules)
 	{
 		super();
-		this.name=name;
-		this.description=description;
-		this.projects=projects;
-		this.year=year;
-		this.degree=degree;
-		this.linked_link=linked_link;
-		this.publiction_link=publiction_link;
-		this.is_alumni=is_alumni;
+		this.name = name;
+		this.description = description;
+		this.code = code;
+		this.year = year;
+		this.semester = semester;
+		this.university = university;
+		this.department = department;
+		this.location_class = location_class;
+		this.syllabus = syllabus;
+		this.grade_parts = grade_parts;
+		this.resources = resources;
+		this.updates = updates;
+		this.modules = modules;
 	}
 	
 	// convert the object into HTML
@@ -35,16 +43,20 @@ class Course extends Element
 	
 	// build a list of this object from Json object
 	static createFromJson(jsonObj)
-	{
-
+	{	
 		return new Course(jsonObj["name"],
-		jsonObj["description"], 
-		ProjectStudent.createListFromJson(jsonObj["projects"]), 
-		jsonObj["year"], 
-        jsonObj["degree"], 
-        jsonObj["linked_link"],
-		jsonObj["publiction_link"],
-		jsonObj["is_alumni"],);
+			jsonObj["description"], 
+			jsonObj["code"], 
+			jsonObj["year"], 
+			jsonObj["semester"],
+			jsonObj["university"],
+			jsonObj["department"],
+			jsonObj["location_class"],
+			jsonObj["syllabus"],
+			jsonObj["grade_parts"],
+			CourseResource.createListFromJson(jsonObj["resources"]),
+			CourseUpdate.createListFromJson(jsonObj["updates"]),
+			CourseModule.createListFromJson(jsonObj["modules"]));
 
 	}
 }
