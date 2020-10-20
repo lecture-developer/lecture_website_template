@@ -1183,9 +1183,11 @@ flickity-prev-next-button[disabled]{
 /* start - 404 not found */
 
 .not-found-section {
+	margin: auto;
 	margin-top: 7rem;
 	margin-bottom: 5.5rem;
 	text-align: center;
+	width: 80%;
 }
 
 .not-found-title {
@@ -1236,9 +1238,23 @@ flickity-prev-next-button[disabled]{
 .not-found-img {
 	margin: auto;
 	margin-top: 4.125rem;
-	width: 80vw;
-
+	position: relative;
+	min-height: 500px;
 }
+
+.not-found-img svg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* @media screen and (max-width: 850px) {
+	.not-found-img svg{
+		transform: scale(0.5);
+	}
+} */
 
 /* end 404 not found */
 
