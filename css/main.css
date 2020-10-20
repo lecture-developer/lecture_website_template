@@ -462,20 +462,24 @@ select::-ms-expand {
 }
 
 .flickity-prev-next-button{
-	background-color: #E2E8F0 !important;
-	border: 2px solid #667EEA;
+	background-color: transparent !important;
+	border: 2px solid black;
 	width: 24px;
 	height: 24px;
 }
 
 .flickity-prev-next-button:hover{
-	background-color: #E2E8F0 !important;
-	border: 3px solid #667EEA;
+	background-color: transparent !important;
+	border: 3px solid black;
 }
 
 flickity-prev-next-button:disabled,
 flickity-prev-next-button[disabled]{
 	border: 2px solid #C3DAFE !important;
+}
+
+.flickity-page-dots {
+	display: none;
 }
 
 
@@ -490,15 +494,41 @@ flickity-prev-next-button[disabled]{
 
 .updates-container{
 	width: 100%;
-	background-color: #E2E8F0;
-	min-height: 220px;
+	background-color: #FFEEC3;
+	height: 100px;
+	position: relative;
+	transition: all 0.5s ease;
+}
+
+.close-updates-btn {
+	position: absolute;
+	width: 1.25rem;
+	height: 1rem;
+	right: 1rem;
+	top: 1rem;
+	cursor: pointer;
+}
+
+.closed-section {
+	height: 0;
+}
+
+.closed-section * {
+	display: none;
+}
+
+.close-updates-btn svg {
+	position: absolute;
+	width: 100%;
+	height: auto;
 }
 
 .updates-section {
-	max-width: 830px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 20px;
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -513,7 +543,6 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: nowrap;
 	align-items: stretch;
 	margin-bottom: 40px;
-    border-bottom: 1px solid #D3DAE2;
 }
 
 .updates-section h2{
