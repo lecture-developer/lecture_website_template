@@ -1180,6 +1180,68 @@ flickity-prev-next-button[disabled]{
 
 /* end - help settings */
 
+/* start - 404 not found */
+
+.not-found-section {
+	margin-top: 7rem;
+	margin-bottom: 5.5rem;
+	text-align: center;
+}
+
+.not-found-title {
+	font-family: Playfair Display;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 64px;
+	letter-spacing: 0em;
+}
+
+.not-found-message {
+	margin-top: 2.5rem;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0em;
+}
+
+.not-found-buttons-section {
+	margin-top: 2rem;
+}
+
+.not-found-buttons-section a, .not-found-section a:hover{
+	color: #5A67D8;
+}
+
+.not-found-button {
+	display: inline-block;
+	border: 2px solid #5A67D8;
+	background-color: white;
+	width: 16.25rem;
+	height: 3.25rem;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 36px;
+	letter-spacing: 0em;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.not-found-button:hover {
+	background-color: white;
+}
+
+.not-found-img {
+	margin: auto;
+	margin-top: 4.125rem;
+	width: 80vw;
+
+}
+
+/* end 404 not found */
+
 /* burger css */
 /*!
  * Hamburgers
