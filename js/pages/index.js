@@ -44,7 +44,17 @@ class Index  extends PageRender
 			{
 				for (var notificationIndex = 0; notificationIndex < notificationLines.length; notificationIndex++)
 				{
-					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text">' + notificationLines[notificationIndex] + '</div></div></div>';
+					// extract the date from the line
+					var splitNotificationLine = notificationLines[notificationIndex].split(" ");
+					var date = splitNotificationLine[0];
+					// join the rest of the line
+					var line = splitNotificationLine.slice(1).join(" ");
+					if(line.length > 200) {
+						line = line.slice(0, 200);
+						line += '...\t <a id="update-link">Read More</a> '
+					}
+					// notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text">' + notificationLines[notificationIndex] + '</div></div></div>';
+					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text"><span class="update-date"> update ' + date + '</span><br> ' + line + '</div></div></div>';
 				}
 				document.getElementById("updates-panel").innerHTML = notificationHtml;
 				

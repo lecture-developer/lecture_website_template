@@ -564,17 +564,33 @@ flickity-prev-next-button[disabled]{
 
 .update-text{
 	font-family: Roboto;
+	font-weight: 400;
 	font-size: 14px;
-	text-align: center;
+	text-align: left;
 	line-height: 140%;
-	width: 100%;
+	width: 90%;
 	color: #000000;
+	margin: auto;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+}
+
+#update-link {
+	color: #2D3748;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.update-date {
+	text-decoration: underline;
 }
 
 .personal-container{
 	padding-top: 40px;
+	padding-bottom: 5rem;
 	width: 100%;
 	background-color: white;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
 }
 
 .personal-section{
@@ -596,7 +612,7 @@ flickity-prev-next-button[disabled]{
 }
 
 
-.personal-coloum{
+.personal-coloum {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -614,7 +630,8 @@ flickity-prev-next-button[disabled]{
 	color: #1A202C;
 	font-family: Roboto;
 	font-size: 16px;
-	line-height: 140%;
+	font-weight: 400;
+	line-height: 24px;
 }
 
 .intrest-item svg{
@@ -626,8 +643,8 @@ flickity-prev-next-button[disabled]{
 }
 
 .personal-img{
-	height: 68px;
-	width: 68px;
+	height: 99px;
+	width: 99px;
 	margin-right: 12px;
 	display: flex;
 	align-items: center; 
@@ -638,10 +655,10 @@ flickity-prev-next-button[disabled]{
 .personal-img img{
 	border: 0px solid white;
 	border-radius: 100%;
-	max-height: 68px;
-	max-width: 68px;
-	min-height: 68px;
-	min-width: 68px;
+	max-height: 99px;
+	max-width: 99px;
+	min-height: 99px;
+	min-width: 99px;
 }
 
 .personal-titles{
@@ -650,13 +667,18 @@ flickity-prev-next-button[disabled]{
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
+	margin-left: 10px;
+	margin-top: -0.5rem;
 }
 
 .personal-titles h3{
 	font-family: Playfair Display;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 32px;
 	letter-spacing: 0.04em;
-	font-size: 32px;
-	line-height: 43px;
+	text-align: left;
 	color: #1A202C;
 }
 
@@ -684,7 +706,8 @@ flickity-prev-next-button[disabled]{
 }
 
 .personal-info-item{
-	font-size: 16px;
+	font-size: 20px;
+	font-weight: 400;
 	line-height: 150%;
 	color: #2D3748;
 	margin-top: 10px;
@@ -693,6 +716,17 @@ flickity-prev-next-button[disabled]{
 .personal-info-item svg{
 	color: #63B3ED;
 	margin-right: 12px;
+}
+
+#lecturer-name {
+	font-family: Playfair Display;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 64px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #1A202C;
 }
 
 #lecture_address{
@@ -708,16 +742,40 @@ flickity-prev-next-button[disabled]{
 .personal-row h2{
 	font-family: Playfair Display;
 	color: #1A202C;
-	padding-top: 30px;
-	padding-bottom: 18px;
-	font-size: 48px;
+	padding-top: 2.5rem;
+	font-size: 32px;
 	text-transform: capitalize;
+}
+
+.reseach-seperator {
+	margin-top: 1px;
+	width: 150%;
+	position: relative;
+	left: calc(-25%);
+	height: 1px;
+	color: rgba(90, 103, 216, 0.5);
+	background-color: rgba(90, 103, 216, 0.5);
+}
+
+#research_intrests {
+	margin-top: 2rem;
+}
+
+.personal-row span {
+	float: left;
 }
 
 .personal-row p{
 	color: #2D3748;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 21.6px;
+}
+
+.personal-row b{
 	font-size: 16px;
-	line-height: 135%;
+	font-weight: 700;
 }
 
 .personal-row .read-more{
@@ -733,6 +791,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .featured-publications-background {
+	margin-top: -15px;
 	background-color: #EBF4FF;
 	width: 100%;
 }
@@ -757,6 +816,7 @@ flickity-prev-next-button[disabled]{
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
+	margin-top: 1.5rem;
 	margin-bottom: 30px;
 	padding: 42px 50px;
 	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
