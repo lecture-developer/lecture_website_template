@@ -794,6 +794,7 @@ flickity-prev-next-button[disabled]{
 	margin-top: -15px;
 	background-color: #EBF4FF;
 	width: 100%;
+	padding-bottom: 8rem;
 }
 
 .featured-publications-container{
@@ -859,6 +860,13 @@ flickity-prev-next-button[disabled]{
 	font-size: 16px;
 	line-height: 150%;
 	margin-right: 20px;
+}
+
+.see-more {
+	font-weight: 400;
+	text-align: right;
+	color: black;
+	text-decoration: underline;
 }
 
 #biography{
