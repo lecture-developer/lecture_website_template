@@ -62,7 +62,8 @@ class CoursePage extends PageRender
     }
     
     build(){
-        this.createBreadcrumb();
+		this.buildBreadcrumb();
+		this.buildHeader();
 		this.createSectionData();
 		this.createResourceList();
 		
@@ -70,8 +71,12 @@ class CoursePage extends PageRender
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
     }
 
+	buildHeader(){
+		this.createDetailsCourse();
+	}
+
     //create html of Breadcrumb
-    createBreadcrumb()
+    buildBreadcrumb()
 	{
 		try
 		{
@@ -83,7 +88,26 @@ class CoursePage extends PageRender
 			console.log("Error at Course.createSectionData, saying: " + error);
 		}
     }
-    
+	
+	/* helper function */
+
+	createDetailsCourse(){
+		try{
+			var html='<div class="main-header-page"><h1>' 
+			+ this.data.name + '</h1><div class="header-deatel"><div class="item-deatel"><img src="lecture_website_template/img/mdi_school.png"><p>'
+			+ this.data.code + '</p></div><div class="item-deatel"><img src="lecture_website_template/img/mdi_access_time.png"><p>Semester '
+			+ this.data.semester + '</p></div><div class="item-deatel"><img src="lecture_website_template/img/mdi_place.png"><div class=".personal-coloum"><p>'
+			+ this.data.university + '</p><p>'
+			+ this.data.location_class + '</p></div></div></div></div><div class=".personal-row"><img src="lecture_website_template/img/save_alt.png" alt=""><a href='
+			+ this.data.syllabus +' >Syllabus</a></div>';
+			document.getElementById("icons_section").innerHTML = html;	
+
+		}catch(error){
+			console.log("Error at Course.BiuldHeader, saying:" + error);
+		}
+	}
+
+
     //create html for the body sections
     createSectionData(title, subTitle, text)
 	{

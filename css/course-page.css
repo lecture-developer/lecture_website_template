@@ -32,3 +32,21 @@
 .grey-1{
     color: #1A202C;
 }
+
+.tags{
+    overflow: hidden;
+    background: #E0E0E0;
+}
+
+.tags button{
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.tab button.active {
+    background-color: #5A67D8;
+}
+  
