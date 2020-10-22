@@ -618,6 +618,7 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: nowrap;
 	align-items: stretch;
 	align-content: flex-start;
+	padding: 5px;
 }
 
 .intrest-item{
@@ -747,7 +748,7 @@ flickity-prev-next-button[disabled]{
 	text-transform: capitalize;
 }
 
-.reseach-seperator {
+.research-seperator {
 	width: 150%;
 	position: relative;
 	left: calc(-25%);
@@ -756,6 +757,13 @@ flickity-prev-next-button[disabled]{
 	background-color: rgba(90, 103, 216, 0.5);
 	margin: auto;
 	margin-top: 1px;
+}
+
+@media screen and (max-width: 1250px) {
+	.research-seperator {
+		width: 100%;
+		left: 0;
+	}
 }
 
 #research_intrests {
@@ -1282,6 +1290,36 @@ flickity-prev-next-button[disabled]{
 
 .wrap{
 	flex-wrap: wrap !important;
+}
+
+@media screen and (max-width: 600px) {
+	.personal-info-item {
+	  font-size: 14px;
+	}
+
+	#lecture_address *{
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 470px) {
+	.personal-info-item {
+	  font-size: 12px;
+	}
+
+	#lecture_address *{
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.personal-info-item {
+	  font-size: 20px;
+	}
+
+	#lecture_address *{
+		font-size: 20px;
+	}
 }
 
 .nowrap{
