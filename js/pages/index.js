@@ -55,7 +55,7 @@ class Index  extends PageRender
 					var line = splitNotificationLine.slice(1).join(" ");
 					
 					// notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text">' + notificationLines[notificationIndex] + '</div></div></div>';
-					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text"><span class="update-date"> update ' + date + '</span><br> ' + line + '</div></div></div>';
+					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text"><span class="update-date"> update ' + date + '</span><br> <span class="update-message">' + line + '</span></div></div></div>';
 				}
 				document.getElementById("updates-panel").innerHTML = notificationHtml;
 				// slice according to window size
@@ -192,7 +192,7 @@ Index.build();
 // window.addEventListener('resize', Index.buildeNotifications);
 
 function changeNotificationLength() {
-	var notifications = document.getElementsByClassName('update-text');
+	var notifications = document.getElementsByClassName('update-message');
 
 	for(let i = 0; i < notificationsArray.length; i++) {
 		var text = notificationsArray[i];
