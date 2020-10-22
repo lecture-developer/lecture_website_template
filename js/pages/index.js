@@ -10,6 +10,8 @@ let INDEX_JSON = "/lecture_website_template/data/jsons/index.json";
 
 let INFO_ICON = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.0055 8.66707C12.672 8.66707 13.2143 8.12545 13.2143 7.45974C13.2143 6.79162 12.672 6.24805 12.0055 6.24805C11.3389 6.24805 10.7966 6.79162 10.7966 7.45974C10.7966 8.12545 11.3388 8.66707 12.0055 8.66707Z" fill="#4F4F4F"/><path d="M14.1509 16.643H12.8655V11.8246C12.8655 11.3496 12.4805 10.9645 12.0054 10.9645H9.86009C9.38509 10.9645 9 11.3496 9 11.8246C9 12.2996 9.38509 12.6847 9.86009 12.6847H11.1454V17.503C11.1454 17.978 11.5305 18.3631 12.0055 18.3631H14.151C14.6261 18.3631 15.0111 17.978 15.0111 17.503C15.011 17.028 14.626 16.643 14.1509 16.643Z" fill="#4F4F4F"/><path d="M12.0001 0C5.38312 0 0 5.38312 0 11.9998C0 18.6165 5.38312 23.9998 12.0001 23.9998C18.6169 23.9998 24 18.6167 24 11.9998C24 5.383 18.6168 0 12.0001 0ZM12.0001 22.2796C6.33162 22.2796 1.72018 17.6681 1.72018 11.9998C1.72018 6.33151 6.33162 1.72006 12.0001 1.72006C17.6685 1.72006 22.2798 6.33151 22.2798 11.9998C22.2798 17.6681 17.6684 22.2796 12.0001 22.2796Z" fill="#4F4F4F"/></svg>';
 
+const notificationsArray = [];
+
 /*
 	Single instance class to build Index page with dynamic content from JSONS from the server
 */
@@ -39,6 +41,8 @@ class Index  extends PageRender
 			var txtObj = retrivedData;
 			var notificationLines = txtObj.split("\n");
 			
+			notificationsArray.push(...notificationLines);
+
 			var notificationHtml = "";
 			if (notificationLines.length > 0)
 			{
@@ -49,14 +53,13 @@ class Index  extends PageRender
 					var date = splitNotificationLine[0];
 					// join the rest of the line
 					var line = splitNotificationLine.slice(1).join(" ");
-					if(line.length > 200) {
-						line = line.slice(0, 200);
-						line += '...\t <a id="update-link">Read More</a> '
-					}
+					
 					// notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text">' + notificationLines[notificationIndex] + '</div></div></div>';
 					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text"><span class="update-date"> update ' + date + '</span><br> ' + line + '</div></div></div>';
 				}
 				document.getElementById("updates-panel").innerHTML = notificationHtml;
+				// slice according to window size
+				changeNotificationLength();
 				
 				if (notificationLines.length == 1)
 				{
@@ -185,5 +188,36 @@ class Index  extends PageRender
 
 // run the class build on page load
 Index.build();
+
+// window.addEventListener('resize', Index.buildeNotifications);
+
+function changeNotificationLength() {
+	var notifications = document.getElementsByClassName('update-text');
+
+	for(let i = 0; i < notificationsArray.length; i++) {
+		var text = notificationsArray[i];
+		if(window.innerWidth >= 850) { // desktop size
+			if(text.length > 200) {
+				text = text.slice(0, 200) + '...\t <a id="update-link">Read More</a> ';
+				notifications[i].innerHTML = text;
+			}
+		} else {
+			if(window.innerWidth < 850) {
+				if(text.length > 100) {
+					text = text.slice(0, 100) + '...\t <a id="update-link">Read More</a> ';
+					notifications[i].innerHTML = text;
+				}
+			}
+			if(window.innerWidth < 470) { // phone size
+				if(text.length > 30) {
+					text = text.slice(0, 30) + '...\t <a id="update-link">Read More</a> ';
+					notifications[i].innerHTML = text;
+				}
+			}
+		}
+	}
+}
+
+window.addEventListener('resize', changeNotificationLength);
 
 export { Index };
