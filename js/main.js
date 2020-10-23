@@ -179,6 +179,11 @@ function getCookie(cname)
 	return "";
 }
 
+// close the update section
+function closeUpdates() {
+	document.getElementById("update-container").classList.add('closed-section');
+}
+
 // end - cookie related functions // 
 
 /* end - help functions */
