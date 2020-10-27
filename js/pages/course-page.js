@@ -2,7 +2,7 @@ import { PageRender, retrivedData } from '/lecture_website_template/js/pageRende
 import { Course } from '/lecture_website_template/js/components/course.js';
 
 // Data file paths
-let TAECHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
+let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
 // consts //
 let PRE_COOKIE_KEY = "course_";
 // end - consts //
@@ -13,7 +13,7 @@ class CoursePage extends PageRender
 	{
         super();
         // load the data from the JSON file
-		CoursePage.loadFileFromServer(TAECHING_JSON, true);
+		CoursePage.loadFileFromServer(TEACHING_JSON, true);
 		
 		this.data = null;
 		
@@ -44,7 +44,7 @@ class CoursePage extends PageRender
 		}
 		
 		// remember the full data
-		var json_full_data = retrivedData["coureses"];
+		var json_full_data = retrivedData["courses"];
 		var found_course = false;
 		for (var course_index = 0; course_index < json_full_data.length; course_index++)
 		{
@@ -94,12 +94,12 @@ class CoursePage extends PageRender
 	createDetailsCourse(){
 		try{
 			var html='<div class="main-header-page"><h1>' 
-			+ this.data.name + '</h1><div class="header-deatel"><div class="item-deatel"><img src="lecture_website_template/img/mdi_school.png"><p>'
-			+ this.data.code + '</p></div><div class="item-deatel"><img src="lecture_website_template/img/mdi_access_time.png"><p>Semester '
-			+ this.data.semester + '</p></div><div class="item-deatel"><img src="lecture_website_template/img/mdi_place.png"><div class=".personal-coloum"><p>'
+			+ this.data.name + '</h1><div class="header-detail"><div class="item-detail"><img class="course-detail-img" src="./img/mdi_school.png"><p>'
+			+ this.data.code + '</p></div><div class="item-detail"><img class="course-detail-img" src="./img/mdi_access_time.png"><p>Semester '
+			+ this.data.semester + '</p></div><div class="item-detail"><img class="course-detail-img" src="./img/mdi_place.png"><div class=".personal-coloum"><p>'
 			+ this.data.university + '</p><p>'
-			+ this.data.location_class + '</p></div></div></div></div><div class=".personal-row"><img src="lecture_website_template/img/save_alt.png" alt=""><a href='
-			+ this.data.syllabus +' >Syllabus</a></div>';
+			+ this.data.location_class + '</p></div></div></div></div><div class=".personal-row"><a class="sylabus-link" href='
+			+ this.data.syllabus +' ><img class="course-sylabus-img" src="./img/save_alt.png" alt="">Syllabus</a></div>';
 			document.getElementById("icons_section").innerHTML = html;	
 
 		}catch(error){
@@ -108,16 +108,20 @@ class CoursePage extends PageRender
 	}
 
 
+	createTabsSection() {
+		
+	}
+
     //create html for the body sections
     createSectionData(title, subTitle, text)
 	{
 		try
 		{
-			var html = '<div class="main-body-page"><h3>'
+			var html = '<div class="body-section"><h3>'
 			+ title + '</h3><hr><h2>'
 			+ subTitle + '</h2><p>'
 			+ text + '</p><div class="person-row"><span class="main-dot"></span><span class="main-dot"></span><span class="main-dot"></span></div></div>';
-			document.getElementById("body-section").innerHTML = html;	
+			document.getElementById("main-body-page").innerHTML = html;	
 		}
 		catch (error)
 		{
@@ -136,7 +140,7 @@ class CoursePage extends PageRender
     _addNewTagIfNeeded(resourceDate){
 		if (resourceDate > this.last_visit)
 		{
-			return '<img src="/img/new-resource.png" class="new-resource-icon" />';
+			return '<img src="./img/new-resource.png" class="new-resource-icon" />';
 		}
 		return ""; // if we don't need to - just return empty string into the html 
     }

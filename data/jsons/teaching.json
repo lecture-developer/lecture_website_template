@@ -1,7 +1,7 @@
 {
 	"teaching_philosophy": "A very long text - allow HTML edditing",
-	"coureses": [{
-			"name": "courese name",
+	"courses": [{
+			"name": "course name",
 			"code": "123",
 			"year": "2019",
 			"semester": "2",
@@ -89,7 +89,7 @@
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
-			"name": "courese name 2",
+			"name": "course name 2",
 			"code": "321",
 			"year": "2020",
 			"semester": "1",
