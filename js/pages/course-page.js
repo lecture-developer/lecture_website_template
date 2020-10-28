@@ -157,4 +157,35 @@ class CoursePage extends PageRender
 document.coursePage = new CoursePage();
 document.coursePage.build();
 
+// add toggle to the tabs
+function onPageLoad() {
+	const tabs = document.getElementsByClassName('tab');
+	for(let i = 0; i < tabs.length; i++) {
+		tabs[i].addEventListener('click', function (event) {
+			if(!event.target.classList.contains('active-tab')) {
+				// get the current active tab
+				let currentActive = document.getElementsByClassName('active-tab')[0];
+
+				// toggle the active class of the current active element
+				toggleActiveTab(currentActive);
+
+				// toggle the active class of the clicked tab
+				toggleActiveTab(event.target);
+			}
+		});
+	}
+	// by default toggle the first tab
+	toggleActiveTab(tabs[0]);
+}
+
+// toggle the activeness of the given item and label
+function toggleActiveTab(target) {
+	// toggle the active-tab class of the given element 
+	target.classList.toggle('active-tab');
+	// get the label element of the current active and toggle active-tab-title
+	target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');
+}
+
+onPageLoad();
+
 export { CoursePage }

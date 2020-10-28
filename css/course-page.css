@@ -74,6 +74,15 @@
     background-color: #E0E0E0;
 }
 
+.tab-seperator {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 10px;
+    width: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .active-tab {
     background-color: #5A67D8;
 }
@@ -83,7 +92,14 @@
     font-weight: 400;
     cursor: pointer;
     position: relative;
-    top: -2rem;
+    top: -2.5rem;
+}
+
+.new-updates-icon {
+    width: 1.5rem;
+    height: 1.75rem;
+    position: relative;
+    top: -2.5rem;
 }
 
 .active-tab-title {
