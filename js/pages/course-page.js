@@ -178,6 +178,7 @@ function onPageLoad() {
 	toggleActiveTab(tabs[0]);
 }
 
+
 // toggle the activeness of the given item and label
 function toggleActiveTab(target) {
 	// toggle the active-tab class of the given element 
