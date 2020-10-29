@@ -64,7 +64,8 @@ class CoursePage extends PageRender
     build(){
 		this.buildBreadcrumb();
 		this.buildHeader();
-		this.createSectionData();
+		this.createTabsSection();
+		this.createSectionData('Summary', 'exam', 'text');
 		this.createResourceList();
 		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
@@ -103,13 +104,35 @@ class CoursePage extends PageRender
 			document.getElementById("icons_section").innerHTML = html;	
 
 		}catch(error){
-			console.log("Error at Course.BiuldHeader, saying:" + error);
+			console.log("Error at Course.BuildHeader, saying:" + error);
 		}
 	}
 
-
+	/*
+		Create the tabs section
+	*/
 	createTabsSection() {
-		
+		try{
+			var html='<div id="tabs-bar" class="tabs-bar">' +
+						'<div class="general-bar tab">'+
+							'<label class="tab-title">General</label>'+
+							'<div class="tab-seperator"></div>'+
+						'</div>'+
+						
+						'<div class="updates-bar tab">'+
+							'<img src="./img/mdi_flag@1x-10.png" alt="new update" class="new-updates-icon">'+
+							'<label class="tab-title">Updates</label>'+
+							'<div class="tab-seperator"></div>'+
+						'</div>'+
+						
+						'<div class="modules-bar tab">'+
+							'<label class="tab-title">Modules</label>'+
+						'</div>'+
+					'</div>'
+			document.getElementById("tabs").innerHTML = html;	
+		}catch(error){
+			console.log("Error at Course.createTabsSection, saying:" + error);
+		}
 	}
 
     //create html for the body sections
@@ -117,17 +140,38 @@ class CoursePage extends PageRender
 	{
 		try
 		{
-			var html = '<div class="body-section"><h3>'
-			+ title + '</h3><hr><h2>'
-			+ subTitle + '</h2><p>'
-			+ text + '</p><div class="person-row"><span class="main-dot"></span><span class="main-dot"></span><span class="main-dot"></span></div></div>';
+			let html = '<div class="body-section">';
+
+			html += this.createSummary();
+			html += '<div class="resources-section"><h3 class="content-title">Resources</h3></div>';
+			
+			html += "</div>";
 			document.getElementById("main-body-page").innerHTML = html;	
 		}
 		catch (error)
 		{
 			console.log("Error at Course.createSectionData, saying: " + error);
 		}
-    }
+	}
+	
+	createSummary() {
+		let text = this.data.description;
+		let grades = this.data.grade_parts;
+		let html = '<div class="summary-section"><h3 class="content-title">'
+		+ "Summary" + '</h3><hr class="blue-hr"><h2 class="content-subtitle">Final grade: ';
+
+		let subTitle = '';
+		for(let i = 0; i < grades.length; i++) {
+			subTitle += grades[i]['name'] + " ";
+			if(i == grades.length - 1) {
+				subTitle += grades[i]["percent"] + "%";
+			} else {
+				subTitle += grades[i]['percent'] + "%, ";
+			}
+		}
+		html += subTitle + '</h2><p class="content-text">' + text + '</p><div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div></div>';
+		return html;
+	}
 	
 	createResourceList()
 	{
