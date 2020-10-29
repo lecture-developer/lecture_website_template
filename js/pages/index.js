@@ -15,7 +15,7 @@ const notificationsArray = [];
 /*
 	Single instance class to build Index page with dynamic content from JSONS from the server
 */
-class Index  extends PageRender
+class Index extends PageRender
 {
 	constructor()
 	{
