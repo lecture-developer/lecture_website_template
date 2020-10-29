@@ -375,6 +375,92 @@ footer h1{
 
 /*** elements ***/
 
+/* for all pages */
+.breadcrumb-page{
+	background-color:none;
+	padding: 0px;
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+
+.breadcrumb-page li{
+	display: inline;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 150%;
+	color: #5A67D8;
+}
+
+.breadcrumb-page li+li:before{
+	padding: 8px;
+	color: #5A67D8;
+	content: ">";
+}
+
+.breadcrumb-page li a {
+	text-decoration: none;
+}
+  
+.breadcrumb-page li a:hover {
+	text-decoration: underline;
+}
+
+.main-header-page h1{
+	font-family: Playfair Display;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 48px;
+	line-height: 64px;
+}
+.main-header-page p{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 150%;
+}
+
+.main-body-page h3{
+	font-family: Playfair Display;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 32px;
+	display: flex;
+	align-items: center;
+	letter-spacing: 0.04em;
+}
+
+.main-body-page h2{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 23px;
+	letter-spacing: 0.04em;	
+}
+
+.main-body-page p{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 25px;	
+}
+
+.main-dot{
+	position: static;
+	width: 8px;
+	height: 8px;
+	background: #C4C4C4;
+	flex: none;
+	order: 0;
+	align-self: center;
+	flex-grow: 0;
+	margin: 24px 0px;
+}
 
 /* Reset Select */
 select {

@@ -22,8 +22,8 @@ class CourseCard extends Element
 		+ this.name +' <small>(' 
 		+ this.code + ')</small> </h3><p style=\"color:black;\">'
 		+ this.description + '<br>'
-		+ this.university +'</p> <div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course='
-		+ this.name.trim().replaceAll('\ ', '') + '" class="download-btn">Course Page</a></div></div></div>';
+		+ this.university +'</p> <div class="personal-row space-between"><div class="w-100 flex-end"><a href="/course-page.html?course_id='
+		+ this.code + '" class="download-btn">Course Page</a></div></div></div>';
 		return answer;
 	}
 

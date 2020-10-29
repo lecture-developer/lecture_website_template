@@ -1,37 +1,179 @@
 {
 	"teaching_philosophy": "A very long text - allow HTML edditing",
-	"coureses":
-	[
-		{
-			"name": "courese name",
-			"code": "courese's code",
+	"courses": [{
+			"name": "course name",
+			"code": "123",
 			"year": "2019",
 			"semester": "2",
-			"university":"Bar-Ilan University",
+			"university": "Bar-Ilan University",
+			"department": "Computer science",
+			"location_class": "Room 210",
+			"syllabus": "link",
+			"grade_parts": [{
+					"name": "home work",
+					"percent": 30
+				},
+				{
+					"name": "Exam",
+					"percent": 70
+				}
+			],
+			"resources": [{
+					"name": "home work",
+					"link": "link link link",
+					"description": "cool description cool description cool description",
+					"is_requried": false
+				},
+				{
+					"name": "home work",
+					"link": "link link link",
+					"description": "cool description cool description cool description",
+					"is_requried": true
+				}
+			],
+			"updates": [{
+					"title": "home work",
+					"date": "Sat Oct 15 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"description": "cool description cool description cool description"
+				},
+				{
+					"title": "home work",
+					"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"description": "cool description cool description cool description"
+				},
+				{
+					"title": "home work",
+					"date": "Sat Oct 30 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"description": "cool description cool description cool description"
+				}
+			],
+			"modules": [{
+					"title": "cool module 1",
+					"explanation": "not too long",
+					"resources": [{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": false
+						},
+						{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": true
+						}
+					]
+				},
+				{
+					"title": "cool module 2",
+					"explanation": "not too long not too long",
+					"resources": [{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": false
+						},
+						{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": true
+						}
+					]
+				}
+			],
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
-			"name": "courese name",
-			"code": "courese's code",
+			"name": "course name 2",
+			"code": "321",
 			"year": "2020",
 			"semester": "1",
-			"university":"Bar-Ilan University",
-			"description": "sentence or two of text - no HTML needed"
-		},
-		{
-			"name": "courese name",
-			"code": "courese's code",
-			"year": "2018",
-			"semester": "1",
-			"university":"Tel-Aviv University",
-			"description": "sentence or two of text - no HTML needed"
-		},
-		{
-			"name": "courese name",
-			"code": "courese's code",
-			"year": "2020",
-			"semester": "2",
-			"university":"Tel-Aviv University",
+			"university": "Bar-Ilan University",
+			"department": "Computer science",
+			"location_class": "Room 211",
+			"syllabus": "link",
+			"grade_parts": [{
+					"name": "home work",
+					"percent": 30
+				},
+				{
+					"name": "Exam",
+					"percent": 70
+				}
+			],
+			"resources": [{
+					"name": "home work",
+					"link": "link link link",
+					"description": "cool description cool description cool description",
+					"is_requried": false
+				},
+				{
+					"name": "home work",
+					"link": "link link link",
+					"description": "cool description cool description cool description",
+					"is_requried": true
+				}
+			],
+			"updates": [{
+					"title": "home work",
+					"date": "Sat Oct 15 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"description": "cool description cool description cool description"
+				},
+				{
+					"title": "home work",
+					"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"description": "cool description cool description cool description"
+				},
+				{
+					"title": "home work",
+					"date": "Sat Oct 30 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"description": "cool description cool description cool description"
+				}
+			],
+			"modules": [{
+					"title": "cool module 1",
+					"explanation": "not too long",
+					"resources": [{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": false
+						},
+						{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": true
+						}
+					]
+				},
+				{
+					"title": "cool module 2",
+					"explanation": "not too long not too long",
+					"resources": [{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": false
+						},
+						{
+							"name": "home work",
+							"link": "link link link",
+							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"description": "cool description cool description cool description",
+							"is_requried": true
+						}
+					]
+				}
+			],
 			"description": "sentence or two of text - no HTML needed"
 		}
 	]
