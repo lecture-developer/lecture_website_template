@@ -31,18 +31,18 @@ class PublicationCard extends Element
 		+ this.description + '</p><div class="personal-row space-between align-items-center mobile-row-breaker"><div class="w-100 acadmic-parms-row"><span>'
 		+ this.publicationStatus + '</span><span>'
 		+ this.year + '</span><span>'
-		+ this.type + '</span></div><div class="w-100 flex-end align-items-center mobile-row-spacer">';
+		+ this.type + '</span></div><div class="flex-end align-items-center mobile-row-spacer">';
 		
 		if (this.fileLinks[0]["link"] != "")
 		{
-			answer += '<a class="cite-btn" href="'+ this.fileLinks[0]["link"] + '">' + CITE_SYMBOL + ' Cite this publication</a>';
+			answer += '<a class="cite-btn" onclick="copy_cite(\'' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '\');">' + CITE_SYMBOL + ' Cite this publication</a></div>';
 		}
 		
 		if (this.fileLinks[1]["link"] != "")
 		{
 			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn">Download</a>';
 		}
-		answer += '</div></div></div>';
+		answer += '</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
 	}
 	

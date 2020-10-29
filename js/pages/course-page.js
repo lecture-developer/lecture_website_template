@@ -44,7 +44,7 @@ class CoursePage extends PageRender
 		}
 		
 		// remember the full data
-		var json_full_data = retrivedData["courses"];
+		var json_full_data = retrivedData["coureses"];
 		var found_course = false;
 		for (var course_index = 0; course_index < json_full_data.length; course_index++)
 		{

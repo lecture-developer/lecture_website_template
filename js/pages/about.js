@@ -56,25 +56,27 @@ class About extends PageRender
 
     if(email != ""){
       let elem = document.createElement("P");
-      elem.innerHTML = Icons.mail() + email;
+      elem.innerHTML = Icons.mail() + " " + email;
       contacts.appendChild(elem);
     }
 
     if(phone != ""){
       let elem = document.createElement("P");
-      elem.innerHTML = Icons.phone() + phone;
+      elem.innerHTML = Icons.phone() + " " +  phone;
       contacts.appendChild(elem);
     }
 
     if(linkedin != ""){
       let linkedinIcon = document.createElement("A");
       linkedinIcon.innerHTML = Icons.linkedin();
+	  linkedinIcon.classList.add("social-icon");
       linkedinIcon.href = linkedin;
       contacts.appendChild(linkedinIcon);
     }
     if(google != ""){
       let googleIcon = document.createElement("A");
       googleIcon.innerHTML = Icons.google();
+	  googleIcon.classList.add("social-icon");
       googleIcon.href = google;
       contacts.appendChild(googleIcon);
     }
@@ -83,20 +85,21 @@ class About extends PageRender
   static buildLocations(addresses){
 
     //adding headlines
-    document.getElementById("org_p").innerHTML = Icons.buildings() + " Organization name";
-    document.getElementById("room_p").innerHTML = Icons.location() + " Room Location";
-    document.getElementById("hours_p").innerHTML = Icons.clock() + " Office hours";
+    document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
+    document.getElementById("room").innerHTML = Icons.location() + " Room Location";
+    document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
+	
+	var info_table = document.getElementById("info-table");
 
-    for(let i = 0; i< addresses.length; i++){
-      let o = document.createElement("P");
-      o.innerHTML = addresses[i].university;
-      let r = document.createElement("P");
-      r.innerHTML = addresses[i].location;
-      let h = document.createElement("P");
-      h.innerHTML = addresses[i].hours;
-      document.getElementById("organization").appendChild(o);
-      document.getElementById("room").appendChild(r);
-      document.getElementById("hours").appendChild(h);
+    for(let i = 0; i< addresses.length; i++)
+	{
+		var row = info_table.insertRow(-1);
+		var cell_university = row.insertCell(0);
+		cell_university.innerHTML = addresses[i].university;
+		var cell_location = row.insertCell(1);
+		cell_location.innerHTML = addresses[i].location;
+		var cell_hours = row.insertCell(2);
+		cell_hours.innerHTML = addresses[i].hours;
     }
 
   }

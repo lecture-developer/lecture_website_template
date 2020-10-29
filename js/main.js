@@ -30,6 +30,12 @@ function onPageLoad()
 	loadFooter();
 	activeMenuLink();
 	manageCollapsible();
+	
+	// cite alerts 
+	document.getElementById("alert-close-btn").onclick = function(){
+		var div = this.parentElement;
+		div.style.opacity = "0";
+	} 
 }
 
 // load the HTML of the header from the right file and put in the right location
@@ -129,6 +135,37 @@ document.getElementById("mobile-menu-bg").onclick = function() {
 document.getElementById('mobile-menu').onclick = function(e) { 
 	e.stopPropagation();
 };
+
+function gotoIndex()
+{
+	var width = Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth);
+	
+	if (width > 850) // TODO: fix magic number
+	{
+		window.location.replace("/");
+	}
+}
+
+function copy_cite(input_holder_id)
+{
+	var copyText = document.getElementById(input_holder_id).value;
+	navigator.clipboard.writeText(copyText).then(function() {
+	  console.log('Async: Copying to clipboard was successful!');
+	}, function(err) {
+	  console.error('Async: Could not copy text: ', err);
+	});
+	
+	// show alert
+	var alertDiv = document.getElementById("alert-close-btn").parentElement;
+	document.getElementById("cite-alert").innerHTML = "Copied: " + copyText;
+	alertDiv.style.opacity = "1";
+	setTimeout(function(){ alertDiv.style.opacity = "0"; }, 2500);
+}
 
 
 /* help functions */

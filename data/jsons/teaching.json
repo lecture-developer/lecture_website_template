@@ -1,6 +1,6 @@
 {
 	"teaching_philosophy": "A very long text - allow HTML edditing",
-	"courses": [{
+	"coureses": [{
 			"name": "course name",
 			"code": "123",
 			"year": "2019",
