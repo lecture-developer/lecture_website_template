@@ -1,5 +1,6 @@
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Course } from '/lecture_website_template/js/components/course.js';
+import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
 
 // Data file paths
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
@@ -143,7 +144,7 @@ class CoursePage extends PageRender
 			let html = '<div class="body-section">';
 
 			html += this.createSummary();
-			html += '<div class="resources-section"><h3 class="content-title">Resources</h3></div>';
+			html += '';
 			
 			html += "</div>";
 			document.getElementById("main-body-page").innerHTML = html;	
@@ -175,7 +176,18 @@ class CoursePage extends PageRender
 	
 	createResourceList()
 	{
-		
+		let section = document.createElement('DIV');
+		section.classList.add('resources-section');
+
+		let html = '<h3 class="content-title">Resources</h3><hr class="blue-hr">';
+
+		this.data["resources"].forEach(resource => {
+			html += CourseResource.createFromJson(resource).toHtml();
+		});
+
+		section.innerHTML = html;
+
+		document.getElementById('main-body-page').appendChild(section);
 	}
 	
 	// help functions //

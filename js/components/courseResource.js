@@ -14,7 +14,10 @@ class CourseResource extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: finish here later
+		let required = this.is_requried ? 'Required' : 'Optinal'; 
+		let html = '<div class="resource"><ul class="resource-list"><li class="content-subtitle">' + required + '<p>something somthing</p></li></ul></div>';
+
+		return html;
 	}
 	
 	// build a list of this object from Json object
