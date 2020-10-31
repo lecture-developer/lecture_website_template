@@ -57,7 +57,7 @@ a:hover {
 
 footer {
     color: white;
-	padding-bottom: 60px;
+	padding-bottom: 20px;
 }
 footer a:hover{
 	text-decoration: underline;
@@ -119,7 +119,6 @@ footer h2{
 }
 
 .footer-menu{
-	max-width: 25%;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 20px;
@@ -157,6 +156,11 @@ footer h2{
 	margin-bottom: 24px;
 }
 
+.footer-menu-item:hover{
+	font-weight: bold;
+	color: #F7FAFC;
+}
+
 .footer-info-item{
 	margin-top: 10px;
 	color: #EBF4FF !important;
@@ -192,7 +196,7 @@ footer h2{
 	margin-bottom: 40px;
 }
 
-.footer-details-icons span{
+.footer-details-icons img{
 	margin-right: 16px;
 	width: 32px;
 	height: 32px;
@@ -203,7 +207,6 @@ footer h2{
 }
 
 .footer-details-icons p{
-	margin-left: 16px;
 	padding-top: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
@@ -256,7 +259,6 @@ footer h2{
 }
 
 .brand-footer{
-	margin-top: 20px;
 	text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -285,7 +287,7 @@ footer h2{
   }
   
   .footer-menu{
-	  max-width: 80% !important;
+	  max-width: 100% !important;
   }
   
   footer h1{
@@ -296,6 +298,10 @@ footer h2{
   .footer-info-item  {
     display: none;
   }
+
+	.main-footer-menu{
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 430px) {
