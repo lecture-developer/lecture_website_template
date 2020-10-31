@@ -128,11 +128,12 @@ footer h2{
 
 .footer-menu-title{
 	font-family: Roboto;
-	color: #5A67D8 !important;
-	font-size: 24px;
 	font-weight: bold;
-	line-height: 28px;
-	margin-bottom: 20px;
+	font-size: 22px;
+	line-height: 21px;
+	text-decoration: underline !important;
+	color: #F7FAFC !important;
+	margin-bottom: 40px;
 }
 
 .footer-menu-item-header{
@@ -145,11 +146,15 @@ footer h2{
 }
 
 .footer-menu-item{
+
 	font-family: Roboto;
-	color: #EBF4FF !important;
-	font-size: 16px;
-	line-height: 140%;
-	margin-bottom: 20px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	text-decoration: underline !important;
+	color: #F7FAFC;
+	margin-bottom: 24px;
 }
 
 .footer-info-item{
@@ -171,6 +176,41 @@ footer h2{
 
 .footer-social-item{
 	margin-right: 16px;
+}
+
+.footer-social-icons{
+	margin-right: 16px;
+	margin-top: 8px;
+}
+
+.footer-details-icons{
+	align-items: center !important;
+	margin-bottom: 20px;
+}
+
+.footer-social{
+	margin-bottom: 40px;
+}
+
+.footer-details-icons span{
+	margin-right: 16px;
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	min-height: 32px;
+	max-width: 32px;
+	max-height: 32px;
+}
+
+.footer-details-icons p{
+	margin-left: 16px;
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 19px;
 }
 
 .alert {
@@ -226,8 +266,16 @@ footer h2{
 	font-family: Roboto;
 	font-size: 16px;
 	line-height: 140.62%;
-	text-align: center;
 	color: #434190;
+}
+
+.brand-footer a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+.brand-footer img{
+	max-width: 120px;
 }
 
 @media only screen and (max-width: 850px) {
