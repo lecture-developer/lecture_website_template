@@ -172,4 +172,31 @@
     margin-left: 1rem;
 }
 
+.resource-list-item-title {
+    margin-bottom: 0.75rem;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.resource-img {
+    margin-right: 0.75rem;
+}
+
+.resource-link {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.resource-description {
+    margin-left: 2.25rem;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 /******* resource section - end ******/

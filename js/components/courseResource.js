@@ -15,7 +15,9 @@ class CourseResource extends Element
 	toHtml()
 	{
 		let required = this.is_requried ? 'Required' : 'Optinal'; 
-		let html = '<div class="resource"><ul class="resource-list"><li class="content-subtitle">' + required + '<p>something somthing</p></li></ul></div>';
+		let html = '<div class="resource"><ul class="resource-list"><li class="content-subtitle"><h5 class="resource-list-item-title">' + required +
+				 '</h5><div class="resource-content"><a href="'+ this.link + '" class="resource-link"><img src="./img/mdi_insert_drive_file.png" class="resource-img"/>'
+				  + this.name + '</a><p class="resource-description">' + this._descriptionTrim(this.description) + '</p></div></li></ul></div>';
 
 		return html;
 	}
@@ -41,6 +43,14 @@ class CourseResource extends Element
 		jsonObj["description"], 
         jsonObj["is_requried"]);
 
+	}
+
+	_descriptionTrim(desc) {
+		if(desc.length > 200) {
+			return desc.slice(0, 200) + '... <a href="' + this.link + '" class="resource-link"> Read more </a>';
+		}
+
+		return desc;
 	}
 }
 export {CourseResource};
