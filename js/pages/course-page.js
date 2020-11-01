@@ -1,6 +1,7 @@
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Course } from '/lecture_website_template/js/components/course.js';
 import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
+import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 
 // Data file paths
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
@@ -110,31 +111,11 @@ class CoursePage extends PageRender
 		}
 	}
 
-	/*
-		Create the tabs section
-	*/
 	createTabsSection() {
-		try{
-			var html='<div id="tabs-bar" class="tabs-bar">' +
-						'<div class="general-bar tab">'+
-							'<label class="tab-title">General</label>'+
-							'<div class="tab-seperator"></div>'+
-						'</div>'+
-						
-						'<div class="updates-bar tab">'+
-							'<img src="./img/mdi_flag@1x-10.png" alt="new update" class="new-updates-icon">'+
-							'<label class="tab-title">Updates</label>'+
-							'<div class="tab-seperator"></div>'+
-						'</div>'+
-						
-						'<div class="modules-bar tab">'+
-							'<label class="tab-title">Modules</label>'+
-						'</div>'+
-					'</div>'
-			document.getElementById("tabs").innerHTML = html;	
-		}catch(error){
-			console.log("Error at Course.createTabsSection, saying:" + error);
-		}
+		Tabs.createTabsSection();
+		Tabs.addTab('general');
+		Tabs.addTab('updates', false ,"./img/mdi_flag@1x-10.png");
+		Tabs.addTab('modules', true);
 	}
 	
 	// help functions //
@@ -162,45 +143,7 @@ document.coursePage.build();
 
 // add toggle to the tabs
 function onPageLoad() {
-	const tabs = document.getElementsByClassName('tab');
-	for(let i = 0; i < tabs.length; i++) {
-		tabs[i].addEventListener('click', function (event) {
-			if(!event.target.classList.contains('active-tab')) {
-				// get the current active tab
-				let currentActive = document.getElementsByClassName('active-tab')[0];
-
-				// toggle the active class of the current active element
-				toggleActiveTab(currentActive);
-
-				// get the index of the current tab (=content)
-				let currIndex = Array.from(currentActive.parentNode.children).indexOf(currentActive);
-				toggleContentDisplay(currIndex);
-
-				// toggle the active class of the clicked tab
-				toggleActiveTab(event.target);
-				// get the index of the new tab (=content)
-				let newIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
-				toggleContentDisplay(newIndex);
-			}
-		});
-	}
-	// by default toggle the first tab
-	toggleActiveTab(tabs[0]);
-	toggleContentDisplay(0);
-}
-
-
-// toggle the activeness of the given item and label
-function toggleActiveTab(target) {
-	// toggle the active-tab class of the given element 
-	target.classList.toggle('active-tab');
-	// get the label element of the current active and toggle active-tab-title
-	target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');
-}
-
-// toggle the current content display
-function toggleContentDisplay(index) {
-	document.getElementsByClassName('body-section')[index].classList.toggle('active-section');
+	Tabs.activateDefault(0);
 }
 
 onPageLoad();

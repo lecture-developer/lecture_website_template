@@ -117,6 +117,7 @@ class Course extends Element
 		return html;
 	}
 
+	// update section inside the updates tab of the course
 	createUpdateData() {
 		try
 		{
@@ -137,6 +138,30 @@ class Course extends Element
 		catch (error)
 		{
 			console.log("Error at Course.createUpdateData, saying: " + error);
+		}
+	}
+
+	// module section inside the modules tab of the course
+	createModuleData() {
+		try
+		{
+			let html = '<div class="body-section">';
+			
+			for(let i = 0; i < this.updates.length; i++) {
+				html += this.modules[i].toHtml();
+
+				if(i != this.modules.length - 1) {
+					html += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+				}
+			}
+
+			html += "</div>";
+
+			return html;
+		}
+		catch (error)
+		{
+			console.log("Error at Course.createModuleData, saying: " + error);
 		}
 	}
 
