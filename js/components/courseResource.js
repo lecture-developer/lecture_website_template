@@ -1,20 +1,42 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
+import {Course} from '/lecture_website_template/js/components/course.js';
 
 class CourseResource extends Element
 {
-	constructor(name, link, description, is_requried)
+	constructor(name, link, description, is_requried, type)
 	{
 		super();
 		this.name = name;
 		this.link = link;
 		this.description = description;
 		this.is_requried = is_requried;
+		this.type = type;
 	}
 	
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: finish here later
+		let img = '<img src="';
+		switch (this.type) {
+			case "slides":
+				img += './img/mdi_slideshow.png';
+				break;
+			case "video":
+				img += './img/mdi_video_library.png';
+				break;
+			default:
+				img += './img/mdi_insert_drive_file.png';
+				break;
+		}
+
+		img += '" class="resource-img"/>';
+
+		let required = this.is_requried ? 'Required' : 'Optinal';
+		let html = '<div class="resource"><ul class="resource-list"><li class="content-subtitle"><h5 class="resource-list-item-title">' + required +
+				 '</h5><div class="resource-content"><a href="'+ this.link + '" class="resource-link">' + img
+				  + this.name + '</a><p class="resource-description">' + Course.descriptionTrim(this.description) + '</p></div></li></ul></div>';
+
+		return html;
 	}
 	
 	// build a list of this object from Json object
@@ -36,7 +58,8 @@ class CourseResource extends Element
 		return new CourseResource(jsonObj["name"],
 		jsonObj["link"], 
 		jsonObj["description"], 
-        jsonObj["is_requried"]);
+		jsonObj["is_requried"],
+		jsonObj["type"]);
 
 	}
 }

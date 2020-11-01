@@ -26,7 +26,13 @@ class Course extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: finish here later
+		let html = '';
+
+		html += this.createGeneralData();
+		html += this.createUpdateData();
+		html += this.createModuleData();
+
+		return html;
 	}
 	
 	// build a list of this object from Json object
@@ -58,6 +64,114 @@ class Course extends Element
 			CourseUpdate.createListFromJson(jsonObj["updates"]),
 			CourseModule.createListFromJson(jsonObj["modules"]));
 
+	}
+
+    //create html for the general section
+    createGeneralData()
+	{
+		try
+		{
+			let html = '<div class="body-section">';
+			html += this.createSummary();
+			html += this.createResourceList();
+			html += "</div>";
+
+			return html;
+		}
+		catch (error)
+		{
+			console.log("Error at Course.createSectionData, saying: " + error);
+		}
+	}
+	
+	// summary section inside the general tab of the course
+	createSummary() {
+		let text = this.description;
+		let grades = this.grade_parts;
+		let html = '<div class="summary-section"><h3 class="content-title">'
+		+ "Summary" + '</h3><hr class="blue-hr"><h2 class="content-subtitle">Final grade: ';
+
+		let subTitle = '';
+		for(let i = 0; i < grades.length; i++) {
+			subTitle += grades[i]['name'] + " ";
+			if(i == grades.length - 1) {
+				subTitle += grades[i]["percent"] + "%";
+			} else {
+				subTitle += grades[i]['percent'] + "%, ";
+			}
+		}
+		html += subTitle + '</h2><p class="content-text">' + text + '</p><div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div></div>';
+		return html;
+	}
+	
+	// resources section inside the general tab of the course
+	createResourceList()
+	{
+		let html = '<div class="resources-section"><h3 class="content-title">Resources</h3><hr class="blue-hr">';
+
+		this.resources.forEach(resource => {
+			html += CourseResource.createFromJson(resource).toHtml();
+		});
+
+		html += '</div>';
+
+		return html;
+	}
+
+	// update section inside the updates tab of the course
+	createUpdateData() {
+		try
+		{
+			let html = '<div class="body-section">';
+			
+			for(let i = 0; i < this.updates.length; i++) {
+				html += this.updates[i].toHtml();
+
+				if(i != this.updates.length - 1) {
+					html += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+				}
+			}
+
+			html += "</div>";
+
+			return html;
+		}
+		catch (error)
+		{
+			console.log("Error at Course.createUpdateData, saying: " + error);
+		}
+	}
+
+	// module section inside the modules tab of the course
+	createModuleData() {
+		try
+		{
+			let html = '<div class="body-section">';
+			
+			for(let i = 0; i < this.modules.length; i++) {
+				html += this.modules[i].toHtml();
+
+				if(i != this.modules.length - 1) {
+					html += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+				}
+			}
+
+			html += "</div>";
+
+			return html;
+		}
+		catch (error)
+		{
+			console.log("Error at Course.createModuleData, saying: " + error);
+		}
+	}
+
+	static descriptionTrim(desc) {
+		if(desc.length > 200) {
+			return desc.slice(0, 200) + '... <a href="' + this.link + '" class="resource-link"> Read more </a>';
+		}
+
+		return desc;
 	}
 }
 export {Course};

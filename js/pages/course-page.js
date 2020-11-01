@@ -1,5 +1,7 @@
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Course } from '/lecture_website_template/js/components/course.js';
+import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
+import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 
 // Data file paths
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
@@ -64,8 +66,10 @@ class CoursePage extends PageRender
     build(){
 		this.buildBreadcrumb();
 		this.buildHeader();
-		this.createSectionData();
-		this.createResourceList();
+		this.createTabsSection();
+		
+		let course = this.data.toHtml();
+		document.getElementById('main-body-page').innerHTML = course;
 		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
@@ -91,7 +95,7 @@ class CoursePage extends PageRender
 	
 	/* helper function */
 
-	createDetailsCourse(){
+	createDetailsCourse() {
 		try{
 			var html='<div class="main-header-page"><h1>' 
 			+ this.data.name + '</h1><div class="header-detail"><div class="item-detail"><img class="course-detail-img" src="./img/mdi_school.png"><p>'
@@ -103,35 +107,15 @@ class CoursePage extends PageRender
 			document.getElementById("icons_section").innerHTML = html;	
 
 		}catch(error){
-			console.log("Error at Course.BiuldHeader, saying:" + error);
+			console.log("Error at Course.BuildHeader, saying:" + error);
 		}
 	}
-
 
 	createTabsSection() {
-		
-	}
-
-    //create html for the body sections
-    createSectionData(title, subTitle, text)
-	{
-		try
-		{
-			var html = '<div class="body-section"><h3>'
-			+ title + '</h3><hr><h2>'
-			+ subTitle + '</h2><p>'
-			+ text + '</p><div class="person-row"><span class="main-dot"></span><span class="main-dot"></span><span class="main-dot"></span></div></div>';
-			document.getElementById("main-body-page").innerHTML = html;	
-		}
-		catch (error)
-		{
-			console.log("Error at Course.createSectionData, saying: " + error);
-		}
-    }
-	
-	createResourceList()
-	{
-		
+		Tabs.createTabsSection();
+		Tabs.addTab('general');
+		Tabs.addTab('updates', false ,"./img/mdi_flag@1x-10.png");
+		Tabs.addTab('modules', true);
 	}
 	
 	// help functions //
@@ -159,31 +143,7 @@ document.coursePage.build();
 
 // add toggle to the tabs
 function onPageLoad() {
-	const tabs = document.getElementsByClassName('tab');
-	for(let i = 0; i < tabs.length; i++) {
-		tabs[i].addEventListener('click', function (event) {
-			if(!event.target.classList.contains('active-tab')) {
-				// get the current active tab
-				let currentActive = document.getElementsByClassName('active-tab')[0];
-
-				// toggle the active class of the current active element
-				toggleActiveTab(currentActive);
-
-				// toggle the active class of the clicked tab
-				toggleActiveTab(event.target);
-			}
-		});
-	}
-	// by default toggle the first tab
-	toggleActiveTab(tabs[0]);
-}
-
-// toggle the activeness of the given item and label
-function toggleActiveTab(target) {
-	// toggle the active-tab class of the given element 
-	target.classList.toggle('active-tab');
-	// get the label element of the current active and toggle active-tab-title
-	target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');
+	Tabs.activateDefault(0);
 }
 
 onPageLoad();
