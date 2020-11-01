@@ -53,7 +53,7 @@
 				}
 			],
 			"modules": [{
-					"title": "cool module 1 due date Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"title": "Module 1",
 					"explanation": "not too long",
 					"resources": [{
 							"name": "resource slides",
@@ -70,11 +70,11 @@
 							"type": "video"
 						},
 						{
-							"title": "assignment 1",
-							"due_date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+							"name": "assignment 1 Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
 							"description": "Submit a physical copy to my office, and email me a digital copy as back up. My email address is teddy@teddy.com.",
 							"link":"link link link",
-							"type": "file"
+							"type": "file",
+							"is_requried": true
 						}
 					]
 				},

@@ -14,10 +14,18 @@ class CourseModule extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		let html = '<div class="module"><h3 class="content-title">' + this.title + '</h3><hr>';
+		
 
+		
+		let html = '<div class="module"><h3 class="content-title">' + this.title + '</h3><hr><h2 class="content-text">' + this.explanation + "</h2>";
+		
+		this.resources.forEach(resource => {
+			html += resource.toHtml();
+		});
 
-		let required = this.is_requried ? 'Required' : 'Optinal'; 
+		html += '</div>';
+
+		return html;
 	}
 	
 	// build a list of this object from Json object

@@ -30,6 +30,7 @@ class Course extends Element
 
 		html += this.createGeneralData();
 		html += this.createUpdateData();
+		html += this.createModuleData();
 
 		return html;
 	}
@@ -147,7 +148,7 @@ class Course extends Element
 		{
 			let html = '<div class="body-section">';
 			
-			for(let i = 0; i < this.updates.length; i++) {
+			for(let i = 0; i < this.modules.length; i++) {
 				html += this.modules[i].toHtml();
 
 				if(i != this.modules.length - 1) {
