@@ -9,7 +9,7 @@
       {
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": ""}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": ""},
 					  {"info": "cite", "type": 3, "link": ""}],
 		 "authors": "first name, last name; first name, last name",
          "year": 2019,
@@ -21,7 +21,7 @@
       {
          "name":"Paper's title Paper's title Paper's title Paper's title",
          "description":"Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"},
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		 "authors": "first name, last name; first name, last name",
          "year": 2020,
@@ -34,16 +34,19 @@
    "currentProjects":[
       {
          "name":"Name 1",
+         "topic": "Great topic",
          "description":"Short Description Short Description Short Description ",
          "link":{"info": "view project", "type": 1, "link": ""}
       },
       {
          "name":"Name 2",
+         "topic": "Great topic",
          "description":"Short Description Short Description Short Description ",
          "link":{"info": "view project", "type": 1, "link": "aaa"}
       },
       {
          "name":"Name 3",
+         "topic": "Another topic",
          "description":"Short Description Short Description Short Description ",
          "link":{"info": "view project", "type": 1, "link": ""}
       }

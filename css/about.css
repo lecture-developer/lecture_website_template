@@ -1,108 +1,142 @@
-.page-container{
-    margin-left: auto;
-	margin-right: auto;
-    padding-bottom: 6.75rem;
-	max-width: 1080px;
-	width: 100%;
+.page-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 6.75rem;
+  max-width: 1080px;
+  width: 100%;
 }
 
-
-@media only screen and (max-width: 850px){
-	.page-container {
-		padding-right: 20px;
-		padding-left: 20px;
-	}
+@media only screen and (max-width: 850px) {
+  .page-container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 
-#lecturer_title{
-	margin-bottom: 50px;
+#lecturer_title {
+  margin-bottom: 50px;
 }
 
-#lecturer_position{
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 150%;
-	color: #1A202C;
+#lecturer_position {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1A202C;
 }
 
-
-#lecturer_name{
-	font-family: Playfair Display;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 48px;
-	line-height: 64px;
-	color: #1A202C;
+#lecturer_name {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 64px;
+  color: #1A202C;
 }
 
-.social-icon{
-	margin-right: 10px;
-	margin-bottom: 20px;
+.social-icon {
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
-
 
 /****** table - start ******/
-
-#contacts{
-	margin-right: 40px;
-	max-width: 430px;
+#contacts {
+  margin-right: 40px;
+  max-width: 430px;
 }
 
-#lecturer_location{
-	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #929292;
-	border-radius: 8px;
-	background: #FFFFFF;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
+#lecturer_location {
+  box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #929292;
+  border-radius: 8px;
+  background: #FFFFFF;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.info-table{
-	background: #FFFFFF;
-	/* drop down - shadow */
-	width: 100%;
+.info-table {
+  background: #FFFFFF;
+  /* drop down - shadow */
+  width: 100%;
 }
 
-.info-table td{
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	color: #4A5568;
-	line-height: 135%;
-	padding: 16px 12px;
+.info-table td {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 135%;
+  padding: 16px 12px;
 }
 
-.info-table th{
-	padding: 16px 12px;
-	padding-top: 0px;
+.info-table th {
+  padding: 16px 12px;
+  padding-top: 0px;
 }
 
-.info-table tr{
-	border-bottom: 1px solid #E2E8F0;
-	margin-left: 20px;
-	margin-right: 20px;
+.info-table tr {
+  border-bottom: 1px solid #E2E8F0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.info-table tr{
-	border-bottom: 1px solid #E2E8F0;
-	margin-left: 20px;
-	margin-right: 20px;
+.info-table tr {
+  border-bottom: 1px solid #E2E8F0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.info-table tr:last-child{
-	border-bottom: 0px solid #E2E8F0;
-	margin-left: 20px;
-	margin-right: 20px;
+.info-table tr:last-child {
+  border-bottom: 0px solid #E2E8F0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-@media only screen and (max-width: 850px){
-	#lecturer_location{
-		margin-top: 30px;
-	}
+@media only screen and (max-width: 850px) {
+  #lecturer_location {
+    margin-top: 30px;
+  }
 }
 
 /****** table - end  ******/
+/****** biography - start  ******/
+#about_section {
+  margin-top: 40px;
+}
+
+.personal-image {
+  float: right;
+  margin-right: 60px;
+  margin-left: 64px;
+}
+
+.bio-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/****** biography - end  ******/
+/****** projects - start  ******/
+ul {
+  list-style-type: none;
+}
+
+#topics li {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #A0AEC0;
+}
+
+ul .active-topic {
+  font-weight: bold !important;
+  color: #1A202C !important;
+}
