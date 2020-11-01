@@ -66,8 +66,9 @@ class CoursePage extends PageRender
 		this.buildBreadcrumb();
 		this.buildHeader();
 		this.createTabsSection();
-		this.createSectionData('Summary', 'exam', 'text');
-		this.createResourceList();
+		
+		let course = this.data.toHtml();
+		document.getElementById('main-body-page').innerHTML = course;
 		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
@@ -93,7 +94,7 @@ class CoursePage extends PageRender
 	
 	/* helper function */
 
-	createDetailsCourse(){
+	createDetailsCourse() {
 		try{
 			var html='<div class="main-header-page"><h1>' 
 			+ this.data.name + '</h1><div class="header-detail"><div class="item-detail"><img class="course-detail-img" src="./img/mdi_school.png"><p>'
@@ -135,60 +136,6 @@ class CoursePage extends PageRender
 			console.log("Error at Course.createTabsSection, saying:" + error);
 		}
 	}
-
-    //create html for the body sections
-    createSectionData(title, subTitle, text)
-	{
-		try
-		{
-			let html = '<div class="body-section">';
-
-			html += this.createSummary();
-			html += '';
-			
-			html += "</div>";
-			document.getElementById("main-body-page").innerHTML = html;	
-		}
-		catch (error)
-		{
-			console.log("Error at Course.createSectionData, saying: " + error);
-		}
-	}
-	
-	createSummary() {
-		let text = this.data.description;
-		let grades = this.data.grade_parts;
-		let html = '<div class="summary-section"><h3 class="content-title">'
-		+ "Summary" + '</h3><hr class="blue-hr"><h2 class="content-subtitle">Final grade: ';
-
-		let subTitle = '';
-		for(let i = 0; i < grades.length; i++) {
-			subTitle += grades[i]['name'] + " ";
-			if(i == grades.length - 1) {
-				subTitle += grades[i]["percent"] + "%";
-			} else {
-				subTitle += grades[i]['percent'] + "%, ";
-			}
-		}
-		html += subTitle + '</h2><p class="content-text">' + text + '</p><div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div></div>';
-		return html;
-	}
-	
-	createResourceList()
-	{
-		let section = document.createElement('DIV');
-		section.classList.add('resources-section');
-
-		let html = '<h3 class="content-title">Resources</h3><hr class="blue-hr">';
-
-		this.data["resources"].forEach(resource => {
-			html += CourseResource.createFromJson(resource).toHtml();
-		});
-
-		section.innerHTML = html;
-
-		document.getElementById('main-body-page').appendChild(section);
-	}
 	
 	// help functions //
 
@@ -225,13 +172,21 @@ function onPageLoad() {
 				// toggle the active class of the current active element
 				toggleActiveTab(currentActive);
 
+				// get the index of the current tab (=content)
+				let currIndex = Array.from(currentActive.parentNode.children).indexOf(currentActive);
+				toggleContentDisplay(currIndex);
+
 				// toggle the active class of the clicked tab
 				toggleActiveTab(event.target);
+				// get the index of the new tab (=content)
+				let newIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
+				toggleContentDisplay(newIndex);
 			}
 		});
 	}
 	// by default toggle the first tab
 	toggleActiveTab(tabs[0]);
+	toggleContentDisplay(0);
 }
 
 
@@ -241,6 +196,11 @@ function toggleActiveTab(target) {
 	target.classList.toggle('active-tab');
 	// get the label element of the current active and toggle active-tab-title
 	target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');
+}
+
+// toggle the current content display
+function toggleContentDisplay(index) {
+	document.getElementsByClassName('body-section')[index].classList.toggle('active-section');
 }
 
 onPageLoad();

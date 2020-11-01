@@ -52,13 +52,12 @@
 }
 
 .body-section {
-    display: flex;
-    flex-direction: column;
+    display: none;
 }
 
 /****** tabs sections - start ******/
 .tabs {
-    height: 100px;
+    margin-bottom: 4rem;
 }
 
 .tab {
@@ -109,6 +108,11 @@
 
 .active-tab-title {
     font-weight: 700;
+}
+
+.active-section {
+    display: flex;
+    flex-direction: column;
 }
 
 /****** tabs sections - end ******/

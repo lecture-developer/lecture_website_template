@@ -34,17 +34,20 @@
 			"updates": [{
 					"title": "home work",
 					"date": "Sat Oct 15 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
-					"description": "cool description cool description cool description"
+					"description": "cool description cool description cool description",
+					"link": "link link link"
 				},
 				{
 					"title": "home work",
 					"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
-					"description": "cool description cool description cool description"
+					"description": "cool description cool description cool description",
+					"link": "link link link"
 				},
 				{
 					"title": "home work",
 					"date": "Sat Oct 30 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
-					"description": "cool description cool description cool description"
+					"description": "cool description cool description cool description",
+					"link": "link link link"
 				}
 			],
 			"modules": [{
