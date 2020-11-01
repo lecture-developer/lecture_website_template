@@ -1,5 +1,6 @@
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Course } from '/lecture_website_template/js/components/course.js';
+import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
 
 // Data file paths
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
@@ -64,8 +65,10 @@ class CoursePage extends PageRender
     build(){
 		this.buildBreadcrumb();
 		this.buildHeader();
-		this.createSectionData();
-		this.createResourceList();
+		this.createTabsSection();
+		
+		let course = this.data.toHtml();
+		document.getElementById('main-body-page').innerHTML = course;
 		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
@@ -91,7 +94,7 @@ class CoursePage extends PageRender
 	
 	/* helper function */
 
-	createDetailsCourse(){
+	createDetailsCourse() {
 		try{
 			var html='<div class="main-header-page"><h1>' 
 			+ this.data.name + '</h1><div class="header-detail"><div class="item-detail"><img class="course-detail-img" src="./img/mdi_school.png"><p>'
@@ -103,35 +106,35 @@ class CoursePage extends PageRender
 			document.getElementById("icons_section").innerHTML = html;	
 
 		}catch(error){
-			console.log("Error at Course.BiuldHeader, saying:" + error);
+			console.log("Error at Course.BuildHeader, saying:" + error);
 		}
 	}
 
-
+	/*
+		Create the tabs section
+	*/
 	createTabsSection() {
-		
-	}
-
-    //create html for the body sections
-    createSectionData(title, subTitle, text)
-	{
-		try
-		{
-			var html = '<div class="body-section"><h3>'
-			+ title + '</h3><hr><h2>'
-			+ subTitle + '</h2><p>'
-			+ text + '</p><div class="person-row"><span class="main-dot"></span><span class="main-dot"></span><span class="main-dot"></span></div></div>';
-			document.getElementById("main-body-page").innerHTML = html;	
+		try{
+			var html='<div id="tabs-bar" class="tabs-bar">' +
+						'<div class="general-bar tab">'+
+							'<label class="tab-title">General</label>'+
+							'<div class="tab-seperator"></div>'+
+						'</div>'+
+						
+						'<div class="updates-bar tab">'+
+							'<img src="./img/mdi_flag@1x-10.png" alt="new update" class="new-updates-icon">'+
+							'<label class="tab-title">Updates</label>'+
+							'<div class="tab-seperator"></div>'+
+						'</div>'+
+						
+						'<div class="modules-bar tab">'+
+							'<label class="tab-title">Modules</label>'+
+						'</div>'+
+					'</div>'
+			document.getElementById("tabs").innerHTML = html;	
+		}catch(error){
+			console.log("Error at Course.createTabsSection, saying:" + error);
 		}
-		catch (error)
-		{
-			console.log("Error at Course.createSectionData, saying: " + error);
-		}
-    }
-	
-	createResourceList()
-	{
-		
 	}
 	
 	// help functions //
@@ -169,14 +172,23 @@ function onPageLoad() {
 				// toggle the active class of the current active element
 				toggleActiveTab(currentActive);
 
+				// get the index of the current tab (=content)
+				let currIndex = Array.from(currentActive.parentNode.children).indexOf(currentActive);
+				toggleContentDisplay(currIndex);
+
 				// toggle the active class of the clicked tab
 				toggleActiveTab(event.target);
+				// get the index of the new tab (=content)
+				let newIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
+				toggleContentDisplay(newIndex);
 			}
 		});
 	}
 	// by default toggle the first tab
 	toggleActiveTab(tabs[0]);
+	toggleContentDisplay(0);
 }
+
 
 // toggle the activeness of the given item and label
 function toggleActiveTab(target) {
@@ -184,6 +196,11 @@ function toggleActiveTab(target) {
 	target.classList.toggle('active-tab');
 	// get the label element of the current active and toggle active-tab-title
 	target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');
+}
+
+// toggle the current content display
+function toggleContentDisplay(index) {
+	document.getElementsByClassName('body-section')[index].classList.toggle('active-section');
 }
 
 onPageLoad();

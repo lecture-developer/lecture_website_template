@@ -1,4 +1,5 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
+import {Course} from '/lecture_website_template/js/components/course.js';
 
 class CourseResource extends Element
 {
@@ -14,7 +15,12 @@ class CourseResource extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: finish here later
+		let required = this.is_requried ? 'Required' : 'Optinal'; 
+		let html = '<div class="resource"><ul class="resource-list"><li class="content-subtitle"><h5 class="resource-list-item-title">' + required +
+				 '</h5><div class="resource-content"><a href="'+ this.link + '" class="resource-link"><img src="./img/mdi_insert_drive_file.png" class="resource-img"/>'
+				  + this.name + '</a><p class="resource-description">' + Course.descriptionTrim(this.description) + '</p></div></li></ul></div>';
+
+		return html;
 	}
 	
 	// build a list of this object from Json object
