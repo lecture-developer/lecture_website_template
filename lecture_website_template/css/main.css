@@ -13,7 +13,7 @@ body {
 	font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
 }
 
@@ -1063,19 +1063,20 @@ flickity-prev-next-button[disabled]{
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	padding: 6px 0px 0px 350px;
+	padding-top: 6px;
 	position: relative;
 	width: 110px;
 	height: 30px;
 	left: 0px;
 	bottom: 0px;
+	justify-content: flex-end;
 	
 	/* Inside Auto Layout */
 	flex: none;
 	order: 0;
 	align-self: center;
 	flex-grow: 0;
-	margin: 8px -100px 0px -10px;
+	margin-top: 8px;
 	flex: none;
 
 }
