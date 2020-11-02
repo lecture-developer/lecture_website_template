@@ -35,7 +35,7 @@ class Tabs {
 
         let section = document.createElement("DIV");
         section.classList.add('tab');
-        section.classList.add(className + '-bar');
+        section.classList.add(className);
 
         let html = img + '<label class="tab-title">'+ label + '</label>';
         if(!is_last) {
