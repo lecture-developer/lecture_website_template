@@ -130,6 +130,12 @@
 					"link": "link link link",
 					"description": "cool description cool description cool description",
 					"is_requried": true
+				},
+				{
+					"name": "home work",
+					"link": "link link link",
+					"description": "cool description cool description cool description",
+					"is_requried": true
 				}
 			],
 			"updates": [{
@@ -139,12 +145,12 @@
 				},
 				{
 					"title": "home work",
-					"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"date": "Sat Oct 20 2021 16:08:50 GMT+0300 (Israel Daylight Time)",
 					"description": "cool description cool description cool description"
 				},
 				{
 					"title": "home work",
-					"date": "Sat Oct 30 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+					"date": "Sat Oct 30 2021 16:08:50 GMT+0300 (Israel Daylight Time)",
 					"description": "cool description cool description cool description"
 				}
 			],

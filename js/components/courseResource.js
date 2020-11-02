@@ -14,18 +14,18 @@ class CourseResource extends Element
 	}
 	
 	// convert the object into HTML
-	toHtml()
+	toHtml(lastVisit)
 	{
 		let img = '<img src="';
 		switch (this.type) {
 			case "slides":
-				img += './img/mdi_slideshow.png';
+				img += '/lecture_website_template/img/mdi_slideshow.png';
 				break;
 			case "video":
-				img += './img/mdi_video_library.png';
+				img += '/lecture_website_template/img/mdi_video_library.png';
 				break;
 			default:
-				img += './img/mdi_insert_drive_file.png';
+				img += '/lecture_website_template/img/mdi_insert_drive_file.png';
 				break;
 		}
 

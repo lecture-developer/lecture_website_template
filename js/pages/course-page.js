@@ -37,7 +37,7 @@ class CoursePage extends PageRender
 		this.last_visit = null; 
 		try
 		{
-			this.last_visit = new Date(new getCookie(PRE_COOKIE_KEY + this.course_code));
+			this.last_visit = new Date(getCookie(PRE_COOKIE_KEY + this.course_code));
 		}
 		catch (error)
 		{
@@ -65,19 +65,16 @@ class CoursePage extends PageRender
     
     build(){
 		this.buildBreadcrumb();
-		this.buildHeader();
-		this.createTabsSection();
+		this.createDetailsCourse();
 		
-		let course = this.data.toHtml();
+		let course = this.data.toHtml(this.last_visit);
 		document.getElementById('main-body-page').innerHTML = course;
+		
+		this.createTabsSection();
 		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
     }
-
-	buildHeader(){
-		this.createDetailsCourse();
-	}
 
     //create html of Breadcrumb
     buildBreadcrumb()
@@ -98,12 +95,12 @@ class CoursePage extends PageRender
 	createDetailsCourse() {
 		try{
 			var html='<div class="main-header-page"><h1>' 
-			+ this.data.name + '</h1><div class="header-detail"><div class="item-detail"><img class="course-detail-img" src="./img/mdi_school.png"><p>'
-			+ this.data.code + '</p></div><div class="item-detail"><img class="course-detail-img" src="./img/mdi_access_time.png"><p>Semester '
-			+ this.data.semester + '</p></div><div class="item-detail"><img class="course-detail-img" src="./img/mdi_place.png"><div class=".personal-coloum"><p>'
+			+ this.data.name + '</h1><div class="header-detail"><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_school.png"><p>'
+			+ this.data.code + '</p></div><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_access_time.png"><p>Semester '
+			+ this.data.semester + '</p></div><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_place.png"><div class=".personal-coloum"><p>'
 			+ this.data.university + '</p><p>'
 			+ this.data.location_class + '</p></div></div></div></div><div class=".personal-row"><a class="sylabus-link" href='
-			+ this.data.syllabus +' ><img class="course-sylabus-img" src="./img/save_alt.png" alt="">Syllabus</a></div>';
+			+ this.data.syllabus +' ><img class="course-sylabus-img" src="/lecture_website_template/img/save_alt.png" alt="">Syllabus</a></div>';
 			document.getElementById("icons_section").innerHTML = html;	
 
 		}catch(error){
@@ -114,14 +111,32 @@ class CoursePage extends PageRender
 	createTabsSection() {
 		Tabs.createTabsSection();
 		Tabs.addTab('general');
-		Tabs.addTab('updates', false ,"./img/mdi_flag@1x-10.png");
+		Tabs.addTab('updates', false ,this._pick_flag());
 		Tabs.addTab('modules', true);
 	}
 	
 	// help functions //
+	
+	// pick the needed flag icon
+	_pick_flag()
+	{
+		if (this.data.newCounter == 0)
+		{
+			
+		}
+		else if (this.data.newCounter < 10)
+		{
+			return "/lecture_website_template/img/flags/flag" +  this.data.newCounter + ".png";
+		}
+		else
+		{
+			return "/lecture_website_template/img/flags/flag+.png";
+		}
+	}
 
     // check if we need the new icon or not, if we do - just give the HTML
-    _addNewTagIfNeeded(resourceDate){
+    _addNewTagIfNeeded(resourceDate)
+	{
 		if (resourceDate > this.last_visit)
 		{
 			return '<img src="./img/new-resource.png" class="new-resource-icon" />';
@@ -130,7 +145,8 @@ class CoursePage extends PageRender
     }
     
     // redicrect to the teaching page
-    _redirectBack(){
+    _redirectBack()
+	{
 		window.location.replace(window.location.hostname + "/teaching.html");
     }
 	

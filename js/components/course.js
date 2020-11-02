@@ -21,53 +21,31 @@ class Course extends Element
 		this.resources = resources;
 		this.updates = updates;
 		this.modules = modules;
+		
+		// technical member for flags logic in course-page
+		this.newCounter = 0;
 	}
 	
 	// convert the object into HTML
-	toHtml()
+	toHtml(lastVisit = null)
 	{
+		// edge case - no time provide, take a really old time
+		if (lastVisit == null)
+		{
+			lastVisit = new Date(2000, 1, 1, 0, 0, 0, 0);
+		}
+		
 		let html = '';
 
-		html += this.createGeneralData();
-		html += this.createUpdateData();
-		html += this.createModuleData();
+		html += this.createGeneralData(lastVisit);
+		html += this.createUpdateData(lastVisit);
+		html += this.createModuleData(lastVisit);
 
 		return html;
 	}
-	
-	// build a list of this object from Json object
-	static createListFromJson(jsonObj)
-	{
-		var listStudent = [];
-		for (var publicationIndex = 0; publicationIndex < jsonObj.length; publicationIndex++)
-		{
-			listStudent.push(Course.createFromJson(jsonObj[publicationIndex]));
-		}
-		return listStudent;
-
-	}
-	
-	// build a list of this object from Json object
-	static createFromJson(jsonObj)
-	{	
-		return new Course(jsonObj["name"],
-			jsonObj["description"], 
-			jsonObj["code"], 
-			jsonObj["year"], 
-			jsonObj["semester"],
-			jsonObj["university"],
-			jsonObj["department"],
-			jsonObj["location_class"],
-			jsonObj["syllabus"],
-			jsonObj["grade_parts"],
-			CourseResource.createListFromJson(jsonObj["resources"]),
-			CourseUpdate.createListFromJson(jsonObj["updates"]),
-			CourseModule.createListFromJson(jsonObj["modules"]));
-
-	}
 
     //create html for the general section
-    createGeneralData()
+    createGeneralData(lastVisit)
 	{
 		try
 		{
@@ -85,7 +63,8 @@ class Course extends Element
 	}
 	
 	// summary section inside the general tab of the course
-	createSummary() {
+	createSummary(lastVisit)
+	{
 		let text = this.description;
 		let grades = this.grade_parts;
 		let html = '<div class="summary-section"><h3 class="content-title">'
@@ -105,12 +84,12 @@ class Course extends Element
 	}
 	
 	// resources section inside the general tab of the course
-	createResourceList()
+	createResourceList(lastVisit)
 	{
 		let html = '<div class="resources-section"><h3 class="content-title">Resources</h3><hr class="blue-hr">';
 
 		this.resources.forEach(resource => {
-			html += CourseResource.createFromJson(resource).toHtml();
+			html += CourseResource.createFromJson(resource).toHtml(lastVisit);
 		});
 
 		html += '</div>';
@@ -119,13 +98,19 @@ class Course extends Element
 	}
 
 	// update section inside the updates tab of the course
-	createUpdateData() {
+	createUpdateData(lastVisit) {
 		try
 		{
 			let html = '<div class="body-section">';
 			
 			for(let i = 0; i < this.updates.length; i++) {
-				html += this.updates[i].toHtml();
+				html += this.updates[i].toHtml(lastVisit);
+				
+				// if flag shown in this one, count it
+				if (this.updates[i].last_html_flag_show)
+				{
+					this.newCounter++;
+				}
 
 				if(i != this.updates.length - 1) {
 					html += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
@@ -164,6 +149,37 @@ class Course extends Element
 		{
 			console.log("Error at Course.createModuleData, saying: " + error);
 		}
+	}
+	
+	// build a list of this object from Json object
+	static createListFromJson(jsonObj)
+	{
+		var listStudent = [];
+		for (var publicationIndex = 0; publicationIndex < jsonObj.length; publicationIndex++)
+		{
+			listStudent.push(Course.createFromJson(jsonObj[publicationIndex]));
+		}
+		return listStudent;
+
+	}
+	
+	// build a list of this object from Json object
+	static createFromJson(jsonObj)
+	{	
+		return new Course(jsonObj["name"],
+			jsonObj["description"], 
+			jsonObj["code"], 
+			jsonObj["year"], 
+			jsonObj["semester"],
+			jsonObj["university"],
+			jsonObj["department"],
+			jsonObj["location_class"],
+			jsonObj["syllabus"],
+			jsonObj["grade_parts"],
+			CourseResource.createListFromJson(jsonObj["resources"]),
+			CourseUpdate.createListFromJson(jsonObj["updates"]),
+			CourseModule.createListFromJson(jsonObj["modules"]));
+
 	}
 
 	static descriptionTrim(desc) {
