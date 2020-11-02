@@ -59,7 +59,11 @@ class Tabs {
     }
     
     static _activateTab(event) {
-        if(!event.target.classList.contains('active-tab')) {
+        let currTarget = event.target;
+        if(currTarget.tagName == "LABEL") {
+            currTarget = currTarget.parentNode;
+        }
+        if(!currTarget.classList.contains('active-tab')) {
             // get the current active tab
             let currentActive = document.getElementsByClassName('active-tab')[0];
 
@@ -71,9 +75,9 @@ class Tabs {
             Tabs._toggleContentDisplay(currIndex);
 
             // toggle the active class of the clicked tab
-            Tabs._toggleActiveTab(event.target);
+            Tabs._toggleActiveTab(currTarget);
             // get the index of the new active tab (=content)
-            let newIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
+            let newIndex = Array.from(currTarget.parentNode.children).indexOf(currTarget);
             Tabs._toggleContentDisplay(newIndex);
         }
     }
