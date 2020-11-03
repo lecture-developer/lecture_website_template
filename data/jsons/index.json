@@ -34,21 +34,21 @@
    "currentProjects":[
       {
          "name":"Name 1",
-         "topic": "Great topic",
+         "topic": "cool topic",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": ""}
+         "link":{"info": "View project", "type": 2, "link": "", "example":""}
       },
       {
          "name":"Name 2",
-         "topic": "Great topic",
+         "topic": "cool topic",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": "aaa"}
+         "link":{"info": "View project", "type": 2, "link": "aaa", "example":""}
       },
       {
          "name":"Name 3",
-         "topic": "Another topic",
+         "topic": "great topic",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": ""}
+         "link":{"info": "View project", "type": 2, "link": "", "example":""}
       }
    ]
 }

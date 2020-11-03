@@ -1,6 +1,8 @@
 // imports
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Icons } from '/lecture_website_template/js/components/icons.js';
+import { Tabs } from '/lecture_website_template/js/components/tabs.js';
+import { ProjectSection } from '/lecture_website_template/js/components/projectSection.js';
 
 // Data file paths
 let LECTURER_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
@@ -113,93 +115,57 @@ class About extends PageRender
 	}
 
 	static buildProjects(lecturerObj){
-
 		let projects = lecturerObj["currentProjects"];
+		let topics = About.buildTopicNav(projects);
+		let projectsList = ProjectSection.createListFromJson(projects);
+		let panels;
+		for(let i = 0; i < projectsList.length; i++){
+			panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
+		}
+		document.getElementById("projects_cards").innerHTML = panels;
+	}
+
+	static buildTopicNav(projects){
 		// build topics navigation bar
 		let topics = new Set();
 		for(let i = 0; i < projects.length; i++){
 			topics.add(projects[i].topic);
 		}
+		if(topics.size == 1){
+			return;
+		}
 		let topics_list = document.getElementById("topics_list");
+		let topicArr = [];
 		const topicIter = topics.values();
 		for(let i = 0; i < topics.size; i++){
 			let t = document.createElement("LI");
-			t.innerHTML = topicIter.next().value;
+			let text = topicIter.next().value;
+			t.innerHTML = text;
 			if(i == 0){
 				t.classList.add("active-topic");
 			}
 			topics_list.appendChild(t);
+			topicArr.push(text);
 		}
+		return topicArr;
 	}
+
 }
 
 About.build();
 
 function createTabsSection() {
-	try{
-		var html='<div id="tabs-bar" class="tabs-bar">' +
-					'<div class="general-bar tab">'+
-						'<label class="tab-title">Biography</label>'+
-						'<div class="tab-seperator"></div>'+
-					'</div>'+
-
-					'<div class="updates-bar tab">'+
-						'<label class="tab-title">Personal projects</label>'+
-						'<div class="tab-seperator"></div>'+
-					'</div>'+
-
-					'<div class="modules-bar tab">'+
-						'<label class="tab-title">Recommended resources</label>'+
-					'</div>'+
-				'</div>'
-		document.getElementById("tabs").innerHTML = html;
-	}catch(error){
-		console.log("Error at Course.createTabsSection, saying:" + error);
-	}
+	Tabs.createTabsSection();
+	Tabs.addTab('Biography');
+	Tabs.addTab('Personal projects');
+	Tabs.addTab('Recommended resources', true);
 }
-
-//toggle
-function onPageLoad() {
-	const tabs = document.getElementsByClassName('tab');
-	for(let i = 0; i < tabs.length; i++) {
-		tabs[i].addEventListener('click', function (event) {
-			if(!event.target.classList.contains('active-tab')) {
-				// get the current active tab
-				let currentActive = document.getElementsByClassName('active-tab')[0];
-
-				// toggle the active class of the current active element
-				toggleActiveTab(currentActive);
-
-				// get the index of the current tab (=content)
-				let currIndex = Array.from(currentActive.parentNode.children).indexOf(currentActive);
-				// toggleContentDisplay(currIndex);
-
-				// toggle the active class of the clicked tab
-				toggleActiveTab(event.target);
-				// get the index of the new tab (=content)
-				let newIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
-				// toggleContentDisplay(newIndex);
-			}
-		});
-	}
-	// by default toggle the first tab
-	toggleActiveTab(tabs[0]);
-	// toggleContentDisplay(0);
-}
-
-
-// toggle the activeness of the given item and label
-function toggleActiveTab(target) {
-	// toggle the active-tab class of the given element
-	target.classList.toggle('active-tab');
-	// get the label element of the current active and toggle active-tab-title
-	target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');
-}
-
-// toggle the current content display
-// function toggleContentDisplay(index) {
-// 	document.getElementsByClassName('body-section')[index].classList.toggle('active-section');
-// }
-
 createTabsSection();
+
+// add toggle to the tabs
+function onPageLoad() {
+	Tabs.activateDefault(0);
+}
+
+
 onPageLoad();

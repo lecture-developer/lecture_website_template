@@ -102,9 +102,34 @@
 }
 
 /****** table - end  ******/
+/****** tabs - start  ******/
+
+.tabs{
+  margin-top: 100px;
+}
+
+.tab-title{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #4A5568;
+}
+
+.Recommended-resources-bar{
+  width: 200px;
+}
+
+.active-tab-title{
+  font-weight: 700;
+}
+
+/****** tabs - end  ******/
 /****** biography - start  ******/
-#about_section {
+#about_section.active-section {
   margin-top: 40px;
+  display: block;
 }
 
 .personal-image {
@@ -123,6 +148,11 @@
 
 /****** biography - end  ******/
 /****** projects - start  ******/
+#projects_section.active-section{
+  display: flex;
+  flex-direction: row;
+}
+
 ul {
   list-style-type: none;
 }
@@ -139,4 +169,32 @@ ul {
 ul .active-topic {
   font-weight: bold !important;
   color: #1A202C !important;
+}
+
+#projects_cards{
+  width:80%;
+}
+
+.project-panel{
+  width:100%;
+  padding: 30px 0;
+}
+
+.project-panel h3{
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #1A202C;
+}
+
+.project-panel p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #1A202C;
 }

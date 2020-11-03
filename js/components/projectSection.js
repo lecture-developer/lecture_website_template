@@ -1,7 +1,7 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
 import { ActionButton } from '/lecture_website_template/js/components/actionButton.js';
 
-class ProjectPanel extends Element
+class ProjectSection extends Element
 {
 	constructor(name, description, btn)
 	{
@@ -17,7 +17,7 @@ class ProjectPanel extends Element
 		// TODO: make this more generic with the following things:
 		// 1. dynamic list of action buttons each one with it's design from the class
 		// 2.
-		var answer = '<div class="academic-papers-panel"><h3>'
+		var answer = '<div class="project-panel"><h3>'
 		+ this.name + '</h3><p>'
 		+ this.description + '</p>'
 		if (this.btn["link"] != "")
@@ -34,7 +34,7 @@ class ProjectPanel extends Element
 		var answer = [];
 		for (var projectIndex = 0; projectIndex < jsonObj.length; projectIndex++)
 		{
-			answer.push(ProjectPanel.createFromJson(jsonObj[projectIndex]));
+			answer.push(ProjectSection.createFromJson(jsonObj[projectIndex]));
 		}
 		return answer;
 	}
@@ -42,9 +42,9 @@ class ProjectPanel extends Element
 	// build a list of this object from Json object
 	static createFromJson(jsonObj)
 	{
-		return new ProjectPanel(jsonObj["name"],
+		return new ProjectSection(jsonObj["name"],
 		jsonObj["description"],
 		ActionButton.createFromJson(jsonObj["link"]));
 	}
 }
-export {ProjectPanel};
+export {ProjectSection};
