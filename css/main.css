@@ -584,14 +584,14 @@ box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
 
 .cite-btn{
 	font-family: Roboto;
-	/* color: #2D3748 !important; */
 	font-size: 16px;
 	line-height: 150%;
 	padding: 4px 18px;
 	text-decoration: none !important;
 	color: #5A67D8 !important;
-	position: absolute;
-	margin-left: 650px;
+	float: right;
+	width: 10%;
+	min-width: 90px;
 }
 
 .cite-btn svg{
@@ -848,6 +848,10 @@ flickity-prev-next-button[disabled]{
 	justify-content: flex-end;
 }
 
+.align-space-between{
+	align-content: space-between;
+}
+
 .space-evenly{
 	display: flex;
 	justify-content: space-evenly;
@@ -1006,6 +1010,7 @@ flickity-prev-next-button[disabled]{
 	line-height: 32px;
 	letter-spacing: 0.04em;
 	padding-bottom: 8px;
+	width: 90%;
 }
 
 .academic-papers-panel h4{
@@ -1046,6 +1051,11 @@ flickity-prev-next-button[disabled]{
 @media screen and (max-width: 850px) {
 	.see-more {
 		padding-right: 1rem;
+	}
+	
+	.cite-btn{
+		padding-right: 0px;
+		padding-left: 0px;
 	}
 }
 
@@ -1165,11 +1175,6 @@ flickity-prev-next-button[disabled]{
 	  line-height: 35px !important;
 	  padding: 0px 0px;
   }
-  
-  .mobile-row-breaker{
-	  flex-wrap: wrap;
-	  flex-direction: coloumn;
-	}
 	
 	.mobile-row-spacer{
 		padding-top: 40px;
@@ -1201,6 +1206,12 @@ flickity-prev-next-button[disabled]{
 	
 }
 
+@media only screen and (max-width: 530px) {
+  .mobile-row-breaker{
+	  flex-wrap: wrap;
+	  flex-direction: coloumn;
+	}
+}
 
 /* end - index page */
 
@@ -1562,6 +1573,14 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: wrap !important;
 }
 
+.col-reverse-mobile{
+	flex-direction: row;
+}
+
+.acadmic-card-margin-fix{
+	
+}
+
 @media screen and (max-width: 600px) {
 	.personal-info-item {
 	  font-size: 14px;
@@ -1569,6 +1588,14 @@ flickity-prev-next-button[disabled]{
 
 	#lecture_address *{
 		font-size: 14px;
+	}
+	
+	.col-reverse-mobile{
+		flex-direction: column-reverse !important;
+	}
+	
+	.acadmic-card-margin-fix{
+		margin-right: 20px;
 	}
 }
 

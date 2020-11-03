@@ -26,12 +26,16 @@ class PublicationCard extends Element
 		// 1. dynamic list of action buttons each one with it's design from the class 
 		// 2. 
 
-		var answer = '<div class="academic-papers-panel"><h3>' 
+		var answer = '<div class="academic-papers-panel"><div class="personal-row-col col-reverse-mobile w-100 align-space-between"><h3>' 
 		+ this.title + '</h3>'
 
 		if (this.fileLinks[0]["link"] != "")
 		{
-			answer += '<a class="cite-btn" onclick="copy_cite(\'' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '\');">' + CITE_SYMBOL + 'Cite</a>';
+			answer += '<a class="cite-btn" onclick="copy_cite(\'' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '\');">' + CITE_SYMBOL + 'Cite</a></div>';
+		}
+		else
+		{
+			answer += "</div>";
 		}
 
 		answer += '<h4>' + this.authors + "<br>" + this.publisher + '</h4><p>'
@@ -41,7 +45,7 @@ class PublicationCard extends Element
 
 		if (this.fileLinks[1]["link"] != "")
 		{
-			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn">Download</a><div class="w-100 acadmic-parms-row">';
+			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a><div class="w-100 acadmic-parms-row">';
 		}
 
 
