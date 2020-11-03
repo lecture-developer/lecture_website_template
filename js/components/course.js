@@ -88,8 +88,20 @@ class Course extends Element
 	{
 		let html = '<div class="resources-section"><h3 class="content-title">Resources</h3><hr class="blue-hr">';
 
-		this.resources.forEach(resource => {
-			html += CourseResource.createFromJson(resource).toHtml(lastVisit);
+		// this.resources.forEach(resource => {
+		// 	html += CourseResource.createFromJson(resource).toHtml(lastVisit);
+		// });
+		this.resources.forEach(resourceEntry => {
+			for(const resourceType in resourceEntry) {
+				html += '<div class="resource"><ul class="resource-list"><li class="content-subtitle"><h5 class="resource-list-item-title">' + resourceType + '</h5>';
+				resourceEntry[resourceType].forEach(resourceProperties => {
+					let resource = CourseResource.createFromJson(resourceProperties);
+				
+					html += resource.toHtml();
+				});
+	
+				html += '</li></ul></div>';
+			}
 		});
 
 		html += '</div>';
