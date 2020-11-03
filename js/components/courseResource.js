@@ -29,12 +29,7 @@ class CourseResource extends Element
 		}
 
 		img += '" class="resource-img"/>';
-
-		// let required = this.is_requried ? 'Required' : 'Optinal';
-		// let html = '<div class="resource"><ul class="resource-list"><li class="content-subtitle"><h5 class="resource-list-item-title">' + required +
-		// 		 '</h5><div class="resource-content"><a href="'+ this.link + '" class="resource-link">' + img
-		// 		  + this.name + '</a><p class="resource-description">' + Course.descriptionTrim(this.description) + '</p></div></li></ul></div>';
-
+		
 		let html = '<div class="resource-content"><a href="'+ this.link + '" class="resource-link">' + img
 				  + this.name + '</a><p class="resource-description">' + Course.descriptionTrim(this.description) + '</p></div>';
 
@@ -42,16 +37,6 @@ class CourseResource extends Element
 	}
 	
 	// build a list of this object from Json object
-	// static createListFromJson(jsonObj)
-	// {
-	// 	var listStudent = [];
-	// 	for (var publicationIndex = 0; publicationIndex < jsonObj.length; publicationIndex++)
-	// 	{
-	// 		listStudent.push(CourseResource.createFromJson(jsonObj[publicationIndex]));
-	// 	}
-	// 	return listStudent;
-
-	// }
 	static createListFromJson(jsonObj)
 	{
 		var resourcesList = [];

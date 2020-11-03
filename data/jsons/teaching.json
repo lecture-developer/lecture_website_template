@@ -151,19 +151,21 @@
 			"modules": [{
 					"title": "cool module 1",
 					"explanation": "not too long",
-					"resources": [{
-							"name": "home work",
-							"link": "link link link",
-							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
-							"description": "cool description cool description cool description"
-						},
-						{
-							"name": "home work",
-							"link": "link link link",
-							"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
-							"description": "cool description cool description cool description"
-						}
-					]
+					"resources": {
+						"required": [{
+								"name": "home work",
+								"link": "link link link",
+								"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+								"description": "cool description cool description cool description"
+							},
+							{
+								"name": "home work",
+								"link": "link link link",
+								"date": "Sat Oct 20 2020 16:08:50 GMT+0300 (Israel Daylight Time)",
+								"description": "cool description cool description cool description"
+							}
+						]
+					}
 				},
 				{
 					"title": "cool module 2",
