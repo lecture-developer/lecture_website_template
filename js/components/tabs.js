@@ -1,17 +1,22 @@
-
-class Tabs {
+class Tabs 
+{
     /*
 		Create the tabs section
+		* assumes an empty element with 'tabs' id to put the data inside it
 	*/
-	static createTabsSection() {
-		try{
+	static createTabsSection()
+	{
+		try
+		{
                     
             let section = document.createElement("DIV");
             section.id = "tabs-bar";
             section.classList.add("tabs-bar");
             
             document.getElementById("tabs").appendChild(section);
-		}catch(error){
+		}
+		catch(error)
+		{
 			console.log("Error at Tabs.createTabsSection, saying:" + error);
 		}
     }
@@ -23,27 +28,32 @@ class Tabs {
         is_last: a boolean value if it is the last or not
         img_path: in case we want an icon in front of the title (like updates).
     */
-    static addTab(title, is_last=false, img_path=null) {
+    static addTab(title, is_last=false, img_path=null)
+	{
         var img = '';
-        if(img_path != null) {
+        if(img_path != null) 
+		{
             img = '<img src="' + img_path + '" class="new-updates-icon">'
         }
 
         let label = title.charAt(0).toUpperCase() + title.slice(1);
-        let className = title.replace(" ", "-") + "-bar";
+        let className = title.replaceAll(" ", "-") + "-bar";
 
 
         let section = document.createElement("DIV");
         section.classList.add('tab');
         section.classList.add(className);
+		section.title = label.replaceAll(" ", "-");
 
-        let html = img + '<label class="tab-title">'+ label + '</label>';
-        if(!is_last) {
+        let html = img + '<label class="tab-title" title="' + label.replaceAll(" ", "-") + '">'+ label + '</label>';
+        if(!is_last) 
+		{
             html += '<div class="tab-seperator"></div>';
         }
                         
         // add toggle functionality
-        section.addEventListener('click', function(event) {
+        section.addEventListener('click', function(event) 
+		{
             Tabs._activateTab(event);
         });
         section.innerHTML = html;
@@ -51,19 +61,24 @@ class Tabs {
         document.getElementById("tabs-bar").appendChild(section);
     }
 
-    static activateDefault(index) {
+    static activateDefault(index) 
+	{
         const tabs = document.getElementsByClassName('tab');
         // by default toggle the first tab
         this._toggleActiveTab(tabs[index]);
         this._toggleContentDisplay(index);
     }
-    
-    static _activateTab(event) {
-        let currTarget = event.target;
-        if(currTarget.tagName == "LABEL" || currTarget.classList.contains("tab-seperator")) {
+   
+  
+  static _activateTab(event) 
+  {
+      let currTarget = event.target;
+      if(currTarget.tagName == "LABEL" || currTarget.classList.contains("tab-seperator"))
+        {
             currTarget = currTarget.parentNode;
         }
-        if(!currTarget.classList.contains('active-tab')) {
+        if(!currTarget.classList.contains('active-tab')) 
+		    {
             // get the current active tab
             let currentActive = document.getElementsByClassName('active-tab')[0];
 
@@ -80,10 +95,14 @@ class Tabs {
             let newIndex = Array.from(currTarget.parentNode.children).indexOf(currTarget);
             Tabs._toggleContentDisplay(newIndex);
         }
-    }
+		
+      // update the url for sharing later this sepsific tab
+      insertGetParamToUrl("section", currTarget.title);
+  }
 
     // toggle the activeness of the given item and label
-    static _toggleActiveTab(target) {
+    static _toggleActiveTab(target)
+	{
         // toggle the active-tab class of the given element 
         target.classList.toggle('active-tab');
         // get the label element of the current active and toggle active-tab-title
@@ -91,7 +110,8 @@ class Tabs {
     }
 
     // toggle the current content display
-    static _toggleContentDisplay(index) {
+    static _toggleContentDisplay(index)
+	{
         document.getElementsByClassName('body-section')[index].classList.toggle('active-section');
     }
 }

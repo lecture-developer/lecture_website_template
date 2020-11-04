@@ -4,10 +4,10 @@ let PARAM_QUERY = "query";
 docs = [];
 var doc1 = {
     "id": 1,
-    "title": "Home Page",
-    "body": "The home page in English for the website. Current projects and bio review My research focus on medical and biological nanoparticles (focusing on nanorobotics). Spesificly, modeling a curing protocol based on bio-physical interactions of targeted drug delivery nanoparticles in the blood. I am also intrested in numerical solving and stabalization of ODE and PDE systems (especially, ones originated in a biological setup). I completed my B.Sc. (2016) and M.Sc. (2018) in Applied Mathematics in Bar-Ilan University. My complete CV can be found here",
-    "shortBody": "Short Bio and current projects review",
-	"url": "/index.html",
+    "title": "Lecture Name with fields and other data",
+    "body": "A cool data with bio A cool data with bio A cool data with bio A cool data with bio A cool data with bio A cool data with bio ",
+    "shortBody": "A cool data with bio ",
+	"url": "/",
 };
 docs.push(doc1);
 
@@ -17,6 +17,26 @@ var index = elasticlunr(function () {
     this.setRef('id');
 });
 
+/* add event for 'ENTER' hit in field search */
+var desktopInput = document.getElementById("search_input");
+desktopInput.onkeyup = function(e)
+{
+    if(e.keyCode == 13)
+	{
+       searchPage();
+    }
+}
+var mobileInput = document.getElementById("search_input_mobile");
+mobileInput.onkeyup = function(e)
+{
+    if(e.keyCode == 13)
+	{
+       searchPage();
+    }
+}
+
+/* end - add event for 'ENTER' hit in field search */
+
 for (var i = 0; i < docs.length; i++)
 {
 	index.addDoc(docs[i]);	
@@ -24,21 +44,36 @@ for (var i = 0; i < docs.length; i++)
 
 function searchPage()
 {
-	var query = getQuery();
+	// get input from the user
+	var queryInput = document.getElementById("search_input").value;
+	query = queryInput.toLowerCase().trim();
+	var queryInputMobile = document.getElementById("search_input_mobile").value;
+	queryMobile = queryInputMobile.toLowerCase().trim();
+	
+	// search from mobile view, get the text from there and continue
+	if (query == "" && queryMobile != "")
+	{
+		query = queryMobile;
+	}
+	
+	// if empty, show alert and end process
 	if (query == "")
 	{
+		showSearchAlert("Please enter a query in order to search in the website");
 		return false;
 	}
+	
 	var results = index.search(query, {
 			fields: {
 				title: {boost: 2},
 				body: {boost: 1}
 			}
 		});
+		
 	// if 1 answer - go to this link
 	if (results.length == 0)
 	{	
-		alert("No result found");
+		showSearchAlert("We was not able to find any result in the website for your query");
 		return false;
 	}
 	else if (results.length == 1)
@@ -99,21 +134,14 @@ function buildSearchResultAnswer(index, title, score, short_body, url)
 	return '<div class="col-lg-12 col-md-12 col-sm-12" ><div class="card text-center"><div class="card-body"><h5 class="card-title">' + title + ' <small>(' + Math.floor(10000 * score) / 100 + '%)</small></h5><p class="card-text">' + short_body + '</p><a class="cool-btn cool-btn-gray" id="cool_btn_' + index + '" href="' + url + '"> Take Me There </a></div></div></div>';
 }
 
-function getQuery()
+// show an alert as a result of searching something in the search field
+function showSearchAlert(alertText)
 {
-	var pageName = document.getElementById("search-data").value;
-	var pageName2 = document.getElementById("search-data-2").value;
-	pageName = pageName.toLowerCase().trim();
-	pageName2 = pageName2.toLowerCase().trim();
-	
-	if (pageName == "" && pageName2 == "")
-	{
-		return "";
-	}
-	else if (pageName == "" && pageName2 != "" )
-	{
-		pageName = pageName2;
-	}
-
-	return pageName;
+	// log events
+	console.log("Write search alert with the text: " + alertText);	
+	// show alert
+	var alertDiv = document.getElementById("search-close-btn").parentElement;
+	document.getElementById("search-alert").innerHTML = alertText;
+	alertDiv.style.opacity = "1";
+	setTimeout(function(){ alertDiv.style.opacity = "0"; }, 2500);
 }
