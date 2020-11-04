@@ -33,20 +33,20 @@
    ],
    "currentProjects":[
       {
-         "name":"Name 1",
+         "name":"Really Cool Project",
          "topic": "cool topic",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "View project", "type": 2, "link": "", "example":""}
+         "link":{"info": "View project", "type": 2, "link": "bbb", "example":"abc"}
       },
       {
-         "name":"Name 2",
-         "topic": "cool topic",
-         "description":"Short Description Short Description Short Description ",
+         "name":"Amazing project!",
+         "topic": "amazing topic",
+         "description":"long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description",
          "link":{"info": "View project", "type": 2, "link": "aaa", "example":""}
       },
       {
-         "name":"Name 3",
-         "topic": "great topic",
+         "name":"Another cool project",
+         "topic": "cool topic",
          "description":"Short Description Short Description Short Description ",
          "link":{"info": "View project", "type": 2, "link": "", "example":""}
       }

@@ -164,6 +164,7 @@ ul {
   font-size: 16px;
   line-height: 150%;
   color: #A0AEC0;
+  cursor: pointer;
 }
 
 ul .active-topic {
@@ -197,4 +198,12 @@ ul .active-topic {
   font-size: 16px;
   line-height: 150%;
   color: #1A202C;
+}
+
+.space-up-20{
+  margin-top: 20px;
+}
+
+.space-around{
+  margin: 0 6px;
 }

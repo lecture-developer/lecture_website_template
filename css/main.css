@@ -677,6 +677,23 @@ select::-ms-expand {
 	color: #A0AEC0 !important;
 }
 
+.secondary-btn{
+  font-family: Roboto;
+	background: #fff;
+	border-radius: 8px;
+  border: 1px solid #5A67D8;
+	color: #5A67D8 !important;
+	font-size: 16px;
+	line-height: 150%;
+	padding: 12px 20px;
+  text-decoration: none !important;
+}
+
+.secondary-btn:hover{
+	background: #5A67D8;
+	color: #fff !important;
+}
+
 /* carosel */
 
 .carousel {

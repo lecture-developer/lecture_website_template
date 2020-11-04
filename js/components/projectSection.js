@@ -22,7 +22,8 @@ class ProjectSection extends Element
 		+ this.description + '</p>'
 		if (this.btn["link"] != "")
 		{
-			answer += '<div class="personal-row space-between"><div class="w-100 flex-end"><a href="' + this.btn["link"] + '" class="download-btn">' + this.btn["info"] + '</a></div></div>';
+			answer += '<div class="personal-row space-up-20"><div class="space-around"><a href="' + this.btn["link"] + '" class="download-btn"> Explore project </a></div>\
+			<div class="space-around"><a href="' + this.btn["example"] + '" class="secondary-btn"> See example </a></div></div>';
 		}
 		answer += '</div>';
 		return answer;
@@ -35,6 +36,20 @@ class ProjectSection extends Element
 		for (var projectIndex = 0; projectIndex < jsonObj.length; projectIndex++)
 		{
 			answer.push(ProjectSection.createFromJson(jsonObj[projectIndex]));
+		}
+		return answer;
+	}
+
+	// filter the list according to some property and value
+	static filterList(objList, property, filterValue)
+	{
+		var answer = [];
+		for (var objIndex = 0; objIndex < objList.length; objIndex++)
+		{
+			if (objList[objIndex][property + ""] == filterValue)
+			{
+				answer.push(objList[objIndex]);
+			}
 		}
 		return answer;
 	}

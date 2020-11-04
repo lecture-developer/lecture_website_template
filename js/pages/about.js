@@ -114,36 +114,64 @@ class About extends PageRender
 		document.getElementById("bio_text").innerHTML = lecturerObj["biography"];
 	}
 
-	static buildProjects(lecturerObj){
+	static buildProjects(lecturerObj, topic, change = false){
 		let projects = lecturerObj["currentProjects"];
-		let topics = About.buildTopicNav(projects);
-		let projectsList = ProjectSection.createListFromJson(projects);
-		let panels;
+		if(!change){
+			let topics = About.buildTopicNav(lecturerObj, projects);
+			if(topics != null){
+				document.getElementById("topics_list").firstChild.classList.add("active-topic");
+				About.dynamicBuildProjects(projects, topics[0]);
+			}
+			else{
+				let projectsList = ProjectSection.createListFromJson(projects);
+				let panels ="";
+				for(let i = 0; i < projectsList.length; i++){
+					panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
+				}
+				document.getElementById("projects_cards").innerHTML = panels;
+			}
+		}
+		else{
+			About.dynamicBuildProjects(projects, topic);
+		}
+	}
+
+	static dynamicBuildProjects(projects, topic){
+		let projectsList = ProjectSection.filterList(projects, "topic", topic);
+		projectsList = ProjectSection.createListFromJson(projectsList);
+		let panels ="";
 		for(let i = 0; i < projectsList.length; i++){
 			panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
 		}
 		document.getElementById("projects_cards").innerHTML = panels;
 	}
 
-	static buildTopicNav(projects){
+	static buildTopicNav(lecturerObj, projects){
 		// build topics navigation bar
 		let topics = new Set();
 		for(let i = 0; i < projects.length; i++){
 			topics.add(projects[i].topic);
 		}
 		if(topics.size == 1){
-			return;
+			document.getElementById("topics").style.display = "none";
+			return null;
 		}
 		let topics_list = document.getElementById("topics_list");
 		let topicArr = [];
 		const topicIter = topics.values();
 		for(let i = 0; i < topics.size; i++){
 			let t = document.createElement("LI");
+			t.classList.add("topic");
 			let text = topicIter.next().value;
-			t.innerHTML = text;
-			if(i == 0){
+			t.addEventListener("click", () => {
+				let allTopics = document.getElementsByClassName("topic");
+				for(let i = 0; i < allTopics.length; i++){
+					allTopics[i].classList.remove("active-topic");
+				}
 				t.classList.add("active-topic");
-			}
+				About.buildProjects(lecturerObj, text, true)
+			});
+			t.innerHTML = text;
 			topics_list.appendChild(t);
 			topicArr.push(text);
 		}
