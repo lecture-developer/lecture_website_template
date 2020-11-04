@@ -39,7 +39,7 @@ class ResearchProject extends Element
 	static createFromJson(jsonObj)
 	{	
 		return new ResearchProject(jsonObj["name"],
-			ResearchTeamMember.createListFromJson(jsonObj["participents"])
+			ResearchTeamMember.createListFromJson(jsonObj["participents"]),
 			jsonObj["participents"], 
 			jsonObj["start_month"], 
 			jsonObj["start_year"], 
