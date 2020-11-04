@@ -120,6 +120,37 @@ hr {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 850px) {
+    .tab {
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .course-page-section {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .item-detail p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .tab {
+        width: 5rem;
+    }
+
+    .tab-title {
+        font-size: 14px;
+    }
+
+    .item-detail p {
+        font-size: 12px;
+    }
+}
+
 /****** tabs sections - end ******/
   
 .main-dot {
