@@ -2,11 +2,13 @@
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
-import { ProjectSection } from '/lecture_website_template/js/components/projectSection.js';
+import { ProjectSection } from '/lecture_website_template/js/components/projectSection.js'
+import { Resource } from '/lecture_website_template/js/components/resources.js';
 
 // Data file paths
 let LECTURER_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
 let INDEX_JSON = "/lecture_website_template/data/jsons/index.json";
+let RESOURCES_JSON = "/lecture_website_template/data/jsons/resources.json";
 let SECTIONS = ["Biography", "Personal-projects", "Recommended-resources"];
 
 /*
@@ -38,29 +40,30 @@ class About extends PageRender
 	{
 		About.loadFileFromServer(INDEX_JSON, true);
 		const lecturerObj = retrivedData;
-		
+
 		// build tabs' content
 		this.buildBiography(lecturerObj);
 		this.buildProjects(lecturerObj);
-		
+		this.buildResources();
+
 		// create the tabs flow themself
 		this.createTabsSection();
-		
+
 		// build the info on the top of the page
 		this.buildInfo();
-		
+
 		// pick the right tab according to the link
 		this.pickTab();
 	}
-	
-	createTabsSection() 
+
+	createTabsSection()
 	{
 		Tabs.createTabsSection();
 		Tabs.addTab('Biography');
 		Tabs.addTab('Personal projects');
 		Tabs.addTab('Recommended resources', true);
 	}
-	
+
 	pickTab()
 	{
 		for (var sectionIndex = 0; sectionIndex < SECTIONS.length; sectionIndex++)
@@ -73,7 +76,7 @@ class About extends PageRender
 		}
 		Tabs.activateDefault(0); // default case;
 	}
-	
+
 	/* build the overall contact info section */
 	buildInfo()
 	{
@@ -180,7 +183,7 @@ class About extends PageRender
 					allTopics[i].classList.remove("active-topic");
 				}
 				t.classList.add("active-topic");
-				About.buildProjects(lecturerObj, text, true)
+				this.buildProjects(lecturerObj, text, true)
 			});
 			t.innerHTML = text;
 			topics_list.appendChild(t);
@@ -218,7 +221,7 @@ class About extends PageRender
 		  linkedinIcon.href = linkedin;
 		  contacts.appendChild(linkedinIcon);
 		}
-		
+
 		if(google != ""){
 		  let googleIcon = document.createElement("A");
 		  googleIcon.innerHTML = Icons.google();
@@ -227,7 +230,7 @@ class About extends PageRender
 		  contacts.appendChild(googleIcon);
 		}
 	}
-  
+
 	/* build locations info section */
 	buildLocations(addresses)
 	{
@@ -247,6 +250,17 @@ class About extends PageRender
 		  cell_location.innerHTML = addresses[i].location;
 		  var cell_hours = row.insertCell(2);
 		  cell_hours.innerHTML = addresses[i].hours;
+		}
+	}
+
+	/* build resources tab content*/
+	buildResources(){
+		About.loadFileFromServer(RESOURCES_JSON, true);
+		const resourcesObj = retrivedData;
+		let res_section = document.getElementById("resources_section");
+		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
+		for(let i = 0; i < resourcesList.length; i++){
+			res_section.innerHTML += resourcesList[i].toHtml();
 		}
 	}
 }
