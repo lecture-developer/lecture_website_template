@@ -1,0 +1,22 @@
+{
+	"position": "position position position",
+	"field": "Cool description to a lecture demo website",
+	"addresses":
+	[
+		{
+			"university":"Bar Ilan University",
+			"location": "Building 202, room 109",
+			"hours": "Wednesdays 16:00 - 18:00"
+		},
+		{
+			"university":"Ben Gurion University",
+			"location": "Building 555, room 676",
+			"hours": "Sundays 14:00 - 16:00"
+		}
+	],
+	"phone": "+972-501234567",
+	"email": "email.email@email.email",
+	"linkedin_link": "https://www.google.com",
+	"google_scholar_link": "https://www.google.com",
+	"name":" Henrietta Losatter"
+}
