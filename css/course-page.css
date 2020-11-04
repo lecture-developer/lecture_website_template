@@ -51,9 +51,13 @@
     color: #1A202C;
 }
 
+.body-section {
+    display: none;
+}
+
 /****** tabs sections - start ******/
 .tabs {
-    height: 100px;
+    margin-bottom: 4rem;
 }
 
 .tab {
@@ -106,18 +110,102 @@
     font-weight: 700;
 }
 
-/* .tabs button{
-    width: 100px;
-    height: 100px;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: #E0E0E0;
-} */
-
-.tab button.active {
-    background-color: #5A67D8;
+.active-section {
+    display: flex;
+    flex-direction: column;
 }
+
+hr {
+    margin-top: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 /****** tabs sections - end ******/
   
+.main-dot {
+    display: inline-block;
+    border-radius: 100%;
+    background-color: #C4C4C4;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 3rem 0.75rem;
+}
+
+.section-seperator {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.blue-hr {
+    border: 1px solid #A3BFFA;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.content-title {
+    margin-left: 1.5rem;
+    margin-bottom: 0;
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.content-subtitle {
+    margin-left: 1.5rem;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.content-text {
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: justified;
+}
+
+/******* resource section - start ******/
+
+.resource-list {
+    margin-left: 1rem;
+}
+
+.resource-list-item-title {
+    margin-bottom: 0.75rem;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.resource-img {
+    margin-right: 0.75rem;
+}
+
+.resource-link {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.resource-description {
+    margin-left: 2.25rem;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/******* resource section - end ******/

@@ -56,17 +56,50 @@ a:hover {
 /* flex footer */
 
 footer {
-	padding-top: 40px;
-    background-color: #1A202C;
     color: white;
-	padding-bottom: 60px;
+	padding-bottom: 20px;
 }
 footer a:hover{
 	text-decoration: underline;
 }
 
 footer h1{
-	padding-right: 150px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+
+	/* #F7FAFC */
+
+	color: #F7FAFC;
+}
+
+footer h2{
+	font-family: Roboto !important;
+	font-style: normal !important;
+	font-weight: bold !important;
+	font-size: 18px !important;
+	line-height: 21px !important;
+	color: #F7FAFC !important;
+	padding-top: 0.25rem !important;
+}
+
+.footer-description{
+	font-family: Roboto !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-size: 16px !important;
+	line-height: 150% !important;
+	text-align: justify !important;
+	color: #F7FAFC !important;
+	padding-top: 0.5rem !important;
+}
+
+.footer-container{
+	padding-top: 40px;
+	max-width: 100%;
+    background-color: #434190;
 }
 
 .footer-section {
@@ -86,7 +119,6 @@ footer h1{
 }
 
 .footer-menu{
-	max-width: 25%;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 20px;
@@ -95,11 +127,12 @@ footer h1{
 
 .footer-menu-title{
 	font-family: Roboto;
-	color: #5A67D8 !important;
-	font-size: 24px;
 	font-weight: bold;
-	line-height: 28px;
-	margin-bottom: 20px;
+	font-size: 22px;
+	line-height: 21px;
+	text-decoration: underline !important;
+	color: #F7FAFC !important;
+	margin-bottom: 40px;
 }
 
 .footer-menu-item-header{
@@ -112,11 +145,20 @@ footer h1{
 }
 
 .footer-menu-item{
+
 	font-family: Roboto;
-	color: #EBF4FF !important;
-	font-size: 16px;
-	line-height: 140%;
-	margin-bottom: 20px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	text-decoration: underline !important;
+	color: #F7FAFC;
+	margin-bottom: 24px;
+}
+
+.footer-menu-item:hover{
+	font-weight: bold;
+	color: #F7FAFC;
 }
 
 .footer-info-item{
@@ -138,6 +180,40 @@ footer h1{
 
 .footer-social-item{
 	margin-right: 16px;
+}
+
+.footer-social-icons{
+	margin-right: 16px;
+	margin-top: 8px;
+}
+
+.footer-details-icons{
+	align-items: center !important;
+	margin-bottom: 20px;
+}
+
+.footer-social{
+	margin-bottom: 40px;
+}
+
+.footer-details-icons img{
+	margin-right: 16px;
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	min-height: 32px;
+	max-width: 32px;
+	max-height: 32px;
+}
+
+.footer-details-icons p{
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 19px;
 }
 
 .alert {
@@ -183,7 +259,6 @@ footer h1{
 }
 
 .brand-footer{
-	margin-top: 20px;
 	text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -191,11 +266,18 @@ footer h1{
 
 .brand-footer a{
 	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
 	font-size: 16px;
-	line-height: 19px;
-	color: #FFFFFF;
+	line-height: 140.62%;
+	color: #434190;
+}
+
+.brand-footer a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+.brand-footer img{
+	max-width: 120px;
 }
 
 @media only screen and (max-width: 850px) {
@@ -205,7 +287,7 @@ footer h1{
   }
   
   .footer-menu{
-	  max-width: 80% !important;
+	  max-width: 100% !important;
   }
   
   footer h1{
@@ -216,6 +298,10 @@ footer h1{
   .footer-info-item  {
     display: none;
   }
+
+	.main-footer-menu{
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 430px) {
@@ -532,9 +618,22 @@ select::-ms-expand {
 	border-radius: 8px;
 	color: white !important;
 	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
 	line-height: 150%;
 	padding: 12px 20px;
-    text-decoration: none !important;
+	text-decoration: none !important;
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+
+/* drop down - shadow */
+
+box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+	
+	
 }
 
 .download-btn svg{
@@ -571,11 +670,14 @@ select::-ms-expand {
 
 .cite-btn{
 	font-family: Roboto;
-	color: #2D3748 !important;
 	font-size: 16px;
 	line-height: 150%;
 	padding: 4px 18px;
-    text-decoration: none !important;
+	text-decoration: none !important;
+	color: #5A67D8 !important;
+	float: right;
+	width: 10%;
+	min-width: 90px;
 }
 
 .cite-btn svg{
@@ -829,7 +931,11 @@ flickity-prev-next-button[disabled]{
 
 .space-between{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
+}
+
+.align-space-between{
+	align-content: space-between;
 }
 
 .space-evenly{
@@ -990,6 +1096,7 @@ flickity-prev-next-button[disabled]{
 	line-height: 32px;
 	letter-spacing: 0.04em;
 	padding-bottom: 8px;
+	width: 90%;
 }
 
 .academic-papers-panel h4{
@@ -1009,14 +1116,15 @@ flickity-prev-next-button[disabled]{
 
 .academic-papers-panel span{
 	font-family: Roboto;
-	background: #E2E8F0;
+	background: #F2F2F2;
 	border-radius: 4px;
-	padding: 8px 18px;
-	color: #718096;
-	font-weight: bold;
-	font-size: 16px;
+	padding: 6px 18px;
+	color: #828282;
+	font-weight: 500;
+	font-size: 14px;
 	line-height: 150%;
 	margin-right: 20px;
+
 }
 
 .see-more {
@@ -1030,6 +1138,11 @@ flickity-prev-next-button[disabled]{
 	.see-more {
 		padding-right: 1rem;
 	}
+	
+	.cite-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
 }
 
 #biography{
@@ -1040,8 +1153,27 @@ flickity-prev-next-button[disabled]{
 	
 }
 
+
 .acadmic-parms-row{
+	/* auto layout */
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding-top: 6px;
+	position: relative;
+	width: 110px;
+	height: 30px;
+	left: 0px;
+	bottom: 0px;
+	justify-content: flex-end;
 	
+	/* Inside Auto Layout */
+	order: 0;
+	align-self: center;
+	flex-grow: 0;
+	margin-top: 8px;
+	flex: inherit;
+
 }
 
 .mobile-row-breaker{
@@ -1129,11 +1261,6 @@ flickity-prev-next-button[disabled]{
 	  line-height: 35px !important;
 	  padding: 0px 0px;
   }
-  
-  .mobile-row-breaker{
-	  flex-wrap: wrap;
-	  flex-direction: coloumn;
-	}
 	
 	.mobile-row-spacer{
 		padding-top: 40px;
@@ -1165,6 +1292,12 @@ flickity-prev-next-button[disabled]{
 	
 }
 
+@media only screen and (max-width: 530px) {
+  .mobile-row-breaker{
+	  flex-wrap: wrap;
+	  flex-direction: coloumn;
+	}
+}
 
 /* end - index page */
 
@@ -1526,6 +1659,14 @@ flickity-prev-next-button[disabled]{
 	flex-wrap: wrap !important;
 }
 
+.col-reverse-mobile{
+	flex-direction: row;
+}
+
+.acadmic-card-margin-fix{
+	
+}
+
 @media screen and (max-width: 600px) {
 	.personal-info-item {
 	  font-size: 14px;
@@ -1533,6 +1674,14 @@ flickity-prev-next-button[disabled]{
 
 	#lecture_address *{
 		font-size: 14px;
+	}
+	
+	.col-reverse-mobile{
+		flex-direction: column-reverse !important;
+	}
+	
+	.acadmic-card-margin-fix{
+		margin-right: 20px;
 	}
 }
 
