@@ -263,3 +263,7 @@ padding: 0;
 .cite-btn:hover{
   cursor: pointer;
 }
+
+.academic-papers-panel{
+  max-width: 1050px;
+}
