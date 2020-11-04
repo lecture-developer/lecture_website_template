@@ -4,10 +4,10 @@ let PARAM_QUERY = "query";
 docs = [];
 var doc1 = {
     "id": 1,
-    "title": "Home Page",
-    "body": "The home page in English for the website. Current projects and bio review My research focus on medical and biological nanoparticles (focusing on nanorobotics). Spesificly, modeling a curing protocol based on bio-physical interactions of targeted drug delivery nanoparticles in the blood. I am also intrested in numerical solving and stabalization of ODE and PDE systems (especially, ones originated in a biological setup). I completed my B.Sc. (2016) and M.Sc. (2018) in Applied Mathematics in Bar-Ilan University. My complete CV can be found here",
-    "shortBody": "Short Bio and current projects review",
-	"url": "/index.html",
+    "title": "",
+    "body": "",
+    "shortBody": "",
+	"url": "/",
 };
 docs.push(doc1);
 

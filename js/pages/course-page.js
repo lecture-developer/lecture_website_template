@@ -7,6 +7,7 @@ import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
 // consts //
 let PRE_COOKIE_KEY = "course_";
+let SECTIONS = ["General", "Modules", "Modules"];
 // end - consts //
 
 class CoursePage extends PageRender
@@ -44,7 +45,23 @@ class CoursePage extends PageRender
 			// no cookie - first time this computer is on this page
 			this.last_visit = new Date(2000, 1, 1, 0, 0, 0, 0); // very old data
 		}
-
+		
+		// check if we wish to open some spesific tab 
+		this.section_open = null;
+		try
+		{
+			var getParms = PageRender.readGetPrams();
+			this.section_open = getParms.get("section");
+			if (this.section_open == null)
+			{
+				this.section_open = SECTIONS[0];
+			}
+		}
+		catch (error)
+		{
+			this.section_open = SECTIONS[0];
+		}
+		
 		// remember the full data
 		var json_full_data = retrivedData["coureses"];
 		var found_course = false;
@@ -71,7 +88,8 @@ class CoursePage extends PageRender
 		document.getElementById('main-body-page').innerHTML = course;
 
 		this.createTabsSection();
-
+		this.pickTab();
+		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
     }
@@ -113,8 +131,22 @@ class CoursePage extends PageRender
 		Tabs.addTab('general');
 		Tabs.addTab('updates', false ,this._pick_flag());
 		Tabs.addTab('modules', true);
+		
 	}
-
+	
+	pickTab()
+	{
+		for (var sectionIndex = 0; sectionIndex < SECTIONS.length; sectionIndex++)
+		{
+			if (this.section_open == SECTIONS[sectionIndex])
+			{
+				Tabs.activateDefault(sectionIndex);
+				return;
+			}
+		}
+		Tabs.activateDefault(0); // default case;
+	}
+	
 	// help functions //
 
 	// pick the needed flag icon
@@ -151,18 +183,10 @@ class CoursePage extends PageRender
     }
 
 	// end - help functions //
-
 }
+
 // run the class build on page load
 document.coursePage = new CoursePage();
 document.coursePage.build();
-
-// add toggle to the tabs
-function onPageLoad() {
-	Tabs.activateDefault(0);
-}
-
-
-onPageLoad();
 
 export { CoursePage }

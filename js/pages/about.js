@@ -7,6 +7,7 @@ import { ProjectSection } from '/lecture_website_template/js/components/projectS
 // Data file paths
 let LECTURER_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
 let INDEX_JSON = "/lecture_website_template/data/jsons/index.json";
+let SECTIONS = ["Biography", "Personal-projects", "Recommended-resources"];
 
 /*
 	Single instance class to build about page with dynamic content from JSONS from the server
@@ -15,128 +16,137 @@ class About extends PageRender
 {
 	constructor()
 	{
-
+		super();
+		this.section_open = null;
+		try
+		{
+			var getParms = PageRender.readGetPrams();
+			this.section_open = getParms.get("section");
+			if (this.section_open == null)
+			{
+				this.section_open = SECTIONS[0];
+			}
+		}
+		catch (error)
+		{
+			this.section_open = SECTIONS[0];
+		}
 	}
 
 	// just gather all the build of all the sections in the page - one per call to the server side
-	static build()
+	build()
 	{
-		About.buildInfo();
-
 		About.loadFileFromServer(INDEX_JSON, true);
 		const lecturerObj = retrivedData;
+		
+		// build tabs' content
+		this.buildBiography(lecturerObj);
+		this.buildProjects(lecturerObj);
+		
+		// create the tabs flow themself
+		this.createTabsSection();
+		
+		// build the info on the top of the page
+		this.buildInfo();
+		
+		// pick the right tab according to the link
+		this.pickTab();
+	}
+	
+	createTabsSection() 
+	{
+		Tabs.createTabsSection();
+		Tabs.addTab('Biography');
+		Tabs.addTab('Personal projects');
+		Tabs.addTab('Recommended resources', true);
+	}
+	
+	pickTab()
+	{
+		for (var sectionIndex = 0; sectionIndex < SECTIONS.length; sectionIndex++)
+		{
+			if (this.section_open == SECTIONS[sectionIndex])
+			{
+				Tabs.activateDefault(sectionIndex);
+				return;
+			}
+		}
+		Tabs.activateDefault(0); // default case;
+	}
+	
+	/* build the overall contact info section */
+	buildInfo()
+	{
+		let container_id = "lecturer_info_container";
+		About.loadFileFromServer(LECTURER_INFO_JSON, true);
+		const lecturerObj = retrivedData;
 
-    About.buildBiography(lecturerObj);
-    About.buildProjects(lecturerObj);
-    // About.buildResources();
+		// setting titles
+		document.getElementById("lecturer_name").innerHTML = lecturerObj.name;
+		document.getElementById("lecturer_position").innerHTML = lecturerObj.position;
+
+		//contacts
+		this.buildContact(lecturerObj);
+		//locations
+		if(lecturerObj.addresses.length != 0)
+		{
+			this.buildLocations(lecturerObj.addresses);
+		}
+		//adding headlines
+		document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
+		document.getElementById("room").innerHTML = Icons.location() + " Room Location";
+		document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
+
+		var info_table = document.getElementById("info-table");
+
+		for(let i = 0; i < lecturerObj.addresses.length; i++)
+		{
+			var row = info_table.insertRow(-1);
+			var cell_university = row.insertCell(0);
+			cell_university.innerHTML = lecturerObj.addresses[i].university;
+			var cell_location = row.insertCell(1);
+			cell_location.innerHTML = lecturerObj.addresses[i].location;
+			var cell_hours = row.insertCell(2);
+			cell_hours.innerHTML = lecturerObj.addresses[i].hours;
+		}
+
 	}
 
-  static buildInfo(){
-    let container_id = "lecturer_info_container";
-    About.loadFileFromServer(LECTURER_INFO_JSON, true);
-    const lecturerObj = retrivedData;
-
-    // setting titles
-    document.getElementById("lecturer_name").innerHTML = lecturerObj.name;
-    document.getElementById("lecturer_position").innerHTML = lecturerObj.position;
-
-    //contacts
-    About.buildContact(lecturerObj);
-    //locations
-    if(lecturerObj.addresses.length != 0){
-      About.buildLocations(lecturerObj.addresses);
-    }
-
-  }
-
-
-  /* build contact info section */
-  static buildContact(lecturerObj){
-
-    let email = lecturerObj.email;
-    let phone = lecturerObj.phone;
-    let linkedin = lecturerObj.linkedin_link;
-    let google = lecturerObj.google_scholar_link;
-
-    let contacts = document.getElementById("contacts");
-
-    if(email != ""){
-      let elem = document.createElement("P");
-      elem.innerHTML = Icons.mail() + " " + email;
-      contacts.appendChild(elem);
-    }
-
-    if(phone != ""){
-      let elem = document.createElement("P");
-      elem.innerHTML = Icons.phone() + " " +  phone;
-      contacts.appendChild(elem);
-    }
-
-    if(linkedin != ""){
-      let linkedinIcon = document.createElement("A");
-      linkedinIcon.innerHTML = Icons.linkedin();
-	  linkedinIcon.classList.add("social-icon");
-      linkedinIcon.href = linkedin;
-      contacts.appendChild(linkedinIcon);
-    }
-    if(google != ""){
-      let googleIcon = document.createElement("A");
-      googleIcon.innerHTML = Icons.google();
-	  googleIcon.classList.add("social-icon");
-      googleIcon.href = google;
-      contacts.appendChild(googleIcon);
-    }
-  }
-  /* build locations info section */
-  static buildLocations(addresses){
-
-    //adding headlines
-    document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
-    document.getElementById("room").innerHTML = Icons.location() + " Room Location";
-    document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
-
-	var info_table = document.getElementById("info-table");
-
-    for(let i = 0; i< addresses.length; i++)
+	buildBiography(lecturerObj)
 	{
-		var row = info_table.insertRow(-1);
-		var cell_university = row.insertCell(0);
-		cell_university.innerHTML = addresses[i].university;
-		var cell_location = row.insertCell(1);
-		cell_location.innerHTML = addresses[i].location;
-		var cell_hours = row.insertCell(2);
-		cell_hours.innerHTML = addresses[i].hours;
-    }
-
-  }
-
-	static buildBiography(lecturerObj){
 		document.getElementById("bio_text").innerHTML = lecturerObj["biography"];
 	}
 
-	static buildProjects(lecturerObj, topic, change = false){
+	buildProjects(lecturerObj, topic, change = false)
+	{
 		let projects = lecturerObj["currentProjects"];
-		if(!change){
-			let topics = About.buildTopicNav(lecturerObj, projects);
-			if(topics != null){
+		if(!change)
+		{
+			let topics = this.buildTopicNav(lecturerObj, projects);
+			if(topics != null)
+			{
 				document.getElementById("topics_list").firstChild.classList.add("active-topic");
-				About.dynamicBuildProjects(projects, topics[0]);
+				this.dynamicBuildProjects(projects, topics[0]);
 			}
-			else{
+			else
+			{
 				let projectsList = ProjectSection.createListFromJson(projects);
 				let panels ="";
-				for(let i = 0; i < projectsList.length; i++){
+				for(let i = 0; i < projectsList.length; i++)
+				{
 					panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
 				}
 				document.getElementById("projects_cards").innerHTML = panels;
 			}
 		}
-		else{
-			About.dynamicBuildProjects(projects, topic);
+		else
+		{
+			this.dynamicBuildProjects(projects, topic);
 		}
 	}
 
-	static dynamicBuildProjects(projects, topic){
+	dynamicBuildProjects(projects, topic)
+	{
 		let projectsList = ProjectSection.filterList(projects, "topic", topic);
 		projectsList = ProjectSection.createListFromJson(projectsList);
 		let panels ="";
@@ -146,7 +156,8 @@ class About extends PageRender
 		document.getElementById("projects_cards").innerHTML = panels;
 	}
 
-	static buildTopicNav(lecturerObj, projects){
+	buildTopicNav(lecturerObj, projects)
+	{
 		// build topics navigation bar
 		let topics = new Set();
 		for(let i = 0; i < projects.length; i++){
@@ -178,22 +189,69 @@ class About extends PageRender
 		return topicArr;
 	}
 
+	/* build contact info section */
+	buildContact(lecturerObj)
+	{
+		let email = lecturerObj.email;
+		let phone = lecturerObj.phone;
+		let linkedin = lecturerObj.linkedin_link;
+		let google = lecturerObj.google_scholar_link;
+
+		let contacts = document.getElementById("contacts");
+
+		if(email != ""){
+		  let elem = document.createElement("P");
+		  elem.innerHTML = Icons.mail() + " " + email;
+		  contacts.appendChild(elem);
+		}
+
+		if(phone != ""){
+		  let elem = document.createElement("P");
+		  elem.innerHTML = Icons.phone() + " " +  phone;
+		  contacts.appendChild(elem);
+		}
+
+		if(linkedin != ""){
+		  let linkedinIcon = document.createElement("A");
+		  linkedinIcon.innerHTML = Icons.linkedin();
+		  linkedinIcon.classList.add("social-icon");
+		  linkedinIcon.href = linkedin;
+		  contacts.appendChild(linkedinIcon);
+		}
+		
+		if(google != ""){
+		  let googleIcon = document.createElement("A");
+		  googleIcon.innerHTML = Icons.google();
+		  googleIcon.classList.add("social-icon");
+		  googleIcon.href = google;
+		  contacts.appendChild(googleIcon);
+		}
+	}
+  
+	/* build locations info section */
+	buildLocations(addresses)
+	{
+	  //adding headlines
+	  document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
+	  document.getElementById("room").innerHTML = Icons.location() + " Room Location";
+	  document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
+
+	  var info_table = document.getElementById("info-table");
+
+	  for(let i = 0; i< addresses.length; i++)
+	  {
+		  var row = info_table.insertRow(-1);
+		  var cell_university = row.insertCell(0);
+		  cell_university.innerHTML = addresses[i].university;
+		  var cell_location = row.insertCell(1);
+		  cell_location.innerHTML = addresses[i].location;
+		  var cell_hours = row.insertCell(2);
+		  cell_hours.innerHTML = addresses[i].hours;
+		}
+	}
 }
 
-About.build();
+document.aboutPage = new About();
+document.aboutPage.build();
 
-function createTabsSection() {
-	Tabs.createTabsSection();
-	Tabs.addTab('Biography');
-	Tabs.addTab('Personal projects');
-	Tabs.addTab('Recommended resources', true);
-}
-createTabsSection();
-
-// add toggle to the tabs
-function onPageLoad() {
-	Tabs.activateDefault(0);
-}
-
-
-onPageLoad();
+export {About};
