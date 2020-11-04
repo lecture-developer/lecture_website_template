@@ -60,7 +60,7 @@ class Tabs {
     
     static _activateTab(event) {
         let currTarget = event.target;
-        if(currTarget.tagName == "LABEL") {
+        if(currTarget.tagName == "LABEL" || currTarget.classList.contains("tab-seperator")) {
             currTarget = currTarget.parentNode;
         }
         if(!currTarget.classList.contains('active-tab')) {
