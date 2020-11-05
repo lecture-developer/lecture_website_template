@@ -83,8 +83,12 @@ class Research extends PageRender
 	{
 		let answerHTML = '<div class="body-section">';
 
-		this.ongoingProjects.forEach(research => {
+		this.ongoingProjects.forEach((research, i) => {
 			answerHTML += research.toHtml();
+
+			if(i < this.previousProjects.length - 1) {
+				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+			}
 		});
 
 		answerHTML += '</div>';
@@ -94,6 +98,14 @@ class Research extends PageRender
 	buildPrevious()
 	{
 		let answerHTML = '<div class="body-section">';
+
+		this.previousProjects.forEach((research, i) => {
+			answerHTML += research.toHtml();
+
+			if(i < this.previousProjects.length - 1) {
+				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+			}
+		});
 		
 		answerHTML += '</div>';
 		return answerHTML;

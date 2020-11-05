@@ -57,6 +57,10 @@
     max-height: 9999px;
 }
 
+.body-section {
+    display: none;
+}
+
 /****** tabs sections - start ******/
 .tabs {
     margin-bottom: 4rem;
@@ -98,7 +102,7 @@
     font-weight: 400;
     cursor: pointer;
     position: relative;
-    top: -2.5rem;
+    top: -2.25rem;
 }
 
 .new-updates-icon {
@@ -109,7 +113,7 @@
 }
 
 .active-tab-title {
-    font-weight: 700;
+    color: #5A67D8;
 }
 
 .active-section {
