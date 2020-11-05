@@ -68,6 +68,8 @@ class Research extends PageRender
 		
 		// open the right tab according to the url
 		this.pickTab();
+
+		this._addCollapsonigSections();
 	}
 
 	createTabsSection() {
@@ -116,6 +118,18 @@ class Research extends PageRender
 			}
 		}
 		Tabs.activateDefault(0); // default case;
+	}
+
+	_addCollapsonigSections() {
+		let sections = document.getElementsByClassName("collapsing-section-title");
+
+		for(let i = 0; i < sections.length; i++) {
+			sections[i].addEventListener('click', function(event) {
+				event.target.parentElement.nextSibling.classList.toggle('open-section');
+
+				sections[i].getElementsByClassName('moreLessButton')[0].classList.toggle('flip180');
+			});
+		}
 	}
 }
 
