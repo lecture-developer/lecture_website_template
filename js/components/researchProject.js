@@ -9,6 +9,7 @@ class ResearchProject extends Element
 		super();
 		this.name = name;
 		this.participents = participents;
+		this.description = description;
 		this.start_month = start_month;
 		this.start_year = start_year;
 		this.end_month = end_month;
@@ -20,7 +21,15 @@ class ResearchProject extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: finish here later
+		let html = '<div class="research">';
+
+		html += this._createResearchTitleSection();
+		html += '<div class="content-text">' + this.description + '</div>';
+		html += this._createTeamSection();
+
+		html += '</div>';
+
+		return html;
 	}
 	
 	// build a list of this object from Json object
@@ -39,14 +48,39 @@ class ResearchProject extends Element
 	static createFromJson(jsonObj)
 	{	
 		return new ResearchProject(jsonObj["name"],
-			ResearchTeamMember.createListFromJson(jsonObj["participents"]),
-			jsonObj["participents"], 
+			ResearchTeamMember.createListFromJson(jsonObj["participants"]),
+			jsonObj["description"], 
 			jsonObj["start_month"], 
 			jsonObj["start_year"], 
 			jsonObj["end_month"],
 			jsonObj["end_year"],
+			jsonObj["team_members"],
 			CourseResource.createListFromJson(jsonObj["relevant_resources"]));
 
+	}
+
+	_createResearchTitleSection() {
+		return '<div class="research-title space-between"><h3 class="content-title">' + this.name +
+		'</h3><p class="research-duration">[' + this.start_month + '/' + this.start_year + 
+		' - ' + this.end_month + '/' + this.end_year + ']</p></div><hr class="blue-hr">';
+	}
+
+	_createTeamSection() {
+		let html = '<div class="team-section">';
+
+		html += '<div class="team-title collapsing-section-title space-between"><p class="content-subtitle">Team</p><svg class="moreLessButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 8" width="13" height="8">'+
+		'<path fill="black" d="M 1.94516 7.41 L 6.53516 2.83 L 11.1252 7.41 L 12.5352 6 L 6.53516 0 L 0.535156 6 L 1.94516 7.41 Z" /></svg></div><hr>';
+
+		html += '<div class="collapsing-section">';
+
+		this.participents.forEach(member => {
+			html += member.toHtml();
+		});
+		html += '</div>';
+
+		html += '</div>';
+
+		return html;
 	}
 }
 export {ResearchProject};

@@ -14,7 +14,17 @@ class ResearchTeamMember extends Element
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: finish here later
+		let html = '<div class="member-card">';
+
+		html += '<img class="member-link-icon" src="/lecture_website_template/img/research/person-image.png" alt="personal-image">'
+
+		html += '<div class="member-icons"><a href="' + this.websiteLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/website.png" alt="personal website"></a>'+
+				'<a href="' + this.linkedinLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/google-scholar.png" alt="googel scholar link"></a>' +
+				'<a href="' + this.googleLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/linkedin.png" alt="linkedin link"><a/></div>';
+
+		html += '</div>';
+
+		return html;
 	}
 	
 	// build a list of this object from Json object

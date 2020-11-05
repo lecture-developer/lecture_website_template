@@ -40,7 +40,7 @@ class Research extends PageRender
 		
 		this.ongoingProjects = [];
 		this.previousProjects = [];
-		for (var index = 0; index < this.jsonData["projects"]; index++)
+		for (var index = 0; index < this.jsonData["projects"].length; index++)
 		{
 			var newProject = ResearchProject.createFromJson(this.jsonData["projects"][index]);
 			if (newProject.end_year <= nowDate.getFullYear() && newProject.end_month <= nowDate.getMonth() + 1)
@@ -80,7 +80,11 @@ class Research extends PageRender
 	buildOngoing()
 	{
 		let answerHTML = '<div class="body-section">';
-		
+
+		this.ongoingProjects.forEach(research => {
+			answerHTML += research.toHtml();
+		});
+
 		answerHTML += '</div>';
 		return answerHTML;
 	}
