@@ -52,6 +52,16 @@ class CourseResource extends Element
 		return resourcesList;
 
 	}
+
+	static createListFromJsonWithoutOrder(jsonObj)
+	{
+		var resourcesList = [];
+		jsonObj.forEach(resource => {
+			resourcesList.push(CourseResource.createFromJson(resource));
+		});
+		return resourcesList;
+
+	}
 	
 	// build a list of this object from Json object
 	static createFromJson(jsonObj)

@@ -26,6 +26,7 @@ class ResearchProject extends Element
 		html += this._createResearchTitleSection();
 		html += '<div class="content-text">' + this.description + '</div>';
 		html += this._createTeamSection();
+		html += this._createLinksSection();
 
 		html += '</div>';
 
@@ -46,7 +47,7 @@ class ResearchProject extends Element
 	
 	// build a list of this object from Json object
 	static createFromJson(jsonObj)
-	{	
+	{
 		return new ResearchProject(jsonObj["name"],
 			ResearchTeamMember.createListFromJson(jsonObj["participants"]),
 			jsonObj["description"], 
@@ -55,7 +56,7 @@ class ResearchProject extends Element
 			jsonObj["end_month"],
 			jsonObj["end_year"],
 			jsonObj["team_members"],
-			CourseResource.createListFromJson(jsonObj["relevant_resources"]));
+			CourseResource.createListFromJsonWithoutOrder(jsonObj["relevant_resources"]));
 
 	}
 
@@ -68,20 +69,44 @@ class ResearchProject extends Element
 	_createTeamSection() {
 		let html = '<div class="team-section">';
 
-		html += '<div class="team-title collapsing-section-title space-between"><p class="content-subtitle">Team</p><svg class="moreLessButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 8" width="13" height="8">'+
-		'<path fill="black" d="M 1.94516 7.41 L 6.53516 2.83 L 11.1252 7.41 L 12.5352 6 L 6.53516 0 L 0.535156 6 L 1.94516 7.41 Z" /></svg></div><hr>';
+		html += '<div class="collapsing-section-title"><div class="team-title space-between"><p class="content-subtitle">Team</p><svg class="moreLessButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 8" width="13" height="8">'+
+		'<path fill="black" d="M 1.94516 7.41 L 6.53516 2.83 L 11.1252 7.41 L 12.5352 6 L 6.53516 0 L 0.535156 6 L 1.94516 7.41 Z" /></svg></div><hr></div>';
 
-		html += '<div class="collapsing-section">';
+		html += '<div class="team-content-section collapsing-section">';
 
 		this.participents.forEach(member => {
 			html += member.toHtml();
 		});
 		
+		// end of content section
 		html += '</div>';
 
+		// end of whole team section
+		html += '</div>';
+
+		return html;
+	}
+
+	_createLinksSection() {
+		let html = '<div class="links-section">';
+
+		html += '<div class="collapsing-section-title"><div class="relevant-links-title space-between"><p class="content-subtitle">Relevant Links</p><svg class="moreLessButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 8" width="13" height="8">'+
+		'<path fill="black" d="M 1.94516 7.41 L 6.53516 2.83 L 11.1252 7.41 L 12.5352 6 L 6.53516 0 L 0.535156 6 L 1.94516 7.41 Z" /></svg></div><hr></div>';
+
+		html += '<div class="relevant-links-content-section collapsing-section">';
+
+		this.relevant_resources.forEach(resource => {
+			html += resource.toHtml();
+		});
+		
+		// end of content section
+		html += '</div>';
+
+		// end of whole link section
 		html += '</div>';
 
 		return html;
 	}
 }
+
 export {ResearchProject};
