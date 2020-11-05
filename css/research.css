@@ -33,6 +33,16 @@
     cursor: pointer;
 }
 
+.collapsing-section {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 2.625rem;
+}
+
 /****** tabs sections - start ******/
 .tabs {
     margin-bottom: 4rem;
@@ -145,7 +155,7 @@ hr {
 .content-text {
     margin-left: 1.5rem;
     margin-top: 1.5rem;
-    font-size: 18px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
@@ -166,13 +176,47 @@ hr {
     flex-direction: column;
 }
 
-.member-link-icons {
+.member-properties {
+    display: flex;
     flex-direction: row;
 }
 
+.member-details {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;  
+    margin-left: 0.75rem;
+}
+
+.member-role {
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #718096;
+    margin-left: 2.75rem;
+}
+
+.member-pesonal-img {
+    position: relative;
+    top: 3px;
+    margin-left: 0;
+}
+
+.member-link-icons {
+    flex-direction: row;
+    margin-left: 2.5rem;
+}
+
 .member-link-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
 }

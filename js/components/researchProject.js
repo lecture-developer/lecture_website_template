@@ -76,6 +76,7 @@ class ResearchProject extends Element
 		this.participents.forEach(member => {
 			html += member.toHtml();
 		});
+		
 		html += '</div>';
 
 		html += '</div>';

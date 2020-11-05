@@ -24,6 +24,23 @@
 		"participants": [{
 			"name": "Full Name",
 			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
 			"website_link": "link link link",
 			"googleLink": "link link link 2",
 			"linkedinLink": "link link link 3"
