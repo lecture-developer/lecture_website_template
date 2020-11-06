@@ -23,8 +23,7 @@
 
 .header-detail {
     display: flex;
-    /* flex-direction: row; */
-    flex-direction: column;
+    flex-direction: row;
     justify-content:space-between;
 }
 
@@ -133,6 +132,10 @@ hr {
     .tab {
         width: 7rem;
     }
+
+	.header-detail {
+		flex-direction: column;
+	}
 }
 
 @media screen and (max-width: 670px) {
