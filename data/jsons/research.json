@@ -18,5 +18,165 @@
 	"email": "email.email@email.email",
 	"linkedin_link": "https://www.google.com",
 	"google_scholar_link": "https://www.google.com",
-	"name":" Henrietta Losatter"
+	"name":" Henrietta Losatter",
+	"projects": [{
+		"name": "Research Name",
+		"participants": [{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		}],
+		"description": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+		"start_month": 2,
+		"start_year": 1990,
+		"end_month": 10,
+		"end_year": 1992,
+		"team_members": 2,
+		"relevant_resources": [
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			}
+		]
+	},
+	{
+		"name": "Research Name 2",
+		"participants": [{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		}],
+		"description": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+		"start_month": 2,
+		"start_year": 2020,
+		"end_month": 10,
+		"end_year": 2022,
+		"team_members": 5,
+		"relevant_resources": [
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			}
+		]
+	},
+	{
+		"name": "Research Name 3",
+		"participants": [{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		}],
+		"description": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+		"start_month": 5,
+		"start_year": 2020,
+		"end_month": 11,
+		"end_year": 2033,
+		"team_members": 1,
+		"relevant_resources": [
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			}
+		]
+	}]
 }
