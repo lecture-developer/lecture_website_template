@@ -8,6 +8,9 @@
     color: #5A67D8;
 }
 
+.main-header-page p {
+    font-size: 1rem;
+}
 
 /****** icons sections - start ******/
 #icons_section {
@@ -28,6 +31,7 @@
     display: flex;
     flex-direction: row;
 }
+
 .item-detail img {
     left: 4.17%;
     right: 4.17%;
@@ -39,11 +43,15 @@
 }
 
 .sylabus-link {
-    font-size: 1.5rem;;
+    font-size: 1.25rem;
+    font-weight: 400;
 }
 
 .course-sylabus-img {
+    width: 1.25rem;
+    height: 1.25rem;
     margin-right: 0.75rem;
+    margin-bottom: 5px;
 }
 /****** icons sections - end ******/
 
@@ -120,6 +128,41 @@ hr {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 850px) {
+    .tab {
+        width: 7rem;
+    }
+
+	.header-detail {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 670px) {
+    .course-page-section {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .item-detail p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .tab {
+        width: 5rem;
+    }
+
+    .tab-title {
+        font-size: 14px;
+    }
+
+    .item-detail p {
+        font-size: 12px;
+    }
+}
+
 /****** tabs sections - end ******/
   
 .main-dot {
@@ -167,7 +210,7 @@ hr {
 .content-text {
     margin-left: 1.5rem;
     margin-top: 1.5rem;
-    font-size: 18px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
