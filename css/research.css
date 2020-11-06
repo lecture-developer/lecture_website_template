@@ -194,11 +194,13 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .member-card {
     display: flex;
     flex-direction: column;
+	margin-bottom: 30px;
 }
 
 .member-properties {
@@ -244,6 +246,12 @@ hr {
     height: 1.25rem;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
+}
+
+@media only screen and (max-width: 850px) {
+	.team-content-section{
+		justify-content: center;
+	}
 }
 
 /****** team section - end ******/

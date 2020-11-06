@@ -45,11 +45,11 @@ class Research extends PageRender
 			var newProject = ResearchProject.createFromJson(this.jsonData["projects"][index]);
 			if (newProject.end_year <= nowDate.getFullYear() && newProject.end_month <= nowDate.getMonth() + 1)
 			{
-				this.ongoingProjects.push(newProject);
+				this.previousProjects.push(newProject);
 			}
 			else
 			{
-				this.previousProjects.push(newProject);
+				this.ongoingProjects.push(newProject);
 			}
 		}
 	}
@@ -61,9 +61,9 @@ class Research extends PageRender
 		
 		// build the tabs' data and open the needed tab according to the link
 		let tabsHTML = "";
-		tabsHTML += this.buildOngoing(this.section_open);
-		tabsHTML += this.buildPrevious(this.section_open);
-		tabsHTML += this.buildWorkwithme(this.section_open);
+		tabsHTML += this.buildOngoing();
+		tabsHTML += this.buildPrevious();
+		tabsHTML += this.buildWorkwithme();
 		document.getElementById('main-body-page').innerHTML += tabsHTML;
 		
 		// open the right tab according to the url
