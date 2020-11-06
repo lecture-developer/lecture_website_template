@@ -1,6 +1,7 @@
 // imports
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { ResearchProject } from '/lecture_website_template/js/components/researchProject.js';
+import { ResearchPosition } from '/lecture_website_template/js/components/researchPosition.js';
 import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 
@@ -51,6 +52,12 @@ class Research extends PageRender
 			{
 				this.ongoingProjects.push(newProject);
 			}
+		}
+		
+		this.openPositions = [];
+		for (var index = 0; index < this.jsonData["open_positions"].length; index++)
+		{
+			this.openPositions.push(ResearchPosition.createFromJson(this.jsonData["open_positions"][index]));
 		}
 	}
 
@@ -114,6 +121,19 @@ class Research extends PageRender
 	buildWorkwithme()
 	{
 		let answerHTML = '<div class="body-section">';
+		
+		if (this.jsonData["work_with_me_opening"] != "")
+		{
+			answerHTML += '<div class="opening-statment">' + this.jsonData["work_with_me_opening"] + '</div>';	
+		}
+
+		this.openPositions.forEach((position, i) => {
+			answerHTML += position.toHtml();
+
+			if(i < this.previousProjects.length - 1) {
+				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+			}
+		});
 		
 		answerHTML += '</div>';
 		return answerHTML;
