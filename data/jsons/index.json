@@ -9,7 +9,7 @@
       {
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": ""}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": ""},
 					  {"info": "cite", "type": 3, "link": ""}],
 		 "authors": "first name, last name; first name, last name",
          "year": 2019,
@@ -21,7 +21,7 @@
       {
          "name":"Paper's title Paper's title Paper's title Paper's title",
          "description":"Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"},
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		 "authors": "first name, last name; first name, last name",
          "year": 2020,
@@ -33,19 +33,22 @@
    ],
    "currentProjects":[
       {
-         "name":"Name 1",
+         "name":"Really Cool Project",
+         "topic": "cool topic",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": ""}
+         "link":{"info": "View project", "type": 2, "link": "bbb", "example":"abc"}
       },
       {
-         "name":"Name 2",
-         "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": "aaa"}
+         "name":"Amazing project!",
+         "topic": "amazing topic",
+         "description":"long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description",
+         "link":{"info": "View project", "type": 2, "link": "aaa", "example":""}
       },
       {
-         "name":"Name 3",
+         "name":"Another cool project",
+         "topic": "cool topic",
          "description":"Short Description Short Description Short Description ",
-         "link":{"info": "view project", "type": 1, "link": ""}
+         "link":{"info": "View project", "type": 2, "link": "", "example":""}
       }
    ]
 }

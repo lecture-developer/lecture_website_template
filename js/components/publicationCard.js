@@ -18,17 +18,15 @@ class PublicationCard extends Element
 		this.publisher = publisher;
 		this.publicationStatus = publicationStatus;
 	}
-	
+
 	// convert the object into HTML
 	toHtml()
 	{
-		// TODO: make this more generic with the following things:
 		// 1. dynamic list of action buttons each one with it's design from the class 
 		// 2. 
 
 		var answer = '<div class="academic-papers-panel"><div class="personal-row-col col-reverse-mobile w-100 align-space-between"><h3>' 
 		+ this.title + '</h3>'
-
 		if (this.fileLinks[0]["link"] != "")
 		{
 			answer += '<a class="cite-btn" onclick="copy_cite(\'' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '\');">' + CITE_SYMBOL + 'Cite</a></div>';
@@ -39,16 +37,12 @@ class PublicationCard extends Element
 		}
 
 		answer += '<h4>' + this.authors + "<br>" + this.publisher + '</h4><p>'
-
-
 		answer += this.description + '</p><div class="personal-row space-between align-items-center mobile-row-breaker">';
 
 		if (this.fileLinks[1]["link"] != "")
 		{
 			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a><div class="w-100 acadmic-parms-row">';
 		}
-
-
 
 		answer += '<span>' 
 		+ this.publicationStatus + '</span><span>'
@@ -57,7 +51,7 @@ class PublicationCard extends Element
 		+'</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
 	}
-	
+
 	// build a list of this object from Json object
 	static createListFromJson(jsonObj)
 	{
@@ -68,32 +62,32 @@ class PublicationCard extends Element
 		}
 		return answer;
 	}
-	
+
 	// build a list of this object from Json object
 	static createFromJson(jsonObj)
 	{
 		return new PublicationCard(jsonObj["name"],
-		jsonObj["description"], 
-		ActionButton.createListFromJson(jsonObj["fileLinks"]), 
-		jsonObj["authors"], 
-		jsonObj["year"], 
-		jsonObj["topic"], 
-		jsonObj["type"], 
+		jsonObj["description"],
+		ActionButton.createListFromJson(jsonObj["fileLinks"]),
+		jsonObj["authors"],
+		jsonObj["year"],
+		jsonObj["topic"],
+		jsonObj["type"],
 		jsonObj["publisher"],
 		jsonObj["publicationStatus"]);
 	}
-	
+
 	// sort according to some property list of this object
 	static sortByProperty(ObjList, property)
 	{
 		return ObjList.sort(function(a, b)
 		{
-			var x = a[property + ""]; 
+			var x = a[property + ""];
 			var y = b[property + ""];
 			return ((x < y) ? -1 : ((x > y) ? 1 : 0));
 		});
 	}
-	
+
 	// filter the list according to some property and value
 	static filterList(objList, property, filterValue)
 	{
@@ -107,7 +101,7 @@ class PublicationCard extends Element
 		}
 		return answer;
 	}
-	
+
 	// split list into list of lists according to some property
 	static splitByProperty(ObjList, property)
 	{
