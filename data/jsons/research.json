@@ -19,6 +19,25 @@
 	"linkedin_link": "https://www.google.com",
 	"google_scholar_link": "https://www.google.com",
 	"name":" Henrietta Losatter",
+	"work_with_me_opening": "I am always looking for great students (both undergraduates and M.Sc.). If you are a good student (from the CS. or Math. department in BIU), and you are curious about research and want to learn, we should talk. Expect hard work, but also lots of fun!",
+	"open_positions": [
+		{
+			"name": "position 1 name",
+			"description": "short information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shor",
+			"requierments": ["requierment 1", "requierment 2", "requierment 3"],
+			"applay_text": "cool text cool text cool text cool text cool text ",
+			"position_type": "full time",
+			"connect_email": "email.email@email.email"
+		},
+		{
+			"name": "position 2 name",
+			"description": "short information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shorshort information shor",
+			"requierments": ["requierment 11", "requierment 22", "requierment 33"],
+			"applay_text": "coolcoolcoolcoolcool text cool text cool text cool text cool text ",
+			"position_type": "part time 60%",
+			"connect_email": "emailemailemail.email@email.emailemailemail"
+		}
+	],
 	"projects": [{
 		"name": "Research Name",
 		"participants": [{
