@@ -68,17 +68,17 @@ class Tabs
         this._toggleActiveTab(tabs[index]);
         this._toggleContentDisplay(index);
     }
-    
-    static _activateTab(event) 
-	{    
-		let currTarget = event.target;
-        
-		if(currTarget.tagName == "LABEL") 
-		{
+   
+  
+  static _activateTab(event) 
+  {
+      let currTarget = event.target;
+      if(currTarget.tagName == "LABEL" || currTarget.classList.contains("tab-seperator"))
+        {
             currTarget = currTarget.parentNode;
         }
         if(!currTarget.classList.contains('active-tab')) 
-		{
+		    {
             // get the current active tab
             let currentActive = document.getElementsByClassName('active-tab')[0];
 
@@ -96,9 +96,9 @@ class Tabs
             Tabs._toggleContentDisplay(newIndex);
         }
 		
-		// update the url for sharing later this sepsific tab
-		insertGetParamToUrl("section", currTarget.title);
-    }
+      // update the url for sharing later this sepsific tab
+      insertGetParamToUrl("section", currTarget.title);
+  }
 
     // toggle the activeness of the given item and label
     static _toggleActiveTab(target)

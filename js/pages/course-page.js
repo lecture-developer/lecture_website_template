@@ -99,7 +99,7 @@ class CoursePage extends PageRender
 	{
 		try
 		{
-			var html='<ul><li><a href="/">Home</a></li><li><a href="/teaching.html">Courses</a></li><li>' + this.data.name + '</li></ul>';
+			var html='<ul><li><a href="/lecture_website_template/">Home</a></li><li><a href="/lecture_website_template/teaching.html">Courses</a></li><li>' + this.data.name + '</li></ul>';
 			document.getElementById("breadcrumb_section").innerHTML = html;
 		}
 		catch (error)
