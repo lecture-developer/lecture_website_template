@@ -6,8 +6,7 @@
       "recommendation":"I love this paper",
       "fileLinks":[
          {"info": "Download", "type": 1, "link": "aaa"},
-         {"info": "cite", "type": 3, "link": "bbb"},
-         {"info": "Read online", "type": 3, "link": "link"}
+         {"info": "cite", "type": 3, "link": "bbb"}
        ],
       "authors": "first name last name, first name last name",
       "year": 2019,
@@ -20,8 +19,7 @@
       "recommendation":"",
       "fileLinks":[
          {"info": "download", "type": 1, "link": ""},
-         {"info": "cite", "type": 3, "link": ""},
-         {"info": "Read online", "type": 3, "link": "link"}
+         {"info": "cite", "type": 3, "link": ""}
        ],
       "authors": "first name last name, first name last name",
       "year": 2005,
@@ -34,8 +32,7 @@
       "recommendation":"great website",
       "fileLinks":[
          {"info": "download", "type": 1, "link": "aaa"},
-         {"info": "cite", "type": 3, "link": ""},
-         {"info": "Read online", "type": 3, "link": ""}
+         {"info": "cite", "type": 3, "link": ""}
        ],
       "authors": "first name last name, first name last name",
       "year": 1997,

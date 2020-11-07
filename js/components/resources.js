@@ -47,9 +47,9 @@ class Resource extends Element
 			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a>';
 		}
 
-    if (this.fileLinks[2]["link"] != ""){
-      answer += '<a href="' + this.fileLinks[2]["link"] + '" class="secondary-btn acadmic-card-margin-fix space-around" style="width: 100%; max-width: 126px;">Read online</a>';
-    }
+    // if (this.fileLinks[2]["link"] != ""){
+    //   answer += '<a href="' + this.fileLinks[2]["link"] + '" class="secondary-btn acadmic-card-margin-fix space-around" style="width: 100%; max-width: 126px;">Read online</a>';
+    // }
 
     answer += '<div class="w-100 acadmic-parms-row"><span>'
 		+ this.year + '</span><span>'

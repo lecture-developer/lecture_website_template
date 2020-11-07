@@ -42,8 +42,19 @@
 
 /****** table - start ******/
 #contacts {
-  margin-right: 40px;
-  max-width: 430px;
+  /* margin-right: 20%; */
+  max-width: 400px;
+}
+
+#cv{
+  color: #5A67D8;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 200%;
+text-decoration-line: underline;
+
 }
 
 #lecturer_location {
@@ -152,9 +163,12 @@
   flex-direction: row;
 }
 
-.space-between {
-  justify-content: space-between;
+@media (min-width: 500px){
+  .space-between {
+    justify-content: space-between;
+  }
 }
+
 
 ul {
   list-style-type: none;
@@ -239,6 +253,14 @@ ul .active-topic {
   color: #4A5568;
   padding-left: 16px;
   padding-top: 8px;
+}
+
+@media only screen and (max-width: 450px){
+.resources-filters select {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
 
 #topic-filter{

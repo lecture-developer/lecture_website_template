@@ -95,22 +95,8 @@ class About extends PageRender
 		{
 			this.buildLocations(lecturerObj.addresses);
 		}
-		//adding headlines
-		document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
-		document.getElementById("room").innerHTML = Icons.location() + " Room Location";
-		document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
-
-		var info_table = document.getElementById("info-table");
-
-		for(let i = 0; i < lecturerObj.addresses.length; i++)
-		{
-			var row = info_table.insertRow(-1);
-			var cell_university = row.insertCell(0);
-			cell_university.innerHTML = lecturerObj.addresses[i].university;
-			var cell_location = row.insertCell(1);
-			cell_location.innerHTML = lecturerObj.addresses[i].location;
-			var cell_hours = row.insertCell(2);
-			cell_hours.innerHTML = lecturerObj.addresses[i].hours;
+		else{
+			document.getElementById("lecturer_location").style.display = "none";
 		}
 
 	}
@@ -195,12 +181,22 @@ class About extends PageRender
 	/* build contact info section */
 	buildContact(lecturerObj)
 	{
+		let cv = lecturerObj.cvfile;
 		let email = lecturerObj.email;
 		let phone = lecturerObj.phone;
 		let linkedin = lecturerObj.linkedin_link;
 		let google = lecturerObj.google_scholar_link;
+		let facebook = lecturerObj.facebook_link;
 
 		let contacts = document.getElementById("contacts");
+
+		if(cv != ""){
+			let elem = document.createElement("A");
+			elem.href = cv;
+			elem.id ="cv";
+		  elem.innerHTML = Icons.cv() + 'Download CV';
+		  contacts.appendChild(elem);
+		}
 
 		if(email != ""){
 		  let elem = document.createElement("P");
@@ -228,6 +224,14 @@ class About extends PageRender
 		  googleIcon.classList.add("social-icon");
 		  googleIcon.href = google;
 		  contacts.appendChild(googleIcon);
+		}
+
+		if(facebook != ""){
+			let fbIcon = document.createElement("A");
+			fbIcon.innerHTML = Icons.facebook();
+			fbIcon.classList.add("social-icon");
+			fbIcon.href = facebook;
+			contacts.appendChild(fbIcon);
 		}
 	}
 
@@ -259,8 +263,14 @@ class About extends PageRender
 		const resourcesObj = retrivedData;
 		let res_section = document.getElementById("resources_section");
 		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
-		for(let i = 0; i < resourcesList.length; i++){
-			res_section.innerHTML += resourcesList[i].toHtml();
+		if(resourcesList.length == 0){
+			document.getElementById("resources_filters").style.display = "none";
+			document.getElementById("filter_by").innerHTML = "No resources to show.";
+		}
+		else{
+			for(let i = 0; i < resourcesList.length; i++){
+				res_section.innerHTML += resourcesList[i].toHtml();
+			}
 		}
 	}
 }
