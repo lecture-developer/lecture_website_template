@@ -3,39 +3,179 @@
 let PARAM_QUERY = "query";
 docs = [];
 var doc1 = {
-    "id": 1,
-    "title": "Lecture Name with fields and other data",
-    "body": "A cool data with bio A cool data with bio A cool data with bio A cool data with bio A cool data with bio A cool data with bio ",
-    "shortBody": "A cool data with bio ",
-	"url": "/",
+    "id": "1",
+    "body": "Paper's description Paper's description",
+    "shortBody": "first name, last name; first name, last name good publisher good publisher",
+    "title": "Paper's Paper's title",
+    "url": "/publications.html"
 };
 docs.push(doc1);
+
+
+var doc2 = {
+    "id": "2",
+    "body": "Paper's description Paper's description",
+    "shortBody": "first name, last name; first name, last name good publisher good publisher",
+    "title": "Paper's Paper's title",
+    "url": "/publications.html"
+};
+docs.push(doc2);
+
+
+var doc3 = {
+    "id": "3",
+    "body": "Paper's description Paper's description",
+    "shortBody": "first name, last name; first name, last name good publisher good publisher",
+    "title": "Paper's Paper's title",
+    "url": "/publications.html"
+};
+docs.push(doc3);
+
+
+var doc4 = {
+    "id": "4",
+    "body": "Paper's description Paper's description",
+    "shortBody": "first name, last name; first name, last name good publisher good publisher",
+    "title": "Paper's Paper's title",
+    "url": "/publications.html"
+};
+docs.push(doc4);
+
+
+var doc5 = {
+    "id": "5",
+    "body": "A very long text - allow HTML edditing cool long html description. cool long html description. cool long html description",
+    "shortBody": "cool name. cool name. cool name",
+    "title": "research",
+    "url": "/publications.html"
+};
+docs.push(doc5);
+
+
+var doc6 = {
+    "id": "6",
+    "body": "cool long html description",
+    "shortBody": "cool long html description",
+    "title": "name student",
+    "url": "url"
+};
+docs.push(doc6);
+
+
+var doc7 = {
+    "id": "7",
+    "body": "cool long html description",
+    "shortBody": "cool long html description",
+    "title": "name student",
+    "url": "url"
+};
+docs.push(doc7);
+
+
+var doc8 = {
+    "id": "8",
+    "body": "cool long html description",
+    "shortBody": "cool long html description",
+    "title": "name student",
+    "url": "url"
+};
+docs.push(doc8);
+
+
+var doc9 = {
+    "id": "9",
+    "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum A Really good text A Really good text A Really good text from data 111. A Really good text A Really good text A Really good text from data 222. A Really good text A Really good text A Really good text from data 333",
+    "shortBody": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "title": "home page",
+    "url": "/"
+};
+docs.push(doc9);
+
+
+var doc10 = {
+    "id": "10",
+    "body": "Cool description to a lecture demo website",
+    "shortBody": "Bar Ilan University. Ben Gurion University",
+    "title": " Henrietta Losatter position position position",
+    "url": "/research.html"
+};
+docs.push(doc10);
+
+
+var doc11 = {
+    "id": "11",
+    "body": "position position position. Cool description to a lecture demo website",
+    "shortBody": "position position position. Cool description to a lecture demo website",
+    "title": "research",
+    "url": "/research.html"
+};
+docs.push(doc11);
+
+
+var doc12 = {
+    "id": "12",
+    "body": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+    "shortBody": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information ab",
+    "title": "Research Name",
+    "url": "/research.html"
+};
+docs.push(doc12);
+
+
+var doc13 = {
+    "id": "13",
+    "body": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+    "shortBody": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information ab",
+    "title": "Research Name 2",
+    "url": "/research.html"
+};
+docs.push(doc13);
+
+
+var doc14 = {
+    "id": "14",
+    "body": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+    "shortBody": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information ab",
+    "title": "Research Name 3",
+    "url": "/research.html"
+};
+docs.push(doc14);
+
+
+var doc15 = {
+    "id": "15",
+    "body": "A very long text - allow HTML edditing",
+    "shortBody": "A very long text - allow HTML edditing",
+    "title": "courses",
+    "url": "/teaching.html"
+};
+docs.push(doc15);
+
+
+var doc16 = {
+    "id": "16",
+    "body": "sentence or two of text - no HTML needed",
+    "shortBody": "not too long not too long not too long",
+    "title": "course name 123",
+    "url": "/course-page.html?course_id=123"
+};
+docs.push(doc16);
+
+
+var doc17 = {
+    "id": "17",
+    "body": "sentence or two of text - no HTML needed",
+    "shortBody": "not too long not too long not too long",
+    "title": "course name 2 321",
+    "url": "/course-page.html?course_id=321"
+};
+docs.push(doc17);
 
 var index = elasticlunr(function () {
     this.addField('title');
     this.addField('body');
     this.setRef('id');
 });
-
-/* add event for 'ENTER' hit in field search */
-var desktopInput = document.getElementById("search_input");
-desktopInput.onkeyup = function(e)
-{
-    if(e.keyCode == 13)
-	{
-       searchPage();
-    }
-}
-var mobileInput = document.getElementById("search_input_mobile");
-mobileInput.onkeyup = function(e)
-{
-    if(e.keyCode == 13)
-	{
-       searchPage();
-    }
-}
-
-/* end - add event for 'ENTER' hit in field search */
 
 for (var i = 0; i < docs.length; i++)
 {
@@ -145,3 +285,24 @@ function showSearchAlert(alertText)
 	alertDiv.style.opacity = "1";
 	setTimeout(function(){ alertDiv.style.opacity = "0"; }, 2500);
 }
+
+/* add event for 'ENTER' hit in field search */
+
+var desktopInput = document.getElementById("search_input");
+desktopInput.onkeyup = function(e)
+{
+    if(e.keyCode == 13)
+	{
+       searchPage();
+    }
+}
+var mobileInput = document.getElementById("search_input_mobile");
+mobileInput.onkeyup = function(e)
+{
+    if(e.keyCode == 13)
+	{
+       searchPage();
+    }
+}
+
+/* end - add event for 'ENTER' hit in field search */
