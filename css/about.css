@@ -262,12 +262,13 @@ ul .active-topic {
     margin-right: auto;
     margin-bottom: 10px;
 }
+}
 
 #topic-filter{
   margin-left: 0;
 }
 
-.academic-papers-panel .recommend-txt{
+.recommend-promo .recommend-txt{
   font-family: Roboto;
 font-style: normal;
 font-weight: 400;

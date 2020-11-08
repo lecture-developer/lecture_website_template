@@ -44,7 +44,7 @@ class About extends PageRender
 		// build tabs' content
 		this.buildBiography(lecturerObj);
 		this.buildProjects(lecturerObj);
-		this.buildResources();
+		this.buildResources(false,"buildFilters");
 
 		// create the tabs flow themself
 		this.createTabsSection();
@@ -257,25 +257,75 @@ class About extends PageRender
 		}
 	}
 
-	/* build resources tab content*/
-	buildResources(){
+		/* build resources tab content*/
+	buildFilters(rList){
+		this.buildOneFilter(rList, "year");
+		this.buildOneFilter(rList, "type");
+		this.buildOneFilter(rList, "topic");
+	}
+
+	buildOneFilter(rList, fName){
+		let filters = new Set();
+		for(let i = 0; i < rList.length; i++){
+			filters.add(rList[i][fName]);
+		}
+
+		filters = Array.from(filters);
+		let filter = document.getElementById(fName+"-filter");
+		for(let i = 0; i<filters.length; i++){
+			let option = document.createElement("OPTION");
+			option.innerHTML = filters[i];
+			filter.appendChild(option);
+		}
+	}
+
+	buildResources(change = false, filterName){
 		About.loadFileFromServer(RESOURCES_JSON, true);
 		const resourcesObj = retrivedData;
+		this.clearResources();
 		let res_section = document.getElementById("resources_section");
 		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
-		if(resourcesList.length == 0){
-			document.getElementById("resources_filters").style.display = "none";
-			document.getElementById("filter_by").innerHTML = "No resources to show.";
+		if(filterName == "buildFilters"){
+			this.buildFilters(resourcesList);
 		}
-		else{
+		if(!change){
+			if(resourcesList.length == 0){
+				document.getElementById("resources_filters").style.display = "none";
+				document.getElementById("filter_by").innerHTML = "No resources to show.";
+			}
+			else{
+				for(let i = 0; i < resourcesList.length; i++){
+					res_section.innerHTML += resourcesList[i].toHtml();
+				}
+			}
+		} else {
+			let selector = document.getElementById(filterName + "-filter");
+			let selectorIndex = selector.selectedIndex;
+			let filter = selector.options[selectorIndex].value;
+			if(filter == "Year" || filter == "Topic" || filter == "Type"){
+				this.buildResources(false);
+				return;
+			}
 			for(let i = 0; i < resourcesList.length; i++){
-				res_section.innerHTML += resourcesList[i].toHtml();
+				console.log(resourcesList[i]);
+				if(resourcesList[i][filterName] == filter){
+					res_section.innerHTML += resourcesList[i].toHtml();
+				}
 			}
 		}
 	}
+
+	clearResources(){
+		let res_section = document.getElementById("resources_section");
+		res_section.innerHTML = '';
+	}
+
 }
 
 document.aboutPage = new About();
 document.aboutPage.build();
+document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"year");});
+document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"type");});
+document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"topic");});
 
 export {About};
