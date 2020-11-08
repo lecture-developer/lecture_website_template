@@ -1,5 +1,5 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
-import {Course} from '/lecture_website_template/js/components/course.js';
+import { descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
 
 class CourseResource extends Element
 {
@@ -31,7 +31,7 @@ class CourseResource extends Element
 		img += '" class="resource-img"/>';
 		
 		let html = '<div class="resource-content"><a href="'+ this.link + '" class="resource-link">' + img
-				  + this.name + '</a><p class="resource-description">' + Course.descriptionTrim(this.description) + '</p></div>';
+				  + this.name + '</a>' + descriptionTrim(this.description, "resource-description") + '</div>';
 
 		return html;
 	}

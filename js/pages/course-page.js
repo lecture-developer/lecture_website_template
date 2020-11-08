@@ -1,7 +1,7 @@
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { Course } from '/lecture_website_template/js/components/course.js';
-import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
@@ -89,6 +89,8 @@ class CoursePage extends PageRender
 
 		this.createTabsSection();
 		this.pickTab();
+
+		addCollapseFunction();
 		
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
@@ -180,7 +182,7 @@ class CoursePage extends PageRender
     _redirectBack()
 	{
 		window.location.replace(window.location.hostname + "/teaching.html");
-    }
+	}
 
 	// end - help functions //
 }
