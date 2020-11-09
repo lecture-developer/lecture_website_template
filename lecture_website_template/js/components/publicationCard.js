@@ -27,7 +27,7 @@ class PublicationCard extends Element
 
 		var answer = '<div class="academic-papers-panel"><div class="personal-row-col col-reverse-mobile w-100 align-space-between"><h3>' 
 		+ this.title + '</h3>'
-		if (this.fileLinks[0]["link"] != "")
+		if (this.fileLinks[1]["link"] != "")
 		{
 			answer += '<a class="cite-btn" onclick="copy_cite(\'' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '\');">' + CITE_SYMBOL + 'Cite</a></div>';
 		}
@@ -38,18 +38,44 @@ class PublicationCard extends Element
 
 		answer += '<h4>' + this.authors + "<br>" + this.publisher + '</h4><p>'
 		answer += this.description + '</p><div class="personal-row space-between align-items-center mobile-row-breaker">';
-
-		if (this.fileLinks[1]["link"] != "")
-		{
-			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a><div class="w-100 acadmic-parms-row">';
+		let link = this.fileLinks[0]["link"];
+		if (link != "" && this.isFileFormat(link)){
+			answer += '<a href="' + link + '" class="download-btn acadmic-card-margin-fix">Download</a><div class="w-100 acadmic-parms-row">';
 		}
-
 		answer += '<span>' 
 		+ this.publicationStatus + '</span><span>'
 		+ this.year + '</span><span>'
 		+ this.type + '</span></div>'
 		+'</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
+	}
+	
+
+	//hhh.pdf, .pdf , str=7, suff=4
+	isFileFormat(str, ){
+		let arr = [".pdf", ".htm", ".html", ".ppt", ".pptx", ".xls", ".xlsx", ".doc", ".docx", ".txt"];
+		let j = 0;
+		while (j < arr.length){
+			let suffix = arr[j];
+			if (str.length > suffix.length){
+				let idx = str.length - suffix.length; 
+				let i = 0; 
+				let isFile = true;
+				while (i < suffix.length){  
+					if (str[idx] !== suffix[i]){
+						isFile = false;
+						break;
+					}
+					idx++;
+					i++;
+				}
+				if (isFile){
+					return true;
+				}
+			}
+			j++;
+		}
+		return false;
 	}
 
 	// build a list of this object from Json object

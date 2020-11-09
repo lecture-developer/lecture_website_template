@@ -21,7 +21,7 @@
       {
          "name":"Paper's title Paper's title Paper's title Paper's title",
          "description":"Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"},
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa.pdf"},
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		 "authors": "first name, last name; first name, last name",
          "year": 2020,
