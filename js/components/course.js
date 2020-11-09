@@ -190,13 +190,6 @@ class Course extends Element
 			CourseModule.createListFromJson(jsonObj["modules"]));
 
 	}
-
-	static descriptionTrim(desc) {
-		if(desc.length > 200) {
-			return desc.slice(0, 200) + '... <a href="' + this.link + '" class="resource-link"> Read more </a>';
-		}
-
-		return desc;
-	}
 }
+
 export {Course};
