@@ -97,16 +97,14 @@ class Index extends PageRender
 			Index.loadFileFromServer(LECTURE_INFO_JSON, true);
 			var jsonObj = retrivedData;
 			document.getElementById("lecture_position").innerHTML = jsonObj["position"];
-			var addressesHtml = "";
+			var addressesHtml = "<div class='lecturer-info'> ";
+			addressesHtml += "<span>" + Icons.info() + "</span> ";
+			addressesHtml += "<div class='addresses-info'> ";
 			for (var locIndex = 0; locIndex < jsonObj["addresses"].length; locIndex++)
 			{
-				addressesHtml += "<p> ";
-				if (locIndex == 0)
-				{
-					addressesHtml += "<span>" + Icons.info() + "</span> ";
-				}
-				addressesHtml += jsonObj["addresses"][locIndex]["university"] + ", " + jsonObj["addresses"][locIndex]["location"] + " (" + jsonObj["addresses"][locIndex]["hours"] + ")</p>";					
+				addressesHtml += "<div><p><B>"+jsonObj["addresses"][locIndex]["university"] + "</B> " + jsonObj["addresses"][locIndex]["location"] + " (" + jsonObj["addresses"][locIndex]["hours"] + ")</p></div>";					
 			}
+			addressesHtml+="</div></div>"
 			document.getElementById("lecture_address").innerHTML += addressesHtml;
 			document.getElementById("lecture_phone").innerHTML += jsonObj["phone"];
 			document.getElementById("lecture_email").innerHTML += jsonObj["email"];
