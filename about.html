@@ -119,15 +119,21 @@
 			<div class="resources-filters" id="resources_filters">
 				<form>
 					<div class="personal-row wrap">
-						<select id="topic-filter">
+						<div class="select-wrapper">
+						<select id="topic-filter"  onfocus="this.selectedIndex=0;" class="minimal">
 							<option>Topic</option>
 						</select>
-						<select id="type-filter">
+					</div>
+					<div class="select-wrapper">
+						<select id="type-filter"  onfocus="this.selectedIndex=0;" class="minimal">
 							<option>Type</option>
 						</select>
-						<select id="year-filter">
+					</div>
+					<div class="select-wrapper">
+						<select id="year-filter"  onfocus="this.selectedIndex=0;" class="minimal">
 							<option>Year</option>
 						</select>
+					</div>
 					</div>
 				</form>
 			</div>

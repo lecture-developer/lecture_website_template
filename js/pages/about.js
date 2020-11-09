@@ -4,6 +4,7 @@ import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 import { ProjectSection } from '/lecture_website_template/js/components/projectSection.js'
 import { Resource } from '/lecture_website_template/js/components/resources.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let LECTURER_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
@@ -143,6 +144,7 @@ class About extends PageRender
 			panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
 		}
 		document.getElementById("projects_cards").innerHTML = panels;
+		addCollapseFunction();
 	}
 
 	buildTopicNav(lecturerObj, projects)
@@ -267,7 +269,12 @@ class About extends PageRender
 	buildOneFilter(rList, fName){
 		let filters = new Set();
 		for(let i = 0; i < rList.length; i++){
-			filters.add(rList[i][fName]);
+			let text = rList[i][fName];
+			if(typeof(text) == "string"){
+				text = text.trim();
+				text = text.toLowerCase();
+			}
+			filters.add(text);
 		}
 
 		filters = Array.from(filters);
@@ -280,6 +287,7 @@ class About extends PageRender
 	}
 
 	buildResources(change = false, filterName){
+		console.log("ive been called");
 		About.loadFileFromServer(RESOURCES_JSON, true);
 		const resourcesObj = retrivedData;
 		this.clearResources();
@@ -307,12 +315,17 @@ class About extends PageRender
 				return;
 			}
 			for(let i = 0; i < resourcesList.length; i++){
-				console.log(resourcesList[i]);
-				if(resourcesList[i][filterName] == filter){
+				let value = resourcesList[i][filterName];
+				if(typeof(value) == "string"){
+					value = value.trim().toLowerCase();
+				}
+
+				if(value == filter){
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
 			}
 		}
+		addCollapseFunction();
 	}
 
 	clearResources(){

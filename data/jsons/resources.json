@@ -3,14 +3,14 @@
     {
       "name":"Paper's Paper's title 1",
       "description":"Paper's description Paper's description",
-      "recommendation":"I love this paper",
+      "recommendation":"I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper",
       "fileLinks":[
          {"info": "Download", "type": 1, "link": "aaa"},
          {"info": "cite", "type": 3, "link": "bbb"}
        ],
       "authors": "first name last name, first name last name",
       "year": 2019,
-      "topic":"cool topic",
+      "topic":"Cool topic",
       "type":"paper"
     },
     {
@@ -24,7 +24,7 @@
       "authors": "first name last name, first name last name",
       "year": 2005,
       "topic":"cool topic",
-      "type":"paper"
+      "type":"Paper"
     },
     {
       "name":"Paper's Paper's title 3",
