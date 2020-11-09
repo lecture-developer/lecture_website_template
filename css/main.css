@@ -1628,8 +1628,12 @@ flickity-prev-next-button[disabled]{
 	margin-top: 2rem;
 }
 
-.not-found-buttons-section a, .not-found-section a:hover{
+.not-found-buttons-section a {
 	color: #5A67D8;
+}
+
+.not-found-section a:hover {
+	color: white;
 }
 
 .not-found-button {
@@ -1647,8 +1651,20 @@ flickity-prev-next-button[disabled]{
 	margin-top: 2rem;
 }
 
+.not-found-arrow-hover {
+	display: none;
+}
+
 .not-found-button:hover {
-	background-color: white;
+	background-color: #5A67D8;
+}
+
+.not-found-button:hover > .not-found-arrow {
+	display: none;
+}
+
+.not-found-button:hover > .not-found-arrow-hover {
+	display: inline;
 }
 
 .not-found-img {
@@ -1665,12 +1681,6 @@ flickity-prev-next-button[disabled]{
 	width: 100%;
 	height: 100%;
 }
-
-/* @media screen and (max-width: 850px) {
-	.not-found-img svg{
-		transform: scale(0.5);
-	}
-} */
 
 /* end 404 not found */
 
