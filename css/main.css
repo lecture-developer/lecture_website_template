@@ -1613,19 +1613,21 @@ flickity-prev-next-button[disabled]{
 	font-weight: 400;
 	line-height: 64px;
 	letter-spacing: 0em;
+	margin-bottom: 0;
 }
 
 .not-found-message {
-	margin-top: 2.5rem;
+	margin-top: 2.7rem;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 24px;
 	letter-spacing: 0em;
+	margin-bottom: 0;
 }
 
 .not-found-buttons-section {
-	margin-top: 2rem;
+	margin-top: 3.375rem;
 }
 
 .not-found-buttons-section a {
@@ -1648,7 +1650,6 @@ flickity-prev-next-button[disabled]{
 	line-height: 36px;
 	letter-spacing: 0em;
 	text-align: center;
-	margin-top: 2rem;
 }
 
 .not-found-arrow-hover {
