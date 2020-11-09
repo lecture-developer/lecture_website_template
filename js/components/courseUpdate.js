@@ -1,5 +1,5 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
-import {Course} from '/lecture_website_template/js/components/course.js';
+import { descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
 
 class CourseUpdate extends Element
 {
@@ -29,7 +29,7 @@ class CourseUpdate extends Element
 
 		html += '<h3 class="content-title">' + this.title + visitTag + '</h3><hr>';
 		html += '<h2 class="content-subtitle">' + this.date + '</h2>';
-		html += '<p class="content-text">' + Course.descriptionTrim(this.description) + '</p>';
+		html += descriptionTrim(this.description, "content-text");
 
 		html += '</div>';
 

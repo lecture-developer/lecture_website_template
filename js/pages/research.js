@@ -4,6 +4,7 @@ import { ResearchProject } from '/lecture_website_template/js/components/researc
 import { ResearchPosition } from '/lecture_website_template/js/components/researchPosition.js';
 import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let RESEARCH_JSON = "/lecture_website_template/data/jsons/research.json";
@@ -77,6 +78,7 @@ class Research extends PageRender
 		this.pickTab();
 
 		this._addCollapsonigSections();
+		addCollapseFunction()
 	}
 
 	createTabsSection() {
