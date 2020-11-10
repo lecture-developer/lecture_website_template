@@ -1,6 +1,6 @@
 /****** tabs sections - start ******/
 .tabs {
-    margin-bottom: 4rem;
+    margin-bottom: 2.25rem;
 }
 
 .tab {
@@ -58,16 +58,20 @@
     flex-direction: column;
 }
 
-hr {
-    margin: auto;
-    margin-top: 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+@media screen and (max-width: 850px) {
+    .tab {
+        width: 7rem;
+    }
 }
 
-.blue-hr {
-    border: 1px solid #A3BFFA;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+@media screen and (max-width: 450px) {
+    .tab {
+        width: 5rem;
+    }
+
+    .tab-title {
+        font-size: 14px;
+    }
 }
 
 /****** tabs sections - end ******/
