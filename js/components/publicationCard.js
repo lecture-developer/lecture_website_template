@@ -41,13 +41,13 @@ class PublicationCard extends Element
 
 		if (this.fileLinks[1]["link"] != "")
 		{
-			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a><div class="w-100 acadmic-parms-row">';
+			answer += '<div class="w-100 acadmic-parms-row">';
 		}
 
 		answer += '<span>' 
 		+ this.publicationStatus + '</span><span>'
 		+ this.year + '</span><span>'
-		+ this.type + '</span></div>'
+		+ this.type + '</span></div><a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a>'
 		+'</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
 	}

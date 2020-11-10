@@ -132,7 +132,7 @@ class AcademicPublications extends PageRender
 				for (var spliterKeyIndex = 0; spliterKeyIndex < keys.length; spliterKeyIndex++)
 				{
 					// add spliter 
-					ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
+					// ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
 					// add elements inside the list
 					for (var elementIndex = 0; elementIndex < publicSets[keys[spliterKeyIndex]].length; elementIndex++)
 					{
