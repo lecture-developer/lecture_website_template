@@ -72,11 +72,32 @@ class ResearchProject extends Element
 		html += '<div class="collapsing-section-title"><div class="team-title space-between"><p class="content-subtitle">Team</p><svg class="moreLessButton" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 8" width="13" height="8">'+
 		'<path fill="black" d="M 1.94516 7.41 L 6.53516 2.83 L 11.1252 7.41 L 12.5352 6 L 6.53516 0 L 0.535156 6 L 1.94516 7.41 Z" /></svg></div><hr></div>';
 
-		html += '<div class="team-content-section collapsing-section open-section">';
+		html += '<div class="collapsing-section open-section">';
 
-		this.participents.forEach(member => {
-			html += member.toHtml();
-		});
+		for(let i = 0; i < this.participents.length; i += 3) {
+			// make rows of 3 team members.
+			// if the row is full - justify with space between
+			// otherwise - align to the left
+			let mem1 = this.participents[i];
+			if(i + 1 < this.participents.length) {
+				let mem2 = this.participents[i + 1];
+				if(i + 2 < this.participents.length) {
+					let mem3 = this.participents[i + 2];
+					html += '<div class="team-content-section">';
+					html += mem1.toHtml();
+					html += mem2.toHtml();
+					html += mem3.toHtml();
+				} else {
+					html += '<div class="team-content-section-no-space-between">';
+					html += mem1.toHtml();
+					html += mem2.toHtml();
+				}
+			} else {
+				html += '<div class="team-content-section-no-space-between">';
+					html += mem1.toHtml();
+			}
+			html += '</div>';
+		}
 		
 		// end of content section
 		html += '</div>';

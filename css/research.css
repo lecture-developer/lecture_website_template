@@ -1,4 +1,10 @@
 /* page sections */
+
+.academic-papers-container {
+    padding-top: 0;
+    margin-top: 5rem;
+}
+
 .research-open-section{
 	margin-bottom: 40px;
 }
@@ -95,7 +101,7 @@
 .tab {
     position: relative;
     width: 10.75rem;
-    height: 10px;
+    height: 0.5rem;
     float: left;
     border: none;
     outline: none;
@@ -106,13 +112,13 @@
 
 .tabs-bar {
     width: 100%;
-    height: 10px;
+    height: 0.5rem;
     background-color: #E0E0E0;
 }
 
 .tab-seperator {
     background-color: rgba(0, 0, 0, 0.4);
-    height: 10px;
+    height: 0.5rem;
     width: 5px;
     position: absolute;
     right: 0;
@@ -124,11 +130,11 @@
 }
 
 .tab-title {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 400;
     cursor: pointer;
     position: relative;
-    top: -2.25rem;
+    top: -1.5rem;
 }
 
 .new-updates-icon {
@@ -210,7 +216,7 @@ hr {
 
 .research-open-statment{
 	margin-bottom: 40px;
-	margin-top: 20px;
+	margin-top: 1rem;
 }
 
 /****** research card section - end ******/
@@ -228,10 +234,22 @@ hr {
 	flex-wrap: wrap;
 }
 
+.team-content-section-no-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+	flex-wrap: wrap;
+}
+
+.team-content-section-no-space-between .member-card {
+    margin-right: 4.5rem;
+}
+
 .member-card {
     display: flex;
     flex-direction: column;
-	margin-bottom: 30px;
+    margin-bottom: 30px;
+    align-self: flex-start;
 }
 
 .member-properties {
