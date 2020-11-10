@@ -62,8 +62,10 @@ font-style: normal;
 font-weight: normal;
 font-size: 20px;
 line-height: 200%;
-text-decoration-line: underline;
+}
 
+#cv span{
+	text-decoration-line: underline;
 }
 
 #lecturer_location {

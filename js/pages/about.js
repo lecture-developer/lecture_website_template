@@ -199,8 +199,8 @@ class About extends PageRender
 		if(cv != ""){
 			let elem = document.createElement("A");
 			elem.href = cv;
-			elem.id ="cv";
-		  elem.innerHTML = Icons.cv() + 'Download CV';
+			elem.id = "cv";
+		  elem.innerHTML = Icons.cv() + '<span style="margin-left: 5px;">Download CV</span>';
 		  contacts.appendChild(elem);
 		}
 
@@ -329,8 +329,6 @@ class About extends PageRender
 				}
 			}
 		}
-		console.log("starting read more");
-		addCollapseFunction();
 	}
 
 	clearResources(){
