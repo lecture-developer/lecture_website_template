@@ -55,6 +55,9 @@ class About extends PageRender
 
 		// pick the right tab according to the link
 		this.pickTab();
+
+		console.log("starting read more");
+		addCollapseFunction();
 	}
 
 	createTabsSection()
@@ -76,6 +79,7 @@ class About extends PageRender
 			}
 		}
 		Tabs.activateDefault(0); // default case;
+		addCollapseFunction();
 	}
 
 	/* build the overall contact info section */
