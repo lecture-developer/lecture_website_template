@@ -287,7 +287,6 @@ class About extends PageRender
 	}
 
 	buildResources(change = false, filterName){
-		console.log("ive been called");
 		About.loadFileFromServer(RESOURCES_JSON, true);
 		const resourcesObj = retrivedData;
 		this.clearResources();
@@ -305,6 +304,7 @@ class About extends PageRender
 				for(let i = 0; i < resourcesList.length; i++){
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
+				addCollapseFunction();
 			}
 		} else {
 			let selector = document.getElementById(filterName + "-filter");
@@ -325,6 +325,7 @@ class About extends PageRender
 				}
 			}
 		}
+		console.log("starting read more");
 		addCollapseFunction();
 	}
 
