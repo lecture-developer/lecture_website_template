@@ -886,6 +886,15 @@ flickity-prev-next-button[disabled]{
 	align-content: flex-start;
 }
 
+.lecturer-info{
+	display: flex;
+	flex-direction: row;
+}
+
+.addresses-info{
+	display: flex;
+	flex-direction: column;
+}
 
 .personal-coloum {
 	display: flex;

@@ -1,6 +1,7 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
 import { ResearchTeamMember } from '/lecture_website_template/js/components/researchTeamMember.js';
 import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
+import { descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
 
 class ResearchProject extends Element
 {
@@ -24,7 +25,7 @@ class ResearchProject extends Element
 		let html = '<div class="research">';
 
 		html += this._createResearchTitleSection();
-		html += '<div class="content-text">' + this.description + '</div>';
+		html += '<div class="content-text">' + descriptionTrim(this.description) + '</div>';
 		html += this._createTeamSection();
 		html += this._createLinksSection();
 

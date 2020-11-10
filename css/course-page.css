@@ -243,12 +243,27 @@ hr {
     font-size: 18px;
     font-weight: 400;
     text-decoration: underline;
+    color: #5A67D8;
+    cursor: pointer;
+}
+
+.collapse-button {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #5A67D8;
+    cursor: pointer;
 }
 
 .resource-description {
     margin-left: 2.25rem;
     font-size: 18px;
     font-weight: 400;
+    overflow: hidden;
+}
+
+.more-section {
+    display: none;
 }
 
 /******* resource section - end ******/
