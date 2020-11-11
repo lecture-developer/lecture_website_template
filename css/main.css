@@ -132,8 +132,8 @@ footer h2{
 
 .footer-menu-title{
 	font-family: Roboto;
-	font-weight: bold;
-	font-size: 22px;
+	font-weight: 500;
+	font-size: 1.25rem;
 	line-height: 21px;
 	text-decoration: underline !important;
 	color: #F7FAFC !important;
@@ -153,8 +153,8 @@ footer h2{
 
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: normal;
-	font-size: 18px;
+	font-weight: 400;
+	font-size: 1rem;
 	line-height: 21px;
 	text-decoration: underline !important;
 	color: #F7FAFC;
@@ -162,7 +162,7 @@ footer h2{
 }
 
 .footer-menu-item:hover{
-	font-weight: bold;
+	font-weight: 500;
 	color: #F7FAFC;
 }
 
