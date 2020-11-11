@@ -40,12 +40,12 @@ class PublicationCard extends Element
 		answer += this.description + '</p><div class="personal-row space-between align-items-center mobile-row-breaker">';
 		let link = this.fileLinks[0]["link"];
 		if (link != "" && this.isFileFormat(link)){
-			answer += '<a href="' + link + '" class="download-btn acadmic-card-margin-fix">Download</a><div class="w-100 acadmic-parms-row">';
+			answer += '<div class="w-100 acadmic-parms-row">';
 		}
-		answer += '<span>' 
+		answer += '<div class="publication-details"><span>' 
 		+ this.publicationStatus + '</span><span>'
 		+ this.year + '</span><span>'
-		+ this.type + '</span></div><a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a>'
+		+ this.type + '</span></div><a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a></div>'
 		+'</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
 	}
