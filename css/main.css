@@ -764,6 +764,16 @@ flickity-prev-next-button[disabled]{
 
 /* index page */
 
+#lecture_position {
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2rem;
+}
+
+#research_intrests_header {
+	margin-top: 5rem;
+}
+
 .updates-container{
 	width: 100%;
 	background-color: #FFEEC3;
@@ -992,7 +1002,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .personal-info-item{
-	font-size: 20px;
+	font-size: 1rem;
 	font-weight: 400;
 	line-height: 150%;
 	color: #2D3748;
@@ -1006,7 +1016,7 @@ flickity-prev-next-button[disabled]{
 
 #lecturer-name {
 	font-family: Playfair Display;
-	font-size: 48px;
+	font-size: 3rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 64px;
@@ -1028,8 +1038,6 @@ flickity-prev-next-button[disabled]{
 .personal-row h2{
 	font-family: Playfair Display;
 	color: #1A202C;
-	padding-top: 2.5rem;
-	font-size: 32px;
 	text-transform: capitalize;
 }
 
@@ -1061,7 +1069,7 @@ flickity-prev-next-button[disabled]{
 
 .personal-row p{
 	color: #2D3748;
-	font-size: 20px;
+	font-size: 1rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 21.6px;
@@ -1107,7 +1115,8 @@ flickity-prev-next-button[disabled]{
 }
 
 .featured-publications-section h2{
-	margin-top: 20px;
+	margin-top: 2.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .academic-papers-panel{
@@ -1127,7 +1136,7 @@ flickity-prev-next-button[disabled]{
 .academic-papers-panel h3{
 	font-family: Playfair Display;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 1.5rem;
 	line-height: 32px;
 	letter-spacing: 0.04em;
 	padding-bottom: 8px;
@@ -1136,7 +1145,8 @@ flickity-prev-next-button[disabled]{
 
 .academic-papers-panel h4{
 	font-family: Roboto;
-	font-size: 14px;
+	font-size: 1rem;
+	font-weight: 400;
 	line-height: 135%;
 	padding-bottom: 26px;
 	color: #718096;
@@ -1279,9 +1289,9 @@ flickity-prev-next-button[disabled]{
   }
 
   #lecture_position{
-	  font-weight: bold;
-	  font-size: 18px !important;
+	  font-weight: 400 !important;
 	  line-height: 24px !important;
+	  padding-top: 0;
 	  margin-top: 8px;
   }
 
@@ -1290,8 +1300,8 @@ flickity-prev-next-button[disabled]{
   }
 
   .personal-row h2{
-	  font-size: 26px !important;
-	  line-height: 35px !important;
+	  font-size: 26px;
+	  line-height: 35px;
 	  padding: 0px 0px;
   }
 
@@ -1309,11 +1319,13 @@ flickity-prev-next-button[disabled]{
 	}
 
 	.featured-publications-section h2{
-		margin-left: 20px;
+		margin-left: 2.5rem;
+		margin-bottom: 1.5rem;
 	}
 
 	#research_intrests_header h2{
-		margin-top: 20px;
+		margin-left: 2.5rem;
+		margin-bottom: 1.5rem;
 	}
 }
 
