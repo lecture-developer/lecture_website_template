@@ -1511,10 +1511,20 @@ flickity-prev-next-button[disabled]{
 }
 
 .teaching-papers-body-section p{
-	font-family: Roboto;
-	font-size: 14px;
-	line-height: 19px;
-	color: #A0AEC0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1A202C;
+  padding-bottom: 0;
+}
+
+.teaching-papers-body-section .semester{
+  font-size: 14px;
+  line-height: 135%;
+  color: #A0AEC0;
+  margin-bottom: 4px;
 }
 
 .teaching-container{
@@ -1564,6 +1574,7 @@ flickity-prev-next-button[disabled]{
 	color: #FFFFFF;
 	border: 0px solid #5A67D8;
 }
+
 
 @media only screen and (max-width: 420px){
 	.teaching-body-filter button {

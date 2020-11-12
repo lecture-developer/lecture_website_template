@@ -71,7 +71,7 @@
 							"link":"link link link",
 							"type": "file"
 						}]
-					}					
+					}
 				},
 				{
 					"title": "cool module 2",
@@ -100,7 +100,7 @@
 			"code": "321",
 			"year": "2020",
 			"semester": "1",
-			"university": "Bar-Ilan University",
+			"university": "Ben-Gurion University",
 			"department": "Computer science",
 			"location_class": "Room 211",
 			"syllabus": "link",

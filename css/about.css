@@ -264,7 +264,7 @@ ul .active-topic {
   border-radius: 4px;
   background: #FFFFFF;
   /* drop down - shadow */
-  box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+  box-shadow: 3px 4px 3px rgba(26, 32, 44, 0.04), 0px 1px 2px #E2E8F0;
   margin-left: 20px;
 
   font-family: Roboto;

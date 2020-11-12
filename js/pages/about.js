@@ -79,7 +79,7 @@ class About extends PageRender
 			}
 		}
 		Tabs.activateDefault(0); // default case;
-		addCollapseFunction();
+
 	}
 
 	/* build the overall contact info section */
@@ -308,7 +308,7 @@ class About extends PageRender
 				for(let i = 0; i < resourcesList.length; i++){
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
-				addCollapseFunction();
+				// addCollapseFunction();
 			}
 		} else {
 			let selector = document.getElementById(filterName + "-filter");
@@ -329,8 +329,8 @@ class About extends PageRender
 				}
 			}
 		}
-		console.log("starting read more");
-		addCollapseFunction();
+		// console.log("starting read more");
+		// addCollapseFunction();
 	}
 
 	clearResources(){
