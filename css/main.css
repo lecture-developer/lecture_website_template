@@ -1354,6 +1354,10 @@ flickity-prev-next-button[disabled]{
 
 /* publications page  */
 
+.filter {
+	cursor: pointer;
+}
+
 .academic-papers-container{
 	max-width: 830px;
 	margin-left: auto;

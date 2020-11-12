@@ -185,6 +185,8 @@ class AcademicPublications extends PageRender
 			// mark this filter as choosen
 			selector.classList.add("active-sort-button");
 			document.getElementById("year-filter").selectedIndex = "" + selectorIndex;
+		} else {
+			filter = default_filter;
 		}
 		
 		this.buildBody(this.sorter, filter, "year");
@@ -205,6 +207,8 @@ class AcademicPublications extends PageRender
 			// mark this filter as choosen
 			selector.classList.add("active-sort-button");
 			document.getElementById("type-filter").selectedIndex = "" + selectorIndex;
+		} else {
+			filter = default_filter;
 		}
 		
 		this.buildBody(this.sorter, filter, "type");
@@ -225,6 +229,8 @@ class AcademicPublications extends PageRender
 			// mark this filter as choosen
 			selector.classList.add("active-sort-button");
 			document.getElementById("topic-filter").selectedIndex = "" + selectorIndex;
+		} else {
+			filter = default_filter;
 		}
 		
 		this.buildBody(this.sorter, filter, "topic");
