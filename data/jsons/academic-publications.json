@@ -1,11 +1,11 @@
 {
    "publications":[
       {
-         "name":"Paper's Paper's title",
+         "name":"Paper's Paper's title1",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
-		 "authors": "first name, last name; first name, last name",
+		   "authors": "first name, last name; first name, last name",
          "year": 2019,
          "topic":"cool topic",
          "type":"paper",
@@ -13,11 +13,11 @@
          "publicationStatus":"Published"
       },
       {
-         "name":"Paper's Paper's title",
-         "description":"Paper's description Paper's description",
+         "name":"Paper's Paper's title2",
+         "description":"Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
-		 "authors": "first name, last name; first name, last name",
+		   "authors": "first name, last name; first name, last name",
          "year": 2019,
          "topic":"cool topic",
          "type":"presentation",
@@ -25,11 +25,11 @@
          "publicationStatus":"Published"
       },   
       {
-         "name":"Paper's Paper's title",
+         "name":"Paper's Paper's title3",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
-		 "authors": "first name, last name; first name, last name",
+		   "authors": "first name, last name; first name, last name",
          "year": 2018,
          "topic":"cool topic",
          "type":"presentation",
@@ -37,11 +37,11 @@
          "publicationStatus":"Published"
       },   
       {
-         "name":"Paper's Paper's title",
+         "name":"Paper's Paper's title4",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
-		 "authors": "first name, last name; first name, last name",
+		   "authors": "first name, last name; first name, last name",
          "year": 2020,
          "topic":"cool topic",
          "type":"paper",

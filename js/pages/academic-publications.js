@@ -1,6 +1,7 @@
 // imports 
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { PublicationCard } from '/lecture_website_template/js/components/publicationCard.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let PUBLICATIONS_JSON = "/lecture_website_template/data/jsons/academic-publications.json";
@@ -52,6 +53,8 @@ class AcademicPublications extends PageRender
 		// build the page itself
 		this.buildHeader(this.sorter, filter);
 		this.buildBody(this.sorter, filter);
+		
+		addCollapseFunction();
 	}
 	
 	/* build section functions */
