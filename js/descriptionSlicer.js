@@ -10,6 +10,7 @@ function descriptionTrim(desc, className) {
 
 function addCollapseFunction() {
     const buttons = document.getElementsByClassName('collapse-button');
+    console.log(buttons.length);
     for(let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function(event) {
             let dots = event.target.parentNode.getElementsByClassName('dots')[0];

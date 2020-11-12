@@ -55,9 +55,10 @@ class About extends PageRender
 
 		// pick the right tab according to the link
 		this.pickTab();
+		//
+		// console.log("calling read more from build");
+		// addCollapseFunction();
 
-		console.log("starting read more");
-		addCollapseFunction();
 	}
 
 	createTabsSection()
@@ -136,7 +137,10 @@ class About extends PageRender
 		else
 		{
 			this.dynamicBuildProjects(projects, topic);
+			console.log("calling read more from project with change");
+			addCollapseFunction();
 		}
+
 	}
 
 	dynamicBuildProjects(projects, topic)
@@ -148,7 +152,7 @@ class About extends PageRender
 			panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
 		}
 		document.getElementById("projects_cards").innerHTML = panels;
-		addCollapseFunction();
+
 	}
 
 	buildTopicNav(lecturerObj, projects)
@@ -308,16 +312,17 @@ class About extends PageRender
 				for(let i = 0; i < resourcesList.length; i++){
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
+				// console.log("calling read more from first call to resources");
 				// addCollapseFunction();
 			}
 		} else {
 			let selector = document.getElementById(filterName + "-filter");
 			let selectorIndex = selector.selectedIndex;
 			let filter = selector.options[selectorIndex].value;
-			if(filter == "Year" || filter == "Topic" || filter == "Type"){
-				this.buildResources(false);
-				return;
-			}
+			// if(filter == "Year" || filter == "Topic" || filter == "Type"){
+			// 	this.buildResources(false);
+			// 	return;
+			// }
 			for(let i = 0; i < resourcesList.length; i++){
 				let value = resourcesList[i][filterName];
 				if(typeof(value) == "string"){
@@ -328,6 +333,8 @@ class About extends PageRender
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
 			}
+			console.log("calling read more from resources filter");
+			addCollapseFunction();
 		}
 	}
 
@@ -336,6 +343,7 @@ class About extends PageRender
 		res_section.innerHTML = '';
 	}
 
+
 }
 
 document.aboutPage = new About();
@@ -343,5 +351,6 @@ document.aboutPage.build();
 document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"year");});
 document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"type");});
 document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"topic");});
+addCollapseFunction();
 
 export {About};

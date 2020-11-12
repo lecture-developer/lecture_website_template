@@ -52,7 +52,7 @@ class Teaching extends PageRender
     }
 
 	//build the body section of the page, start after the button filter.
-    buildBody(filterValue = default_filter)
+    buildBody(filterValue = default_filter, rst = false)
 	{
         // sort the list
 		var buildTeachingList = CourseCard.sortByProperty(this.cardList, "year", "semester");
@@ -60,8 +60,11 @@ class Teaching extends PageRender
 		// if filter needed
 		if (filterValue != default_filter)
 		{
+			let selector = document.getElementById(filterValue + "-filter");
+			let selectorIndex = selector.selectedIndex;
+			let filter = selector.options[selectorIndex].value;
 			// filter the needed list only
-			buildTeachingList = CourseCard.filterList(buildTeachingList, this.property_university, filterValue);
+			buildTeachingList = CourseCard.filterList(buildTeachingList, filterValue, filter);
 		}
 
 		// split into the right sets
@@ -101,29 +104,53 @@ class Teaching extends PageRender
 		{
 			console.log("Error at Teaching.buildBody saying: " + error);
 		}
-
+		if(filterValue == default_filter && !rst){
+						this.buildFilters();
+				}
     }
     /* build function end */
+		/* build filters */
+		buildFilters(){
+			this.buildOneFilter("year");
+			this.buildOneFilter("university");
+		}
+
+		buildOneFilter(fName){
+			let filters = new Set();
+			for(let i = 0; i < this.cardList.length; i++){
+				let text = this.cardList[i][fName];
+				// if(typeof(text) == "string"){
+				// 	text = text.replaceAll("-"," ").trim().toLowerCase();
+				//
+				// }
+				filters.add(text);
+			}
+
+			filters = Array.from(filters);
+			let filter = document.getElementById(fName+"-filter");
+			for(let i = 0; i<filters.length; i++){
+				let option = document.createElement("OPTION");
+				option.innerHTML = filters[i];
+				filter.appendChild(option);
+			}
+		}
 
 	//the function change the filter by the value.
 	ChangeFilter(filter_value)
 	{
-		document.getElementById("filter-btn-" + this.filter).classList.remove("active-sort-button");
 		this.filter = filter_value;
-		document.getElementById("filter-btn-" + filter_value).classList.add("active-sort-button");
 		//build the new body after the filter change.
 		this.buildBody(filter_value);
 	}
 
-	//create a element button
-	createElementButton(nameButton)
-	{
-		return '<button type="button" class="mobile-buttons-tide" id="filter-btn-' + nameButton + '" onclick="document.teaching.ChangeFilter(\'' + nameButton + '\');">' + nameButton + '</button>';
-	}
 }
 
 // run the class build on page load
 document.teaching = new Teaching();
 document.teaching.build();
+document.getElementById("year-filter").addEventListener("change", () => {document.teaching.ChangeFilter("year");});
+document.getElementById("topic-filter").addEventListener("change", () => {document.teaching.ChangeFilter("topic");});
+document.getElementById("university-filter").addEventListener("change", () => {document.teaching.ChangeFilter("university");});
+document.getElementById("reset-btn").addEventListener("click", () => {document.teaching.buildBody(default_filter,true);});
 
 export { Teaching }

@@ -72,6 +72,7 @@ class CourseCard extends Element
 		var answer = [];
 		for (var objIndex = 0; objIndex < objList.length; objIndex++)
 		{
+			console.log(objList[objIndex][property + ""]);
 			if (objList[objIndex][property + ""] == filterValue)
 			{
 				answer.push(objList[objIndex]);
