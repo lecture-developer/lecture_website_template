@@ -3,7 +3,7 @@
       {
          "name":"Paper's Paper's title1",
          "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa.pdf"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		   "authors": "first name, last name; first name, last name",
          "year": 2019,
@@ -15,7 +15,7 @@
       {
          "name":"Paper's Paper's title2",
          "description":"Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa.pdf"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		   "authors": "first name, last name; first name, last name",
          "year": 2019,
@@ -27,7 +27,7 @@
       {
          "name":"Paper's Paper's title3",
          "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa.pdf"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		   "authors": "first name, last name; first name, last name",
          "year": 2018,
@@ -39,7 +39,7 @@
       {
          "name":"Paper's Paper's title4",
          "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa.pdf"}, 
 					  {"info": "cite", "type": 3, "link": "bbb"}],
 		   "authors": "first name, last name; first name, last name",
          "year": 2020,

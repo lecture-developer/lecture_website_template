@@ -213,7 +213,7 @@ function searchPage()
 	// if 1 answer - go to this link
 	if (results.length == 0)
 	{	
-		showSearchAlert("We was not able to find any result in the website for your query");
+		showSearchAlert("We were not able to find any result in the website for your query");
 		return false;
 	}
 	else if (results.length == 1)
@@ -271,7 +271,7 @@ function GetParamsLoad(param_name)
 function buildSearchResultAnswer(index, title, score, short_body, url)
 {
 	var label = url.replace("/", "").split(".")[0].toUpperCase();
-	return '<div class="academic-papers-panel"><div class="personal-row-col col-reverse-mobile w-100 align-space-between"><h3>'	+ title + '</h3></div><h4>' + short_body + '</h4><p class="search-date">Fitting ' + Math.round(score * 100) + '% to query</p><div class="personal-row space-between-search align-items-center mobile-row-breaker"><div class="search-parms-row"><span class="search-label">' + label + '</span></div><a href="' + url + '" class="see-page-btn see-page-text search-card-margin-fix acadmic-card-margin-fix">See this page</a></div></div>';
+	return '<div class="academic-papers-panel"><div class="personal-row-col col-reverse-mobile w-100 align-space-between"><h3>'	+ title + '</h3></div><h4>' + short_body + '</h4><p class="search-date">Fitting ' + Math.round(score * 100) + '% to query</p><div class="personal-row space-between-search align-items-center mobile-row-breaker"><div class="search-parms-row"><span class="search-label">' + label + '</span></div><a href="' + url + '" class="secondary-btn">See this page</a></div></div>';
 }
 
 // show an alert as a result of searching something in the search field

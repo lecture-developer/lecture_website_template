@@ -39,17 +39,17 @@ class PublicationCard extends Element
 
 		answer += '<h4>' + this.authors + "<br>" + this.publisher + '</h4>'
 		answer += descriptionTrim(this.description) + '<div class="personal-row space-between align-items-center mobile-row-breaker">';
-		let link = this.fileLinks[0]["link"];
 		answer += '<div class="publication-details"><span>' 
 		+ this.publicationStatus + '</span><span>'
 		+ this.year + '</span><span>'
-		+ this.type + '</span></div><a href="' + this.fileLinks[0]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a></div>'
-		+'</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
+		+ this.type + '</span></div>'
+		if (this.fileLinks[0]["link"] != "" && this.isFileFormat(this.fileLinks[0]["link"]))		
+			answer+='<a href="' + this.fileLinks[0]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a></div>'
+		answer+='</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
 	}
 	
 
-	//hhh.pdf, .pdf , str=7, suff=4
 	isFileFormat(str, ){
 		let arr = [".pdf", ".htm", ".html", ".ppt", ".pptx", ".xls", ".xlsx", ".doc", ".docx", ".txt"];
 		let j = 0;
