@@ -21,11 +21,21 @@ class ResearchTeamMember extends Element
 
 		html += '<p class="member-role">' + this.role + '</p>';
 
-		html += '<div class="member-link-icons"><a href="' + this.websiteLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/website.png" alt="personal website"></a>'+
-				'<a href="' + this.linkedinLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/google-scholar.png" alt="googel scholar link"></a>' +
-				'<a href="' + this.googleLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/linkedin.png" alt="linkedin link"></a></div>';
-
-		html += '</div>';
+		html += '<div class="member-link-icons">';
+		
+		if (this.websiteLink != "")
+		{
+			html += '<a href="' + this.websiteLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/website.png" alt="personal website"></a>';
+		}
+		if (this.linkedinLink != "")
+		{
+			html += '<a href="' + this.linkedinLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/google-scholar.png" alt="googel scholar link"></a>';
+		}
+		if (this.googleLink != "")
+		{
+			html += '<a href="' + this.googleLink + '"><img class="member-link-icon" src="/lecture_website_template/img/research/linkedin.png" alt="linkedin link"></a>';
+		}
+		html += '</div></div>';
 
 		return html;
 	}
