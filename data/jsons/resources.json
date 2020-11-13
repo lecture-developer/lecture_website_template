@@ -3,15 +3,14 @@
     {
       "name":"Paper's Paper's title 1",
       "description":"Paper's description Paper's description",
-      "recommendation":"I love this paper",
+      "recommendation":"I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper I love this paper",
       "fileLinks":[
          {"info": "Download", "type": 1, "link": "aaa"},
-         {"info": "cite", "type": 3, "link": "bbb"},
-         {"info": "Read online", "type": 3, "link": "link"}
+         {"info": "cite", "type": 3, "link": "bbb"}
        ],
       "authors": "first name last name, first name last name",
       "year": 2019,
-      "topic":"cool topic",
+      "topic":"Cool topic",
       "type":"paper"
     },
     {
@@ -20,22 +19,20 @@
       "recommendation":"",
       "fileLinks":[
          {"info": "download", "type": 1, "link": ""},
-         {"info": "cite", "type": 3, "link": ""},
-         {"info": "Read online", "type": 3, "link": "link"}
+         {"info": "cite", "type": 3, "link": ""}
        ],
       "authors": "first name last name, first name last name",
       "year": 2005,
       "topic":"cool topic",
-      "type":"paper"
+      "type":"Paper"
     },
     {
       "name":"Paper's Paper's title 3",
       "description":"Paper's description Paper's description",
-      "recommendation":"great website",
+      "recommendation":"great websitegreat websitegreat websitegreat websitegreat websitegreat websitegreat website great websitegreat websitegreat websitegreat websitegreat website great websitegreat websitegreat websitegreat websitegreat websitegreat website",
       "fileLinks":[
          {"info": "download", "type": 1, "link": "aaa"},
-         {"info": "cite", "type": 3, "link": ""},
-         {"info": "Read online", "type": 3, "link": ""}
+         {"info": "cite", "type": 3, "link": ""}
        ],
       "authors": "first name last name, first name last name",
       "year": 1997,

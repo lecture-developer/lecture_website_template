@@ -597,7 +597,7 @@ footer h2{
 
 /* Reset Select */
 select {
-  -webkit-appearance: none;
+  -webkit-appearance:
   -moz-appearance: none;
   -ms-appearance: none;
   appearance: none;
@@ -606,6 +606,27 @@ select {
   border: 0 !important;
   background: #2c3e50;
   background-image: none;
+}
+
+.select-wrapper {
+	position: relative;
+}
+
+.select-wrapper:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 28px;
+  	position: absolute;
+  	top: 4px;
+  	right: 20px;
+  	color: #434B67;
+  	pointer-events: none;
+}
+@media (max-width: 600px) {
+  .select-wrapper:after {
+    content: '';
+    pointer-events: none;
+  }
 }
 
 /* Remove IE arrow */
@@ -628,13 +649,9 @@ select::-ms-expand {
 	line-height: 150%;
 	padding: 12px 20px;
 	text-decoration: none !important;
-
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-
-	/* drop down - shadow */
-
 	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
 }
 
@@ -649,6 +666,50 @@ select::-ms-expand {
 .download-btn:active{
 	background: #5A67D8;
 	color: #434190 !important;
+}
+
+.see-page-btn{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 14px 22px;
+	position: static;
+	left: 0%;
+	right: -1.46%;
+	top: 0%;
+	bottom: 0%;
+	background: #FFFFFF;
+	border: 2px solid #5A67D8;
+	box-sizing: border-box;
+	border-radius: 8px;
+	flex: none;
+	order: 0;
+	align-self: flex-start;
+	flex-grow: 0;
+	margin: 0px 0px;
+
+}
+.see-page-text{
+	position: static;
+	left: 13.92%;
+	right: 13.92%;
+	top: 28.57%;
+	bottom: 28.57%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: 0.025em;
+	color: #5A67D8;
+	flex: none;
+	order: 0;
+	align-self: center;
+	flex-grow: 0;
+	margin: 0px 10px;
 }
 
 .link-btn{
@@ -1171,6 +1232,8 @@ flickity-prev-next-button[disabled]{
 	margin-right: 0.5rem;
 }
 
+
+
 .see-more {
 	font-weight: 400;
 	text-align: right;
@@ -1218,6 +1281,95 @@ flickity-prev-next-button[disabled]{
 	margin-top: 8px;
 	flex: inherit;
 }
+
+.search-parms-row{
+	/* auto layout */
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding-top: 6px;
+	position: relative;
+	width: 110px;
+	height: 30px;
+	left: 0px;
+	bottom: 0px;
+	justify-content: flex-start;
+
+	/* Inside Auto Layout */
+	order: 0;
+	align-self: center;
+	flex-grow: 0;
+	margin-top: 8px;
+	flex: inherit;
+}
+
+.space-between-search{
+	display: flex;
+	justify-content: space-between;
+}
+
+.search-date{
+	position: flex;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	height: 22.62px;
+	left: 7.13%;
+	right: 84.5%;
+	top: 47px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 135%;
+	color: #A0AEC0;
+
+}
+
+.search-panel{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: flex-start;
+	margin-top: 1.5rem;
+	margin-bottom: 30px;
+	padding: 42px 50px;
+	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
+	border-radius: 10px;
+	max-width: 830px;
+	background-color: white;
+}
+
+
+.search-description{
+	/* Bar Ilan University */
+
+position: static;
+width: 160px;
+height: 34.92px;
+left: 0px;
+top: 34.91px;
+
+/* Body */
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 150%;
+/* or 30px */
+
+/* Grey1 */
+color: #1A202C;
+
+/* Inside Auto Layout */
+flex: none;
+order: 1;
+align-self: flex-start;
+flex-grow: 0;
+margin: 0px 0px;
+
+}
+
+
 
 .mobile-row-breaker{
 
@@ -1549,10 +1701,20 @@ flickity-prev-next-button[disabled]{
 }
 
 .teaching-papers-body-section p{
-	font-family: Roboto;
-	font-size: 14px;
-	line-height: 19px;
-	color: #A0AEC0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1A202C;
+  padding-bottom: 0;
+}
+
+.teaching-papers-body-section .semester{
+  font-size: 14px;
+  line-height: 135%;
+  color: #A0AEC0;
+  margin-bottom: 4px;
 }
 
 .teaching-container{
@@ -1602,6 +1764,7 @@ flickity-prev-next-button[disabled]{
 	color: #FFFFFF;
 	border: 0px solid #5A67D8;
 }
+
 
 @media only screen and (max-width: 420px){
 	.teaching-body-filter button {

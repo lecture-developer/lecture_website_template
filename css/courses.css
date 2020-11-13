@@ -1,0 +1,40 @@
+
+/* ----------------- filters area ----------------- */
+.personal-row .filter-by-txt{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 140.62%;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #52575C;
+}
+
+
+.resources-filters{
+  margin-top: 70px;
+}
+
+
+#reset-btn{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 180%;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #5A67D8;
+  margin: 10px 36px;
+  cursor: pointer;
+}
+
+
+.academic-papers-panel{
+  box-shadow: none;
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 0;
+}
