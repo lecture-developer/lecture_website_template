@@ -1,3 +1,12 @@
+
+.academic-papers-panel span{
+  background: #E2E8F0;
+}
+
+.personal-row span{
+  float:none;
+}
+
 .page-container {
   margin-left: auto;
   margin-right: auto;
@@ -42,8 +51,21 @@
 
 /****** table - start ******/
 #contacts {
-  margin-right: 40px;
-  max-width: 430px;
+  /* margin-right: 20%; */
+  max-width: 400px;
+}
+
+#cv{
+  color: #5A67D8;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 200%;
+}
+
+#cv span{
+	text-decoration-line: underline;
 }
 
 #lecturer_location {
@@ -145,6 +167,19 @@
   line-height: 150%;
 }
 
+@media (max-width: 500px){
+  #about_section{
+    width: 90%;
+    margin: auto;
+  }
+
+  .personal-image {
+    float: none;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}
+
 /****** biography - end  ******/
 /****** projects - start  ******/
 #projects_section.active-section {
@@ -152,9 +187,12 @@
   flex-direction: row;
 }
 
-.space-between {
-  justify-content: space-between;
+@media (min-width: 500px){
+  .space-between {
+    justify-content: space-between;
+  }
 }
+
 
 ul {
   list-style-type: none;
@@ -228,7 +266,7 @@ ul .active-topic {
   border-radius: 4px;
   background: #FFFFFF;
   /* drop down - shadow */
-  box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+  box-shadow: 3px 4px 3px rgba(26, 32, 44, 0.04), 0px 1px 2px #E2E8F0;
   margin-left: 20px;
 
   font-family: Roboto;
@@ -241,19 +279,69 @@ ul .active-topic {
   padding-top: 8px;
 }
 
+@media only screen and (max-width: 450px){
+.resources-filters select {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.resources-filter .personal-row{
+  align-items: flex-start;
+}
+.select-wrapper{
+  width: 30%;
+  margin: 0 3px;
+}
+}
+
 #topic-filter{
   margin-left: 0;
 }
 
-.academic-papers-panel .recommend-txt{
+p .recommend-promo{
   font-family: Roboto;
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: #1A202C;
-background: #fff;
-padding: 0;
+  font-style: normal;
+  font-weight:bold;
+  font-size: 16px;
+  line-height: 150%;
+  color: #1A202C;
+  background: #fff;
+  margin-right: 5px;
+  padding: 0;
+}
+
+.academic-papers-panel p{
+  font-weight: 400;
+}
+
+p .collapse-button {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #5A67D8;
+    cursor: pointer;
+    padding: 0;
+    background-color: #fff;
+}
+
+p .dots{
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  padding: 0;
+  background-color: #fff;
+  margin: 0;
+}
+
+p .more-section{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1A202C;
+  padding: 0;
+  background-color: #fff;
 }
 
 .cite-btn{

@@ -4,6 +4,7 @@ import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 import { ProjectSection } from '/lecture_website_template/js/components/projectSection.js'
 import { Resource } from '/lecture_website_template/js/components/resources.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let LECTURER_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
@@ -44,7 +45,7 @@ class About extends PageRender
 		// build tabs' content
 		this.buildBiography(lecturerObj);
 		this.buildProjects(lecturerObj);
-		this.buildResources();
+		this.buildResources(false,"buildFilters");
 
 		// create the tabs flow themself
 		this.createTabsSection();
@@ -54,6 +55,10 @@ class About extends PageRender
 
 		// pick the right tab according to the link
 		this.pickTab();
+		//
+		// console.log("calling read more from build");
+		// addCollapseFunction();
+
 	}
 
 	createTabsSection()
@@ -75,6 +80,7 @@ class About extends PageRender
 			}
 		}
 		Tabs.activateDefault(0); // default case;
+
 	}
 
 	/* build the overall contact info section */
@@ -95,22 +101,8 @@ class About extends PageRender
 		{
 			this.buildLocations(lecturerObj.addresses);
 		}
-		//adding headlines
-		document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
-		document.getElementById("room").innerHTML = Icons.location() + " Room Location";
-		document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
-
-		var info_table = document.getElementById("info-table");
-
-		for(let i = 0; i < lecturerObj.addresses.length; i++)
-		{
-			var row = info_table.insertRow(-1);
-			var cell_university = row.insertCell(0);
-			cell_university.innerHTML = lecturerObj.addresses[i].university;
-			var cell_location = row.insertCell(1);
-			cell_location.innerHTML = lecturerObj.addresses[i].location;
-			var cell_hours = row.insertCell(2);
-			cell_hours.innerHTML = lecturerObj.addresses[i].hours;
+		else{
+			document.getElementById("lecturer_location").style.display = "none";
 		}
 
 	}
@@ -145,7 +137,10 @@ class About extends PageRender
 		else
 		{
 			this.dynamicBuildProjects(projects, topic);
+			console.log("calling read more from project with change");
+			addCollapseFunction();
 		}
+
 	}
 
 	dynamicBuildProjects(projects, topic)
@@ -157,6 +152,7 @@ class About extends PageRender
 			panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
 		}
 		document.getElementById("projects_cards").innerHTML = panels;
+
 	}
 
 	buildTopicNav(lecturerObj, projects)
@@ -195,12 +191,22 @@ class About extends PageRender
 	/* build contact info section */
 	buildContact(lecturerObj)
 	{
+		let cv = lecturerObj.cvfile;
 		let email = lecturerObj.email;
 		let phone = lecturerObj.phone;
 		let linkedin = lecturerObj.linkedin_link;
 		let google = lecturerObj.google_scholar_link;
+		let facebook = lecturerObj.facebook_link;
 
 		let contacts = document.getElementById("contacts");
+
+		if(cv != ""){
+			let elem = document.createElement("A");
+			elem.href = cv;
+			elem.id = "cv";
+		  elem.innerHTML = Icons.cv() + '<span style="margin-left: 5px;">Download CV</span>';
+		  contacts.appendChild(elem);
+		}
 
 		if(email != ""){
 		  let elem = document.createElement("P");
@@ -229,6 +235,14 @@ class About extends PageRender
 		  googleIcon.href = google;
 		  contacts.appendChild(googleIcon);
 		}
+
+		if(facebook != ""){
+			let fbIcon = document.createElement("A");
+			fbIcon.innerHTML = Icons.facebook();
+			fbIcon.classList.add("social-icon");
+			fbIcon.href = facebook;
+			contacts.appendChild(fbIcon);
+		}
 	}
 
 	/* build locations info section */
@@ -253,19 +267,90 @@ class About extends PageRender
 		}
 	}
 
-	/* build resources tab content*/
-	buildResources(){
-		About.loadFileFromServer(RESOURCES_JSON, true);
-		const resourcesObj = retrivedData;
-		let res_section = document.getElementById("resources_section");
-		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
-		for(let i = 0; i < resourcesList.length; i++){
-			res_section.innerHTML += resourcesList[i].toHtml();
+		/* build resources tab content*/
+	buildFilters(rList){
+		this.buildOneFilter(rList, "year");
+		this.buildOneFilter(rList, "type");
+		this.buildOneFilter(rList, "topic");
+	}
+
+	buildOneFilter(rList, fName){
+		let filters = new Set();
+		for(let i = 0; i < rList.length; i++){
+			let text = rList[i][fName];
+			if(typeof(text) == "string"){
+				text = text.trim();
+				text = text.toLowerCase();
+			}
+			filters.add(text);
+		}
+
+		filters = Array.from(filters);
+		let filter = document.getElementById(fName+"-filter");
+		for(let i = 0; i<filters.length; i++){
+			let option = document.createElement("OPTION");
+			option.innerHTML = filters[i];
+			filter.appendChild(option);
 		}
 	}
+
+	buildResources(change = false, filterName){
+		About.loadFileFromServer(RESOURCES_JSON, true);
+		const resourcesObj = retrivedData;
+		this.clearResources();
+		let res_section = document.getElementById("resources_section");
+		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
+		if(filterName == "buildFilters"){
+			this.buildFilters(resourcesList);
+		}
+		if(!change){
+			if(resourcesList.length == 0){
+				document.getElementById("resources_filters").style.display = "none";
+				document.getElementById("filter_by").innerHTML = "No resources to show.";
+			}
+			else{
+				for(let i = 0; i < resourcesList.length; i++){
+					res_section.innerHTML += resourcesList[i].toHtml();
+				}
+				// console.log("calling read more from first call to resources");
+				// addCollapseFunction();
+			}
+		} else {
+			let selector = document.getElementById(filterName + "-filter");
+			let selectorIndex = selector.selectedIndex;
+			let filter = selector.options[selectorIndex].value;
+			// if(filter == "Year" || filter == "Topic" || filter == "Type"){
+			// 	this.buildResources(false);
+			// 	return;
+			// }
+			for(let i = 0; i < resourcesList.length; i++){
+				let value = resourcesList[i][filterName];
+				if(typeof(value) == "string"){
+					value = value.trim().toLowerCase();
+				}
+
+				if(value == filter){
+					res_section.innerHTML += resourcesList[i].toHtml();
+				}
+			}
+			console.log("calling read more from resources filter");
+			addCollapseFunction();
+		}
+	}
+
+	clearResources(){
+		let res_section = document.getElementById("resources_section");
+		res_section.innerHTML = '';
+	}
+
+
 }
 
 document.aboutPage = new About();
 document.aboutPage.build();
+document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"year");});
+document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"type");});
+document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"topic");});
+addCollapseFunction();
 
 export {About};

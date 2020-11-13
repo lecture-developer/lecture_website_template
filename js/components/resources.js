@@ -1,7 +1,9 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
 import { ActionButton } from '/lecture_website_template/js/components/actionButton.js';
+import { descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
 
-let CITE_SYMBOL = '<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9796 10.4249C12.221 10.36 12.446 10.2505 12.6272 10.0615C12.8071 9.87389 12.9067 9.64659 12.9654 9.41093C13.0705 8.98875 13.0704 8.40647 13.0703 7.70001C13.0703 7.67591 13.0703 7.65167 13.0703 7.62729L13.0703 7.42695C13.0703 6.59853 12.3987 5.92695 11.5703 5.92695L9.56874 5.92695C9.2926 5.92695 9.06874 5.70309 9.06874 5.42695L9.06874 1.14181C9.06874 0.865667 9.2926 0.641809 9.56874 0.641809L15 0.641809C15.2761 0.641809 15.5 0.865667 15.5 1.14181L15.5 6.42695C15.5 8.56894 15.2613 10.2046 14.6801 11.3435C14.1211 12.4388 13.2304 13.106 11.7876 13.3002C11.5873 13.3272 11.356 13.158 11.356 12.8588L11.356 11.0286C11.356 10.7975 11.5567 10.5386 11.9796 10.4249Z" fill="white" stroke="#000000"/><path d="M4.49845 7.42695C4.49845 6.59853 3.82688 5.92695 2.99845 5.92695L0.999994 5.92695C0.723852 5.92695 0.499994 5.70309 0.499994 5.42695L0.499994 1.14181C0.499994 0.865668 0.723853 0.641809 0.999995 0.641809L6.42755 0.641809C6.70369 0.641809 6.92755 0.865667 6.92755 1.14181L6.92755 6.42695C6.92755 8.56896 6.68899 10.2046 6.1079 11.3435C5.54904 12.4389 4.65847 13.106 3.21579 13.3002C3.0155 13.3272 2.78421 13.158 2.78421 12.8588L2.78421 11.0286C2.78421 10.7975 2.98491 10.5386 3.4078 10.4249C3.64917 10.36 3.87418 10.2505 4.05538 10.0615C4.23531 9.87389 4.33492 9.64659 4.39358 9.41093C4.49868 8.98875 4.49858 8.40647 4.49846 7.7C4.49846 7.67591 4.49845 7.65167 4.49845 7.62729L4.49845 7.42695Z" fill="white" stroke="#000000"/></svg>';
+let CITE_SYMBOL = '<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.5703 7.62686C12.5703 9.16849 12.5703 9.74792 11.8498 9.94165C11.3165 10.0851 10.856 10.4759 10.856 11.0282L10.856 12.8584C10.856 13.4107 11.307 13.869 11.8543 13.7953C15.0498 13.3651 16 10.7486 16 6.42653L16 1.14138C16 0.589098 15.5523 0.141382 15 0.141382L9.56874 0.141382C9.01646 0.141382 8.56874 0.589097 8.56874 1.14138L8.56874 5.42652C8.56874 5.97881 9.01646 6.42652 9.56874 6.42653L11.5703 6.42653C12.1226 6.42653 12.5703 6.87424 12.5703 7.42653L12.5703 7.62686Z" fill="#1A202C"/><path d="M2.99839 6.42653C3.55068 6.42653 3.99839 6.87424 3.99839 7.42653L3.99839 7.62686C3.99839 9.16849 3.99839 9.74792 3.27791 9.94165C2.74457 10.0851 2.28415 10.4759 2.28415 11.0282L2.28415 12.8584C2.28415 13.4107 2.7351 13.869 3.28245 13.7953C6.47777 13.3651 7.42749 10.7486 7.42749 6.42653L7.42749 1.14138C7.42749 0.589098 6.97978 0.141382 6.42749 0.141382L0.999934 0.141382C0.44765 0.141382 -6.65508e-05 0.589097 -6.65991e-05 1.14138L-6.69737e-05 5.42652C-6.7022e-05 5.97881 0.447648 6.42652 0.999933 6.42653L2.99839 6.42653Z" fill="#1A202C"/></svg>';
+
 
 class Resource extends Element
 {
@@ -37,7 +39,7 @@ class Resource extends Element
 		answer += '<h4>' + this.authors + '<br></h4>';
 
     if(this.recommendation != ""){
-      answer += '<p class="recommend-promo"> Why am I recommending this? <span class="recommend-txt">' + this.recommendation + '</span></p>';
+      answer += descriptionTrim('<span class="recommend-promo"> Why am I recommending this? </span>' + this.recommendation);
     }
 
     answer += '<div class="personal-row space-between align-items-center mobile-row-breaker">';
@@ -47,9 +49,9 @@ class Resource extends Element
 			answer += '<a href="' + this.fileLinks[1]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a>';
 		}
 
-    if (this.fileLinks[2]["link"] != ""){
-      answer += '<a href="' + this.fileLinks[2]["link"] + '" class="secondary-btn acadmic-card-margin-fix space-around" style="width: 100%; max-width: 126px;">Read online</a>';
-    }
+    // if (this.fileLinks[2]["link"] != ""){
+    //   answer += '<a href="' + this.fileLinks[2]["link"] + '" class="secondary-btn acadmic-card-margin-fix space-around" style="width: 100%; max-width: 126px;">Read online</a>';
+    // }
 
     answer += '<div class="w-100 acadmic-parms-row"><span>'
 		+ this.year + '</span><span>'

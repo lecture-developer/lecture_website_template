@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- seo -->
     <title> Lecuter's Courses Website </title>
     <link href="/lecture_website_template/img/favicon.ico" rel="icon" type="image/x-icon"/>
@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet"/>
     <link href="/lecture_website_template/css/main.css" rel="stylesheet">
+    <link href="/lecture_website_template/css/about.css" rel="stylesheet">
+    <link href="/lecture_website_template/css/courses.css" rel="stylesheet">
     <!-- end - css -->
 
 
@@ -23,7 +25,7 @@
 	<header class="header" id="header">
 	</header>
     <!-- end - header -->
-    
+
 	<!-- main content -->
 	<main class="content" id="main_section">
 		<div class="teaching-container">
@@ -38,14 +40,33 @@
 				</ul>
 			</div>
 			<div class="teaching-papers-header-section">
-                <h1>All courses</h1>
-				<p> These are my current and past courses</p>
-                <h5 id="filter-header">Filter</h5>
-                <div class="teaching-body-filter">
-				    <form>
-                        <div id="buttons-filter" class="mobile-buttons-holder-tide">
-						</div>
+                <h1>Courses</h1>
+                  <div class="resources-filters personal-row wrap" id="resources_filters">
+                    <p class="filter-by-txt">
+                      Filter by:
+                    </p>
+                    <form>
+                      <div class="personal-row" style="margin-left: 10px;">
+                        <div class="select-wrapper">
+                        <select id="topic-filter"  onfocus="this.selectedIndex=0;" class="minimal">
+                          <option>Topic</option>
+                        </select>
+                      </div>
+
+                      <div class="select-wrapper">
+                        <select id="year-filter"  onfocus='this.selectedIndex=0;' class="minimal">
+                          <option>Year</option>
+                        </select>
+                      </div>
+
+                      <div class="select-wrapper">
+                        <select id="university-filter"  onfocus="this.selectedIndex=0;" class="minimal">
+                          <option>Institution</option>
+                        </select>
+                      </div>
                     </form>
+                    <a id="reset-btn"></a>
+                  </div>
                 </div>
                 <hr>
             </div>
@@ -58,7 +79,7 @@
 	<footer class="footer" id="footer">
 	</footer>
     <!-- end - footer -->
-    
+
     <!-- js -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

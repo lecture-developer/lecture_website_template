@@ -592,7 +592,7 @@ footer h2{
 
 /* Reset Select */
 select {
-  -webkit-appearance: none;
+  -webkit-appearance:
   -moz-appearance: none;
   -ms-appearance: none;
   appearance: none;
@@ -601,6 +601,27 @@ select {
   border: 0 !important;
   background: #2c3e50;
   background-image: none;
+}
+
+.select-wrapper {
+	position: relative;
+}
+
+.select-wrapper:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 28px;
+  	position: absolute;
+  	top: 4px;
+  	right: 20px;
+  	color: #434B67;
+  	pointer-events: none;
+}
+@media (max-width: 600px) {
+  .select-wrapper:after {
+    content: '';
+    pointer-events: none;
+  }
 }
 
 /* Remove IE arrow */
@@ -1618,10 +1639,20 @@ margin: 0px 0px;
 }
 
 .teaching-papers-body-section p{
-	font-family: Roboto;
-	font-size: 14px;
-	line-height: 19px;
-	color: #A0AEC0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1A202C;
+  padding-bottom: 0;
+}
+
+.teaching-papers-body-section .semester{
+  font-size: 14px;
+  line-height: 135%;
+  color: #A0AEC0;
+  margin-bottom: 4px;
 }
 
 .teaching-container{
@@ -1671,6 +1702,7 @@ margin: 0px 0px;
 	color: #FFFFFF;
 	border: 0px solid #5A67D8;
 }
+
 
 @media only screen and (max-width: 420px){
 	.teaching-body-filter button {
