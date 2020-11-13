@@ -11,11 +11,9 @@
   color: #52575C;
 }
 
-
 .resources-filters{
-  margin-top: 70px;
+  margin-top: 20px;
 }
-
 
 #reset-btn{
   font-family: Roboto;
@@ -31,10 +29,12 @@
   cursor: pointer;
 }
 
-
-.academic-papers-panel{
+.academic-papers-panel-hard{
   box-shadow: none;
   padding-top: 0;
   padding-left: 0;
   margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 20px;
 }
+/* ----------------- end - filters area ----------------- */

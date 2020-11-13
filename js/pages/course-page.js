@@ -7,7 +7,7 @@ import { addCollapseFunction } from '/lecture_website_template/js/descriptionSli
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
 // consts //
 let PRE_COOKIE_KEY = "course_";
-let SECTIONS = ["General", "Modules", "Modules"];
+let SECTIONS = ["General", "Updates", "Modules"];
 // end - consts //
 
 class CoursePage extends PageRender
@@ -119,7 +119,7 @@ class CoursePage extends PageRender
 			+ this.data.code + '</p></div><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_access_time.png"><p>Semester '
 			+ this.data.semester + '</p></div><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_place.png"><div class=".personal-coloum"><p>'
 			+ this.data.university + '</p><p>'
-			+ this.data.location_class + '</p></div></div></div></div><div class=".personal-row"><a class="sylabus-link" href='
+			+ this.data.location_class + '</p></div></div></div></div><div class="personal-row"><a class="sylabus-link" href='
 			+ this.data.syllabus +' ><img class="course-sylabus-img" src="/lecture_website_template/img/save_alt.png" alt="">Syllabus</a></div>';
 			document.getElementById("icons_section").innerHTML = html;
 

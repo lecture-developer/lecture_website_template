@@ -246,7 +246,7 @@ function update_search_results()
 	// TODO: make sure the results are ordered from best score to worst
 	
 	// we can assume results >= 1 and show them
-	document.getElementById("query_place").innerHTML = "Search results For \"" + query + "\"";
+	document.getElementById("query").innerHTML = query;
 	var resultListHtml = "";
 	var scores_norm = 0;
 	for (var i = 0; i < results.length; i++)
@@ -260,8 +260,7 @@ function update_search_results()
 	}
 	
 	// set the data in the page
-	document.getElementById("query_place").innerHTML = "Search results For \"" + query + "\"";
-	document.getElementById("search_list").innerHTML = resultListHtml;
+	document.getElementById("search-results").innerHTML = resultListHtml;
 }
 
 function GetParamsLoad(param_name) 
@@ -271,7 +270,8 @@ function GetParamsLoad(param_name)
 
 function buildSearchResultAnswer(index, title, score, short_body, url)
 {
-	return '<div class="col-lg-12 col-md-12 col-sm-12" ><div class="card text-center"><div class="card-body"><h5 class="card-title">' + title + ' <small>(' + Math.floor(10000 * score) / 100 + '%)</small></h5><p class="card-text">' + short_body + '</p><a class="cool-btn cool-btn-gray" id="cool_btn_' + index + '" href="' + url + '"> Take Me There </a></div></div></div>';
+	var label = url.replace("/", "").split(".")[0].toUpperCase();
+	return '<div class="academic-papers-panel"><div class="personal-row-col col-reverse-mobile w-100 align-space-between"><h3>'	+ title + '</h3></div><h4>' + short_body + '</h4><p class="search-date">Fitting ' + Math.round(score * 100) + '% to query</p><div class="personal-row space-between-search align-items-center mobile-row-breaker"><div class="search-parms-row"><span class="search-label">' + label + '</span></div><a href="' + url + '" class="see-page-btn see-page-text search-card-margin-fix acadmic-card-margin-fix">See this page</a></div></div>';
 }
 
 // show an alert as a result of searching something in the search field

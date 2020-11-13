@@ -19,7 +19,7 @@ class CourseCard extends Element
 	toHtml()
 	{
 		var answer = '<p class="semester"> Semster '
-		+ this.semester + '</p><div class="academic-papers-panel"><h3>'
+		+ this.semester + '</p><div class="academic-papers-panel-hard"><h3>'
 		+ this.name +'</h3><p>'
 		+ this.department +'<br>'
 		+ this.university +'</p> <div class="personal-row space-between"><div class="flex-start"><a href="/lecture_website_template/course-page.html?course_id='

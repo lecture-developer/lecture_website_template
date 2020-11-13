@@ -152,7 +152,6 @@ class About extends PageRender
 			panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
 		}
 		document.getElementById("projects_cards").innerHTML = panels;
-
 	}
 
 	buildTopicNav(lecturerObj, projects)
@@ -238,7 +237,7 @@ class About extends PageRender
 
 		if(facebook != ""){
 			let fbIcon = document.createElement("A");
-			fbIcon.innerHTML = Icons.facebook();
+			fbIcon.innerHTML = Icons.about_facebook();
 			fbIcon.classList.add("social-icon");
 			fbIcon.href = facebook;
 			contacts.appendChild(fbIcon);
@@ -249,9 +248,9 @@ class About extends PageRender
 	buildLocations(addresses)
 	{
 	  //adding headlines
-	  document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
-	  document.getElementById("room").innerHTML = Icons.location() + " Room Location";
-	  document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
+	  document.getElementById("organization").innerHTML = Icons.buildings() + "<div class='after-icon-cell'> Organization Name </div>";
+	  document.getElementById("room").innerHTML = Icons.location() + "<div class='after-icon-cell'> Room Location  </div>";
+	  document.getElementById("hours").innerHTML = Icons.clock() + "<div class='after-icon-cell'> Office Hours  </div>";
 
 	  var info_table = document.getElementById("info-table");
 

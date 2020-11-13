@@ -1581,12 +1581,12 @@ margin: 0px 0px;
 	border: 0px solid #4A5568;
 }
 
-/* .active-sort-button {
-	background: #5A67D8;
-	color: #FFFFFF;
-	font-weight: bold;
-	border: 0px solid #5A67D8;
-} */
+ .active-sort-button {
+	background: #5A67D8 !important;
+	color: #FFFFFF !important;
+	font-weight: bold !important;
+	border: 0px solid #5A67D8 !important;
+} 
 
 .academic-papers-header-section button:active{
 	background: #5A67D8 !important;
@@ -1656,8 +1656,51 @@ margin: 0px 0px;
   }
 }
 
+@media only screen and (max-width: 400px){
+	.academic-papers-panel {
+		margin-left: 0px; 
+		margin-right: 0px; 
+	}
+	
+	.teaching-papers-body-section {
+		margin-left: 0px !important;
+	}
+}
+
 
 /* end - publications page */
+
+/* search page */
+
+.search-label{
+	font-family: Roboto;
+    background: #F2F2F2;
+    border-radius: 4px;
+    padding: 6px 18px;
+    color: #828282;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    margin-right: 0.5rem;
+}
+
+.search-date{
+	font-size: 14px !important;
+	margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 400px)
+{
+	
+	.search-card-margin-fix{
+		margin-top: 20px !important;
+		width: 100%;
+		margin-left: 0px !important;
+	}
+}
+
+/* end - search page */
 
 /* start  - teaching page*/
 
@@ -1685,9 +1728,17 @@ margin: 0px 0px;
 	text-transform: capitalize;
 }
 
+.search-pre-header{
+	font-family: Playfair Display;
+	font-size: 24px;
+	line-height: 10px;
+}
+
 .teaching-papers-body-section{
 	padding-bottom: 50px;
-	width: 100%;
+	width: 100%;  
+	padding-left: 16px;
+    padding-right: 16px;
 }
 
 .teaching-papers-body-section h3{
@@ -1727,6 +1778,7 @@ margin: 0px 0px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 5rem;
 }
 
 .teaching-body-filter button{
@@ -1931,7 +1983,7 @@ margin: 0px 0px;
 }
 
 .acadmic-card-margin-fix{
-
+	
 }
 
 @media screen and (max-width: 600px) {
@@ -1949,6 +2001,7 @@ margin: 0px 0px;
 
 	.acadmic-card-margin-fix{
 		margin-right: 20px;
+		margin-top: 10px;
 	}
 }
 

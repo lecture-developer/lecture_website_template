@@ -13,6 +13,7 @@
   padding-bottom: 6.75rem;
   max-width: 1080px;
   width: 100%;
+  margin-top: 5rem;
 }
 
 @media only screen and (max-width: 850px) {
@@ -24,6 +25,15 @@
 
 #lecturer_title {
   margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 650px) {
+	#lecturer_title {
+	  margin-bottom: 5px;
+	}
+	#lecturer_name{
+	  font-size: 38px !important;
+	}
 }
 
 #lecturer_position {
@@ -117,10 +127,25 @@ line-height: 200%;
   margin-right: 20px;
 }
 
+.after-icon-cell{
+	display: inline;
+}
+
 @media only screen and (max-width: 850px) {
   #lecturer_location {
     margin-top: 30px;
   }
+  
+  .icon-cell{
+	  text-align: center;
+  }
+	.tabs {
+	  margin-top: 40px !important;
+	}
+	
+	.after-icon-cell{
+		display: none !important;
+	}
 }
 
 /****** table - end  ******/
