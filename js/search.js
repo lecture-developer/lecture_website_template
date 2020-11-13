@@ -223,7 +223,7 @@ function searchPage()
 	}
 	else // if more then 1 answer - go to the search page and load there again the answers
 	{
-		window.open("/search.html?" + PARAM_QUERY + "=" + encodeURIComponent(query));
+		window.open("/lecture_website_template/search.html?" + PARAM_QUERY + "=" + encodeURIComponent(query));
 	}
 }
 
