@@ -132,19 +132,25 @@ line-height: 200%;
 }
 
 @media only screen and (max-width: 850px) {
-  #lecturer_location {
-    margin-top: 30px;
-  }
-  
-  .icon-cell{
-	  text-align: center;
-  }
+	#lecturer_location {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.icon-cell {
+		text-align: center;
+	}
+	
 	.tabs {
 	  margin-top: 40px !important;
 	}
 	
-	.after-icon-cell{
+	.after-icon-cell {
 		display: none !important;
+	}
+
+	.page-container {
+	  margin-top: 1rem;
 	}
 }
 

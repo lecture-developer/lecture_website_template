@@ -58,20 +58,51 @@
     flex-direction: column;
 }
 
+@media screen and (max-width: 1800px) {
+    .tab {
+        width: 12rem !important;
+    }
+	
+	.tab-title {
+		top: -2rem !important;;
+	}
+}
+
 @media screen and (max-width: 850px) {
     .tab {
-        width: 7rem;
+        width: 7rem !important;
     }
+	
+	.tab-title {
+		top: -3rem !important;;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	
+	.tab-title {
+		top: -2rem;
+	}
 }
 
 @media screen and (max-width: 450px) {
     .tab {
-        width: 5rem;
+        width: 5rem !important;
     }
 
     .tab-title {
         font-size: 14px;
     }
+}
+
+@media screen and (max-width: 400px) {
+    .tab {
+        width: 5rem !important;
+    }
+	
+	.tab-title {
+		top: -3rem !important;;
+	}
 }
 
 /****** tabs sections - end ******/
