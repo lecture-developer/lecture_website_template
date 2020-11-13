@@ -3,6 +3,7 @@ import { PageRender, retrivedData } from '/lecture_website_template/js/pageRende
 import { PublicationCard } from '/lecture_website_template/js/components/publicationCard.js';
 import { ProjectPanel } from '/lecture_website_template/js/components/projectPanel.js';
 import { Icons } from '/lecture_website_template/js/components/icons.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let UPDATES_TEXT = "/lecture_website_template/data/notifications.txt"
@@ -27,6 +28,8 @@ class Index extends PageRender
 		Index.buildeNotifications();
 		Index.buildePersonalPanel();
 		Index.buildePageContent();
+		
+		addCollapseFunction();
 	}
 	
 	/* build section functions */
@@ -169,9 +172,9 @@ class Index extends PageRender
 			{
 				document.getElementById("featured_publications_header").style.display = "none";
 			}
-			if (jsonObj["current_projects_header"].length == 0)
+			if (jsonObj["currentProjects"].length == 0)
 			{
-				document.getElementById("featured_publications_header").style.display = "none";
+				document.getElementById("current_publications_header").style.display = "none";
 			}
 		}
 		catch (error)

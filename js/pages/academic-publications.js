@@ -1,6 +1,7 @@
 // imports 
 import { PageRender, retrivedData } from '/lecture_website_template/js/pageRender.js';
 import { PublicationCard } from '/lecture_website_template/js/components/publicationCard.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let PUBLICATIONS_JSON = "/lecture_website_template/data/jsons/academic-publications.json";
@@ -52,6 +53,8 @@ class AcademicPublications extends PageRender
 		// build the page itself
 		this.buildHeader(this.sorter, filter);
 		this.buildBody(this.sorter, filter);
+		
+		addCollapseFunction();
 	}
 	
 	/* build section functions */
@@ -132,7 +135,7 @@ class AcademicPublications extends PageRender
 				for (var spliterKeyIndex = 0; spliterKeyIndex < keys.length; spliterKeyIndex++)
 				{
 					// add spliter 
-					ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
+					// ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
 					// add elements inside the list
 					for (var elementIndex = 0; elementIndex < publicSets[keys[spliterKeyIndex]].length; elementIndex++)
 					{
@@ -185,6 +188,8 @@ class AcademicPublications extends PageRender
 			// mark this filter as choosen
 			selector.classList.add("active-sort-button");
 			document.getElementById("year-filter").selectedIndex = "" + selectorIndex;
+		} else {
+			filter = default_filter;
 		}
 		
 		this.buildBody(this.sorter, filter, "year");
@@ -205,6 +210,8 @@ class AcademicPublications extends PageRender
 			// mark this filter as choosen
 			selector.classList.add("active-sort-button");
 			document.getElementById("type-filter").selectedIndex = "" + selectorIndex;
+		} else {
+			filter = default_filter;
 		}
 		
 		this.buildBody(this.sorter, filter, "type");
@@ -225,6 +232,8 @@ class AcademicPublications extends PageRender
 			// mark this filter as choosen
 			selector.classList.add("active-sort-button");
 			document.getElementById("topic-filter").selectedIndex = "" + selectorIndex;
+		} else {
+			filter = default_filter;
 		}
 		
 		this.buildBody(this.sorter, filter, "topic");

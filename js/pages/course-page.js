@@ -81,7 +81,7 @@ class CoursePage extends PageRender
     }
 
     build(){
-		this.buildBreadcrumb();
+		// this.buildBreadcrumb();
 		this.createDetailsCourse();
 
 		let course = this.data.toHtml(this.last_visit);
