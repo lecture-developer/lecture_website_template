@@ -1111,9 +1111,8 @@ flickity-prev-next-button[disabled]{
 }
 
 .research-seperator {
-	width: 150%;
+	width: 100%;
 	position: relative;
-	left: calc(-25%);
 	height: 1px;
 	color: rgba(90, 103, 216, 0.5);
 	background-color: rgba(90, 103, 216, 0.5);
