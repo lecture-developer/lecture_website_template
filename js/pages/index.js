@@ -99,6 +99,7 @@ class Index extends PageRender
 		{
 			Index.loadFileFromServer(LECTURE_INFO_JSON, true);
 			var jsonObj = retrivedData;
+			document.getElementById("lecturer-name").innerHTML = jsonObj["name"];
 			document.getElementById("lecture_position").innerHTML = jsonObj["position"];
 			var addressesHtml = "<div class='lecturer-info'> ";
 			addressesHtml += "<span>" + Icons.info() + "</span> ";

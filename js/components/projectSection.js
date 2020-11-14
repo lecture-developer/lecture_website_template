@@ -23,8 +23,19 @@ class ProjectSection extends Element
 		+ descriptionTrim(this.description);
 		if (this.btn["link"] != "")
 		{
-			answer += '<div class="personal-row space-up-20"><div class="space-around"><a href="' + this.btn["link"] + '" class="download-btn"> Explore project </a></div>\
-			<div class="space-around"><a href="' + this.btn["example"] + '" class="secondary-btn"> See example </a></div></div>';
+			answer += '<div class="personal-row space-up-20">';
+			
+			if (this.btn["link"] != "" && this.btn["link"] != undefined)
+			{
+				answer += '<div class="space-around"><a href="' + this.btn["link"] + '" class="download-btn"> Explore project </a></div>';
+			}
+			
+			if (this.btn["example"] != "" && this.btn["example"] != undefined)
+			{
+				answer += '<div class="space-around"><a href="' + this.btn["example"] + '" class="secondary-btn"> See example </a></div>';
+			}
+			
+			answer += '</div>';
 		}
 		answer += '</div>';
 		return answer;

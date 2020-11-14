@@ -58,9 +58,19 @@
     flex-direction: column;
 }
 
+@media screen and (max-width: 3000px) {
+    .tab {
+        width: 20rem !important;
+    }
+	
+	.tab-title {
+		top: -1.5rem !important;;
+	}
+}
+
 @media screen and (max-width: 1800px) {
     .tab {
-        width: 12rem !important;
+        width: 14rem !important;
     }
 	
 	.tab-title {

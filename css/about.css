@@ -10,12 +10,14 @@
   max-width: 1080px;
   width: 100%;
   margin-top: 5rem;
+  padding-right: 32px;
+padding-left: 32px;
 }
 
 @media only screen and (max-width: 850px) {
   .page-container {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
   }
 }
 
@@ -61,6 +63,17 @@
   max-width: 400px;
 }
 
+#contacts p{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#contacts svg{
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
 #cv{
   color: #5A67D8;
   font-family: Roboto;
@@ -98,11 +111,13 @@ line-height: 200%;
   color: #4A5568;
   line-height: 135%;
   padding: 16px 12px;
+  text-align: center;
 }
 
 .info-table th {
   padding: 16px 12px;
   padding-top: 0px;
+  text-align: center;
 }
 
 .info-table tr {
@@ -124,7 +139,7 @@ line-height: 200%;
 }
 
 .after-icon-cell{
-	display: inline;
+	
 }
 
 @media only screen and (max-width: 850px) {
@@ -333,6 +348,42 @@ ul .active-topic {
 	background-image: url("/lecture_website_template/img/expand_more.png");
 	background-repeat: no-repeat;
 	background-position: right;
+  height: 40px;
+  width: 161px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  /* drop down - shadow */
+  box-shadow: 3px 4px 3px rgba(26, 32, 44, 0.04), 0px 1px 2px #E2E8F0;
+  margin-left: 20px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #4A5568;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
+@media only screen and (max-width: 450px){
+	.resources-filters select {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+	}
+	.resources-filter .personal-row{
+	  align-items: flex-start;
+	}
+}
+
+@media only screen and (max-width: 800px)
+{
+	.select-wrapper{
+	  width: 100%;
+	  margin: 0 3px;
+	}
 }
 
 #topic-filter{

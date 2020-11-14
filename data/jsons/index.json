@@ -1,54 +1,42 @@
 {
-   "biography":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+   "biography":"Prof. Losatter is the head of internet academy society and a assosiative professor as Sphera Academy. Finished her PhD long time ago and researched in the field of sicoal-mathematics.",
    "researchInterests":[
-		"A Really good text A Really good text A Really good text from data 111",
-		"A Really good text A Really good text A Really good text from data 222",
-		"A Really good text A Really good text A Really good text from data 333"
+		"Mathematical modeling of how people do stuff",
+		"Biology and people - the connection between the two",
+		"How to make computers to do my work for me"
    ],
    "featuredPublications":[
       {
-         "name":"Paper's Paper's title",
-         "description":"Paper's description Paper's description",
+         "name":"Why COVID-19 pandemic is the right time to switch your academic website?",
+         "description":"In this non-existing paper, we show why COVID-19 pandemic is the right time to upgrade your academic website and how to do so easly",
          "fileLinks":[{"info": "download", "type": 1, "link": ""},
 					  {"info": "cite", "type": 3, "link": ""}],
-		   "authors": "first name, last name; first name, last name",
-         "year": 2019,
-         "topic":"cool topic",
+		 "authors": "Losatter, H.",
+         "year": 2020,
+         "topic":"websites",
          "type":"paper",
-         "publisher":"good publisher good publisher",
-         "publicationStatus":"Published"
+         "publisher":"The journal of what really matters",
+         "publicationStatus":"Submited"
       },
       {
-         "name":"Paper's title Paper's title Paper's title Paper's title",
-         "description":"Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa.pdf"},
-					  {"info": "cite", "type": 3, "link": "bbb"}],
-		   "authors": "first name, last name; first name, last name",
-         "year": 2020,
-         "topic":"cool topic",
+         "name":"Researchers and their websites",
+         "description":"What researchers do wrong with their websites",
+         "fileLinks":[{"info": "download", "type": 1, "link": ""},
+					  {"info": "cite", "type": 3, "link": ""}],
+		 "authors": "Losatter, H.",
+         "year": 2019,
+         "topic":"websites",
          "type":"paper",
-         "publisher":"good publisher good publisher",
+         "publisher":"The journal of what really matters",
          "publicationStatus":"Published"
       }
    ],
    "currentProjects":[
       {
-         "name":"Really Cool Project",
+         "name":"Sphera Academy Website Generator",
          "topic": "cool topic",
-         "description":"Short Description Short Description Short Description Short Description Short Description Short Description  Short Description Short Description Short Description Short Description Short Description Short Description Short Description Short Description Short Description  ",
-         "link":{"info": "View project", "type": 2, "link": "bbb", "example":"abc"}
-      },
-      {
-         "name":"Amazing project!",
-         "topic": "amazing topic",
-         "description":"long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description long Description",
-         "link":{"info": "View project", "type": 2, "link": "aaa", "example":""}
-      },
-      {
-         "name":"Another cool project",
-         "topic": "cool topic",
-         "description":"Short Description Short Description Short Description ",
-         "link":{"info": "View project", "type": 2, "link": "", "example":""}
+         "description":"Maintaining an academic online presence is not easy. That's why we created our one-stop-shop solution: Sphera. a free, customizable and easy-to-use template for a personal website, that contains your entire academic life in one place. And yes, it’s mobile friendly too!",
+         "link":{"info": "View project", "type": 2, "link": "https://sphera.academy/", "example":""}
       }
    ]
 }
