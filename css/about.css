@@ -1,8 +1,4 @@
 
-.academic-papers-panel span{
-  background: #E2E8F0;
-}
-
 .personal-row span{
   float:none;
 }
@@ -155,11 +151,11 @@ line-height: 200%;
 	.icon-cell {
 		text-align: center;
 	}
-	
+
 	.tabs {
 	  margin-top: 40px !important;
 	}
-	
+
 	.after-icon-cell {
 		display: none !important;
 	}
@@ -190,6 +186,23 @@ line-height: 200%;
 
 .active-tab-title {
   font-weight: 700;
+}
+
+
+@media screen and (max-width: 850px) {
+    .tab {
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .tab {
+        width: 6.4rem;
+    }
+
+    .tab-title {
+        font-size: 14px;
+    }
 }
 
 /****** tabs - end  ******/
@@ -295,6 +308,16 @@ ul .active-topic {
   margin: 0 6px;
 }
 
+
+@media screen and (max-width: 500px) {
+  #topics{
+    display: none;
+  }
+
+  #projects_cards{
+    margin:auto;
+  }
+}
 /****** projects - end  ******/
 /****** resources - start  ******/
 .resources_section p {
@@ -307,6 +330,24 @@ ul .active-topic {
 }
 
 .resources-filters select {
+  min-width: 10rem;
+	padding: 8px 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+	border-radius: 4px;
+	border: 0px solid white;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 150%;
+	color: #4A5568;
+	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
+	background-image: url("/lecture_website_template/img/expand_more.png");
+	background-repeat: no-repeat;
+	background-position: right;
   height: 40px;
   width: 161px;
   border-radius: 4px;
@@ -404,4 +445,39 @@ p .more-section{
 
 .academic-papers-panel{
   max-width: 1050px;
+}
+
+.acadmic-parms-row{
+  justify-content: flex-end;
+}
+
+.acadmic-parms-row span{
+  font-family: Roboto;
+  background: #E2E8F0;
+  border-radius: 4px;
+  padding: 6px 18px;
+  color: #828282;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 450px){
+.resources-filters select {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.resources-filter .personal-row{
+  align-items: flex-start;
+}
+.select-wrapper{
+  width: 30%;
+  margin: 0 3px;
+}
+.acadmic-parms-row{
+  align-items: flex-end;
+}
 }

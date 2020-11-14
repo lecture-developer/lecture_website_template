@@ -3,12 +3,13 @@ import { ActionButton } from '/lecture_website_template/js/components/actionButt
 
 class CourseCard extends Element
 {
-	constructor(name, code, year, department, semester, university, description)
+	constructor(name, code, year, topic, department, semester, university, description)
 	{
 		super();
 		this.name = name;
 		this.code = code;
 		this.year = year;
+		this.topic = topic;
 		this.department = department;
         this.semester = semester;
         this.university = university;
@@ -44,6 +45,7 @@ class CourseCard extends Element
 		return new CourseCard(jsonObj["name"],
 		jsonObj["code"],
 		jsonObj["year"],
+		jsonObj["topic"],
 		jsonObj["department"],
         jsonObj["semester"],
         jsonObj["university"],
@@ -72,7 +74,6 @@ class CourseCard extends Element
 		var answer = [];
 		for (var objIndex = 0; objIndex < objList.length; objIndex++)
 		{
-			console.log(objList[objIndex][property + ""]);
 			if (objList[objIndex][property + ""] == filterValue)
 			{
 				answer.push(objList[objIndex]);

@@ -56,8 +56,6 @@ class About extends PageRender
 		// pick the right tab according to the link
 		this.pickTab();
 		//
-		// console.log("calling read more from build");
-		// addCollapseFunction();
 
 	}
 
@@ -137,7 +135,7 @@ class About extends PageRender
 		else
 		{
 			this.dynamicBuildProjects(projects, topic);
-			console.log("calling read more from project with change");
+
 			addCollapseFunction();
 		}
 
@@ -311,8 +309,7 @@ class About extends PageRender
 				for(let i = 0; i < resourcesList.length; i++){
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
-				// console.log("calling read more from first call to resources");
-				// addCollapseFunction();
+
 			}
 		} else {
 			let selector = document.getElementById(filterName + "-filter");
@@ -332,7 +329,6 @@ class About extends PageRender
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
 			}
-			console.log("calling read more from resources filter");
 			addCollapseFunction();
 		}
 	}
