@@ -614,7 +614,7 @@ select {
 
 .select-wrapper:after {
 	font-family: FontAwesome;
-  	content: '\f107';
+  	/*content: '\f107';*/
   	font-size: 28px;
   	position: absolute;
   	top: 4px;

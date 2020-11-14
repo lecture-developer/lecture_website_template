@@ -31,8 +31,8 @@ class Teaching extends PageRender
 	{
 		// build the page itself
         this.buildHeader(this.filter);
-				this.buildBody(this.filter);
-				this.buildFilters();
+		this.buildBody(this.filter);
+		this.buildFilters();
     }
 
 	//build the header section of the page
@@ -41,9 +41,9 @@ class Teaching extends PageRender
         try
 		{
 			let reset = document.getElementById("reset-btn");
-      reset.innerHTML = Icons.reset() + " Reset";
-			reset.addEventListener("click",this.buildBody());
-    }
+			reset.innerHTML = Icons.reset() + " Reset";
+			reset.addEventListener("click", this.buildBody());
+		}
         catch (error)
 		{
 			console.log("Error at Teaching.buildHeader saying: " + error);
@@ -54,15 +54,18 @@ class Teaching extends PageRender
     buildBody(filterValue = default_filter)
 	{
 		this.clearFiltersDesign();
-		if(filterValue == default_filter){
+		if(filterValue == default_filter)
+		{
 			document.getElementById("reset-btn").style.display = "none";
 			let fils = document.getElementsByClassName("minimal");
-			for(let i = 0; i<fils.length; i++){
+			for(let i = 0; i<fils.length; i++)
+			{
 				fils[i].selectedIndex = 0;
 			}
-
-		} else {
-			document.getElementById("reset-btn").style.display = "block";
+		} 
+		else 
+		{
+			document.getElementById("reset-btn").style.display = "";
 			document.getElementById(filterValue+"-filter").classList.add("active-sort-button");
 		}
         // sort the list
@@ -116,37 +119,44 @@ class Teaching extends PageRender
 		}
     }
     /* build function end */
-		/* build filters */
-		buildFilters(){
-			this.buildOneFilter("year");
-			this.buildOneFilter("university");
-			this.buildOneFilter("topic");
-		}
+	
+	/* build filters */
+	buildFilters()
+	{
+		this.buildOneFilter("year");
+		this.buildOneFilter("university");
+		this.buildOneFilter("topic");
+	}
 
-		buildOneFilter(fName){
-			let filters = new Set();
-			for(let i = 0; i < this.cardList.length; i++){
-				let text = this.cardList[i][fName];
-				if(fName == "topic"){
-					text = text.replaceAll("-"," ").trim().toLowerCase();
+	buildOneFilter(fName)
+	{
+		let filters = new Set();
+		for(let i = 0; i < this.cardList.length; i++)
+		{
+			let text = this.cardList[i][fName];
+			if(fName == "topic")
+			{
+				text = text.replaceAll("-"," ").trim().toLowerCase();
 
-				}
-				if(text == "") continue;
-				filters.add(text);
 			}
-			filters = Array.from(filters);
-			let filter = document.getElementById(fName+"-filter");
-			if(filters.length == 0 || filters[0] == undefined){
-				filter.parentElement.classList.remove("select-wrapper");
-				filter.style.display = "none";
-				return;
-			}
-			for(let i = 0; i<filters.length; i++){
-				let option = document.createElement("OPTION");
-				option.innerHTML = filters[i];
-				filter.appendChild(option);
-			}
+			if(text == "") continue;
+			filters.add(text);
 		}
+		filters = Array.from(filters);
+		let filter = document.getElementById(fName+"-filter");
+		if(filters.length < 2 || filters[0] == undefined)
+		{
+			filter.parentElement.classList.remove("select-wrapper");
+			filter.style.display = "none";
+			return;
+		}
+		for(let i = 0; i < filters.length; i++)
+		{
+			let option = document.createElement("OPTION");
+			option.innerHTML = filters[i];
+			filter.appendChild(option);
+		}
+	}
 
 	//the function change the filter by the value.
 	ChangeFilter(filter_value)

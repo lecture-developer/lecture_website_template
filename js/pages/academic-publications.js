@@ -255,13 +255,20 @@ class AcademicPublications extends PageRender
 	
 	static fulfilDropdown(id, itemsList)
 	{
-		itemsList = [...new Set(itemsList)];
-		var html = "";
-		for (var itemIndex = 0; itemIndex < itemsList.length; itemIndex++)
+		if (Array.from(new Set(itemsList)).length > 1)
 		{
-			html += '<option value="' + itemsList[itemIndex] + '">' + itemsList[itemIndex] + '</option>';
+			itemsList = [...new Set(itemsList)];
+			var html = "";
+			for (var itemIndex = 0; itemIndex < itemsList.length; itemIndex++)
+			{
+				html += '<option value="' + itemsList[itemIndex] + '">' + itemsList[itemIndex] + '</option>';
+			}
+			document.getElementById(id).innerHTML += html;
 		}
-		document.getElementById(id).innerHTML += html;
+		else
+		{
+			document.getElementById(id).style.display = "none";
+		}
 	}
 	
 	/* end -  help functions  */
