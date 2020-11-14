@@ -53,30 +53,32 @@ class Teaching extends PageRender
 	//build the body section of the page, start after the button filter.
     buildBody(filterValue = default_filter)
 	{
-		this.clearFiltersDesign();
+
 		if(filterValue == default_filter)
 		{
+			this.clearFiltersDesign();
 			document.getElementById("reset-btn").style.display = "none";
 			let fils = document.getElementsByClassName("minimal");
 			for(let i = 0; i<fils.length; i++)
 			{
 				fils[i].selectedIndex = 0;
 			}
-		} 
-		else 
+		}
+		else
 		{
 			document.getElementById("reset-btn").style.display = "";
-			document.getElementById(filterValue+"-filter").classList.add("active-sort-button");
 		}
         // sort the list
 		var buildTeachingList = CourseCard.sortByProperty(this.cardList, "year", "semester");
-
+		console.log("teachinglist"+buildTeachingList);
 		// if filter needed
 		if (filterValue != default_filter)
 		{
 			let selector = document.getElementById(filterValue + "-filter");
 			let selectorIndex = selector.selectedIndex;
 			let filter = selector.options[selectorIndex].value;
+			this.clearFiltersDesign();
+			selector.classList.add("active-sort-button");
 			// filter the needed list only
 			buildTeachingList = CourseCard.filterList(buildTeachingList, filterValue, filter);
 		}
@@ -119,7 +121,7 @@ class Teaching extends PageRender
 		}
     }
     /* build function end */
-	
+
 	/* build filters */
 	buildFilters()
 	{
