@@ -34,6 +34,9 @@ class About extends PageRender
 		{
 			this.section_open = SECTIONS[0];
 		}
+		
+		About.loadFileFromServer(RESOURCES_JSON, true);
+		this.resourcesObj = retrivedData;
 	}
 
 	// just gather all the build of all the sections in the page - one per call to the server side
@@ -291,41 +294,45 @@ class About extends PageRender
 		}
 	}
 
-	buildResources(change = false, filterName){
-		About.loadFileFromServer(RESOURCES_JSON, true);
-		const resourcesObj = retrivedData;
+	buildResources(change = false, filterName)
+	{
 		this.clearResources();
 		let res_section = document.getElementById("resources_section");
-		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
-		if(filterName == "buildFilters"){
+		let resourcesList = Resource.createListFromJson(this.resourcesObj["resources"]);
+		if(filterName == "buildFilters")
+		{
 			this.buildFilters(resourcesList);
 		}
-		if(!change){
-			if(resourcesList.length == 0){
+		if(!change)
+		{
+			if(resourcesList.length == 0)
+			{
 				document.getElementById("resources_filters").style.display = "none";
 				document.getElementById("filter_by").innerHTML = "No resources to show.";
 			}
-			else{
-				for(let i = 0; i < resourcesList.length; i++){
+			else
+			{
+				for(let i = 0; i < resourcesList.length; i++)
+				{
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
-
 			}
-		} else {
+		}
+		else 
+		{
 			let selector = document.getElementById(filterName + "-filter");
 			let selectorIndex = selector.selectedIndex;
 			let filter = selector.options[selectorIndex].value;
-			// if(filter == "Year" || filter == "Topic" || filter == "Type"){
-			// 	this.buildResources(false);
-			// 	return;
-			// }
-			for(let i = 0; i < resourcesList.length; i++){
+			for(let i = 0; i < resourcesList.length; i++)
+			{
 				let value = resourcesList[i][filterName];
-				if(typeof(value) == "string"){
+				if(typeof(value) == "string")
+				{
 					value = value.trim().toLowerCase();
 				}
 
-				if(value == filter){
+				if(value == filter)
+				{
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
 			}
@@ -343,9 +350,9 @@ class About extends PageRender
 
 document.aboutPage = new About();
 document.aboutPage.build();
-document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"year");});
-document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"type");});
-document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"topic");});
+document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true, "year");});
+document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true, "type");});
+document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true, "topic");});
 addCollapseFunction();
 
 export {About};

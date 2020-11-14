@@ -74,7 +74,7 @@ class CourseCard extends Element
 		var answer = [];
 		for (var objIndex = 0; objIndex < objList.length; objIndex++)
 		{
-			if (objList[objIndex][property + ""] == filterValue)
+			if (objList[objIndex][property + ""].trim().toLowerCase() == filterValue.trim().toLowerCase())
 			{
 				answer.push(objList[objIndex]);
 			}
@@ -90,7 +90,7 @@ class CourseCard extends Element
 		var subGroup = [ObjList[0]];
 		for (var publicationIndex = 1; publicationIndex < ObjList.length; publicationIndex++)
 		{
-			if (ObjList[publicationIndex][property + ""] != spliter)
+			if (ObjList[publicationIndex][property + ""].trim().toLowerCase() != spliter.trim().toLowerCase())
 			{
 				answer[spliter] = [...subGroup];
 				spliter = ObjList[publicationIndex][property + ""];
