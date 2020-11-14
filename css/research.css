@@ -271,6 +271,15 @@ hr {
 	.team-content-section{
 		justify-content: center;
 	}
+
+	.team-content-section-no-space-between {
+		justify-content: center;
+	}
+
+	.team-content-section-no-space-between .member-card {
+		margin-right: 0rem;
+	}
+
 }
 
 /****** team section - end ******/

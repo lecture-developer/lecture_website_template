@@ -51,11 +51,15 @@ class Teaching extends PageRender
     }
 
 	//build the body section of the page, start after the button filter.
-    buildBody(filterValue = default_filter, rst = false)
+    buildBody(filterValue = default_filter)
 	{
 		this.clearFiltersDesign();
 		if(filterValue == default_filter){
 			document.getElementById("reset-btn").style.display = "none";
+			let fils = document.getElementsByClassName("minimal");
+			for(let i = 0; i<fils.length; i++){
+				fils[i].selectedIndex = 0;
+			}
 
 		} else {
 			document.getElementById("reset-btn").style.display = "block";
@@ -154,9 +158,10 @@ class Teaching extends PageRender
 
 	clearFiltersDesign(){
 		let f = document.getElementsByClassName("active-sort-button");
-		console.log(f);
 		if(f.length == 0) return;
+		f[0].selectedIndex = 0;
 		f[0].classList.remove("active-sort-button");
+
 	}
 
 }
@@ -167,7 +172,7 @@ document.teaching.build();
 document.getElementById("year-filter").addEventListener("change", () => {document.teaching.ChangeFilter("year");});
 document.getElementById("topic-filter").addEventListener("change", () => {document.teaching.ChangeFilter("topic");});
 document.getElementById("university-filter").addEventListener("change", () => {document.teaching.ChangeFilter("university");});
-document.getElementById("reset-btn").addEventListener("click", () => {document.teaching.buildBody(default_filter,true);});
+document.getElementById("reset-btn").addEventListener("click", () => {document.teaching.buildBody(default_filter);});
 
 
 export { Teaching }

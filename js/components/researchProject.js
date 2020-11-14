@@ -89,6 +89,7 @@ class ResearchProject extends Element
 					html += mem2.toHtml();
 					html += mem3.toHtml();
 				} else {
+					// html += '<div class="team-content-section-no-space-between">';
 					html += '<div class="team-content-section-no-space-between">';
 					html += mem1.toHtml();
 					html += mem2.toHtml();

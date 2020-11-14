@@ -1427,6 +1427,8 @@ margin: 0px 0px;
 
   .academic-papers-panel {
 	  padding: 42px 20px;
+	  margin-right: 16px;
+	  margin-left: 16px;
   }
 }
 
@@ -1520,6 +1522,7 @@ margin: 0px 0px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 5rem;
 }
 
 .academic-papers-header-section{
@@ -1638,15 +1641,21 @@ margin: 0px 0px;
 
 
 @media only screen and (max-width: 850px) {
+	
+	.academic-papers-container{
+		margin-top: 1rem;
+	}
+
 
   .academic-papers-body-section h3{
 	  margin-left: 16px;
   }
 
-  .academic-papers-panel{
-	  margin-left: 16px;
-	  margin-right: 16px;
-  }
+	.publications-hr {
+		margin-top: 0.5rem;
+	}
+
+  
   .academic-papers-header-section select{
 	  width: 100%;
 	  margin-left: auto;
@@ -1854,6 +1863,10 @@ margin: 0px 0px;
 
 	.academic-papers-panel p{
 		margin-left: 0px;
+	}
+
+	.teaching-container{
+		margin-top: 1rem;
 	}
 }
 

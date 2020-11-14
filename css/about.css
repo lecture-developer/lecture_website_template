@@ -128,19 +128,25 @@ line-height: 200%;
 }
 
 @media only screen and (max-width: 850px) {
-  #lecturer_location {
-    margin-top: 30px;
-  }
+	#lecturer_location {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
 
-  .icon-cell{
-	  text-align: center;
-  }
+	.icon-cell {
+		text-align: center;
+	}
+
 	.tabs {
 	  margin-top: 40px !important;
 	}
 
-	.after-icon-cell{
+	.after-icon-cell {
 		display: none !important;
+	}
+
+	.page-container {
+	  margin-top: 1rem;
 	}
 }
 
@@ -309,22 +315,24 @@ ul .active-topic {
 }
 
 .resources-filters select {
-  height: 40px;
-  width: 161px;
-  border-radius: 4px;
-  background: #FFFFFF;
-  /* drop down - shadow */
-  box-shadow: 3px 4px 3px rgba(26, 32, 44, 0.04), 0px 1px 2px #E2E8F0;
-  margin-left: 20px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 150%;
-  color: #4A5568;
-  padding-left: 16px;
-  padding-top: 8px;
+  min-width: 10rem;
+	padding: 8px 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
+	border-radius: 4px;
+	border: 0px solid white;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 150%;
+	color: #4A5568;
+	box-shadow: 0px 8px 15px rgba(45, 55, 72, 0.15), 0px 0px 2px rgba(127, 156, 245, 0.16);
+	background-image: url("/lecture_website_template/img/expand_more.png");
+	background-repeat: no-repeat;
+	background-position: right;
 }
 
 #topic-filter{
