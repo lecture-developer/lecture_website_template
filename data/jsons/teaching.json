@@ -1,11 +1,11 @@
 {
-	"teaching_philosophy": "A very long text - allow HTML edditing",
+	"teaching_philosophy": "Online learning is the future. Students should be able to find quality acadmic resources easly which provided by their lecturers.",
 	"coureses": [{
-			"name": "course name",
-			"code": "123",
-			"year": "2019",
-			"semester": "2",
-			"university": "Bar-Ilan University",
+			"name": "Demo Course",
+			"code": "101",
+			"year": "2020",
+			"semester": "1",
+			"university": "Sphera Academy",
 			"department": "Computer science",
 			"location_class": "Room 210",
 			"syllabus": "link",
@@ -96,11 +96,11 @@
 			"description": "sentence or two of text - no HTML needed"
 		},
 		{
-			"name": "course name 2",
-			"code": "321",
+			"name": "Demo course 2",
+			"code": "102",
 			"year": "2020",
-			"semester": "1",
-			"university": "Ben-Gurion University",
+			"semester": "2",
+			"university": "Not Sphera Academy",
 			"department": "Computer science",
 			"location_class": "Room 211",
 			"syllabus": "link",

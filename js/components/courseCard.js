@@ -97,7 +97,7 @@ class CourseCard extends Element
 			}
 			else
 			{
-				subGroup.push(ObjList[0]);
+				subGroup.push(ObjList[publicationIndex]);
 			}
 		}
 		answer[spliter] = [...subGroup];
