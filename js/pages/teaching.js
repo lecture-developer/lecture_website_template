@@ -32,6 +32,7 @@ class Teaching extends PageRender
 		// build the page itself
         this.buildHeader(this.filter);
 				this.buildBody(this.filter);
+				this.buildFilters();
     }
 
 	//build the header section of the page
@@ -41,10 +42,8 @@ class Teaching extends PageRender
 		{
 			let reset = document.getElementById("reset-btn");
       reset.innerHTML = Icons.reset() + " Reset";
-			reset.addEventListener("click",buildBody());
-			// highlight the sort button which is active
-            document.getElementById("filter-btn-" + filterValue).classList.add("active-sort-button");
-        }
+			reset.addEventListener("click",this.buildBody());
+    }
         catch (error)
 		{
 			console.log("Error at Teaching.buildHeader saying: " + error);
@@ -54,6 +53,14 @@ class Teaching extends PageRender
 	//build the body section of the page, start after the button filter.
     buildBody(filterValue = default_filter, rst = false)
 	{
+		this.clearFiltersDesign();
+		if(filterValue == default_filter){
+			document.getElementById("reset-btn").style.display = "none";
+
+		} else {
+			document.getElementById("reset-btn").style.display = "block";
+			document.getElementById(filterValue+"-filter").classList.add("active-sort-button");
+		}
         // sort the list
 		var buildTeachingList = CourseCard.sortByProperty(this.cardList, "year", "semester");
 
@@ -69,7 +76,6 @@ class Teaching extends PageRender
 
 		// split into the right sets
 		var coursesSets = CourseCard.splitByProperty(buildTeachingList, 'year');
-		console.log(coursesSets);
 		// build the UI //
 		try
 		{
@@ -104,30 +110,33 @@ class Teaching extends PageRender
 		{
 			console.log("Error at Teaching.buildBody saying: " + error);
 		}
-		if(filterValue == default_filter && !rst){
-						this.buildFilters();
-				}
     }
     /* build function end */
 		/* build filters */
 		buildFilters(){
 			this.buildOneFilter("year");
 			this.buildOneFilter("university");
+			this.buildOneFilter("topic");
 		}
 
 		buildOneFilter(fName){
 			let filters = new Set();
 			for(let i = 0; i < this.cardList.length; i++){
 				let text = this.cardList[i][fName];
-				// if(typeof(text) == "string"){
-				// 	text = text.replaceAll("-"," ").trim().toLowerCase();
-				//
-				// }
+				if(fName == "topic"){
+					text = text.replaceAll("-"," ").trim().toLowerCase();
+
+				}
+				if(text == "") continue;
 				filters.add(text);
 			}
-
 			filters = Array.from(filters);
 			let filter = document.getElementById(fName+"-filter");
+			if(filters.length == 0 || filters[0] == undefined){
+				filter.parentElement.classList.remove("select-wrapper");
+				filter.style.display = "none";
+				return;
+			}
 			for(let i = 0; i<filters.length; i++){
 				let option = document.createElement("OPTION");
 				option.innerHTML = filters[i];
@@ -143,6 +152,13 @@ class Teaching extends PageRender
 		this.buildBody(filter_value);
 	}
 
+	clearFiltersDesign(){
+		let f = document.getElementsByClassName("active-sort-button");
+		console.log(f);
+		if(f.length == 0) return;
+		f[0].classList.remove("active-sort-button");
+	}
+
 }
 
 // run the class build on page load
@@ -152,5 +168,6 @@ document.getElementById("year-filter").addEventListener("change", () => {documen
 document.getElementById("topic-filter").addEventListener("change", () => {document.teaching.ChangeFilter("topic");});
 document.getElementById("university-filter").addEventListener("change", () => {document.teaching.ChangeFilter("university");});
 document.getElementById("reset-btn").addEventListener("click", () => {document.teaching.buildBody(default_filter,true);});
+
 
 export { Teaching }

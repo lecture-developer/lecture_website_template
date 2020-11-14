@@ -1,8 +1,4 @@
 
-.academic-papers-panel span{
-  background: #E2E8F0;
-}
-
 .personal-row span{
   float:none;
 }
@@ -135,14 +131,14 @@ line-height: 200%;
   #lecturer_location {
     margin-top: 30px;
   }
-  
+
   .icon-cell{
 	  text-align: center;
   }
 	.tabs {
 	  margin-top: 40px !important;
 	}
-	
+
 	.after-icon-cell{
 		display: none !important;
 	}
@@ -169,6 +165,23 @@ line-height: 200%;
 
 .active-tab-title {
   font-weight: 700;
+}
+
+
+@media screen and (max-width: 850px) {
+    .tab {
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .tab {
+        width: 6.4rem;
+    }
+
+    .tab-title {
+        font-size: 14px;
+    }
 }
 
 /****** tabs - end  ******/
@@ -274,6 +287,16 @@ ul .active-topic {
   margin: 0 6px;
 }
 
+
+@media screen and (max-width: 500px) {
+  #topics{
+    display: none;
+  }
+
+  #projects_cards{
+    margin:auto;
+  }
+}
 /****** projects - end  ******/
 /****** resources - start  ******/
 .resources_section p {
@@ -302,22 +325,6 @@ ul .active-topic {
   color: #4A5568;
   padding-left: 16px;
   padding-top: 8px;
-}
-
-@media only screen and (max-width: 450px){
-.resources-filters select {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-}
-.resources-filter .personal-row{
-  align-items: flex-start;
-}
-.select-wrapper{
-  width: 30%;
-  margin: 0 3px;
-}
 }
 
 #topic-filter{
@@ -379,4 +386,39 @@ p .more-section{
 
 .academic-papers-panel{
   max-width: 1050px;
+}
+
+.acadmic-parms-row{
+  justify-content: flex-end;
+}
+
+.acadmic-parms-row span{
+  font-family: Roboto;
+  background: #E2E8F0;
+  border-radius: 4px;
+  padding: 6px 18px;
+  color: #828282;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 450px){
+.resources-filters select {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.resources-filter .personal-row{
+  align-items: flex-start;
+}
+.select-wrapper{
+  width: 30%;
+  margin: 0 3px;
+}
+.acadmic-parms-row{
+  align-items: flex-end;
+}
 }
