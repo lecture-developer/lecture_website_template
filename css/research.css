@@ -14,7 +14,8 @@
 }
 
 .main-dot {
-    display: inline-block;
+    /*display: inline-block;*/
+	display: none;
     border-radius: 100%;
     background-color: #C4C4C4;
     width: 0.5rem;
@@ -204,6 +205,13 @@ hr {
 	flex-wrap: wrap;
 }
 
+.req-content-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	flex-wrap: wrap;
+}
+
 .team-content-section-no-space-between {
     display: flex;
     flex-direction: row;
@@ -270,6 +278,10 @@ hr {
 @media only screen and (max-width: 850px) {
 	.team-content-section{
 		justify-content: center;
+	}
+	
+	.req-content-section{
+		justify-content: start;
 	}
 
 	.team-content-section-no-space-between {
