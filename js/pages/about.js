@@ -34,7 +34,7 @@ class About extends PageRender
 		{
 			this.section_open = SECTIONS[0];
 		}
-		
+
 		About.loadFileFromServer(RESOURCES_JSON, true);
 		this.resourcesObj = retrivedData;
 	}
@@ -296,6 +296,7 @@ class About extends PageRender
 
 	buildResources(change = false, filterName)
 	{
+
 		this.clearResources();
 		let res_section = document.getElementById("resources_section");
 		let resourcesList = Resource.createListFromJson(this.resourcesObj["resources"]);
@@ -318,11 +319,13 @@ class About extends PageRender
 				}
 			}
 		}
-		else 
+		else
 		{
 			let selector = document.getElementById(filterName + "-filter");
 			let selectorIndex = selector.selectedIndex;
 			let filter = selector.options[selectorIndex].value;
+			this.clearFiltersDesign();
+			selector.classList.add("active-sort-button");
 			for(let i = 0; i < resourcesList.length; i++)
 			{
 				let value = resourcesList[i][filterName];
@@ -335,6 +338,8 @@ class About extends PageRender
 				{
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
+				let reset = document.getElementById("reset-btn");
+				reset.innerHTML = Icons.reset() + " Reset";
 			}
 			addCollapseFunction();
 		}
@@ -345,14 +350,33 @@ class About extends PageRender
 		res_section.innerHTML = '';
 	}
 
+	clearFiltersDesign(){
+		let f = document.getElementsByClassName("active-sort-button");
+		if(f.length == 0) return;
+		f[0].selectedIndex = 0;
+		f[0].classList.remove("active-sort-button");
+
+	}
+
 
 }
 
 document.aboutPage = new About();
 document.aboutPage.build();
-document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true, "year");});
-document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true, "type");});
-document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true, "topic");});
+document.getElementById("reset-btn").addEventListener("click", () => {
+	document.aboutPage.clearFiltersDesign();
+	document.aboutPage.buildResources();
+});
+document.getElementById("year-filter").addEventListener("change", () => {filterFilters("year")});
+document.getElementById("type-filter").addEventListener("change", () => {filterFilters("type")});
+document.getElementById("topic-filter").addEventListener("change",() => {filterFilters("topic")});
+
+function filterFilters(fName){
+	console.log(document.getElementById(fName+"-filter").selectedIndex);
+	if(document.getElementById(fName+"-filter").selectedIndex != 0){
+		document.aboutPage.buildResources(true, fName);
+	}
+}
 addCollapseFunction();
 
 export {About};
