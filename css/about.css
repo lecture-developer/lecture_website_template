@@ -305,7 +305,7 @@ ul .active-topic {
 }
 
 .space-around {
-  margin: 0 6px;
+  margin: 0 0px;
 }
 
 
@@ -317,6 +317,9 @@ ul .active-topic {
   #projects_cards{
     margin:auto;
   }
+	.space-around {
+	  margin: 0px 0px;
+	}
 }
 /****** projects - end  ******/
 /****** resources - start  ******/
