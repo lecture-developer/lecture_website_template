@@ -228,7 +228,7 @@ footer h2{
 	right: 0;
 	position: fixed;
 	width: 80%;
-	height: 60px;
+	min-height: 60px;
 	padding: 20px;
 	margin: 1% auto;
 	left: 0;

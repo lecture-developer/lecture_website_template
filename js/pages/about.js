@@ -268,13 +268,15 @@ class About extends PageRender
 	}
 
 		/* build resources tab content*/
-	buildFilters(rList){
+	buildFilters(rList)
+	{
 		this.buildOneFilter(rList, "year");
 		this.buildOneFilter(rList, "type");
 		this.buildOneFilter(rList, "topic");
 	}
 
-	buildOneFilter(rList, fName){
+	buildOneFilter(rList, fName)
+	{
 		let filters = new Set();
 		for(let i = 0; i < rList.length; i++){
 			let text = rList[i][fName];
@@ -287,21 +289,29 @@ class About extends PageRender
 
 		filters = Array.from(filters);
 		let filter = document.getElementById(fName+"-filter");
-		for(let i = 0; i<filters.length; i++){
-			let option = document.createElement("OPTION");
-			option.innerHTML = filters[i];
-			filter.appendChild(option);
+		if (filters.length > 1)
+		{
+			for(let i = 0; i< filters.length; i++)
+			{
+				let optionElement = document.createElement("OPTION");
+				optionElement.innerHTML = filters[i];
+				filter.appendChild(optionElement);
+			}
+		}
+		else
+		{
+			document.getElementById(fName+"-filter").style.display = "none";
 		}
 	}
 
 	buildResources(change = false, filterName)
 	{
-
 		this.clearResources();
 		let res_section = document.getElementById("resources_section");
 		let resourcesList = Resource.createListFromJson(this.resourcesObj["resources"]);
 		if(filterName == "buildFilters")
 		{
+			document.getElementById("resources_section").style.display = "";
 			this.buildFilters(resourcesList);
 		}
 		if(!change)
@@ -345,17 +355,19 @@ class About extends PageRender
 		}
 	}
 
-	clearResources(){
+	clearResources()
+	{
 		let res_section = document.getElementById("resources_section");
 		res_section.innerHTML = '';
 	}
 
-	clearFiltersDesign(){
+	clearFiltersDesign()
+	{
 		let f = document.getElementsByClassName("active-sort-button");
 		if(f.length == 0) return;
 		f[0].selectedIndex = 0;
 		f[0].classList.remove("active-sort-button");
-
+		document.getElementById("reset-btn").style.display = "none";
 	}
 
 
@@ -367,13 +379,14 @@ document.getElementById("reset-btn").addEventListener("click", () => {
 	document.aboutPage.clearFiltersDesign();
 	document.aboutPage.buildResources();
 });
+
 document.getElementById("year-filter").addEventListener("change", () => {filterFilters("year")});
 document.getElementById("type-filter").addEventListener("change", () => {filterFilters("type")});
 document.getElementById("topic-filter").addEventListener("change",() => {filterFilters("topic")});
 
 function filterFilters(fName){
-	console.log(document.getElementById(fName+"-filter").selectedIndex);
 	if(document.getElementById(fName+"-filter").selectedIndex != 0){
+		document.getElementById("reset-btn").style.display = "";
 		document.aboutPage.buildResources(true, fName);
 	}
 }

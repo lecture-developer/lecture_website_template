@@ -20,8 +20,13 @@ class Teaching extends PageRender
         Teaching.loadFileFromServer(TAECHING_JSON, true);
         this.cardList = CourseCard.createListFromJson(retrivedData["coureses"]);
         this.filter = default_filter;
-				this.property_university = 'university';
-				this.listFilterName = CourseCard.listFilterButtons(this.cardList, this.property_university);
+		this.listFilterName = CourseCard.listFilterButtons(this.cardList, this.property_university);
+		
+		// TODO: move outside to static member
+		this.property_university = 'university';
+		
+		// remove alert as they not in use and can make problems
+		removeAlertsPanels();
 	}
 
     /* biuld function start */
@@ -168,12 +173,12 @@ class Teaching extends PageRender
 		this.buildBody(filter_value);
 	}
 
-	clearFiltersDesign(){
+	clearFiltersDesign()
+	{
 		let f = document.getElementsByClassName("active-sort-button");
 		if(f.length == 0) return;
 		f[0].selectedIndex = 0;
 		f[0].classList.remove("active-sort-button");
-
 	}
 
 }
@@ -181,6 +186,8 @@ class Teaching extends PageRender
 // run the class build on page load
 document.teaching = new Teaching();
 document.teaching.build();
+
+// buttons click logic
 document.getElementById("year-filter").addEventListener("change", () => {document.teaching.ChangeFilter("year");});
 document.getElementById("topic-filter").addEventListener("change", () => {document.teaching.ChangeFilter("topic");});
 document.getElementById("university-filter").addEventListener("change", () => {document.teaching.ChangeFilter("university");});
