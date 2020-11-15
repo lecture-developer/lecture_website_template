@@ -34,6 +34,9 @@ class About extends PageRender
 		{
 			this.section_open = SECTIONS[0];
 		}
+
+		About.loadFileFromServer(RESOURCES_JSON, true);
+		this.resourcesObj = retrivedData;
 	}
 
 	// just gather all the build of all the sections in the page - one per call to the server side
@@ -265,13 +268,15 @@ class About extends PageRender
 	}
 
 		/* build resources tab content*/
-	buildFilters(rList){
+	buildFilters(rList)
+	{
 		this.buildOneFilter(rList, "year");
 		this.buildOneFilter(rList, "type");
 		this.buildOneFilter(rList, "topic");
 	}
 
-	buildOneFilter(rList, fName){
+	buildOneFilter(rList, fName)
+	{
 		let filters = new Set();
 		for(let i = 0; i < rList.length; i++){
 			let text = rList[i][fName];
@@ -284,58 +289,85 @@ class About extends PageRender
 
 		filters = Array.from(filters);
 		let filter = document.getElementById(fName+"-filter");
-		for(let i = 0; i<filters.length; i++){
-			let option = document.createElement("OPTION");
-			option.innerHTML = filters[i];
-			filter.appendChild(option);
+		if (filters.length > 1)
+		{
+			for(let i = 0; i< filters.length; i++)
+			{
+				let optionElement = document.createElement("OPTION");
+				optionElement.innerHTML = filters[i];
+				filter.appendChild(optionElement);
+			}
+		}
+		else
+		{
+			document.getElementById(fName+"-filter").style.display = "none";
 		}
 	}
 
-	buildResources(change = false, filterName){
-		About.loadFileFromServer(RESOURCES_JSON, true);
-		const resourcesObj = retrivedData;
+	buildResources(change = false, filterName)
+	{
 		this.clearResources();
 		let res_section = document.getElementById("resources_section");
-		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
-		if(filterName == "buildFilters"){
+		let resourcesList = Resource.createListFromJson(this.resourcesObj["resources"]);
+		if(filterName == "buildFilters")
+		{
+			document.getElementById("resources_section").style.display = "";
 			this.buildFilters(resourcesList);
 		}
-		if(!change){
-			if(resourcesList.length == 0){
+		if(!change)
+		{
+			if(resourcesList.length == 0)
+			{
 				document.getElementById("resources_filters").style.display = "none";
 				document.getElementById("filter_by").innerHTML = "No resources to show.";
 			}
-			else{
-				for(let i = 0; i < resourcesList.length; i++){
+			else
+			{
+				for(let i = 0; i < resourcesList.length; i++)
+				{
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
-
 			}
-		} else {
+		}
+		else
+		{
 			let selector = document.getElementById(filterName + "-filter");
 			let selectorIndex = selector.selectedIndex;
 			let filter = selector.options[selectorIndex].value;
-			// if(filter == "Year" || filter == "Topic" || filter == "Type"){
-			// 	this.buildResources(false);
-			// 	return;
-			// }
-			for(let i = 0; i < resourcesList.length; i++){
+			this.clearFiltersDesign();
+			selector.classList.add("active-sort-button");
+			for(let i = 0; i < resourcesList.length; i++)
+			{
 				let value = resourcesList[i][filterName];
-				if(typeof(value) == "string"){
+				if(typeof(value) == "string")
+				{
 					value = value.trim().toLowerCase();
 				}
 
-				if(value == filter){
+				if(value == filter)
+				{
 					res_section.innerHTML += resourcesList[i].toHtml();
 				}
+				let reset = document.getElementById("reset-btn");
+				reset.innerHTML = Icons.reset() + " Reset";
 			}
 			addCollapseFunction();
 		}
 	}
 
-	clearResources(){
+	clearResources()
+	{
 		let res_section = document.getElementById("resources_section");
 		res_section.innerHTML = '';
+	}
+
+	clearFiltersDesign()
+	{
+		let f = document.getElementsByClassName("active-sort-button");
+		if(f.length == 0) return;
+		f[0].selectedIndex = 0;
+		f[0].classList.remove("active-sort-button");
+		document.getElementById("reset-btn").style.display = "none";
 	}
 
 
@@ -343,9 +375,21 @@ class About extends PageRender
 
 document.aboutPage = new About();
 document.aboutPage.build();
-document.getElementById("year-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"year");});
-document.getElementById("type-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"type");});
-document.getElementById("topic-filter").addEventListener("change", () => {document.aboutPage.buildResources(true,"topic");});
+document.getElementById("reset-btn").addEventListener("click", () => {
+	document.aboutPage.clearFiltersDesign();
+	document.aboutPage.buildResources();
+});
+
+document.getElementById("year-filter").addEventListener("change", () => {filterFilters("year")});
+document.getElementById("type-filter").addEventListener("change", () => {filterFilters("type")});
+document.getElementById("topic-filter").addEventListener("change",() => {filterFilters("topic")});
+
+function filterFilters(fName){
+	if(document.getElementById(fName+"-filter").selectedIndex != 0){
+		document.getElementById("reset-btn").style.display = "";
+		document.aboutPage.buildResources(true, fName);
+	}
+}
 addCollapseFunction();
 
 export {About};
