@@ -597,7 +597,7 @@ footer h2{
 
 /* Reset Select */
 select {
-  -webkit-appearance:
+  -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   appearance: none;
@@ -844,7 +844,7 @@ flickity-prev-next-button[disabled]{
 .updates-container{
 	width: 100%;
 	background-color: #FFEEC3;
-	height: 100px;
+	min-height: 100px;
 	position: relative;
 	transition: all 0.5s ease;
 }
@@ -859,7 +859,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .closed-section {
-	height: 0;
+	min-height: 0;
 }
 
 .closed-section * {
@@ -879,7 +879,6 @@ flickity-prev-next-button[disabled]{
 	padding-left: 3.5rem;
 	padding-right: 3.5rem;
 	width: 100%;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
