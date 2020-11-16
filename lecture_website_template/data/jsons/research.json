@@ -1,0 +1,171 @@
+{
+	"work_with_me_opening": "I am always looking for great students (both undergraduates and M.Sc.). If you are a good student, and you are curious about academic websites and want to learn, we should talk. Expect hard work, but also lots of fun!",
+	"open_positions": [
+		{
+			"name": "Mobile developer",
+			"description": "Developing IOS and/or Android application based on this website",
+			"requierments": ["Mobile development expirance", "8 hours a week", "Great personality"],
+			"applay_text": "Checkout the project's website at <a href='https://sphera.academy'>Sphera Academy</a> ",
+			"position_type": "Part time",
+			"connect_email": "lazebnik.teddy@gmail.com"
+		},
+		{
+			"name": "Designer",
+			"description": "Help to design the website generator SaaS product",
+			"requierments": ["UI-UX expirance", "8 hours a week", "Great personality", "Know how to design"],
+			"applay_text": "Checkout the project's website at <a href='https://sphera.academy'>Sphera Academy</a> ",
+			"position_type": "Part time",
+			"connect_email": "lazebnik.teddy@gmail.com"
+		}
+	],
+	"projects": [{
+		"name": "Research Name",
+		"participants": [{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		}],
+		"description": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+		"start_month": 1,
+		"start_year": 2020,
+		"end_month": 10,
+		"end_year": 2020,
+		"team_members": 10,
+		"relevant_resources": [
+			{
+				"name": "Project Website",
+				"link": "https://sphera.academy",
+				"description": "The project's website where you can read more about what we already have done."
+			}
+		]
+	},
+	{
+		"name": "Research Name 2",
+		"participants": [{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		},
+		{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		}],
+		"description": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+		"start_month": 2,
+		"start_year": 2020,
+		"end_month": 10,
+		"end_year": 2022,
+		"team_members": 5,
+		"relevant_resources": [
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			}
+		]
+	},
+	{
+		"name": "Research Name 3",
+		"participants": [{
+			"name": "Full Name",
+			"title": "Degree",
+			"role": "Role in this research",
+			"website_link": "link link link",
+			"googleLink": "link link link 2",
+			"linkedinLink": "link link link 3"
+		}],
+		"description": "short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research - short information about this research",
+		"start_month": 5,
+		"start_year": 2020,
+		"end_month": 11,
+		"end_year": 2033,
+		"team_members": 1,
+		"relevant_resources": [
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+				"name": "home work",
+				"link": "link link link",
+				"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			},
+			{
+			"name": "home work",
+			"link": "link link link",
+			"description": "cool description cool description cool description"
+			}
+		]
+	}]
+}
