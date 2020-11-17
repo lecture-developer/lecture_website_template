@@ -1500,7 +1500,7 @@ margin: 0px 0px;
 
 	.acadmic-parms-row{
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 	}
 
 	.acadmic-parms-row span{

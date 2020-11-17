@@ -64,14 +64,13 @@ padding-left: 32px;
 }
 
 #contacts p{
-	display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #contacts svg{
-	margin-right: 10px;
-	margin-top: 10px;
+	margin-right: 1rem;
 }
 
 #cv{
@@ -459,6 +458,8 @@ p .more-section{
 
 .acadmic-parms-row{
   justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
 }
 
 .acadmic-parms-row span{
@@ -487,9 +488,7 @@ p .more-section{
   width: 30%;
   margin: 0 3px;
 }
-.acadmic-parms-row{
-  align-items: flex-end;
-}
+
 #reset-btn{
   font-size: 14px;
   margin: 12px 10px;
