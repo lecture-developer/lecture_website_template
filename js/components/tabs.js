@@ -1,4 +1,5 @@
-class Tabs 
+
+class Tabs
 {
     /*
 		Create the tabs section
@@ -8,11 +9,11 @@ class Tabs
 	{
 		try
 		{
-                    
+
             let section = document.createElement("DIV");
             section.id = "tabs-bar";
             section.classList.add("tabs-bar");
-            
+
             document.getElementById("tabs").appendChild(section);
 		}
 		catch(error)
@@ -31,7 +32,7 @@ class Tabs
     static addTab(title, is_last=false, img_path=null)
 	{
         var img = '';
-        if(img_path != null) 
+        if(img_path != null)
 		{
             img = '<img src="' + img_path + '" class="new-updates-icon">'
         }
@@ -46,13 +47,13 @@ class Tabs
 		section.title = label.replaceAll(" ", "-");
 
         let html = img + '<label class="tab-title" title="' + label.replaceAll(" ", "-") + '">'+ label + '</label>';
-        if(!is_last) 
+        if(!is_last)
 		{
             html += '<div class="tab-seperator"></div>';
         }
-                        
+
         // add toggle functionality
-        section.addEventListener('click', function(event) 
+        section.addEventListener('click', function(event)
 		{
             Tabs._activateTab(event);
         });
@@ -61,23 +62,23 @@ class Tabs
         document.getElementById("tabs-bar").appendChild(section);
     }
 
-    static activateDefault(index) 
+    static activateDefault(index)
 	{
         const tabs = document.getElementsByClassName('tab');
         // by default toggle the first tab
         this._toggleActiveTab(tabs[index]);
         this._toggleContentDisplay(index);
     }
-   
-  
-  static _activateTab(event) 
+
+
+  static _activateTab(event)
   {
       let currTarget = event.target;
       if(currTarget.tagName == "LABEL" || currTarget.classList.contains("tab-seperator"))
         {
             currTarget = currTarget.parentNode;
         }
-        if(!currTarget.classList.contains('active-tab')) 
+        if(!currTarget.classList.contains('active-tab'))
 		    {
             // get the current active tab
             let currentActive = document.getElementsByClassName('active-tab')[0];
@@ -95,7 +96,7 @@ class Tabs
             let newIndex = Array.from(currTarget.parentNode.children).indexOf(currTarget);
             Tabs._toggleContentDisplay(newIndex);
         }
-		
+
       // update the url for sharing later this sepsific tab
       insertGetParamToUrl("section", currTarget.title);
   }
@@ -103,7 +104,7 @@ class Tabs
     // toggle the activeness of the given item and label
     static _toggleActiveTab(target)
 	{
-        // toggle the active-tab class of the given element 
+        // toggle the active-tab class of the given element
         target.classList.toggle('active-tab');
         // get the label element of the current active and toggle active-tab-title
         target.getElementsByTagName('label')[0].classList.toggle('active-tab-title');

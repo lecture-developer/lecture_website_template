@@ -7,11 +7,12 @@
 		<!-- end - technical meta -->
 		
 		<!-- seo -->
-		<title> Lecuter's Name Academic Website </title>
-		<meta name="description" content="Lecuter's Name Academic Website focusing on cool study in the field of something" />
+		<title> Lecturer's Name Website </title>
+		<meta content="Theodore (Teddy) Lazebnik - Mathematics and Computer Science researcher focusing on medical nanorobotics, PDE stabalization and numerical solutions" name="description"/>
 		<meta name="keywords" content="lecture website, academic website" />
+		<meta content="keywords" content="lazebnik, לזנבניק, teddy lazebnik, medical nanorobotics" />
 		<meta id="author" content="First Last name" name="author"/>
-		<link href="/lecture_website_template/img/favicon.ico" rel="icon" type="image/x-icon"/>
+		<link href="/img/favicon.ico" rel="icon" type="image/x-icon"/>
 		<!-- end - seo -->
 
 		<!-- css -->
@@ -19,33 +20,36 @@
 		<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet"/>
 		<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 		<link href="/lecture_website_template/css/main.css" rel="stylesheet">
+		<link href="/lecture_website_template/css/descriptionTrim.css" rel="stylesheet">
 		<!-- end - css -->
 		
 		<!-- stracture page data -->
-		<script type="application/ld+json">
-			{
-				"@context": "http://schema.org",
-				"@type": "Person",
+	  <script type="application/ld+json">
+	   {
+			  "@context": "http://schema.org",
+			  "@type": "Person",
+			  "name": "",
+			  "jobTitle": "",
+			  "gender": "https://schema.org/Male",
+			  "url": "",
+			  "description": "",
+			  "givenName": "",
+			  "familyName": "",
+			  "honorificPrefix": "",
+			  "nationality": "",
+			  "image": "",
+			  "birthDate": "",
+			  "worksFor": {
+				"@type": "Organization",
 				"name": "",
-				"jobTitle": "",
-				"gender": "https://schema.org/Male", // "https://schema.org/Female"
 				"url": "",
-				"description": "",
-				"givenName": "",
-				"familyName": "",
-				"honorificPrefix": "",
-				"nationality": "",
-				"image": "",
-				"birthDate": "",
-				"telephone": "(972) 545524589",
-				"worksFor": 
-				{
-					"@type": "Organization",
-					"name": "",
-					"url": "",
-				},
+			  },
+			  "spouse": "",
+			  "memberOf": "",
+			  "seeks": "",
+			  "telephone": "",
 			}
-		</script>
+	  </script>
 		<!-- end - stracture page data -->
 		
 		<!-- Analytics -->
@@ -107,8 +111,8 @@
 							<img src="/lecture_website_template/img/personal_image.png" alt="Lecture name" />
 						</div>
 						<div class="personal-titles">
-							<h1 id="lecturer-name"> Lecturer Name </h1>
-							<h3 id="lecture_position"> </h3>
+							<h1 id="lecturer-name"> </h1>
+							<h2 id="lecture_position"> </h2>
 						</div>
 					</div>
 					<!-- contacts - start -->
@@ -118,7 +122,7 @@
 							<div class="personal-coloum wrap">
 								<!-- email section -->
 								<div class="personal-info-item" id="lecture_email">
-<svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M6.81889 10.646C4.32859 9.0547 1.39649 7.18113 1.04782 6.96529C0.821704 6.82932 0.441175 6.58975 0.358451 6.30486C0.215064 5.81924 0.369481 5.625 0.981636 5.625H11.5261H22.0707C22.6828 5.625 22.8372 5.81277 22.6938 6.30486C22.6111 6.58327 22.2306 6.82932 22.0045 6.96529C21.6558 7.18113 18.7237 9.05468 16.2334 10.6459C14.391 11.8232 12.7904 12.846 12.6567 12.9286C12.3424 13.1228 12.0225 13.2135 11.5261 13.2135C11.0298 13.2135 10.7099 13.1228 10.3956 12.9286C10.2619 12.846 8.66132 11.8232 6.81889 10.646ZM20.0768 9.1602C21.3161 8.1582 22.2775 7.38098 22.4843 7.2566C22.9461 6.98246 22.9441 7.26432 22.9423 7.52511C22.9421 7.54149 22.942 7.55779 22.942 7.57387V20.8472C22.942 21.4429 22.2968 22.2005 21.7563 22.2005H11.5262H1.296C0.755543 22.2005 0 21.4494 0 20.8472V7.57387C0 7.3084 0.0275745 6.96523 0.512887 7.2566C0.725865 7.38468 1.74862 8.20497 3.05172 9.25011C4.51552 10.4241 6.33309 11.8819 7.75397 12.9609L3.22622 18.9501C3.11592 19.0796 3.06629 19.2415 3.13247 19.3127C3.19865 19.3904 3.34755 19.3516 3.45785 19.2221L8.89555 13.835C9.71727 14.4566 10.2908 14.8839 10.3956 14.9487C10.8203 15.2012 11.1181 15.2336 11.5262 15.2336C11.9343 15.2336 12.2321 15.2012 12.6567 14.9487C12.756 14.8839 13.3351 14.4566 14.1568 13.835L19.5945 19.2221C19.7103 19.3451 19.8537 19.3839 19.9199 19.3127C19.9805 19.235 19.9309 19.0796 19.8206 18.9501L15.2873 12.9609C16.7447 11.8542 18.6064 10.349 20.0768 9.1602Z" fill="#1A202C"/> <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="5" width="23" height="18"> <path fill-rule="evenodd" clip-rule="evenodd" d="M6.81889 10.646C4.32859 9.0547 1.39649 7.18113 1.04782 6.96529C0.821704 6.82932 0.441175 6.58975 0.358451 6.30486C0.215064 5.81924 0.369481 5.625 0.981636 5.625H11.5261H22.0707C22.6828 5.625 22.8372 5.81277 22.6938 6.30486C22.6111 6.58327 22.2306 6.82932 22.0045 6.96529C21.6558 7.18113 18.7237 9.05468 16.2334 10.6459C14.391 11.8232 12.7904 12.846 12.6567 12.9286C12.3424 13.1228 12.0225 13.2135 11.5261 13.2135C11.0298 13.2135 10.7099 13.1228 10.3956 12.9286C10.2619 12.846 8.66132 11.8232 6.81889 10.646ZM20.0768 9.1602C21.3161 8.1582 22.2775 7.38098 22.4843 7.2566C22.9461 6.98246 22.9441 7.26432 22.9423 7.52511C22.9421 7.54149 22.942 7.55779 22.942 7.57387V20.8472C22.942 21.4429 22.2968 22.2005 21.7563 22.2005H11.5262H1.296C0.755543 22.2005 0 21.4494 0 20.8472V7.57387C0 7.3084 0.0275745 6.96523 0.512887 7.2566C0.725865 7.38468 1.74862 8.20497 3.05172 9.25011C4.51552 10.4241 6.33309 11.8819 7.75397 12.9609L3.22622 18.9501C3.11592 19.0796 3.06629 19.2415 3.13247 19.3127C3.19865 19.3904 3.34755 19.3516 3.45785 19.2221L8.89555 13.835C9.71727 14.4566 10.2908 14.8839 10.3956 14.9487C10.8203 15.2012 11.1181 15.2336 11.5262 15.2336C11.9343 15.2336 12.2321 15.2012 12.6567 14.9487C12.756 14.8839 13.3351 14.4566 14.1568 13.835L19.5945 19.2221C19.7103 19.3451 19.8537 19.3839 19.9199 19.3127C19.9805 19.235 19.9309 19.0796 19.8206 18.9501L15.2873 12.9609C16.7447 11.8542 18.6064 10.349 20.0768 9.1602Z" fill="white"/> </mask> <g mask="url(#mask0)"> <rect width="23" height="27" fill="#1A202C"/> </g> </svg>								</div>
+								<svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M6.81889 10.646C4.32859 9.0547 1.39649 7.18113 1.04782 6.96529C0.821704 6.82932 0.441175 6.58975 0.358451 6.30486C0.215064 5.81924 0.369481 5.625 0.981636 5.625H11.5261H22.0707C22.6828 5.625 22.8372 5.81277 22.6938 6.30486C22.6111 6.58327 22.2306 6.82932 22.0045 6.96529C21.6558 7.18113 18.7237 9.05468 16.2334 10.6459C14.391 11.8232 12.7904 12.846 12.6567 12.9286C12.3424 13.1228 12.0225 13.2135 11.5261 13.2135C11.0298 13.2135 10.7099 13.1228 10.3956 12.9286C10.2619 12.846 8.66132 11.8232 6.81889 10.646ZM20.0768 9.1602C21.3161 8.1582 22.2775 7.38098 22.4843 7.2566C22.9461 6.98246 22.9441 7.26432 22.9423 7.52511C22.9421 7.54149 22.942 7.55779 22.942 7.57387V20.8472C22.942 21.4429 22.2968 22.2005 21.7563 22.2005H11.5262H1.296C0.755543 22.2005 0 21.4494 0 20.8472V7.57387C0 7.3084 0.0275745 6.96523 0.512887 7.2566C0.725865 7.38468 1.74862 8.20497 3.05172 9.25011C4.51552 10.4241 6.33309 11.8819 7.75397 12.9609L3.22622 18.9501C3.11592 19.0796 3.06629 19.2415 3.13247 19.3127C3.19865 19.3904 3.34755 19.3516 3.45785 19.2221L8.89555 13.835C9.71727 14.4566 10.2908 14.8839 10.3956 14.9487C10.8203 15.2012 11.1181 15.2336 11.5262 15.2336C11.9343 15.2336 12.2321 15.2012 12.6567 14.9487C12.756 14.8839 13.3351 14.4566 14.1568 13.835L19.5945 19.2221C19.7103 19.3451 19.8537 19.3839 19.9199 19.3127C19.9805 19.235 19.9309 19.0796 19.8206 18.9501L15.2873 12.9609C16.7447 11.8542 18.6064 10.349 20.0768 9.1602Z" fill="#1A202C"/> <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="5" width="23" height="18"> <path fill-rule="evenodd" clip-rule="evenodd" d="M6.81889 10.646C4.32859 9.0547 1.39649 7.18113 1.04782 6.96529C0.821704 6.82932 0.441175 6.58975 0.358451 6.30486C0.215064 5.81924 0.369481 5.625 0.981636 5.625H11.5261H22.0707C22.6828 5.625 22.8372 5.81277 22.6938 6.30486C22.6111 6.58327 22.2306 6.82932 22.0045 6.96529C21.6558 7.18113 18.7237 9.05468 16.2334 10.6459C14.391 11.8232 12.7904 12.846 12.6567 12.9286C12.3424 13.1228 12.0225 13.2135 11.5261 13.2135C11.0298 13.2135 10.7099 13.1228 10.3956 12.9286C10.2619 12.846 8.66132 11.8232 6.81889 10.646ZM20.0768 9.1602C21.3161 8.1582 22.2775 7.38098 22.4843 7.2566C22.9461 6.98246 22.9441 7.26432 22.9423 7.52511C22.9421 7.54149 22.942 7.55779 22.942 7.57387V20.8472C22.942 21.4429 22.2968 22.2005 21.7563 22.2005H11.5262H1.296C0.755543 22.2005 0 21.4494 0 20.8472V7.57387C0 7.3084 0.0275745 6.96523 0.512887 7.2566C0.725865 7.38468 1.74862 8.20497 3.05172 9.25011C4.51552 10.4241 6.33309 11.8819 7.75397 12.9609L3.22622 18.9501C3.11592 19.0796 3.06629 19.2415 3.13247 19.3127C3.19865 19.3904 3.34755 19.3516 3.45785 19.2221L8.89555 13.835C9.71727 14.4566 10.2908 14.8839 10.3956 14.9487C10.8203 15.2012 11.1181 15.2336 11.5262 15.2336C11.9343 15.2336 12.2321 15.2012 12.6567 14.9487C12.756 14.8839 13.3351 14.4566 14.1568 13.835L19.5945 19.2221C19.7103 19.3451 19.8537 19.3839 19.9199 19.3127C19.9805 19.235 19.9309 19.0796 19.8206 18.9501L15.2873 12.9609C16.7447 11.8542 18.6064 10.349 20.0768 9.1602Z" fill="white"/> </mask> <g mask="url(#mask0)"> <rect width="23" height="27" fill="#1A202C"/> </g> </svg>								</div>
 							</div>
 								<!-- phone section -->
 								<div class="personal-info-item wrap"  id="lecture_phone">
@@ -190,7 +194,7 @@
 						</div>
 						<div id="featured_publications">
 						</div>
-						<a class="see-more" href="/publications.html">See more publications</a>
+						<a class="see-more" href="/lecture_website_template/publications.html">See more publications</a>
 					</div>
 				</div>
 				<div class="featured-publications-container" id="current_projects_header">
@@ -203,7 +207,7 @@
 						<div id="current_projects">
 							
 						</div>
-						<a class="see-more" href="/research.html">See more projects</a>
+						<a class="see-more" href="/lecture_website_template/research.html">See more projects</a>
 					</div>
 				</div>
 			</div>
@@ -224,20 +228,6 @@
 		<script src="/lecture_website_template/js/main.js"> </script>
 		<script src="/lecture_website_template/js/search.js"> </script>
 		<script src="/lecture_website_template/js/pages/index.js"  type="module"> </script>
-		<script>
-			// fix the design of the dots 
-			setTimeout(function(){ fixDotsColor(); }, 300);
-			setTimeout(function(){ fixDotsColor(); }, 1000);
-			
-			function fixDotsColor()
-			{
-				var dots = document.querySelectorAll(".flickity-page-dots .dot");
-				for (var i = 0; i < dots.length; i++)
-				{
-					dots[i].style.backgroundColor = "#667EEA";
-				}
-			}
-		</script>
 		<!-- end - js -->	
 	</body>
 </html>
