@@ -39,6 +39,7 @@
 		}
 	],
 	"projects": [{
+		"id": "1",
 		"name": "Research Name",
 		"participants": [{
 			"name": "Full Name",
@@ -89,6 +90,7 @@
 		]
 	},
 	{
+		"id": "2",
 		"name": "Research Name 2",
 		"participants": [{
 			"name": "Full Name",
@@ -155,6 +157,7 @@
 		]
 	},
 	{
+		"id": "3",
 		"name": "Research Name 3",
 		"participants": [{
 			"name": "Full Name",
