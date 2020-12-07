@@ -1,6 +1,7 @@
 {
    "publications":[
       {
+         "id": "1",
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
@@ -13,6 +14,7 @@
          "publicationStatus":"Published"
       },
       {
+         "id": 2,
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
@@ -25,6 +27,7 @@
          "publicationStatus":"Published"
       },   
       {
+         "id": "3",
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
@@ -37,6 +40,7 @@
          "publicationStatus":"Published"
       },   
       {
+         "id": "4",
          "name":"Paper's Paper's title",
          "description":"Paper's description Paper's description",
          "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
