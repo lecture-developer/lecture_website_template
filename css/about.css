@@ -180,7 +180,7 @@ line-height: 200%;
 }
 
 .Recommended-resources-bar {
-  width: 200px;
+  width: 33.3%;
 }
 
 .active-tab-title {
@@ -188,16 +188,16 @@ line-height: 200%;
 }
 
 
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 850px) {
     .tab {
         width: 7rem;
     }
-}
+} */
 
 @media screen and (max-width: 450px) {
-    .tab {
+    /* .tab {
         width: 6.4rem;
-    }
+    } */
 
     .tab-title {
         font-size: 14px;

@@ -23,7 +23,7 @@ class ProjectPanel extends Element
 		+ descriptionTrim(this.description);
 		if (this.btn["link"] != "")
 		{
-			answer += '<div class="personal-row space-between"><div class="w-100 flex-end"><a href="' + this.btn["link"] + '" class="download-btn">' + this.btn["info"] + '</a></div></div>';
+			answer += '<div class="personal-row space-between"><div class="w-100 flex-btn"><a href="' + this.btn["link"] + '" class="download-btn">' + this.btn["info"] + '</a></div></div>';
 		}
 		answer += '</div>';
 		return answer;

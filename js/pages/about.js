@@ -67,9 +67,9 @@ class About extends PageRender
 	createTabsSection()
 	{
 		Tabs.createTabsSection();
-		Tabs.addTab('Biography');
-		Tabs.addTab('Personal projects');
-		Tabs.addTab('Recommended resources', true);
+		Tabs.addTab('Biography', 'Bio');
+		Tabs.addTab('Personal projects', 'Projects');
+		Tabs.addTab('Recommended resources','Resources', true);
 	}
 
 	pickTab()
