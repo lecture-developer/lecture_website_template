@@ -1,5 +1,6 @@
 import { Element } from '/lecture_website_template/js/components/element.js';
 import { ActionButton } from '/lecture_website_template/js/components/actionButton.js';
+import { descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
 
 class ProjectPanel extends Element
 {
@@ -18,8 +19,8 @@ class ProjectPanel extends Element
 		// 1. dynamic list of action buttons each one with it's design from the class
 		// 2.
 		var answer = '<div class="academic-papers-panel"><h3>'
-		+ this.name + '</h3><p>'
-		+ this.description + '</p>'
+		+ this.name + '</h3>'
+		+ descriptionTrim(this.description);
 		if (this.btn["link"] != "")
 		{
 			answer += '<div class="personal-row space-between"><div class="w-100 flex-end"><a href="' + this.btn["link"] + '" class="download-btn">' + this.btn["info"] + '</a></div></div>';

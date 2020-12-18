@@ -1,17 +1,18 @@
 {
    "publications":[
+      
       {
          "id": "1",
-         "name":"Paper's Paper's title",
-         "description":"Paper's description Paper's description",
-         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
-					  {"info": "cite", "type": 3, "link": "bbb"}],
-		 "authors": "first name, last name; first name, last name",
-         "year": 2019,
-         "topic":"cool topic",
+         "name":"Why COVID-19 pandemic is the right time to switch your academic website?",
+         "description":"In this non-existing paper, we show why COVID-19 pandemic is the right time to upgrade your academic website and how to do so easly",
+         "fileLinks":[{"info": "download", "type": 1, "link": "https://sphera.academy.pdf"},
+					  {"info": "cite", "type": 3, "link": "Losatter, H., Why COVID-19 pandemic is the right time to switch your academic website?. The journal of what really matters. 2020."}],
+		 "authors": "Losatter, H.",
+         "year": 2020,
+         "topic":"websites",
          "type":"paper",
-         "publisher":"good publisher good publisher",
-         "publicationStatus":"Published"
+         "publisher":"The journal of what really matters",
+         "publicationStatus":"Submited"
       },
       {
          "id": 2,
@@ -49,7 +50,7 @@
          "year": 2020,
          "topic":"cool topic",
          "type":"paper",
-         "publisher":"good publisher good publisher",
+         "publisher":"The journal of what really matters",
          "publicationStatus":"Published"
       }]
 }

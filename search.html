@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- seo -->
-    <title> Lecuter's Courses Website </title>
+    <title> Lecturer's Courses Website </title>
     <link href="/lecture_website_template/img/favicon.ico" rel="icon" type="image/x-icon"/>
     <!-- end - seo -->
 
@@ -27,23 +27,26 @@
 	<!-- main content -->
 	<main class="content" id="main_section">
 		<div class="teaching-container">
-			<div class="breadcrumb-page" id="breadcrumb_section">
-				<ul>
-					<li>
-						<a href="/lecture_website_template/">Home</a>
-					</li>
-					<li>
-						<a>Seach Results</a>
-					</li>
-				</ul>
-			</div>
 			<div class="teaching-papers-header-section">
-                <h1>Search Results</h1>
-				<p id="query"> </p>
+                <h3 class="search-pre-header">Search Results for: </h3>
+                <h1 id="query"></h1>
                 <hr>
             </div>
             <div class="teaching-papers-body-section" id="search-results">
-				
+				<div class="academic-papers-panel">
+                    <p class="search-date">July 2020</p>
+                    <div class="personal-row-col col-reverse-mobile w-100 align-space-between">
+                        <h3>Paper's title Paper's title Paper's title Paper's title</h3>
+                    </div>
+                    <h4>Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description Paper's description</h4>
+                    <div class="personal-row space-between-search align-items-center mobile-row-breaker">
+                        <div class="search-parms-row">
+                            <span>Publication</span>
+                        </div>
+                        <a href="aaa.pdf" class="see-page-btn see-page-text acadmic-card-margin-fix">See this page</a>
+
+                    </div>
+                </div>
             </div>
 		</div>
     </main>
@@ -59,7 +62,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/lecture_website_template/js/main.js"> </script>
 	<script src="/lecture_website_template/js/search.js"> </script>
-    <script src="/lecture_website_template/js/pages/teaching.js" type="module"> </script>
+	<script>
+		update_search_results();
+	</script>
 
     </body>
 </html>

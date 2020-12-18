@@ -4,12 +4,15 @@ import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 import { ProjectSection } from '/lecture_website_template/js/components/projectSection.js'
 import { Resource } from '/lecture_website_template/js/components/resources.js';
+import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let LECTURER_INFO_JSON = "/lecture_website_template/data/jsons/lecturer.json";
 let INDEX_JSON = "/lecture_website_template/data/jsons/index.json";
 let RESOURCES_JSON = "/lecture_website_template/data/jsons/resources.json";
 let SECTIONS = ["Biography", "Personal-projects", "Recommended-resources"];
+
+let ALL_TOPIC_KEY = "all";
 
 /*
 	Single instance class to build about page with dynamic content from JSONS from the server
@@ -33,6 +36,9 @@ class About extends PageRender
 		{
 			this.section_open = SECTIONS[0];
 		}
+
+		About.loadFileFromServer(RESOURCES_JSON, true);
+		this.resourcesObj = retrivedData;
 	}
 
 	// just gather all the build of all the sections in the page - one per call to the server side
@@ -44,7 +50,7 @@ class About extends PageRender
 		// build tabs' content
 		this.buildBiography(lecturerObj);
 		this.buildProjects(lecturerObj);
-		this.buildResources();
+		this.buildResources(false,"buildFilters");
 
 		// create the tabs flow themself
 		this.createTabsSection();
@@ -54,6 +60,8 @@ class About extends PageRender
 
 		// pick the right tab according to the link
 		this.pickTab();
+		//
+
 	}
 
 	createTabsSection()
@@ -75,6 +83,7 @@ class About extends PageRender
 			}
 		}
 		Tabs.activateDefault(0); // default case;
+
 	}
 
 	/* build the overall contact info section */
@@ -95,22 +104,8 @@ class About extends PageRender
 		{
 			this.buildLocations(lecturerObj.addresses);
 		}
-		//adding headlines
-		document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
-		document.getElementById("room").innerHTML = Icons.location() + " Room Location";
-		document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
-
-		var info_table = document.getElementById("info-table");
-
-		for(let i = 0; i < lecturerObj.addresses.length; i++)
-		{
-			var row = info_table.insertRow(-1);
-			var cell_university = row.insertCell(0);
-			cell_university.innerHTML = lecturerObj.addresses[i].university;
-			var cell_location = row.insertCell(1);
-			cell_location.innerHTML = lecturerObj.addresses[i].location;
-			var cell_hours = row.insertCell(2);
-			cell_hours.innerHTML = lecturerObj.addresses[i].hours;
+		else{
+			document.getElementById("lecturer_location").style.display = "none";
 		}
 
 	}
@@ -145,7 +140,10 @@ class About extends PageRender
 		else
 		{
 			this.dynamicBuildProjects(projects, topic);
+
+			addCollapseFunction();
 		}
+
 	}
 
 	dynamicBuildProjects(projects, topic)
@@ -163,17 +161,23 @@ class About extends PageRender
 	{
 		// build topics navigation bar
 		let topics = new Set();
-		for(let i = 0; i < projects.length; i++){
+		topics.add(ALL_TOPIC_KEY);
+		for(let i = 0; i < projects.length; i++)
+		{
 			topics.add(projects[i].topic);
 		}
-		if(topics.size == 1){
+		
+		if(topics.size < 3)
+		{
 			document.getElementById("topics").style.display = "none";
 			return null;
 		}
 		let topics_list = document.getElementById("topics_list");
+		
 		let topicArr = [];
 		const topicIter = topics.values();
-		for(let i = 0; i < topics.size; i++){
+		for(let i = 0; i < topics.size; i++)
+		{
 			let t = document.createElement("LI");
 			t.classList.add("topic");
 			let text = topicIter.next().value;
@@ -195,12 +199,22 @@ class About extends PageRender
 	/* build contact info section */
 	buildContact(lecturerObj)
 	{
+		let cv = lecturerObj.cvfile;
 		let email = lecturerObj.email;
 		let phone = lecturerObj.phone;
 		let linkedin = lecturerObj.linkedin_link;
 		let google = lecturerObj.google_scholar_link;
+		let facebook = lecturerObj.facebook_link;
 
 		let contacts = document.getElementById("contacts");
+
+		if(cv != ""){
+			let elem = document.createElement("A");
+			elem.href = cv;
+			elem.id = "cv";
+		  elem.innerHTML = Icons.cv() + '<span style="margin-left: 5px;">Download CV</span>';
+		  contacts.appendChild(elem);
+		}
 
 		if(email != ""){
 		  let elem = document.createElement("P");
@@ -229,15 +243,23 @@ class About extends PageRender
 		  googleIcon.href = google;
 		  contacts.appendChild(googleIcon);
 		}
+
+		if(facebook != ""){
+			let fbIcon = document.createElement("A");
+			fbIcon.innerHTML = Icons.about_facebook();
+			fbIcon.classList.add("social-icon");
+			fbIcon.href = facebook;
+			contacts.appendChild(fbIcon);
+		}
 	}
 
 	/* build locations info section */
 	buildLocations(addresses)
 	{
 	  //adding headlines
-	  document.getElementById("organization").innerHTML = Icons.buildings() + " Organization name";
-	  document.getElementById("room").innerHTML = Icons.location() + " Room Location";
-	  document.getElementById("hours").innerHTML = Icons.clock() + " Office hours";
+	  document.getElementById("organization").innerHTML = Icons.buildings() + "<div class='after-icon-cell'> Organization Name </div>";
+	  document.getElementById("room").innerHTML = Icons.location() + "<div class='after-icon-cell'> Room Location  </div>";
+	  document.getElementById("hours").innerHTML = Icons.clock() + "<div class='after-icon-cell'> Office Hours  </div>";
 
 	  var info_table = document.getElementById("info-table");
 
@@ -253,19 +275,129 @@ class About extends PageRender
 		}
 	}
 
-	/* build resources tab content*/
-	buildResources(){
-		About.loadFileFromServer(RESOURCES_JSON, true);
-		const resourcesObj = retrivedData;
-		let res_section = document.getElementById("resources_section");
-		let resourcesList = Resource.createListFromJson(resourcesObj["resources"]);
-		for(let i = 0; i < resourcesList.length; i++){
-			res_section.innerHTML += resourcesList[i].toHtml();
+		/* build resources tab content*/
+	buildFilters(rList)
+	{
+		this.buildOneFilter(rList, "year");
+		this.buildOneFilter(rList, "type");
+		this.buildOneFilter(rList, "topic");
+	}
+
+	buildOneFilter(rList, fName)
+	{
+		let filters = new Set();
+		for(let i = 0; i < rList.length; i++){
+			let text = rList[i][fName];
+			if(typeof(text) == "string"){
+				text = text.trim();
+				text = text.toLowerCase();
+			}
+			filters.add(text);
+		}
+
+		filters = Array.from(filters);
+		let filter = document.getElementById(fName+"-filter");
+		if (filters.length > 1)
+		{
+			for(let i = 0; i< filters.length; i++)
+			{
+				let optionElement = document.createElement("OPTION");
+				optionElement.innerHTML = filters[i];
+				filter.appendChild(optionElement);
+			}
+		}
+		else
+		{
+			document.getElementById(fName+"-filter").style.display = "none";
 		}
 	}
+
+	buildResources(change = false, filterName)
+	{
+		this.clearResources();
+		let res_section = document.getElementById("resources_section");
+		let resourcesList = Resource.createListFromJson(this.resourcesObj["resources"]);
+		if(filterName == "buildFilters")
+		{
+			document.getElementById("resources_section").style.display = "";
+			this.buildFilters(resourcesList);
+		}
+		if(!change)
+		{
+			if(resourcesList.length == 0)
+			{
+				document.getElementById("resources_filters").style.display = "none";
+				document.getElementById("filter_by").innerHTML = "No resources to show.";
+			}
+			else
+			{
+				for(let i = 0; i < resourcesList.length; i++)
+				{
+					res_section.innerHTML += resourcesList[i].toHtml();
+				}
+			}
+		}
+		else
+		{
+			let selector = document.getElementById(filterName + "-filter");
+			let selectorIndex = selector.selectedIndex;
+			let filter = selector.options[selectorIndex].value;
+			this.clearFiltersDesign();
+			selector.classList.add("active-sort-button");
+			for(let i = 0; i < resourcesList.length; i++)
+			{
+				let value = resourcesList[i][filterName];
+				if(typeof(value) == "string")
+				{
+					value = value.trim().toLowerCase();
+				}
+
+				if(value == filter)
+				{
+					res_section.innerHTML += resourcesList[i].toHtml();
+				}
+				let reset = document.getElementById("reset-btn");
+				reset.innerHTML = Icons.reset() + " Reset";
+			}
+			addCollapseFunction();
+		}
+	}
+
+	clearResources()
+	{
+		let res_section = document.getElementById("resources_section");
+		res_section.innerHTML = '';
+	}
+
+	clearFiltersDesign()
+	{
+		let f = document.getElementsByClassName("active-sort-button");
+		if(f.length == 0) return;
+		f[0].selectedIndex = 0;
+		f[0].classList.remove("active-sort-button");
+		document.getElementById("reset-btn").style.display = "none";
+	}
+
+
 }
 
 document.aboutPage = new About();
 document.aboutPage.build();
+document.getElementById("reset-btn").addEventListener("click", () => {
+	document.aboutPage.clearFiltersDesign();
+	document.aboutPage.buildResources();
+});
+
+document.getElementById("year-filter").addEventListener("change", () => {filterFilters("year")});
+document.getElementById("type-filter").addEventListener("change", () => {filterFilters("type")});
+document.getElementById("topic-filter").addEventListener("change",() => {filterFilters("topic")});
+
+function filterFilters(fName){
+	if(document.getElementById(fName+"-filter").selectedIndex != 0){
+		document.getElementById("reset-btn").style.display = "";
+		document.aboutPage.buildResources(true, fName);
+	}
+}
+addCollapseFunction();
 
 export {About};

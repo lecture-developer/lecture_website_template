@@ -60,6 +60,9 @@ class Research extends PageRender
 		{
 			this.openPositions.push(ResearchPosition.createFromJson(this.jsonData["open_positions"][index]));
 		}
+		
+		// remove alert as they not in use and can make problems
+		removeAlertsPanels();
 	}
 
 	// just gather all the build of all the sections in the page - one per call to the server side
@@ -95,7 +98,7 @@ class Research extends PageRender
 		this.ongoingProjects.forEach((research, i) => {
 			answerHTML += research.toHtml();
 
-			if(i < this.previousProjects.length - 1) {
+			if(i < this.ongoingProjects.length - 1) {
 				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
 			}
 		});
@@ -132,7 +135,7 @@ class Research extends PageRender
 		this.openPositions.forEach((position, i) => {
 			answerHTML += position.toHtml();
 
-			if(i < this.previousProjects.length - 1) {
+			if(i < this.openPositions.length - 1) {
 				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
 			}
 		});

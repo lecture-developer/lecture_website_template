@@ -3,6 +3,7 @@ import { PageRender, retrivedData } from '/lecture_website_template/js/pageRende
 import { PublicationCard } from '/lecture_website_template/js/components/publicationCard.js';
 import { ProjectPanel } from '/lecture_website_template/js/components/projectPanel.js';
 import { Icons } from '/lecture_website_template/js/components/icons.js';
+import { addCollapseFunction, descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
 
 // Data file paths
 let UPDATES_TEXT = "/lecture_website_template/data/notifications.txt"
@@ -27,6 +28,8 @@ class Index extends PageRender
 		Index.buildeNotifications();
 		Index.buildePersonalPanel();
 		Index.buildePageContent();
+		
+		addCollapseFunction();
 	}
 	
 	/* build section functions */
@@ -43,7 +46,7 @@ class Index extends PageRender
 			notificationsArray.push(...notificationLines);
 
 			var notificationHtml = "";
-			if (notificationLines.length > 0)
+			if (notificationLines.length > 0 && notificationLines[0] != "")
 			{
 				for (var notificationIndex = 0; notificationIndex < notificationLines.length; notificationIndex++)
 				{
@@ -53,12 +56,11 @@ class Index extends PageRender
 					// join the rest of the line
 					var line = splitNotificationLine.slice(1).join(" ");
 					
-					// notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text">' + notificationLines[notificationIndex] + '</div></div></div>';
 					notificationHtml += '<div class="carousel-cell"><div class="update-panel"><div class="update-text"><span class="update-date"> update ' + date + '</span><br> <span class="update-message">' + line + '</span></div></div></div>';
 				}
 				document.getElementById("updates-panel").innerHTML = notificationHtml;
 				// slice according to window size
-				changeNotificationLength();
+				// changeNotificationLength();
 				
 				if (notificationLines.length == 1)
 				{
@@ -96,6 +98,7 @@ class Index extends PageRender
 		{
 			Index.loadFileFromServer(LECTURE_INFO_JSON, true);
 			var jsonObj = retrivedData;
+			document.getElementById("lecturer-name").innerHTML = jsonObj["name"];
 			document.getElementById("lecture_position").innerHTML = jsonObj["position"];
 			var addressesHtml = "<div class='lecturer-info'> ";
 			addressesHtml += "<span>" + Icons.info() + "</span> ";
@@ -169,9 +172,9 @@ class Index extends PageRender
 			{
 				document.getElementById("featured_publications_header").style.display = "none";
 			}
-			if (jsonObj["current_projects_header"].length == 0)
+			if (jsonObj["currentProjects"].length == 0)
 			{
-				document.getElementById("featured_publications_header").style.display = "none";
+				document.getElementById("current_publications_header").style.display = "none";
 			}
 		}
 		catch (error)
@@ -186,7 +189,7 @@ class Index extends PageRender
 // run the class build on page load
 Index.build();
 
-// window.addEventListener('resize', Index.buildeNotifications);
+window.addEventListener('resize', Index.buildeNotifications);
 
 function changeNotificationLength() {
 	var notifications = document.getElementsByClassName('update-message');
@@ -215,6 +218,6 @@ function changeNotificationLength() {
 	}
 }
 
-window.addEventListener('resize', changeNotificationLength);
+// window.addEventListener('resize', changeNotificationLength);
 
 export { Index };
