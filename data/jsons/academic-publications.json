@@ -2,6 +2,7 @@
    "publications":[
       
       {
+         "id": "1",
          "name":"Why COVID-19 pandemic is the right time to switch your academic website?",
          "description":"In this non-existing paper, we show why COVID-19 pandemic is the right time to upgrade your academic website and how to do so easly",
          "fileLinks":[{"info": "download", "type": 1, "link": "https://sphera.academy.pdf"},
@@ -14,13 +15,40 @@
          "publicationStatus":"Submited"
       },
       {
-         "name":"Researchers and their websites",
-         "description":"What researchers do wrong with their websites",
-         "fileLinks":[{"info": "download", "type": 1, "link": "https://sphera.academy.pdf"},
-					  {"info": "cite", "type": 3, "link": "Losatter, H., Researchers and their websites. The journal of what really matters. 2019."}],
-		 "authors": "Losatter, H.",
+         "id": 2,
+         "name":"Paper's Paper's title",
+         "description":"Paper's description Paper's description",
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+					  {"info": "cite", "type": 3, "link": "bbb"}],
+		 "authors": "first name, last name; first name, last name",
          "year": 2019,
-         "topic":"covid",
+         "topic":"cool topic",
+         "type":"presentation",
+         "publisher":"good publisher good publisher",
+         "publicationStatus":"Published"
+      },   
+      {
+         "id": "3",
+         "name":"Paper's Paper's title",
+         "description":"Paper's description Paper's description",
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+					  {"info": "cite", "type": 3, "link": "bbb"}],
+		 "authors": "first name, last name; first name, last name",
+         "year": 2018,
+         "topic":"cool topic",
+         "type":"presentation",
+         "publisher":"good publisher good publisher",
+         "publicationStatus":"Published"
+      },   
+      {
+         "id": "4",
+         "name":"Paper's Paper's title",
+         "description":"Paper's description Paper's description",
+         "fileLinks":[{"info": "download", "type": 1, "link": "aaa"}, 
+					  {"info": "cite", "type": 3, "link": "bbb"}],
+		 "authors": "first name, last name; first name, last name",
+         "year": 2020,
+         "topic":"cool topic",
          "type":"paper",
          "publisher":"The journal of what really matters",
          "publicationStatus":"Published"
