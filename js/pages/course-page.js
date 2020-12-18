@@ -143,12 +143,12 @@ class CoursePage extends PageRender
 	createTabsSection() 
 	{
 		Tabs.createTabsSection();
-		Tabs.addTab('general');
+		Tabs.addTab('general', 'general');
 		if (this.data.updates.length > 0)
 		{
-			Tabs.addTab('updates', false ,this._pick_flag());	
+			Tabs.addTab('updates', 'updates', false ,this._pick_flag());	
 		}
-		Tabs.addTab('modules', true);
+		Tabs.addTab('modules', 'modules', true);
 		
 	}
 	

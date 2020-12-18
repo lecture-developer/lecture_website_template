@@ -86,9 +86,9 @@ class Research extends PageRender
 
 	createTabsSection() {
 		Tabs.createTabsSection();
-		Tabs.addTab('Ongoing Projects');
-		Tabs.addTab('Previous Projects');
-		Tabs.addTab('Work with me', true);
+		Tabs.addTab('Ongoing Projects', 'Ongoing');
+		Tabs.addTab('Previous Projects', 'Previous');
+		Tabs.addTab('Work with me','Join me', true);
 	}
 
 	buildOngoing()
