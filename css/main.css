@@ -64,6 +64,7 @@ footer {
     color: white;
 	padding-bottom: 20px;
 }
+
 footer a:hover{
 	text-decoration: underline;
 }
@@ -123,6 +124,11 @@ footer h2{
 	font-size: 16px;
 }
 
+.footer-bottom-links {
+	display: flex;
+	flex-direction: row;
+}
+
 .footer-menu{
 	display: flex;
 	flex-direction: column;
@@ -150,7 +156,6 @@ footer h2{
 }
 
 .footer-menu-item{
-
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 400;
@@ -159,6 +164,7 @@ footer h2{
 	text-decoration: underline !important;
 	color: #F7FAFC;
 	margin-bottom: 24px;
+	display: flex;
 }
 
 .footer-menu-item:hover{
@@ -195,6 +201,7 @@ footer h2{
 .footer-details-icons{
 	align-items: center !important;
 	margin-bottom: 20px;
+	display: inline;
 }
 
 .footer-social{
@@ -221,12 +228,16 @@ footer h2{
 	line-height: 19px;
 }
 
+.footer-find-me-mail-and-phone {
+	display: none;
+}
+
 .alert {
+
 	z-index: 999999;
 	position: fixed;
 	top: 50px;
 	right: 0;
-	position: fixed;
 	width: 80%;
 	min-height: 60px;
 	padding: 20px;
@@ -314,6 +325,28 @@ footer h2{
 	#footer-menu-row{
 		flex-wrap: wrap !important;
 	}
+
+	.footer-bottom-links {
+		flex-direction: column;
+	}
+
+	.footer-details-icons {
+		display: none !important;
+	}
+
+	.footer-find-me-mail-and-phone {
+		display: inline;
+	}
+
+	.footer-menu-title {
+		margin-bottom: 26px;
+		color: #C3DAFE !important;
+	}
+
+	.footer-menu-item {
+		display: none;
+	}
+
 }
 
 /*** main content pages section ***/
@@ -1524,7 +1557,6 @@ margin: 0px 0px;
 	
 		/*text*/
 		font-family: Roboto;
-		font-style: italic;
 		font-weight: 400;
 		font-size: 18px;
 		line-height: 16px;
@@ -2056,6 +2088,7 @@ margin: 0px 0px;
 
 .not-found-buttons-section a {
 	color: #5A67D8;
+	margin-bottom: 20px;
 }
 
 .not-found-section a:hover {
@@ -2108,17 +2141,36 @@ margin: 0px 0px;
 }
 
 @media screen and (max-width: 430px) {
+
+	.not-found-title {
+		font-size: 24px;
+		font-weight: normal;
+		line-height: 32px;
+	}
+
+	.not-found-message{
+		font-weight: normal;
+		font-size: 16px;
+		text-align: center;
+
+	}
+
 	.not-found-container {
 		display: flex;
 		flex-direction: column-reverse;
 	}
 
 	.not-found-img {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 26px;
 		margin-bottom: -255px;
 	}
 
 	.not-found-buttons-section {
-		margin-bottom: -30px;
+		margin-bottom: -60px;
+
 	}
 
 	.content-404 {
