@@ -109,12 +109,13 @@ class Teaching extends PageRender
 				for (var spliterKeyIndex = 0; spliterKeyIndex < keys.length; spliterKeyIndex++)
 				{
 					// add spliter
-					ansewrHtml +='<h2 class="institution-title">' + keys[spliterKeyIndex] + "</h2>";
+					ansewrHtml +='<div class="institution-card"><h2 class="institution-title">' + keys[spliterKeyIndex] + "</h2>";
 					// add elements inside the list
 					for (var elementIndex = 0; elementIndex < coursesSets[keys[spliterKeyIndex]].length; elementIndex++)
 					{
 						ansewrHtml += coursesSets[keys[spliterKeyIndex]][elementIndex].toHtml();
 					}
+					ansewrHtml+="</div>";
 				}
 				document.getElementById("teaching-body").innerHTML = ansewrHtml;
             }
@@ -174,6 +175,8 @@ class Teaching extends PageRender
 		this.filter = filter_value;
 		//build the new body after the filter change.
 		this.buildBody(filter_value);
+		//close filter display
+		this.filtersDisplay();
 	}
 
 	clearFiltersDesign()
@@ -185,9 +188,11 @@ class Teaching extends PageRender
 	}
 
 	/*
-	Show/hide filters 
+	Show/hide filters menu
 	*/
 	filtersDisplay(){
+		//relevent for mobile only
+		if (window.innerWidth > 430) return;
 		let filters = document.getElementsByClassName("select-wrapper")[0];
 		if( filters.style.display =="none"){
 			filters.style.display = "block";
@@ -196,7 +201,7 @@ class Teaching extends PageRender
 		}
 	}
 
-	//reset view after resize page.
+	//reset view after resize page manualy(if the user like to change the browser size)
 	resetView(){
 		let filters = document.getElementsByClassName("select-wrapper")[0];
 		if (window.innerWidth > 430)

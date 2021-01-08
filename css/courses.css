@@ -1,6 +1,6 @@
 /*------------header file section area--------------*/
 .course-card-panel{
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 @media (max-width:430px){
   .teaching-papers-header-section h1{
@@ -25,6 +25,9 @@
 
   }
 
+  .teaching-papers-header-section{
+  padding-left: 25px;
+  }
   
 
 }
@@ -102,6 +105,10 @@
   letter-spacing: 0.04em;
   color: #5A67D8;
   padding-bottom: 16px;
+}
+
+.institution-card{
+  padding-bottom:22px;
 }
 
 /* --------- Start course card area --------------------*/
@@ -228,6 +235,24 @@
     width: 210px;
     border-radius: 8px;
     padding: 14px 22px;
+    font-size: 18px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    display: flex;
+    text-align: center;
+    letter-spacing: 0.025em;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 
   .course-card-header-hard p{
