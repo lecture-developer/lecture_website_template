@@ -73,6 +73,10 @@ class Icons {
   static reset(){
     return '<svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 10.9992C14 6.99922 8 0.199219 8 0.199219C8 0.199219 6.67 1.70922 5.27 3.71922L13.86 12.3092C13.95 11.8892 14 11.4492 14 10.9992ZM13.12 14.1192L8.5 9.49922L1.27 2.26922L0 3.54922L3.32 6.86922C2.55 8.31922 2 9.78922 2 10.9992C2 14.3092 4.69 16.9992 8 16.9992C9.52 16.9992 10.9 16.4292 11.96 15.4992L14.59 18.1292L15.86 16.8592L13.12 14.1192Z" fill="#5A67D8"/></svg>';
   }
+  
+  static filter(){
+	  return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="#667EEA"/></svg>';
+  }
 }
 
 export { Icons };

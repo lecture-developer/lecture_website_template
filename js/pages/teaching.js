@@ -18,7 +18,7 @@ class Teaching extends PageRender
 	{
 		super();
         Teaching.loadFileFromServer(TAECHING_JSON, true);
-        this.cardList = CourseCard.createListFromJson(retrivedData["coureses"]);
+        this.cardList = CourseCard.createListFromJson(retrivedData["courses"]);
         this.filter = default_filter;
 		this.listFilterName = CourseCard.listFilterButtons(this.cardList, this.property_university);
 		
@@ -48,6 +48,9 @@ class Teaching extends PageRender
 			let reset = document.getElementById("reset-btn");
 			reset.innerHTML = Icons.reset() + " Reset";
 			reset.addEventListener("click", this.buildBody());
+
+			let filter_btn = document.getElementById("filter-btn");
+			filter_btn.innerHTML = Icons.filter() + " Filter"
 		}
         catch (error)
 		{
@@ -89,7 +92,7 @@ class Teaching extends PageRender
 		}
 
 		// split into the right sets
-		var coursesSets = CourseCard.splitByProperty(buildTeachingList, 'year');
+		var coursesSets = CourseCard.splitByProperty(buildTeachingList, 'university');
 		// build the UI //
 		try
 		{
@@ -101,12 +104,12 @@ class Teaching extends PageRender
 				{
 					keys.push(spliterKey);
 				}
-				keys = keys.sort().reverse();
+				keys = keys.sort();
 
 				for (var spliterKeyIndex = 0; spliterKeyIndex < keys.length; spliterKeyIndex++)
 				{
 					// add spliter
-					ansewrHtml += "<h3>" + keys[spliterKeyIndex] + "</h3>";
+					ansewrHtml +='<h2 class="institution-title">' + keys[spliterKeyIndex] + "</h2>";
 					// add elements inside the list
 					for (var elementIndex = 0; elementIndex < coursesSets[keys[spliterKeyIndex]].length; elementIndex++)
 					{
@@ -181,6 +184,29 @@ class Teaching extends PageRender
 		f[0].classList.remove("active-sort-button");
 	}
 
+	/*
+	Show/hide filters 
+	*/
+	filtersDisplay(){
+		let filters = document.getElementsByClassName("select-wrapper")[0];
+		if( filters.style.display =="none"){
+			filters.style.display = "block";
+		}else {
+			filters.style.display = "none";
+		}
+	}
+
+	//reset view after resize page.
+	resetView(){
+		let filters = document.getElementsByClassName("select-wrapper")[0];
+		if (window.innerWidth > 430)
+			filters.style.display = "block";
+		else{
+			filters.style.display = "none";
+		}
+	}
+	
+
 }
 
 // run the class build on page load
@@ -192,6 +218,11 @@ document.getElementById("year-filter").addEventListener("change", () => {documen
 document.getElementById("topic-filter").addEventListener("change", () => {document.teaching.ChangeFilter("topic");});
 document.getElementById("university-filter").addEventListener("change", () => {document.teaching.ChangeFilter("university");});
 document.getElementById("reset-btn").addEventListener("click", () => {document.teaching.buildBody(default_filter);});
+document.getElementById("filter-btn").addEventListener("click", () => {document.teaching.filtersDisplay();});
+
+//event for resize page
+window.onresize = document.teaching.resetView;
+
 
 
 export { Teaching }
