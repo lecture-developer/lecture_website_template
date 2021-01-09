@@ -5,12 +5,10 @@
 @media (max-width:430px){
   .teaching-papers-header-section h1{
     /* Courses */
-
-
     font-family: Playfair Display;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 24pt;
     line-height: 32px;
     /* identical to box height */
     align-items: center;
@@ -26,7 +24,8 @@
   }
 
   .teaching-papers-header-section{
-  padding-left: 25px;
+	  padding-left: 32px;
+	  padding-right: 32px;
   }
   
 
@@ -190,7 +189,6 @@
     text-align: center;
     color: #667EEA;
     display: block;
-    padding-left: 16px;
   }
 
   .filter-by-txt{
