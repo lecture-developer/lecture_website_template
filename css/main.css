@@ -1870,8 +1870,8 @@ margin: 0px 0px;
 .teaching-papers-body-section{
 	padding-bottom: 50px;
 	width: 100%;
-	padding-left: 16px;
-    padding-right: 16px;
+	padding-left: 0px;
+    padding-right: 0px;
 }
 
 .teaching-papers-body-section h3{
@@ -1895,7 +1895,7 @@ margin: 0px 0px;
 }
 
 .teaching-papers-body-section .semester{
-  font-size: 14px;
+  font-size: 16px;
   line-height: 135%;
   color: #A0AEC0;
   margin-bottom: 4px;
