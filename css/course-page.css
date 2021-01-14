@@ -14,6 +14,21 @@
     font-size: 1rem;
 }
 
+@media screen and (max-width: 430px) {
+
+    .main-header-page h1{
+        font-family: Playfair Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 32px;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+    }
+}
+
+
 /****** icons sections - start ******/
 #icons_section {
     margin-bottom: 4.75rem
