@@ -2,6 +2,7 @@ import { PageRender, retrivedData } from '/lecture_website_template/js/pageRende
 import { Course } from '/lecture_website_template/js/components/course.js';
 import { Tabs } from '/lecture_website_template/js/components/tabs.js';
 import { addCollapseFunction } from '/lecture_website_template/js/descriptionSlicer.js';
+import {Icons} from '/lecture_website_template/js/components/icons.js';
 
 // Data file paths
 let TEACHING_JSON = "/lecture_website_template/data/jsons/teaching.json";
@@ -117,6 +118,7 @@ class CoursePage extends PageRender
 
 	createDetailsCourse() 
 	{
+
 		try
 		{
 			var html='<div class="main-header-page"><h1>'
@@ -124,20 +126,38 @@ class CoursePage extends PageRender
 			+ this.data.code + '</p></div><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_access_time.png"><p>Semester '
 			+ this.data.semester + '</p></div><div class="item-detail"><img class="course-detail-img" src="/lecture_website_template/img/mdi_place.png"><div class=".personal-coloum"><p>'
 			+ this.data.university + '</p><p>'
-			+ this.data.location_class + '</p></div></div></div></div><div class="personal-row">';
+			+ this.data.location_class + '</p></div></div></div><div class="personal-row">';
 			
 			if (this.data.syllabus != "" && this.data.syllabus != undefined)
 			{
 				html += '<a class="sylabus-link" href='+ this.data.syllabus +' ><img class="course-sylabus-img" src="/lecture_website_template/img/save_alt.png" alt="">Syllabus</a>';
 			}
-			html += '</div>';
+			html += '</div></div>';
+
+			html +='<div class="main-header-page-mobile"><h1>'+ this.data.name + '</h1>'+
+			'<div class="header-detail">'+
+			'<div class="item-detail1 ">'+Icons.education_hat()+'</div>'+
+			'<div class="item-detail">'+Icons.place()+'</div>'+
+			'<div class="item-detail">'+Icons.watch()+'</div>'+
+			'</div></div>';
+
 			document.getElementById("icons_section").innerHTML = html;
+			console.log(Icons.place());
+
+			document.getElementsByClassName('item-detail1')[0]
+        .addEventListener('click', function (event) {
+			event.target.classList.toggle("active-tab");
+            // do something
+        });
 
 		}
 		catch(error)
 		{
 			console.log("Error at Course.BuildHeader, saying:" + error);
 		}
+	}
+	iconButtonClick(){
+		console.log("yana");
 	}
 
 	createTabsSection() 

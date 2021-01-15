@@ -14,9 +14,18 @@
     font-size: 1rem;
 }
 
+.main-header-page-mobile{
+    display: none;
+}
 @media screen and (max-width: 430px) {
+    .main-header-page {
+        display: none;
+    }
 
-    .main-header-page h1{
+    .main-header-page-mobile{
+        display: block;
+    }
+    .main-header-page-mobile h1{
         font-family: Playfair Display;
         font-style: normal;
         font-weight: normal;
@@ -25,6 +34,14 @@
         align-items: center;
         text-align: center;
         color: #000000;
+        margin-top: 40px;
+    }
+    .main-header-page-mobile p{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 150%;
     }
 }
 
@@ -76,6 +93,27 @@
     margin-right: 0.75rem;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width: 430px){
+    .header-detail {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        margin-top: 2.25rem;
+        max-width: 600px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    #icons_section {
+        margin-bottom: 71px;
+    }
+
+    svg .active-tab{
+        fill: #7F9CF5;
+    }
+
+
 /****** icons sections - end ******/
 
 .grey-1{
@@ -99,9 +137,7 @@ hr {
 
 @media screen and (max-width: 850px) {
 
-	.header-detail {
-		flex-direction: column;
-	}
+
 }
 
 @media screen and (max-width: 1080px) {
@@ -124,7 +160,8 @@ hr {
     }
 	
 	.item-detail{
-		margin-top: 10px;
+        margin-top: 10px;
+        
 	}
 
 	.sylabus-link{
