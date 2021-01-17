@@ -84,6 +84,7 @@ class CoursePage extends PageRender {
 		this.pickTab();
 
 		addCollapseFunction();
+		this.addShowMoreFunctions();
 
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
@@ -125,8 +126,8 @@ class CoursePage extends PageRender {
 				'<div id="hours" class="item-detail-mobile">' + Icons.course_clock() + '</div>' +
 				'</div>';
 
-			html += this.setUpperDataPanel()+'</div>';
-			
+			html += this.setUpperDataPanel() + '</div>';
+
 			//add to document
 			document.getElementById("icons_section").innerHTML = html;
 			//set click function for each icon
@@ -136,6 +137,7 @@ class CoursePage extends PageRender {
 			console.log("Error at Course.BuildHeader, saying:" + error);
 		}
 	}
+
 
 	//set the ecent-click for each icon to change color and show-hide panel
 	setClickForIcon() {
@@ -170,9 +172,9 @@ class CoursePage extends PageRender {
 	//add panels of basic info about the course
 	setUpperDataPanel() {
 		//add educatio panel
-		let html = '<div id="education-data" class="icon-detail-panel">Course number:' + this.data.code;
+		let html = '<div id="education-data" class="icon-detail-panel">Course number: ' + this.data.code;
 		if (this.data.syllabus != "" && this.data.syllabus != undefined) {
-			html += '<br><a class="sylabus-link" href=' + this.data.syllabus + ' ><img class="course-sylabus-img" src="/lecture_website_template/img/save_alt.png" alt="">Download course syllabus</a>';
+			html += '<br><a class="sylabus-link" href=' + this.data.syllabus + ' ><img class="course-sylabus-img" src="/lecture_website_template/img//mdi_insert_drive_file.png" alt="">Download course syllabus</a>';
 		}
 		//add class place panel
 		html += '</div><div id="place-data" class="icon-detail-panel">'
@@ -204,6 +206,31 @@ class CoursePage extends PageRender {
 		}
 		Tabs.activateDefault(0); // default case;
 	}
+
+	addShowMoreFunctions() {
+		let readMoreBtns = document.getElementsByClassName("readMore");
+		for (var i = 0; i < readMoreBtns.length; i++) {
+			readMoreBtns[i].addEventListener("click", function (event) {
+				var id = event.currentTarget.id;
+				var dots = document.getElementById(id + "-dots");
+				var moreText = document.getElementById(id + "-secondPartDataText");
+				var btnText = document.getElementById(id);
+				console.log(id);
+
+				if (dots.style.display === "none") {
+					dots.style.display = "inline";
+					btnText.innerHTML = "Read more";
+					moreText.style.display = "none";
+				} else {
+					dots.style.display = "none";
+					btnText.innerHTML = "Read less";
+					moreText.style.display = "inline";
+				}
+			});
+		}
+	}
+
+
 
 	// help functions //
 

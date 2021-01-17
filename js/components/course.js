@@ -69,7 +69,6 @@ class Course extends Element
 		let grades = this.grade_parts;
 		let html = '<div class="summary-section"><h3 class="content-title">'
 		+ "Summary" + '</h3><hr class="blue-hr"><h2 class="content-subtitle">Final grade: ';
-
 		let subTitle = '';
 		for(let i = 0; i < grades.length; i++) {
 			subTitle += grades[i]['name'] + " ";
@@ -79,9 +78,22 @@ class Course extends Element
 				subTitle += grades[i]['percent'] + "%, ";
 			}
 		}
+		text = this.addExtandReadMoreToText(this.description, "summary-rm-btn");
 		html += subTitle + '</h2><p class="content-text">' + text + '</p><div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div></div>';
 		return html;
 	}
+
+	//Add Read-more button to extand text.
+	addExtandReadMoreToText(text,id) {
+		const maxVisbleSize = 5;
+		if(text.length <= maxVisbleSize) return text;
+		const visablePart = text.slice(0, maxVisbleSize);
+		const hiddenPart = text.slice(maxVisbleSize,text.length);
+		let html = visablePart + '<span id="'+id+'-dots">...</span><span  class="hidden-text" id="'+id+'-secondPartDataText">'+
+		hiddenPart + ' </span><a class="readMore" id="'+id+'">Read more</a>';
+		return html;
+	}
+
 	
 	// resources section inside the general tab of the course
 	createResourceList(lastVisit)
