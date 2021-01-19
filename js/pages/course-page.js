@@ -84,7 +84,6 @@ class CoursePage extends PageRender {
 		this.pickTab();
 
 		addCollapseFunction();
-		this.addShowMoreFunctions();
 
 		// for the "new" tags, put new cookie with current date so we can check the needed tags next run of the page
 		setCookie(PRE_COOKIE_KEY + this.course_code, new Date().toString(), 365);
@@ -122,7 +121,7 @@ class CoursePage extends PageRender {
 			html += '<div class="main-header-page-mobile"><h1>' + this.data.name + '</h1>' +
 				'<div class="header-detail">' +
 				'<div id="education" class="item-detail-mobile">' + Icons.education_hat() + '</div>' +
-				'<div id="place" class="item-detail-mobile">' + Icons.place() + '</div>' +
+				'<div id="place" class="item-detail-mobile">' + Icons.location() + '</div>' +
 				'<div id="hours" class="item-detail-mobile">' + Icons.course_clock() + '</div>' +
 				'</div>';
 
@@ -205,29 +204,6 @@ class CoursePage extends PageRender {
 			}
 		}
 		Tabs.activateDefault(0); // default case;
-	}
-
-	addShowMoreFunctions() {
-		let readMoreBtns = document.getElementsByClassName("readMore");
-		for (var i = 0; i < readMoreBtns.length; i++) {
-			readMoreBtns[i].addEventListener("click", function (event) {
-				var id = event.currentTarget.id;
-				var dots = document.getElementById(id + "-dots");
-				var moreText = document.getElementById(id + "-secondPartDataText");
-				var btnText = document.getElementById(id);
-				console.log(id);
-
-				if (dots.style.display === "none") {
-					dots.style.display = "inline";
-					btnText.innerHTML = "Read more";
-					moreText.style.display = "none";
-				} else {
-					dots.style.display = "none";
-					btnText.innerHTML = "Read less";
-					moreText.style.display = "inline";
-				}
-			});
-		}
 	}
 
 

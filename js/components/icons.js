@@ -93,6 +93,10 @@ class Icons {
   static page(){
     return '<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 0C0.9 0 0.0100002 0.9 0.0100002 2L0 18C0 19.1 0.89 20 1.99 20H14C15.1 20 16 19.1 16 18V6L10 0H2ZM9 7V1.5L14.5 7H9Z" fill="#5A67D8"/></svg>';
   }
+
+  static dots_seperator(){
+    return '<svg width="72" height="8" viewBox="0 0 72 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#C4C4C4"/><circle cx="36" cy="4" r="4" fill="#C4C4C4"/><circle cx="68" cy="4" r="4" fill="#C4C4C4"/></svg>';
+  }
   
 }
 

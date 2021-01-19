@@ -13,8 +13,9 @@ class CourseResource extends Element
 	}
 	
 	// convert the object into HTML
-	toHtml(lastVisit)
+	toHtml(lastVisit, resourceClasses = "")
 	{
+		var classdescription = (resourceClasses=="")? "resource-description": "resource-description" + " " + resourceClasses;
 		let img = '<img src="';
 		switch (this.type) {
 			case "slides":
@@ -31,7 +32,7 @@ class CourseResource extends Element
 		img += '" class="resource-img"/>';
 		
 		let html = '<div class="resource-content"><a href="'+ this.link + '" class="resource-link">' + img
-				  + this.name + '</a>' + descriptionTrim(this.description, "resource-description") + '</div>';
+				  + this.name + '</a>' + descriptionTrim(this.description, classdescription) + '</div>';
 
 		return html;
 	}

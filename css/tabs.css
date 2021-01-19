@@ -122,10 +122,10 @@
     
 }
 
-@media screen and (max-width: 400px) {
-    /* .tab {
-        width: 5rem !important;
-    } */
+@media screen and (max-width: 450px) {
+     .tabs {
+         margin-bottom: 1.875rem;
+    }
 	
 	/*.tab-title {
 		top: -3rem !important;;

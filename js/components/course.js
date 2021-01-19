@@ -2,6 +2,9 @@ import { Element } from '/lecture_website_template/js/components/element.js';
 import { CourseResource } from '/lecture_website_template/js/components/courseResource.js';
 import { CourseUpdate } from '/lecture_website_template/js/components/courseUpdate.js';
 import { CourseModule } from '/lecture_website_template/js/components/courseModule.js';
+import { descriptionTrim } from '/lecture_website_template/js/descriptionSlicer.js';
+import { Icons } from '/lecture_website_template/js/components/icons.js';
+
 
 class Course extends Element
 {
@@ -78,21 +81,11 @@ class Course extends Element
 				subTitle += grades[i]['percent'] + "%, ";
 			}
 		}
-		text = this.addExtandReadMoreToText(this.description, "summary-rm-btn");
-		html += subTitle + '</h2><p class="content-text">' + text + '</p><div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div></div>';
+		text = descriptionTrim(this.description, "summary","content-text" );
+		html += subTitle + '</h2>'+text+'<div class="section-seperator">'+Icons.dots_seperator()+'<div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div></div>';
 		return html;
 	}
 
-	//Add Read-more button to extand text.
-	addExtandReadMoreToText(text,id) {
-		const maxVisbleSize = 5;
-		if(text.length <= maxVisbleSize) return text;
-		const visablePart = text.slice(0, maxVisbleSize);
-		const hiddenPart = text.slice(maxVisbleSize,text.length);
-		let html = visablePart + '<span id="'+id+'-dots">...</span><span  class="hidden-text" id="'+id+'-secondPartDataText">'+
-		hiddenPart + ' </span><a class="readMore" id="'+id+'">Read more</a>';
-		return html;
-	}
 
 	
 	// resources section inside the general tab of the course
@@ -134,8 +127,7 @@ class Course extends Element
 				}
 
 				if(i != this.updates.length - 1) {
-					html += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
-				}
+					html += '<div class="section-seperator">'+Icons.dots_seperator()+'</div>';				}
 			}
 
 			html += "</div>";
@@ -149,13 +141,13 @@ class Course extends Element
 	}
 
 	// module section inside the modules tab of the course
-	createModuleData() {
+	createModuleData(lastVisit) {
 		try
 		{
 			let html = '<div class="body-section">';
 			
 			for(let i = 0; i < this.modules.length; i++) {
-				html += this.modules[i].toHtml();
+				html += this.modules[i].toHtml(lastVisit);
 
 				if(i != this.modules.length - 1) {
 					html += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
