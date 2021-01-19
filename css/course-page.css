@@ -252,9 +252,10 @@ hr {
 /****** tabs sections - end ******/
 
 .module{
-	margin-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
-  
+
 .main-dot {
     display: inline-block;
     border-radius: 100%;
@@ -359,6 +360,11 @@ hr {
         text-align: left;
     }
 
+    .module h5, .module .resource-link{
+        font-size: 16px;
+    }
+
+
     .summary {
         font-family: Roboto;
         font-style: normal;
@@ -367,8 +373,12 @@ hr {
         line-height: 150%;
         display: flex;
         align-items: center;
+        
     }
-    
+    .summary-section h2{
+        text-align: center;
+
+    }
   
     
 }
@@ -447,6 +457,7 @@ hr {
         line-height: 23px;
         letter-spacing: 0.04em;
         text-align: left;
+        text-transform:capitalize;
     }
 }
 

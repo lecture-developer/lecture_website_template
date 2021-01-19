@@ -92,7 +92,7 @@ class Course extends Element
 	createResourceList(lastVisit)
 	{
 		let html = '<div class="resources-section"><h3 class="content-title">Resources</h3><hr class="blue-hr">';
-
+		console.log(this.resources);
 		this.resources.forEach(resourceEntry => {
 			for(const resourceType in resourceEntry) {
 				html += '<div class="resource"><ul class="resource-list"><li class="content-subtitle"><h5 class="resource-list-item-title">' + resourceType + '</h5>';
