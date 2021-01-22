@@ -77,6 +77,27 @@ class Icons {
   static filter(){
 	  return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="#667EEA"/></svg>';
   }
+
+  static education_hat(){
+    return '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.66671 17.5733V22.9067L16 28L25.3334 22.9067V17.5733L16 22.6667L6.66671 17.5733ZM16 4L1.33337 12L16 20L28 13.4533V22.6667H30.6667V12L16 4Z" fill="#1A202C"/></svg>';
+  }
+
+  static place(){
+    return '<svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0.666748C4.84002 0.666748 0.666687 4.84008 0.666687 10.0001C0.666687 17.0001 10 27.3334 10 27.3334C10 27.3334 19.3334 17.0001 19.3334 10.0001C19.3334 4.84008 15.16 0.666748 10 0.666748ZM10 13.3334C8.16002 13.3334 6.66669 11.8401 6.66669 10.0001C6.66669 8.16008 8.16002 6.66675 10 6.66675C11.84 6.66675 13.3334 8.16008 13.3334 10.0001C13.3334 11.8401 11.84 13.3334 10 13.3334Z" fill="#1A202C"/></svg>';
+  }
+
+  static course_clock(){
+    return '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.9867 2.66675C8.62669 2.66675 2.66669 8.64008 2.66669 16.0001C2.66669 23.3601 8.62669 29.3334 15.9867 29.3334C23.36 29.3334 29.3334 23.3601 29.3334 16.0001C29.3334 8.64008 23.36 2.66675 15.9867 2.66675ZM16 26.6667C10.1067 26.6667 5.33335 21.8934 5.33335 16.0001C5.33335 10.1067 10.1067 5.33341 16 5.33341C21.8934 5.33341 26.6667 10.1067 26.6667 16.0001C26.6667 21.8934 21.8934 26.6667 16 26.6667Z" fill="#1A202C"/><path d="M16.6667 9.33325H14.6667V17.3333L21.6667 21.5333L22.6667 19.8933L16.6667 16.3333V9.33325Z" fill="#1A202C"/></svg>';
+  }
+  
+  static page(){
+    return '<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 0C0.9 0 0.0100002 0.9 0.0100002 2L0 18C0 19.1 0.89 20 1.99 20H14C15.1 20 16 19.1 16 18V6L10 0H2ZM9 7V1.5L14.5 7H9Z" fill="#5A67D8"/></svg>';
+  }
+
+  static dots_seperator(){
+    return '<svg width="72" height="8" viewBox="0 0 72 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#C4C4C4"/><circle cx="36" cy="4" r="4" fill="#C4C4C4"/><circle cx="68" cy="4" r="4" fill="#C4C4C4"/></svg>';
+  }
+  
 }
 
 export { Icons };
