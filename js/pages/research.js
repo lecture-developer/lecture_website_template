@@ -45,7 +45,9 @@ class Research extends PageRender
 		for (var index = 0; index < this.jsonData["projects"].length; index++)
 		{
 			var newProject = ResearchProject.createFromJson(this.jsonData["projects"][index]);
-			if (newProject.end_year <= nowDate.getFullYear() && newProject.end_month <= nowDate.getMonth() + 1)
+			//create lists of current and prev researches using date calculation.
+			if ((newProject.end_year <= nowDate.getFullYear() )||(
+				(newProject.end_year == nowDate.getFullYear()) && newProject.end_month <= nowDate.getMonth() + 1))
 			{
 				this.previousProjects.push(newProject);
 			}
@@ -99,7 +101,7 @@ class Research extends PageRender
 			answerHTML += research.toHtml();
 
 			if(i < this.ongoingProjects.length - 1) {
-				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+				answerHTML += '<div class="section-seperator">'+Icons.dots_seperator()+'</div>';
 			}
 		});
 
@@ -115,7 +117,7 @@ class Research extends PageRender
 			answerHTML += research.toHtml();
 
 			if(i < this.previousProjects.length - 1) {
-				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+				answerHTML += '<div class="section-seperator">'+Icons.dots_seperator()+'</div>';
 			}
 		});
 		

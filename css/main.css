@@ -1798,6 +1798,8 @@ margin: 0px 0px;
 	  margin: 12px 10px;
 	  text-align: left;
 	}
+
+	
 }
 
 
@@ -1994,9 +1996,7 @@ margin: 0px 0px;
 		margin-top: 1rem;
 	}
 
-	.academic-papers-header-section{
-		padding-right: 0px !important;
-	}
+
 	
 	.teaching-papers-body-section{
 		padding-bottom: 0px !important;

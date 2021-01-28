@@ -97,6 +97,10 @@ class Icons {
   static dots_seperator(){
     return '<svg width="72" height="8" viewBox="0 0 72 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="#C4C4C4"/><circle cx="36" cy="4" r="4" fill="#C4C4C4"/><circle cx="68" cy="4" r="4" fill="#C4C4C4"/></svg>';
   }
+
+  static suit_case(){
+    return '<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 4.5H18V2.5C18 1.39 16.8875 0.5 15.5 0.5H10.5C9.1125 0.5 8 1.39 8 2.5V4.5H3C1.6125 4.5 0.5125 5.39 0.5125 6.5L0.5 17.5C0.5 18.61 1.6125 19.5 3 19.5H23C24.3875 19.5 25.5 18.61 25.5 17.5V6.5C25.5 5.39 24.3875 4.5 23 4.5ZM15.5 4.5H10.5V2.5H15.5V4.5Z" fill="#718096"/></svg>';
+  }
   
 }
 

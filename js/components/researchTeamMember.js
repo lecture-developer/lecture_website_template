@@ -1,3 +1,4 @@
+import { Icons } from '/lecture_website_template/js/components/icons.js';
 import { Element } from '/lecture_website_template/js/components/element.js';
 class ResearchTeamMember extends Element
 {
@@ -19,7 +20,7 @@ class ResearchTeamMember extends Element
 
 		html += '<div class="member-properties"><img class="member-pesonal-img member-link-icon" src="/lecture_website_template/img/research/person-image.png" alt="personal-image"><h5 class="member-details">' + this.name + ", " + this.title + '</h5></div>';
 
-		html += '<p class="member-role">' + this.role + '</p>';
+		html += '<div class="member-properties role-properties"><img class="role-pesonal-img role-link-icon" src="/lecture_website_template/img/research/suitcase-image.png" alt="personal-image"><p class="member-role">' + this.role + '</p></div>';
 
 		html += '<div class="member-link-icons">';
 		
