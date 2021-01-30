@@ -59,7 +59,7 @@ class ResearchTeamMember extends Element
 		return new ResearchTeamMember(jsonObj["name"],
 			jsonObj["title"],
 			jsonObj["role"],
-			jsonObj["website_link"], 
+			jsonObj["websiteLink"], 
 			jsonObj["googleLink"], 
 			jsonObj["linkedinLink"]);
 

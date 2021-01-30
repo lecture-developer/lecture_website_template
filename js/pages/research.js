@@ -138,7 +138,7 @@ class Research extends PageRender
 			answerHTML += position.toHtml();
 
 			if(i < this.openPositions.length - 1) {
-				answerHTML += '<div class="section-seperator"><div class="main-dot"></div><div class="main-dot"></div><div class="main-dot"></div></div>';
+				answerHTML += '<div class="section-seperator">'+Icons.dots_seperator()+'</div>';
 			}
 		});
 		
