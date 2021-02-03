@@ -124,6 +124,23 @@ footer h2{
 	font-size: 16px;
 }
 
+.year-logo{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.year-logo span{
+	color: #434190;
+}
+
+.year-logo a {
+	color: #5A67D8;
+}
+
 .footer-bottom-links {
 	display: flex;
 	flex-direction: row;
@@ -278,6 +295,7 @@ footer h2{
 	text-align: center;
     margin-right: auto;
     margin-left: auto;
+	margin-bottom: 32px;
 }
 
 .brand-footer a{
@@ -721,9 +739,14 @@ select {
 		height: 49px;
 		width: 210px;
 		padding: 14px 22px;
-		font-size: 18px;
+		font-size: 10px;
 	}
 
+	.read-online-btn{
+		height: 49px;
+		width: 210px;
+		padding: 16px 15px;
+	}
 	
 }
 
@@ -753,12 +776,29 @@ select::-ms-expand {
 	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
 }
 
+.read-online-btn{
+	font-family: Roboto;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 21px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 14px 22px;
+	background: #FFFFFF;
+	border: 2px solid #5A67D8;
+	box-sizing: border-box;
+	border-radius: 8px;
+}
+
 .download-btn svg{
 	margin-left: 10px;
 }
 
 .download-btn:hover{
 	background: #667EEA;
+
 }
 
 .download-btn:active{
@@ -1366,6 +1406,9 @@ flickity-prev-next-button[disabled]{
 	.see-more {
 		font-weight: 500;
 	}
+	.personal-row{
+		align-self: center;
+	}
 
 }
 
@@ -1597,7 +1640,8 @@ margin: 0px 0px;
 
   .mobile-row-breaker{
 	  flex-wrap: wrap;
-	  flex-direction: coloumn;
+	  flex-direction: column;
+
 	}
 
 	.mobile-row-spacer{
@@ -1630,12 +1674,13 @@ margin: 0px 0px;
 		margin-top: 10px;
 	}
 
+
 }
 
 @media only screen and (max-width: 530px) {
   .mobile-row-breaker{
 	  flex-wrap: wrap;
-	  flex-direction: coloumn;
+	  flex-direction: column;
 	}
 }
 
@@ -1658,6 +1703,26 @@ margin: 0px 0px;
   cursor: pointer;
 }
 
+.academic-papers-order-filter-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.publications-order-by-btn {
+	pointer-events: none;
+}
+
+.publications-order-by-icon {
+	display: none;
+}
+
+.publications-filter-btn{
+	pointer-events: none;
+}
+
+.publications-filter-icon {
+	display: none;
+}
 
 .filter {
 	cursor: pointer;
@@ -1797,7 +1862,6 @@ margin: 0px 0px;
 		margin-top: 1rem;
 	}
 
-
   .academic-papers-body-section h3{
 	  margin-left: 16px;
   }
@@ -1815,7 +1879,20 @@ margin: 0px 0px;
   }
 }
 
+/* Edited by Chezi Imany  - added classes (academic-papers-header-section h1) and (content p)*/
 @media only screen and (max-width: 400px){
+
+	.academic-papers-header-section h1{
+		font-size: 24px;
+		display: flex;
+		align-self: center;
+		text-align: center;
+	}
+
+	.content p{
+		text-align: center;
+	}
+
 	.academic-papers-panel {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -1823,6 +1900,30 @@ margin: 0px 0px;
 
 	.teaching-papers-body-section {
 		margin-left: 0px !important;
+	}
+
+	.publications-order-by-icon {
+		display: inline;
+		height: 14px;
+		margin-right: 13px;
+		color: #667EEA;
+	}
+
+	.publications-order-by-btn {
+		pointer-events: auto;
+		color: #667EEA;
+	}
+
+	.publications-filter-btn {
+		pointer-events: auto;
+		color: #667EEA;
+	}
+
+	.publications-filter-icon {
+		display: inline;
+		height: 10px;
+		margin-right: 13px;
+		margin-top: 2px;
 	}
 
   #reset-btn{
@@ -2288,6 +2389,9 @@ margin: 0px 0px;
 
 	#lecture_address *{
 		font-size: 20px;
+	}
+	.acadmic-card-margin-fix{
+		align-self: center;
 	}
 }
 
