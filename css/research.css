@@ -196,6 +196,15 @@ hr {
         margin-top: 0.625rem;
     }
 
+    .section-seperator {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .moreLessButton {
+        margin-bottom: 0.625rem;
+    }
+
 }
 /****** research card section - start ******/
 
@@ -321,6 +330,10 @@ hr {
 
     .position-info {
         margin-bottom: 1.25rem;
+    }
+
+    .reachout a {
+        margin-left: 32px;
     }
 }
 
