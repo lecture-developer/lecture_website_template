@@ -615,7 +615,7 @@ footer h2{
 
 /* for all pages */
 .breadcrumb-page{
-	background-color:none;
+	background-color: transparent;
 	padding: 0px;
 	margin-top: 35px;
 	margin-bottom: 35px;
@@ -1160,7 +1160,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .personal-titles{
-	width: clac(100% - 80px);
+	width: calc(100% - 80px);
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -1469,7 +1469,6 @@ flickity-prev-next-button[disabled]{
 }
 
 .search-date{
-	position: flex;
 	padding-bottom: 0;
 	margin-bottom: 0;
 	height: 22.62px;
@@ -1902,6 +1901,7 @@ margin: 0px 0px;
 		margin-left: 0px !important;
 	}
 
+
 	.publications-order-by-icon {
 		display: inline;
 		height: 14px;
@@ -1926,11 +1926,13 @@ margin: 0px 0px;
 		margin-top: 2px;
 	}
 
-  #reset-btn{
-  font-size: 14px;
-  margin: 12px 10px;
-  text-align: left;
-}
+
+	#reset-btn {
+	  font-size: 14px;
+	  margin: 12px 10px;
+	  text-align: left;
+	}
+
 }
 
 
@@ -2003,8 +2005,8 @@ margin: 0px 0px;
 .teaching-papers-body-section{
 	padding-bottom: 50px;
 	width: 100%;
-	padding-left: 16px;
-    padding-right: 16px;
+	padding-left: 0px;
+    padding-right: 0px;
 }
 
 .teaching-papers-body-section h3{
@@ -2028,7 +2030,7 @@ margin: 0px 0px;
 }
 
 .teaching-papers-body-section .semester{
-  font-size: 14px;
+  font-size: 16px;
   line-height: 135%;
   color: #A0AEC0;
   margin-bottom: 4px;
@@ -2125,6 +2127,14 @@ margin: 0px 0px;
 
 	.teaching-container{
 		margin-top: 1rem;
+	}
+
+	.academic-papers-header-section{
+		padding-right: 0px !important;
+	}
+	
+	.teaching-papers-body-section{
+		padding-bottom: 0px !important;
 	}
 }
 
