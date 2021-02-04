@@ -175,6 +175,26 @@ class AcademicPublications extends PageRender
 
 	/* GUI functions */
 
+	// this function controls the Order By section appearance in mobile view
+	showOrderOptions(element) {
+		let x =  document.getElementById("orderOptions");
+		if (x.style.display === "none") {
+			x.style.display = "initial";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
+	// this function controls the Filter section appearance in mobile view
+	showFilterOptions(element) {
+		let x =  document.getElementById("FilterOptions")
+		if (x.style.display === "none") {
+			x.style.display = "initial";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
 	changeSort(sort_value)
 	{
 		document.getElementById("sort-btn-topic").classList.remove("active-sort-button");
