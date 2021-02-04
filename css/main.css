@@ -1882,7 +1882,7 @@ margin: 0px 0px;
 @media only screen and (max-width: 400px){
 
 	.academic-papers-header-section h1{
-		font-size: 24px;
+		font-size: 22px;
 		display: flex;
 		align-self: center;
 		text-align: center;
@@ -1931,6 +1931,28 @@ margin: 0px 0px;
 	  font-size: 14px;
 	  margin: 12px 10px;
 	  text-align: left;
+	}
+	.academic-papers-panel{
+		background: #FFFFFF;
+		box-shadow: 0px 0px 3px rgba(127, 156, 245, 0.16), 0px 8px 10px rgba(45, 55, 72, 0.15);
+		border-radius: 10px;
+	}
+
+	.academic-papers-header-section select{
+		width: 161.26px;
+		height: 40px;
+		margin-right: 260px;
+	}
+
+	.academic-papers-body-section h3{
+		font-family: Playfair Display;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 27px;
+		display: flex;
+		align-items: center;
+		letter-spacing: 0.04em;
 	}
 
 }
