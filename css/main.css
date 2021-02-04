@@ -26,6 +26,11 @@ body {
 	font-weight: 400;
 }
 
+.content .top_p{
+	font-size: 1rem;
+	font-weight: 400;
+}
+
 .footer{
   flex-shrink: 0;
 }
@@ -1409,6 +1414,23 @@ flickity-prev-next-button[disabled]{
 	.personal-row{
 		align-self: center;
 	}
+	.cite-btn{
+		display: none;
+	}
+	.academic-papers-panel p{
+		padding-bottom: 0px;
+		text-align: left;
+
+	}
+	.academic-papers-panel h3{
+		padding-bottom: 0px;
+		align-items: center;
+	}
+	.academic-papers-panel h4{
+		padding-bottom: 0px;
+		align-items: center;
+
+	}
 
 }
 
@@ -1596,8 +1618,6 @@ margin: 0px 0px;
 		position: relative;
 		display: contents;
 		align-items: center;
-	
-		/*text*/
 		font-family: Roboto;
 		font-weight: 400;
 		font-size: 18px;
@@ -1878,17 +1898,17 @@ margin: 0px 0px;
   }
 }
 
-/* Edited by Chezi Imany  - added classes (academic-papers-header-section h1) and (content p)*/
+/* Edited by Chezi Imany  */
 @media only screen and (max-width: 400px){
 
 	.academic-papers-header-section h1{
 		font-size: 22px;
 		display: flex;
 		align-self: center;
-		text-align: center;
+		text-align: left;
 	}
 
-	.content p{
+	.content .top_p{
 		text-align: center;
 	}
 
@@ -1933,6 +1953,10 @@ margin: 0px 0px;
 	  text-align: left;
 	}
 	.academic-papers-panel{
+		width: 300px;
+		height: 446px;
+		margin-left: 41px;
+		top: 550px;
 		background: #FFFFFF;
 		box-shadow: 0px 0px 3px rgba(127, 156, 245, 0.16), 0px 8px 10px rgba(45, 55, 72, 0.15);
 		border-radius: 10px;
