@@ -171,6 +171,10 @@ hr {
         margin-bottom: 59px;
     }
 
+    hr {
+        border: 1px solid #E2E8F0;
+    }
+
     .blue-hr {
         border: 1px solid #A3BFFA;
         margin-top: 0;
@@ -426,7 +430,7 @@ hr {
 .role-link-icon {
     width: 25px;
     height: 19px;
-    margin-left: 0.19rem;
+    margin-left: 0.15rem;
 }
 .role-pesonal-img{
     position: relative;

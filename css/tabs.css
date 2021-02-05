@@ -126,6 +126,10 @@
      .tabs {
          margin-bottom: 1.875rem;
     }
+
+    .tab-seperator {
+        display: none;
+    }
 	
 	/*.tab-title {
 		top: -3rem !important;;
