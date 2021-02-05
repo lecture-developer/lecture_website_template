@@ -173,12 +173,14 @@ hr {
 
     hr {
         border: 1px solid #E2E8F0;
+        border-bottom-width: 0;
     }
 
     .blue-hr {
         border: 1px solid #A3BFFA;
         margin-top: 0;
         margin-bottom: 0rem;
+        border-bottom-width: 0;
     }
 
     .opening-statment, .reachout{
