@@ -37,14 +37,21 @@ class PublicationCard extends Element
 			answer += "</div>";
 		}
 
-		answer += '<h4>' + this.authors + "<br>" + this.publisher + '</h4>'
+		answer += '<h4>' + this.authors + "<br>" + this.publisher + '</h4>';
 		answer += descriptionTrim(this.description) + '<div class="personal-row space-between align-items-center mobile-row-breaker">';
-		answer += '<div class="publication-details"><span>' 
-		+ this.publicationStatus + '</span><span>'
-		+ this.year + '</span><span>'
-		+ this.type + '</span></div>'
-		if (this.fileLinks[0]["link"] != "" && this.isFileFormat(this.fileLinks[0]["link"]))		
-			answer+='<a href="' + this.fileLinks[0]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a></div>'
+		if(window.screen.width > 400)
+		{
+			answer += '<div class="publication-details"><span>'
+				+ this.publicationStatus + '</span><span>'
+				+ this.year + '</span><span>'
+				+ this.type + '</span></div>';
+		}
+		if (this.fileLinks[0]["link"] != "" && this.isFileFormat(this.fileLinks[0]["link"]))
+		{
+			answer+='<a href="' + this.fileLinks[0]["link"] + '" class="download-btn acadmic-card-margin-fix">Download</a>'
+			answer+='<a href="' + this.fileLinks[0]["link"] + '" class="read-online-btn acadmic-card-margin-fix">Read Online</a></div>'		// added the Read online button and put both bottums inside the condition
+		}
+
 		answer+='</div></div><input type="text" style="display: none;" id="' + this.title.replaceAll("'", "").replaceAll(" ", "_") + '" value="' + this.fileLinks[1]["link"] + '"></div></div>';
 		return answer;
 	}

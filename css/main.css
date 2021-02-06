@@ -26,6 +26,11 @@ body {
 	font-weight: 400;
 }
 
+.content .top_p{
+	font-size: 1rem;
+	font-weight: 400;
+}
+
 .footer{
   flex-shrink: 0;
 }
@@ -64,6 +69,7 @@ footer {
     color: white;
 	padding-bottom: 20px;
 }
+
 footer a:hover{
 	text-decoration: underline;
 }
@@ -123,6 +129,28 @@ footer h2{
 	font-size: 16px;
 }
 
+.year-logo{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.year-logo span{
+	color: #434190;
+}
+
+.year-logo a {
+	color: #5A67D8;
+}
+
+.footer-bottom-links {
+	display: flex;
+	flex-direction: row;
+}
+
 .footer-menu{
 	display: flex;
 	flex-direction: column;
@@ -150,7 +178,6 @@ footer h2{
 }
 
 .footer-menu-item{
-
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 400;
@@ -159,6 +186,7 @@ footer h2{
 	text-decoration: underline !important;
 	color: #F7FAFC;
 	margin-bottom: 24px;
+	display: flex;
 }
 
 .footer-menu-item:hover{
@@ -195,6 +223,7 @@ footer h2{
 .footer-details-icons{
 	align-items: center !important;
 	margin-bottom: 20px;
+	display: inline;
 }
 
 .footer-social{
@@ -221,12 +250,16 @@ footer h2{
 	line-height: 19px;
 }
 
+.footer-find-me-mail-and-phone {
+	display: none;
+}
+
 .alert {
+
 	z-index: 999999;
 	position: fixed;
 	top: 50px;
 	right: 0;
-	position: fixed;
 	width: 80%;
 	min-height: 60px;
 	padding: 20px;
@@ -267,6 +300,7 @@ footer h2{
 	text-align: center;
     margin-right: auto;
     margin-left: auto;
+	margin-bottom: 32px;
 }
 
 .brand-footer a{
@@ -314,6 +348,28 @@ footer h2{
 	#footer-menu-row{
 		flex-wrap: wrap !important;
 	}
+
+	.footer-bottom-links {
+		flex-direction: column;
+	}
+
+	.footer-details-icons {
+		display: none !important;
+	}
+
+	.footer-find-me-mail-and-phone {
+		display: inline;
+	}
+
+	.footer-menu-title {
+		margin-bottom: 26px;
+		color: #C3DAFE !important;
+	}
+
+	.footer-menu-item {
+		display: none;
+	}
+
 }
 
 /*** main content pages section ***/
@@ -564,7 +620,7 @@ footer h2{
 
 /* for all pages */
 .breadcrumb-page{
-	background-color:none;
+	background-color: transparent;
 	padding: 0px;
 	margin-top: 35px;
 	margin-bottom: 35px;
@@ -688,9 +744,14 @@ select {
 		height: 49px;
 		width: 210px;
 		padding: 14px 22px;
-		font-size: 18px;
+		font-size: 10px;
 	}
 
+	.read-online-btn{
+		height: 49px;
+		width: 210px;
+		padding: 16px 15px;
+	}
 	
 }
 
@@ -720,12 +781,29 @@ select::-ms-expand {
 	box-shadow: 0px 4px 3px rgba(26, 32, 44, 0.04), 0px 0px 2px #E2E8F0;
 }
 
+.read-online-btn{
+	font-family: Roboto;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 21px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 14px 22px;
+	background: #FFFFFF;
+	border: 2px solid #5A67D8;
+	box-sizing: border-box;
+	border-radius: 8px;
+}
+
 .download-btn svg{
 	margin-left: 10px;
 }
 
 .download-btn:hover{
 	background: #667EEA;
+
 }
 
 .download-btn:active{
@@ -1087,7 +1165,7 @@ flickity-prev-next-button[disabled]{
 }
 
 .personal-titles{
-	width: clac(100% - 80px);
+	width: calc(100% - 80px);
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -1333,6 +1411,26 @@ flickity-prev-next-button[disabled]{
 	.see-more {
 		font-weight: 500;
 	}
+	.personal-row{
+		align-self: center;
+	}
+	.cite-btn{
+		display: none;
+	}
+	.academic-papers-panel p{
+		padding-bottom: 0px;
+		text-align: left;
+
+	}
+	.academic-papers-panel h3{
+		padding-bottom: 0px;
+		align-items: center;
+	}
+	.academic-papers-panel h4{
+		padding-bottom: 0px;
+		align-items: center;
+
+	}
 
 }
 
@@ -1393,7 +1491,6 @@ flickity-prev-next-button[disabled]{
 }
 
 .search-date{
-	position: flex;
 	padding-bottom: 0;
 	margin-bottom: 0;
 	height: 22.62px;
@@ -1521,10 +1618,7 @@ margin: 0px 0px;
 		position: relative;
 		display: contents;
 		align-items: center;
-	
-		/*text*/
 		font-family: Roboto;
-		font-style: italic;
 		font-weight: 400;
 		font-size: 18px;
 		line-height: 16px;
@@ -1565,7 +1659,8 @@ margin: 0px 0px;
 
   .mobile-row-breaker{
 	  flex-wrap: wrap;
-	  flex-direction: coloumn;
+	  flex-direction: column;
+
 	}
 
 	.mobile-row-spacer{
@@ -1598,12 +1693,13 @@ margin: 0px 0px;
 		margin-top: 10px;
 	}
 
+
 }
 
 @media only screen and (max-width: 530px) {
   .mobile-row-breaker{
 	  flex-wrap: wrap;
-	  flex-direction: coloumn;
+	  flex-direction: column;
 	}
 }
 
@@ -1626,6 +1722,26 @@ margin: 0px 0px;
   cursor: pointer;
 }
 
+.academic-papers-order-filter-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.publications-order-by-btn {
+	pointer-events: none;
+}
+
+.publications-order-by-icon {
+	display: none;
+}
+
+.publications-filter-btn{
+	pointer-events: none;
+}
+
+.publications-filter-icon {
+	display: none;
+}
 
 .filter {
 	cursor: pointer;
@@ -1765,7 +1881,6 @@ margin: 0px 0px;
 		margin-top: 1rem;
 	}
 
-
   .academic-papers-body-section h3{
 	  margin-left: 16px;
   }
@@ -1783,23 +1898,55 @@ margin: 0px 0px;
   }
 }
 
+/* Edited by Chezi Imany  */
 @media only screen and (max-width: 400px){
-	.academic-papers-panel {
-		margin-left: 0px;
-		margin-right: 0px;
+
+	.academic-papers-header-section h1{
+		font-size: 22px;
+		display: flex;
+		align-self: center;
+		text-align: left;
+	}
+
+	.content .top_p{
+		text-align: center;
 	}
 
 	.teaching-papers-body-section {
 		margin-left: 0px !important;
 	}
 
+
+	.publications-order-by-icon {
+		display: inline;
+		height: 14px;
+		margin-right: 13px;
+		color: #667EEA;
+	}
+
+	.publications-order-by-btn {
+		pointer-events: auto;
+		color: #667EEA;
+	}
+
+	.publications-filter-btn {
+		pointer-events: auto;
+		color: #667EEA;
+	}
+
+	.publications-filter-icon {
+		display: inline;
+		height: 10px;
+		margin-right: 13px;
+		margin-top: 2px;
+	}
+
+
 	#reset-btn {
 	  font-size: 14px;
 	  margin: 12px 10px;
 	  text-align: left;
 	}
-
-	
 }
 
 
@@ -2064,6 +2211,7 @@ margin: 0px 0px;
 
 .not-found-buttons-section a {
 	color: #5A67D8;
+	margin-bottom: 20px;
 }
 
 .not-found-section a:hover {
@@ -2116,17 +2264,36 @@ margin: 0px 0px;
 }
 
 @media screen and (max-width: 430px) {
+
+	.not-found-title {
+		font-size: 24px;
+		font-weight: normal;
+		line-height: 32px;
+	}
+
+	.not-found-message{
+		font-weight: normal;
+		font-size: 16px;
+		text-align: center;
+
+	}
+
 	.not-found-container {
 		display: flex;
 		flex-direction: column-reverse;
 	}
 
 	.not-found-img {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 26px;
 		margin-bottom: -255px;
 	}
 
 	.not-found-buttons-section {
-		margin-bottom: -30px;
+		margin-bottom: -60px;
+
 	}
 
 	.content-404 {
@@ -2244,6 +2411,9 @@ margin: 0px 0px;
 
 	#lecture_address *{
 		font-size: 20px;
+	}
+	.acadmic-card-margin-fix{
+		align-self: center;
 	}
 }
 
