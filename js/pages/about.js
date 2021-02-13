@@ -96,6 +96,7 @@ class About extends PageRender
 		// setting titles
 		document.getElementById("lecturer_name").innerHTML = lecturerObj.name;
 		document.getElementById("lecturer_position").innerHTML = lecturerObj.position;
+		document.getElementById("info-icon").innerHTML = Icons.info();
 
 		//contacts
 		this.buildContact(lecturerObj);
@@ -108,6 +109,20 @@ class About extends PageRender
 			document.getElementById("lecturer_location").style.display = "none";
 		}
 
+		this.buildMobileHeaderInfo(lecturerObj.addresses);
+
+	}
+
+	buildMobileHeaderInfo(addresses) {
+		var str = "";
+		for(let i = 0; i< addresses.length; i++)
+		{
+			str += '<div class="organization">'+addresses[i].university+'</div>'+
+				'<div>'+addresses[i].location+'</div>'+
+				'<div>'+addresses[i].hours+'</div>';
+			if(i+1 < addresses.length) str+="<br>";
+		  }
+		  document.getElementById("lecturer_location_mobile").innerHTML = str;
 	}
 
 	buildBiography(lecturerObj)
@@ -130,9 +145,12 @@ class About extends PageRender
 			{
 				let projectsList = ProjectSection.createListFromJson(projects);
 				let panels ="";
-				for(let i = 0; i < projectsList.length; i++)
+				let n = projectsList.length;
+				for(let i = 0; i < n; i++)
 				{
 					panels += '<div class="projects-panel">' + projectsList[i].toHtml() + '</div>';
+					if ( i+ 1 < n)
+						panels+='<hr>'
 				}
 				document.getElementById("projects_cards").innerHTML = panels;
 			}
@@ -196,6 +214,8 @@ class About extends PageRender
 		return topicArr;
 	}
 
+	
+
 	/* build contact info section */
 	buildContact(lecturerObj)
 	{
@@ -207,6 +227,7 @@ class About extends PageRender
 		let facebook = lecturerObj.facebook_link;
 
 		let contacts = document.getElementById("contacts");
+		let mobileContacts = document.getElementById("contacts-mobile");
 
 		if(cv != ""){
 			let elem = document.createElement("A");
@@ -214,18 +235,37 @@ class About extends PageRender
 			elem.id = "cv";
 		  elem.innerHTML = Icons.cv() + '<span style="margin-left: 5px;">Download CV</span>';
 		  contacts.appendChild(elem);
+
+		  let elem_mob = document.createElement("A");
+		  elem_mob.href = cv;
+		  elem_mob.innerHTML = Icons.cv();
+		  elem_mob.classList.add("social-icon");
+		  mobileContacts.appendChild(elem_mob);
 		}
 
 		if(email != ""){
 		  let elem = document.createElement("P");
 		  elem.innerHTML = Icons.mail() + " " + email;
 		  contacts.appendChild(elem);
+
+		   let elem_mob = document.createElement("A");
+		   elem_mob.innerHTML = Icons.mail_mobile();
+		   elem_mob.href = "mailto:" + email;
+		   elem_mob.classList.add("social-icon");
+		   mobileContacts.appendChild(elem_mob);
 		}
 
 		if(phone != ""){
 		  let elem = document.createElement("P");
 		  elem.innerHTML = Icons.phone() + " " +  phone;
 		  contacts.appendChild(elem);
+
+		  let elem_mob = document.createElement("A");
+		  elem_mob.innerHTML = Icons.phone();
+		  elem_mob.href = "tel:" + phone;
+		  elem_mob.classList.add("social-icon");
+		  mobileContacts.appendChild(elem_mob);
+		  
 		}
 
 		if(linkedin != ""){
@@ -234,6 +274,7 @@ class About extends PageRender
 		  linkedinIcon.classList.add("social-icon");
 		  linkedinIcon.href = linkedin;
 		  contacts.appendChild(linkedinIcon);
+		  mobileContacts.appendChild(linkedinIcon);
 		}
 
 		if(google != ""){
@@ -242,6 +283,7 @@ class About extends PageRender
 		  googleIcon.classList.add("social-icon");
 		  googleIcon.href = google;
 		  contacts.appendChild(googleIcon);
+		  mobileContacts.appendChild(googleIcon);
 		}
 
 		if(facebook != ""){
@@ -250,6 +292,7 @@ class About extends PageRender
 			fbIcon.classList.add("social-icon");
 			fbIcon.href = facebook;
 			contacts.appendChild(fbIcon);
+			mobileContacts.appendChild(fbIcon);
 		}
 	}
 
@@ -305,6 +348,8 @@ class About extends PageRender
 				optionElement.innerHTML = filters[i];
 				filter.appendChild(optionElement);
 			}
+			let filter_btn = document.getElementById("filter-btn");
+			filter_btn.innerHTML = Icons.filter() + " Filter";
 		}
 		else
 		{
@@ -328,6 +373,7 @@ class About extends PageRender
 			{
 				document.getElementById("resources_filters").style.display = "none";
 				document.getElementById("filter_by").innerHTML = "No resources to show.";
+				let filter_btn = document.getElementById("filter-btn").innerHTML = "No resources to show.";
 			}
 			else
 			{
@@ -342,7 +388,6 @@ class About extends PageRender
 			let selector = document.getElementById(filterName + "-filter");
 			let selectorIndex = selector.selectedIndex;
 			let filter = selector.options[selectorIndex].value;
-			this.clearFiltersDesign();
 			selector.classList.add("active-sort-button");
 			for(let i = 0; i < resourcesList.length; i++)
 			{
@@ -358,10 +403,12 @@ class About extends PageRender
 				}
 				let reset = document.getElementById("reset-btn");
 				reset.innerHTML = Icons.reset() + " Reset";
+
 			}
 			addCollapseFunction();
 		}
 	}
+
 
 	clearResources()
 	{
@@ -378,6 +425,20 @@ class About extends PageRender
 		document.getElementById("reset-btn").style.display = "none";
 	}
 
+	/*
+	Show/hide filters menu
+	*/
+	filtersDisplay(){
+		//relevent for mobile only
+		if (window.innerWidth > 430) return;
+		let filters = document.getElementsByClassName("resources-filters")[0];
+		if( filters.style.display =="none"){
+			filters.style.display = "block";
+		}else {
+			filters.style.display = "none";
+		}
+	}
+
 
 }
 
@@ -391,6 +452,7 @@ document.getElementById("reset-btn").addEventListener("click", () => {
 document.getElementById("year-filter").addEventListener("change", () => {filterFilters("year")});
 document.getElementById("type-filter").addEventListener("change", () => {filterFilters("type")});
 document.getElementById("topic-filter").addEventListener("change",() => {filterFilters("topic")});
+document.getElementById("filter-btn").addEventListener("click", () => {document.aboutPage.filtersDisplay();});
 
 function filterFilters(fName){
 	if(document.getElementById(fName+"-filter").selectedIndex != 0){
@@ -399,5 +461,7 @@ function filterFilters(fName){
 	}
 }
 addCollapseFunction();
+
+
 
 export {About};

@@ -25,7 +25,7 @@ class ProjectSection extends Element
 		+ descriptionTrim(this.description);
 		if (this.btn["link"] != "")
 		{
-			answer += '<div class="personal-row space-up-20">';
+			answer += '<div class="personal-row space-up-20 mobile-paddig-left">';
 			
 			if (this.btn["link"] != "" && this.btn["link"] != undefined)
 			{
