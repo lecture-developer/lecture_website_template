@@ -255,8 +255,7 @@ footer h2{
 }
 
 .alert {
-
-	z-index: 999999;
+	z-index: -999999;
 	position: fixed;
 	top: 50px;
 	right: 0;
@@ -795,6 +794,7 @@ select::-ms-expand {
 	border: 2px solid #5A67D8;
 	box-sizing: border-box;
 	border-radius: 8px;
+	color: #5A67D8 !important;
 }
 
 .download-btn svg{
@@ -1345,6 +1345,15 @@ flickity-prev-next-button[disabled]{
 	background-color: white;
 }
 
+.inner-publication-card-div{
+	display: flex;
+	flex-direction: row;
+}
+
+.acadmic-download-btn{
+	margin-right: 20px;
+}
+
 .academic-papers-panel h3{
 	font-family: Playfair Display;
 	font-weight: bold;
@@ -1407,31 +1416,61 @@ flickity-prev-next-button[disabled]{
 	}
 }
 
+@media screen and (min-width: 850px) {
+	
+	.flex-btn{
+		display: flex;
+		justify-content: start;
+	}
+}
+
 @media screen and (max-width: 430px) {
+	
+	#lecture_phone{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	
 	.see-more {
 		font-weight: 500;
 	}
+	
 	.personal-row{
 		align-self: center;
 	}
+	
 	.cite-btn{
 		display: none;
 	}
+	
 	.academic-papers-panel p{
 		padding-bottom: 0px;
 		text-align: left;
-
 	}
+	
 	.academic-papers-panel h3{
 		padding-bottom: 0px;
 		align-items: center;
 	}
+	
 	.academic-papers-panel h4{
 		padding-bottom: 0px;
 		align-items: center;
 
 	}
 
+	.featured-publications-background {
+		padding-bottom: 2rem;
+	}
+	
+	.personal-container{
+		padding-bottom: 1rem;
+	}
+	
+	#research_intrests {
+		margin-top: 0rem;
+	}
 }
 
 #biography{
@@ -1662,6 +1701,11 @@ margin: 0px 0px;
 	  flex-direction: column;
 
 	}
+	
+	.inner-publication-card-div{
+	  flex-wrap: wrap;
+	  flex-direction: column;
+	}
 
 	.mobile-row-spacer{
 		padding-top: 40px;
@@ -1672,12 +1716,7 @@ margin: 0px 0px;
 	}
 
 	.featured-publications-section h2{
-		margin-left: 2.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	#research_intrests_header h2{
-		margin-left: 5.5rem;
+		margin-left: 0rem;
 		margin-bottom: 1.5rem;
 	}
 }
@@ -2391,6 +2430,10 @@ margin: 0px 0px;
 	.acadmic-card-margin-fix{
 		margin-right: 20px;
 		margin-top: 10px;
+	}
+	
+	.updates-container{
+		display: none;
 	}
 }
 
