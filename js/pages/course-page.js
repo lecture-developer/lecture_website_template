@@ -138,7 +138,7 @@ class CoursePage extends PageRender {
 	}
 
 
-	//set the ecent-click for each icon to change color and show-hide panel
+	//set the event-click for each icon to change color and show-hide panel
 	setClickForIcon() {
 		var items = document.getElementsByClassName('item-detail-mobile');
 		//for each item detail-set click function
