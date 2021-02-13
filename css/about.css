@@ -504,6 +504,11 @@ ul .active-topic {
   form .personal-row{
     display: block;
 	}
+
+  #resources_filters {
+    margin-bottom: 0;
+  }
+
   #filter_by {
     display: none;
   }
@@ -518,8 +523,10 @@ ul .active-topic {
     display: block;
     align-self: flex-start;
     padding-left: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
+
+  
 }
 
 @media only screen and (max-width: 800px)
@@ -617,7 +624,7 @@ p .more-section{
 @media only screen and (max-width: 450px){
 .resources-filters select {
     width: 50%;
-    margin-left: 0;
+    margin-left: 20px;
     margin-right: auto;
     margin-bottom: 10px;
 }
@@ -633,7 +640,9 @@ p .more-section{
   font-size: 14px;
   margin: 12px 10px;
   text-align: left;
+  margin-left: 20px;
 }
+
 
 #resources-filters{
   margin-bottom: 0;

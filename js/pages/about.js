@@ -419,10 +419,11 @@ class About extends PageRender
 	clearFiltersDesign()
 	{
 		let f = document.getElementsByClassName("active-sort-button");
+		document.getElementById("reset-btn").style.display = "none";
 		if(f.length == 0) return;
 		f[0].selectedIndex = 0;
 		f[0].classList.remove("active-sort-button");
-		document.getElementById("reset-btn").style.display = "none";
+		//document.getElementById("reset-btn").style.display = "none";
 	}
 
 	/*
