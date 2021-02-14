@@ -78,7 +78,6 @@ class Teaching extends PageRender
 		}
         // sort the list
 		var buildTeachingList = CourseCard.sortByProperty(this.cardList, "year", "semester");
-		console.log("teachinglist"+buildTeachingList);
 		// if filter needed
 		if (filterValue != default_filter)
 		{
