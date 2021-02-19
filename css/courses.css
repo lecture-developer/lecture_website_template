@@ -189,6 +189,7 @@
     text-align: center;
     color: #667EEA;
     display: block;
+    padding-left: 0;
   }
 
   .filter-by-txt{
@@ -210,6 +211,7 @@
   }
   #semester-info{
     order:3;
+    align-self: flex-start;
   }
 
   .card-year{

@@ -1472,6 +1472,17 @@ flickity-prev-next-button[disabled]{
 		display: none;
 	}
 
+	.personal-info-item svg {
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+
+	
+	#contacts-mobile{
+		padding-top: 26px;
+		padding-bottom: 20px;
+	}
+
 	#research_intrests_header {
 		margin-top: 2rem;
 	}
