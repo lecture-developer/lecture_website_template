@@ -153,7 +153,8 @@ class Index extends PageRender
 		  let elem_mob = document.createElement("A");
 		  elem_mob.href = cv;
 		  elem_mob.innerHTML = Icons.cv();
-		  elem_mob.classList.add("social-icon no-show-desktop");
+		  elem_mob.classList.add("social-icon");
+		  elem_mob.classList.add("no-show-desktop");
 		  mobileContacts.appendChild(elem_mob);
 		}
 
